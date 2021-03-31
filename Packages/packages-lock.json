@@ -159,6 +159,22 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "trulden.joysticks": {
+      "version": "https://github.com/kirillsmirnov1/Joysticks.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "06461818ad83d0291c4f2de47ba0eb301e118f0b"
+    },
+    "trulden.unity-utils": {
+      "version": "https://github.com/kirillsmirnov1/unity-utils.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.textmeshpro": "2.1.1"
+      },
+      "hash": "857c8d3f61b305a9859944c58e41e73e2d6bc9f2"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
