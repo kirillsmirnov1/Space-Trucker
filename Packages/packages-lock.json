@@ -164,7 +164,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "06461818ad83d0291c4f2de47ba0eb301e118f0b"
+      "hash": "f16eb61bbadf7302d1d580bf8572545504468cf9"
     },
     "trulden.unity-utils": {
       "version": "https://github.com/kirillsmirnov1/unity-utils.git",
@@ -173,7 +173,7 @@
       "dependencies": {
         "com.unity.textmeshpro": "2.1.1"
       },
-      "hash": "857c8d3f61b305a9859944c58e41e73e2d6bc9f2"
+      "hash": "013b41c15ecb3b6a51dd7b7447e08e763f23b069"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
