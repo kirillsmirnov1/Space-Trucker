@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityUtils.Extensions;
 using UnityUtils.Variables;
 
 namespace Trucker.Control.Craft.Movement
@@ -18,10 +17,7 @@ namespace Trucker.Control.Craft.Movement
 
         private void Rotate()
         {
-            // FIXME doesn't work as expected 
-
-            var joystickAngle = directionInput.Value.ToAngleInDegrees();
-            var targetRotation = Quaternion.Euler(0, -joystickAngle, 0);
+            var targetRotation = Quaternion.Euler(0, _rb.rotation.eulerAngles.y + directionInput.Value.x, 0);
             var lerpT = rotationSpeed * directionInput.Value.magnitude;
             
             var newRotation = Quaternion.Lerp(_rb.rotation, targetRotation, lerpT);
