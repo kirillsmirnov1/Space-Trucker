@@ -23,7 +23,7 @@ namespace Trucker.Control.Craft.Movement
 
         private void ApplyThrust()
         {
-            var thrustForce = Vector3.forward * thrustValue * _craftMass;
+            var thrustForce = transform.forward * thrustValue * _craftMass;
             _rb.AddForce(thrustForce);
         }
     }
