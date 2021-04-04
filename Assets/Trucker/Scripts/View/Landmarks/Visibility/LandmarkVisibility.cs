@@ -5,7 +5,6 @@ namespace Trucker.View.Landmarks.Visibility
 {
     public class LandmarkVisibility : MonoBehaviour
     {
-        // TODO display smth on canvas 
         public Action<bool> OnVisibilityChange;
         
         [SerializeField] private bool visible;
