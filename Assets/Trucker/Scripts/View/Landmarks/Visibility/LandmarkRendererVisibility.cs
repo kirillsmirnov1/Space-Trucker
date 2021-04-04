@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Trucker.Scripts.View.Landmarks.Visibility
+namespace Trucker.View.Landmarks.Visibility
 {
     public class LandmarkRendererVisibility : MonoBehaviour
     {
