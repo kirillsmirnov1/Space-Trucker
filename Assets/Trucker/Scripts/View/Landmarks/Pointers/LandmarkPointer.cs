@@ -11,6 +11,11 @@ namespace Trucker.View.Landmarks.Pointers
         [SerializeField] private Image image;
         [SerializeField] private RectTransform rectTransform;
         
+        [Header("Debug")]
+        [SerializeField] private Vector3 screenPos;
+        
+        private static readonly Vector2 ScreenDim = new Vector2(Screen.width/2, Screen.height/2);
+        
         private Action _onUpdate;
         private LandmarkVisibility _landmarkVisibility;
         private Camera _cam;
@@ -43,11 +48,29 @@ namespace Trucker.View.Landmarks.Pointers
         }
 
         private void DisplayInsideScreen() 
-            => rectTransform.position = _cam.WorldToScreenPoint(_landmarkVisibility.transform.position);
+            => rectTransform.position = GetScreenPos();
+
+        private Vector2 GetScreenPos()
+        {
+            screenPos = _cam.WorldToScreenPoint(_landmarkVisibility.transform.position);
+            return screenPos * Mathf.Sign(screenPos.z);
+        }
 
         private void DisplayOnScreenBorder()
         {
-            // TODO
+            var direction = (GetScreenPos() - ScreenDim).normalized;
+            
+            var projection = new Vector2(
+                ScreenDim.x * direction.y / direction.x, 
+                ScreenDim.y * direction.x / direction.y);
+
+            var clampedProjection = Mathf.Abs(projection.y) < ScreenDim.y
+                ? new Vector2(ScreenDim.x, projection.y) * Mathf.Sign(direction.x)
+                : new Vector2(projection.x, ScreenDim.y) * Mathf.Sign(direction.y);
+
+            clampedProjection *= 0.9f;
+            
+            rectTransform.anchoredPosition = clampedProjection;
         }
     }
 }
