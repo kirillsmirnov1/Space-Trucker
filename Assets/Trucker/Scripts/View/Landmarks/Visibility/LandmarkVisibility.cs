@@ -5,7 +5,7 @@ namespace Trucker.View.Landmarks.Visibility
 {
     public class LandmarkVisibility : MonoBehaviour
     {
-        public Action<bool> OnVisibilityChange;
+        public Action<bool> onVisibilityChange;
         
         [SerializeField] private bool visible;
         
@@ -18,7 +18,7 @@ namespace Trucker.View.Landmarks.Visibility
             {
                 if(value == visible) return;
                 visible = value;
-                OnVisibilityChange?.Invoke(visible);
+                onVisibilityChange?.Invoke(visible);
                 Debug.Log($"{gameObject.name} is {(visible ? "visible" : "invisible")}");
             }
         }

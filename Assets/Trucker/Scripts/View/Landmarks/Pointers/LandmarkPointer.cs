@@ -33,13 +33,13 @@ namespace Trucker.View.Landmarks.Pointers
             image.sprite = sprite;
             _landmarkVisibility = landmarkVisibility;
 
-            _landmarkVisibility.OnVisibilityChange += SetDisplayMethod;
+            _landmarkVisibility.onVisibilityChange += SetDisplayMethod;
             SetDisplayMethod(_landmarkVisibility.Visible);
         }
 
         private void OnDestroy()
         {
-            _landmarkVisibility.OnVisibilityChange -= SetDisplayMethod;
+            _landmarkVisibility.onVisibilityChange -= SetDisplayMethod;
         }
 
         private void SetDisplayMethod(bool visible)
