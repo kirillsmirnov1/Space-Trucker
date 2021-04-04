@@ -4,17 +4,29 @@ namespace Trucker.View.Landmarks.Visibility
 {
     public class LandmarkVisibility : MonoBehaviour
     {
-        // TODO bind callbacks from LandmarkRendererVisibility 
         // TODO display smth on canvas 
-        
-        private void Awake() => InitChildRenderers();
+        [SerializeField] private bool visible;
 
-        private void InitChildRenderers()
+        public bool Visible
         {
-            foreach (var childRenderer in GetComponentsInChildren<Renderer>())
+            get => visible;
+            private set
             {
-                childRenderer.gameObject.AddComponent<LandmarkRendererVisibility>();
+                if(value == visible) return;
+                visible = value;
+                Debug.Log($"{gameObject.name} is {(visible ? "visible" : "invisible")}");
             }
+        }
+
+        private void Update()
+        {
+            CheckVisibility();
+        }
+
+        private void CheckVisibility()
+        {
+            var vpPos = Camera.main.WorldToViewportPoint(transform.position);
+            Visible = vpPos.x >= 0 && vpPos.x <= 1 && vpPos.y >= 0 & vpPos.y <= 1 && vpPos.z >= 0;
         }
     }
 }
