@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8605797741653826343}
   - component: {fileID: 272161075}
   - component: {fileID: 2092329198961696466}
+  - component: {fileID: 2839290903199738242}
   m_Layer: 0
   m_Name: craft_cargoB
   m_TagString: Untagged
@@ -176,3 +177,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionInput: {fileID: 11400000, guid: 00efedbc099833d4a95e69cee8a470c3, type: 2}
   rotationSpeed: {fileID: 11400000, guid: a9bd78f9d5960e44ba128400a99f7f25, type: 2}
+--- !u!114 &2839290903199738242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911645796159432309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ceebe081d448d93f8083be9c5cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}
