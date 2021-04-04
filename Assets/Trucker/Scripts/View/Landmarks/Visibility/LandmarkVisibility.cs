@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Trucker.View.Landmarks.Visibility
 {
     public class LandmarkVisibility : MonoBehaviour
     {
         // TODO display smth on canvas 
+        public Action<bool> OnVisibilityChange;
+        
         [SerializeField] private bool visible;
         
         private Camera _cam;
@@ -16,6 +19,7 @@ namespace Trucker.View.Landmarks.Visibility
             {
                 if(value == visible) return;
                 visible = value;
+                OnVisibilityChange?.Invoke(visible);
                 Debug.Log($"{gameObject.name} is {(visible ? "visible" : "invisible")}");
             }
         }
