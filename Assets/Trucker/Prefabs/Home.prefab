@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 0
+  logVisibilityChange: {fileID: 11400000, guid: 09095ca5bb6bc664c840f2e5a9168b1f, type: 2}
 --- !u!114 &7139714423532803990
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityUtils.Variables;
 
 namespace Trucker.View.Landmarks.Visibility
 {
@@ -8,6 +9,9 @@ namespace Trucker.View.Landmarks.Visibility
         public Action<bool> onVisibilityChange;
         
         [SerializeField] private bool visible;
+
+        [Header("Debug")]
+        [SerializeField] private BoolVariable logVisibilityChange;
         
         private Camera _cam;
 
@@ -19,7 +23,7 @@ namespace Trucker.View.Landmarks.Visibility
                 if(value == visible) return;
                 visible = value;
                 onVisibilityChange?.Invoke(visible);
-                Debug.Log($"{gameObject.name} is {(visible ? "visible" : "invisible")}");
+                if(logVisibilityChange) Debug.Log($"{gameObject.name} is {(visible ? "visible" : "invisible")}");
             }
         }
 
