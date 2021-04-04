@@ -61,8 +61,8 @@ namespace Trucker.View.Landmarks.Pointers
             var direction = (GetScreenPos() - ScreenDim).normalized;
             
             var projection = new Vector2(
-                ScreenDim.x * direction.y / direction.x, 
-                ScreenDim.y * direction.x / direction.y);
+                ScreenDim.y * direction.x / direction.y,
+                ScreenDim.x * direction.y / direction.x);
 
             var clampedProjection = Mathf.Abs(projection.y) < ScreenDim.y
                 ? new Vector2(ScreenDim.x, projection.y) * Mathf.Sign(direction.x)
