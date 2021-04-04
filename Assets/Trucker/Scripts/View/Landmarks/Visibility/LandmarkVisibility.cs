@@ -6,6 +6,8 @@ namespace Trucker.View.Landmarks.Visibility
     {
         // TODO display smth on canvas 
         [SerializeField] private bool visible;
+        
+        private Camera _cam;
 
         public bool Visible
         {
@@ -18,6 +20,11 @@ namespace Trucker.View.Landmarks.Visibility
             }
         }
 
+        private void Awake()
+        {
+            _cam = Camera.main;
+        }
+
         private void Update()
         {
             CheckVisibility();
@@ -25,7 +32,7 @@ namespace Trucker.View.Landmarks.Visibility
 
         private void CheckVisibility()
         {
-            var vpPos = Camera.main.WorldToViewportPoint(transform.position);
+            var vpPos = _cam.WorldToViewportPoint(transform.position);
             Visible = vpPos.x >= 0 && vpPos.x <= 1 && vpPos.y >= 0 & vpPos.y <= 1 && vpPos.z >= 0;
         }
     }
