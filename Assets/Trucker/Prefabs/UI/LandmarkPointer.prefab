@@ -90,3 +90,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2607486936462869766}
   rectTransform: {fileID: 2703011524059924546}
+  heightRatio: 0.052083332
+  screenPos: {x: 0, y: 0, z: 0}

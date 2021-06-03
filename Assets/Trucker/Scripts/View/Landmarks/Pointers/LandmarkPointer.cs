@@ -10,6 +10,7 @@ namespace Trucker.View.Landmarks.Pointers
     {
         [SerializeField] private Image image;
         [SerializeField] private RectTransform rectTransform;
+        [SerializeField] private float heightRatio;
         
         [Header("Debug")]
         [SerializeField] private Vector3 screenPos;
@@ -31,6 +32,9 @@ namespace Trucker.View.Landmarks.Pointers
             _cam = Camera.main;
             
             image.sprite = sprite;
+            var size = heightRatio * Screen.height;
+            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size);
+            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
             _landmarkVisibility = landmarkVisibility;
 
             _landmarkVisibility.onVisibilityChange += SetDisplayMethod;
