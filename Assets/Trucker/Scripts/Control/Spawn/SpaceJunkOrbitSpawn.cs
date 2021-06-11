@@ -1,4 +1,4 @@
-﻿using Unity.Mathematics;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityUtils;
 using Random = System.Random;
@@ -12,9 +12,16 @@ namespace Trucker.Control.Spawn
         [SerializeField] private int numberOfObjects;
         [SerializeField] private float orbitRadius;
         [SerializeField] private float spawnCircleRadius; // might change to ellipsis later
+        [SerializeField] private Vector2 sizeMinMax = new Vector2(1f, 10f);
         
         private static readonly Random Random = new Random();
-        
+
+        private void Awake()
+        {
+            Spawn();
+        }
+
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             UnityEditor.Handles.color = Color.yellow;
@@ -22,14 +29,15 @@ namespace Trucker.Control.Spawn
             UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius - spawnCircleRadius);
             UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius + spawnCircleRadius);
         }
+#endif
 
         public void Spawn()
         {
             RemoveOldSpawn();
             for (var i = 0; i < numberOfObjects; i++)
             {
-                Instantiate(prefabToSpawn, NextPosition(), quaternion.identity, transform);
-                // TODO change size and rotation 
+                var obj = Instantiate(prefabToSpawn, NextPosition(), quaternion.identity, transform);
+                obj.transform.localScale = Random.NextFloat(sizeMinMax.x, sizeMinMax.y) * Vector3.one;
             }
         }
 
