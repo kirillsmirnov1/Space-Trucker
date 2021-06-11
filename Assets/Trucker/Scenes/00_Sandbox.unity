@@ -14,9 +14,9 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.047058824, g: 0.047058824, b: 0.047058824, a: 0}
+  m_FogMode: 2
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 1ddf60c73b119204f88b8d54e3b2f3c3, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a398f15b4e5a63c459f3e18b5b3dd558, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.271
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 125311002}
-  m_IndirectSpecularColor: {r: 0.4884463, g: 0.169332, b: 0.45101577, a: 0.271}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.271}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -247,9 +247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 273551459333336668, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
   centralObject: {fileID: 1393538021889057818}
-  numberOfObjects: 0
+  numberOfObjects: 10000
   orbitRadius: 1034.8
   spawnCircleRadius: 205.48
+  sizeMinMax: {x: 1, y: 10}
 --- !u!4 &200878766
 Transform:
   m_ObjectHideFlags: 0
