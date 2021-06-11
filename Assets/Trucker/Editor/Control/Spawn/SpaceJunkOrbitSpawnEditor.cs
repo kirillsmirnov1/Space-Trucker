@@ -8,10 +8,14 @@ namespace Trucker.Control.Spawn
     {
         public override void OnInspectorGUI()
         {
+            var obj = (SpaceJunkOrbitSpawn) target;
             if (GUILayout.Button("Spawn"))
             {
-                var obj = (SpaceJunkOrbitSpawn) target;
                 obj.Spawn();
+            }
+            if (GUILayout.Button("Clear"))
+            {
+                obj.RemoveOldSpawn();
             }
             base.OnInspectorGUI();
         }

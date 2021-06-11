@@ -1,4 +1,4 @@
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using UnityEngine;
 using UnityUtils;
 using Random = System.Random;
@@ -41,7 +41,7 @@ namespace Trucker.Control.Spawn
             }
         }
 
-        private void RemoveOldSpawn()
+        public void RemoveOldSpawn()
         {
             for (var i = transform.childCount - 1; i >= 0; i--)
             {
