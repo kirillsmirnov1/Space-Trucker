@@ -10,9 +10,15 @@ namespace Trucker.Control.Spawn
         [SerializeField] private int numberOfObjects;
         [SerializeField] private float orbitRadius;
         [SerializeField] private float spawnCircleRadius; // might change to ellipsis later
-
-        // TODO show spawn location 
         
+        private void OnDrawGizmosSelected()
+        {
+            UnityEditor.Handles.color = Color.yellow;
+            UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius);
+            UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius - spawnCircleRadius);
+            UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius + spawnCircleRadius);
+        }
+
         public void Spawn()  
         {
             RemoveOldSpawn();
