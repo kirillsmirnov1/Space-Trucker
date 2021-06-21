@@ -7,6 +7,7 @@ namespace Trucker.Control.Craft.Movement
     public class CraftThrust : MonoBehaviour
     {
         [SerializeField] private FloatVariable thrustValue;
+        [SerializeField] private FloatVariable thrustMod;
 
         private Rigidbody _rb;
         private float _craftMass;
@@ -23,8 +24,10 @@ namespace Trucker.Control.Craft.Movement
 
         private void ApplyThrust()
         {
-            var thrustForce = transform.forward * thrustValue * _craftMass;
-            _rb.AddForce(thrustForce);
+            var speed = thrustValue * _craftMass * thrustMod;
+            if (!(Mathf.Abs(speed) > 0f)) return;
+            var thrustForce = transform.forward * speed;
+            _rb.velocity = thrustForce;
         }
     }
 }
