@@ -42,26 +42,26 @@ namespace Trucker.Control.Craft.Movement
 
         private void HandleKeyBoardInput()
         {
+            _keyboardInput = Vector3.zero;
+            
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                _keyboardInput = Vector3.down;
+                _keyboardInput += Vector3.down;
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
-                _keyboardInput = Vector3.up;
+                _keyboardInput += Vector3.up;
             }
-            else if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                _keyboardInput = Vector3.right;
+                _keyboardInput += Vector3.left;
             }
-            else if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
-                _keyboardInput = Vector3.left;
+                _keyboardInput += Vector3.right;
             }
-            else
-            {
-                _keyboardInput = Vector3.zero;
-            }
+            
+            _keyboardInput.Normalize();
         }
 
         private void Rotate()
