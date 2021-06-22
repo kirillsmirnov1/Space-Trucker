@@ -6,21 +6,21 @@ namespace Trucker.Control.Craft.Movement
     {
         private Rigidbody _rb;
 
-        private Vector3 _defaultAttitude;
-        private Vector3 DefaultAttitude
+        private Vector3 _baseGyroAttitude;
+        private Vector3 BaseGyroAttitude
         {
             get
             {
-                if (_defaultAttitude == Vector3.zero)
+                if (_baseGyroAttitude == Vector3.zero)
                 {
-                    _defaultAttitude = Input.acceleration;
+                    _baseGyroAttitude = Input.acceleration;
                 }
-                return _defaultAttitude;
+                return _baseGyroAttitude;
             }
         }
-        private Vector3 _attitude;
-        private Vector3 _attitudeToRotation;
-        private Vector3 _keyboardInput;
+
+        private Vector3 _attitudeChangeGyro;
+        private Vector3 _attitudeChangeKeyboard;
         
         private void Awake()
         {
@@ -36,44 +36,44 @@ namespace Trucker.Control.Craft.Movement
 
         private void UpdateAttitude()
         {
-            _attitude = DefaultAttitude - Input.acceleration;
-            _attitudeToRotation = new Vector3(_attitude.z, -_attitude.x, 0);
+            var rawGyroChange = BaseGyroAttitude - Input.acceleration;
+            _attitudeChangeGyro = new Vector3(rawGyroChange.z, -rawGyroChange.x, 0);
         }
 
         private void HandleKeyBoardInput()
         {
-            _keyboardInput = Vector3.zero;
+            _attitudeChangeKeyboard = Vector3.zero;
             
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                _keyboardInput += Vector3.down;
+                _attitudeChangeKeyboard += Vector3.down;
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                _keyboardInput += Vector3.up;
+                _attitudeChangeKeyboard += Vector3.up;
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                _keyboardInput += Vector3.left;
+                _attitudeChangeKeyboard += Vector3.left;
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                _keyboardInput += Vector3.right;
+                _attitudeChangeKeyboard += Vector3.right;
             }
             
-            _keyboardInput.Normalize();
+            _attitudeChangeKeyboard.Normalize();
         }
 
         private void Rotate()
         {
-            var rotationChangeV3 = _keyboardInput + _attitudeToRotation;
+            var attitudeChangeV3 = _attitudeChangeKeyboard + _attitudeChangeGyro;
             
-            if (transform.up.y < 0) rotationChangeV3.y *= -1;
+            if (transform.up.y < 0) attitudeChangeV3.y *= -1;
 
-            var rotationChangeQx = Quaternion.Euler(rotationChangeV3.x, 0, 0);
-            var rotationChangeQy = Quaternion.Euler(0, rotationChangeV3.y, 0);
+            var attitudeChangeQx = Quaternion.Euler(attitudeChangeV3.x, 0, 0);
+            var attitudeChangeQy = Quaternion.Euler(0, attitudeChangeV3.y, 0);
             
-            _rb.MoveRotation(rotationChangeQy * _rb.rotation * rotationChangeQx);
+            _rb.MoveRotation(attitudeChangeQy * _rb.rotation * attitudeChangeQx);
         }
     }
 }
