@@ -21,12 +21,10 @@ namespace Trucker.Control.Craft.Movement
         private Vector3 _attitude;
         private Vector3 _attitudeToRotation;
         private Vector3 _keyboardInput;
-        private Vector3 _rotation;
         
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
-            _rotation = _rb.rotation.eulerAngles;
         }
 
         private void Update()
@@ -68,13 +66,13 @@ namespace Trucker.Control.Craft.Movement
 
         private void Rotate()
         {
-            // Using V3 as rotation storage bc using Qs caused rotation around Z and I dont want that
             var rotationChangeV3 = _keyboardInput + _attitudeToRotation;
             
             if (transform.up.y < 0) rotationChangeV3.y *= -1;
-            _rotation += rotationChangeV3;
-            
-            _rb.MoveRotation(Quaternion.Euler(_rotation));
+
+            // FIXME apply to rb 
+            transform.Rotate(rotationChangeV3.x, 0, 0, Space.Self);
+            transform.Rotate(0, rotationChangeV3.y, 0, Space.World);
         }
     }
 }
