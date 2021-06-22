@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 612499680142177510}
   - component: {fileID: 4075544832193108679}
   - component: {fileID: 2556248687046941930}
+  - component: {fileID: 1777226650207755751}
   m_Layer: 0
   m_Name: meteor_detailed
   m_TagString: Untagged
@@ -62,6 +63,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1777226650207755751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273551459333336668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890814bf9c794c18838ab9fb874cbf37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centralObject: {fileID: 11400000, guid: eeee0971a9b13cb4eb0184c6ac561f75, type: 2}
+  stayOnOrbitForce: {fileID: 11400000, guid: e4eb316610753954e81f797c21b9b64f, type: 2}
+  orbitSpeed: {fileID: 11400000, guid: a7c0a44c0c0a7ea41933c27d2e33d6fb, type: 2}
+  rb: {fileID: 2556248687046941930}
+  orbitRadius: {fileID: 11400000, guid: 6d870cc8e84596340a24b4564d707afe, type: 2}
 --- !u!1 &6649628260834910829
 GameObject:
   m_ObjectHideFlags: 0

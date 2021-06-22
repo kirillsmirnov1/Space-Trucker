@@ -1,6 +1,8 @@
 ﻿using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 using UnityUtils;
+using UnityUtils.Variables;
 using Random = System.Random;
 
 namespace Trucker.Control.Spawn
@@ -9,12 +11,14 @@ namespace Trucker.Control.Spawn
     {
         [SerializeField] private GameObject prefabToSpawn; // might extract factory later
         [SerializeField] private Transform centralObject;
-        [SerializeField] private int numberOfObjects;
-        [SerializeField] private float orbitRadius;
-        [SerializeField] private float spawnCircleRadius; // might change to ellipsis later
-        [SerializeField] private Vector2 sizeMinMax = new Vector2(1f, 10f);
+        [SerializeField] private IntVariable numberOfObjects;
+        [SerializeField] private FloatVariable orbitRadius;
+        [SerializeField] private FloatVariable spawnCircleRadius; // might change to ellipsis later
+        [SerializeField] private Vector2Variable spaceJunkScale;
         
         private static readonly Random Random = new Random();
+
+        private void OnValidate() => this.CheckNullFields();
 
         private void Awake()
         {
@@ -24,10 +28,10 @@ namespace Trucker.Control.Spawn
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            UnityEditor.Handles.color = Color.yellow;
-            UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius);
-            UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius - spawnCircleRadius);
-            UnityEditor.Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius + spawnCircleRadius);
+            Handles.color = Color.yellow;
+            Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius);
+            Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius - spawnCircleRadius);
+            Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius + spawnCircleRadius);
         }
 #endif
 
@@ -37,7 +41,7 @@ namespace Trucker.Control.Spawn
             for (var i = 0; i < numberOfObjects; i++)
             {
                 var obj = Instantiate(prefabToSpawn, NextPosition(), quaternion.identity, transform);
-                obj.transform.localScale = Random.NextFloat(sizeMinMax.x, sizeMinMax.y) * Vector3.one;
+                obj.transform.localScale = Random.NextFloat(spaceJunkScale.Value.x, spaceJunkScale.Value.y) * Vector3.one;
             }
         }
 
