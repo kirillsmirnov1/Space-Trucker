@@ -70,9 +70,10 @@ namespace Trucker.Control.Craft.Movement
             
             if (transform.up.y < 0) rotationChangeV3.y *= -1;
 
-            // FIXME apply to rb 
-            transform.Rotate(rotationChangeV3.x, 0, 0, Space.Self);
-            transform.Rotate(0, rotationChangeV3.y, 0, Space.World);
+            var rotationChangeQx = Quaternion.Euler(rotationChangeV3.x, 0, 0);
+            var rotationChangeQy = Quaternion.Euler(0, rotationChangeV3.y, 0);
+            
+            _rb.MoveRotation(rotationChangeQy * _rb.rotation * rotationChangeQx);
         }
     }
 }
