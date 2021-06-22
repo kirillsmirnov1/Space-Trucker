@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 643907160}
   - component: {fileID: 643907164}
   m_Layer: 5
-  m_Name: Button_Backwards
+  m_Name: Backwards_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 1164746987}
   - component: {fileID: 1164746991}
   m_Layer: 5
-  m_Name: Button_Forward
+  m_Name: Forward_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 6427718620758423439}
   - component: {fileID: 36169214777694938}
   m_Layer: 5
-  m_Name: Button_ResetGyro
+  m_Name: ResetGyro_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
