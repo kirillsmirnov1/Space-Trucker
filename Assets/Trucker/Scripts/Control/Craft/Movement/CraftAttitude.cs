@@ -13,7 +13,7 @@ namespace Trucker.Control.Craft.Movement
             {
                 if (_baseGyroAttitude == Vector3.zero)
                 {
-                    _baseGyroAttitude = Input.acceleration;
+                    ResetBaseGyroAttitude();
                 }
                 return _baseGyroAttitude;
             }
@@ -33,6 +33,9 @@ namespace Trucker.Control.Craft.Movement
             HandleKeyBoardInput();
             Rotate();
         }
+
+        public void ResetBaseGyroAttitude() 
+            => _baseGyroAttitude = Input.acceleration;
 
         private void UpdateAttitude()
         {

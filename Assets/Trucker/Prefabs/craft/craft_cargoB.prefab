@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 272161075}
   - component: {fileID: 2839290903199738242}
   - component: {fileID: 380747065}
+  - component: {fileID: 5801492429987914365}
   m_Layer: 0
   m_Name: craft_cargoB
   m_TagString: Untagged
@@ -275,6 +276,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87a014e54bcee20ab76919f777229d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5801492429987914365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911645796159432309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6957297fb206642b2f37e96c30a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e8c7f9c0b60c53448a61bf06587da777, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 380747065}
+        m_TargetAssemblyTypeName: Trucker.Control.Craft.Movement.CraftAttitude, Assembly-CSharp
+        m_MethodName: ResetBaseGyroAttitude
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1336522140943153287
 PrefabInstance:
   m_ObjectHideFlags: 0
