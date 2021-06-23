@@ -1,7 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityUtils;
 using UnityUtils.Variables;
-using Random = System.Random;
 
 namespace Trucker.Control.Meteor
 {
@@ -11,10 +10,6 @@ namespace Trucker.Control.Meteor
         [SerializeField] private FloatVariable stayOnOrbitForce;
         [SerializeField] private FloatVariable orbitSpeed;
         [SerializeField] private Rigidbody rb;
-        [SerializeField] private FloatVariable orbitRadius;
-        [SerializeField] private FloatVariable orbitCircleRadius;
-                
-        private static readonly Random Random = new Random();
         private float _personalOrbitRadius;
 
         private Vector3 CentralObjectPos => centralObject.Value.position;
