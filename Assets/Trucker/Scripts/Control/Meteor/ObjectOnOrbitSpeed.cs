@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityUtils;
 using UnityUtils.Variables;
 using Random = System.Random;
@@ -21,7 +21,7 @@ namespace Trucker.Control.Meteor
         private Vector3 ToCentral => CentralObjectPos - transform.position;
         private Vector3 ToCentralNormalized => ToCentral.normalized;
         private Vector3 OrbitDirection => Vector3.Cross(ToCentral, Vector3.up).normalized;
-        private Vector3 PushForce => OrbitDirection * orbitSpeed;
+        private Vector3 PushForce => (OrbitDirection + Random.insideUnitSphere * 0.1f) * orbitSpeed;
 
         private void OnValidate() => this.CheckNullFields();
 
@@ -40,12 +40,12 @@ namespace Trucker.Control.Meteor
         }
 
         private void SetPersonalOrbitRadius() 
-            => _personalOrbitRadius = Random.NextFloat(orbitRadius - orbitCircleRadius, orbitRadius + orbitCircleRadius);
+            => _personalOrbitRadius = ToCentral.magnitude;
 
         private void SetStartSpeed() 
             => rb.velocity = PushForce;
 
-        private void PushObject() => rb.AddForce(PushForce); // TODO add some randomness maybe 
+        private void PushObject() => rb.AddForce(PushForce);
         
         private void MoveToOrbit() 
         {
