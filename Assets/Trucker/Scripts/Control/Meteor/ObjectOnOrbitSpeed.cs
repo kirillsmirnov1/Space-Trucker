@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityUtils;
 using UnityUtils.Variables;
+using Random = System.Random;
 
 namespace Trucker.Control.Meteor
 {
@@ -11,10 +12,20 @@ namespace Trucker.Control.Meteor
         [SerializeField] private FloatVariable orbitSpeed;
         [SerializeField] private Rigidbody rb;
         [SerializeField] private FloatVariable orbitRadius;
-        
+        [SerializeField] private FloatVariable orbitCircleRadius;
+                
+        private static readonly Random Random = new Random();
+        private float _personalOrbitRadius;
+
         private Vector3 CentralObjectPos => centralObject.Value.position;
-        
+        private Vector3 ToCentral => CentralObjectPos - transform.position;
+        private Vector3 ToCentralNormalized => ToCentral.normalized;
+        private Vector3 OrbitDirection => Vector3.Cross(ToCentral, Vector3.up).normalized;
+        private Vector3 PushForce => OrbitDirection * orbitSpeed;
+
         private void OnValidate() => this.CheckNullFields();
+
+        private void Start() => Init();
 
         private void FixedUpdate()
         {
@@ -22,16 +33,25 @@ namespace Trucker.Control.Meteor
             PushObject();
         }
 
-        private void PushObject() => rb.AddForce(OrbitDirection * orbitSpeed); // TODO add some randomness maybe 
-
-        private Vector3 ToCentral => CentralObjectPos - transform.position;
-        private Vector3 ToCentralNormalized => ToCentral.normalized;
-        private Vector3 OrbitDirection => Vector3.Cross(ToCentral, Vector3.up).normalized;
-        
-        private void MoveToOrbit() // TODO welp make it work nice 
+        private void Init() // TODO call on respawn 
         {
-            var moveDirection = ToCentralNormalized * (ToCentral.magnitude - orbitRadius);
-            rb.AddForce(moveDirection * stayOnOrbitForce);
+            SetPersonalOrbitRadius();
+            SetStartSpeed();
+        }
+
+        private void SetPersonalOrbitRadius() 
+            => _personalOrbitRadius = Random.NextFloat(orbitRadius - orbitCircleRadius, orbitRadius + orbitCircleRadius);
+
+        private void SetStartSpeed() 
+            => rb.velocity = PushForce;
+
+        private void PushObject() => rb.AddForce(PushForce); // TODO add some randomness maybe 
+        
+        private void MoveToOrbit() 
+        {
+            var distanceFromOrbitCenter = ToCentral.magnitude - _personalOrbitRadius;
+            var moveDirection = ToCentralNormalized * distanceFromOrbitCenter;
+            rb.AddForce(moveDirection * stayOnOrbitForce * rb.velocity.magnitude);
         }
     }
 }
