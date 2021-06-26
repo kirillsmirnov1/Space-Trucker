@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340e6befe0be4769a330eef47d544e74, type: 3}
   m_Name: spaceJunkScale
   m_EditorClassIdentifier: 
-  value: {x: 1, y: 10}
+  value: {x: 0.5, y: 5}
   save: 0
   logSave: 0
   defaultValue: {fileID: 0}
