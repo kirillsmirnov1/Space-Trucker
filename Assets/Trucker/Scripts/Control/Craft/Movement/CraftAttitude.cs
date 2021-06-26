@@ -1,3 +1,4 @@
+using Trucker.Extensions;
 using UnityEngine;
 
 namespace Trucker.Control.Craft.Movement
@@ -71,14 +72,12 @@ namespace Trucker.Control.Craft.Movement
         {
             var attitudeChangeV3 = _attitudeChangeKeyboard + _attitudeChangeGyro;
             
-            if (UpsideDown) attitudeChangeV3.y *= -1;
+            if (transform.UpsideDown()) attitudeChangeV3.y *= -1;
 
             var attitudeChangeQx = Quaternion.Euler(attitudeChangeV3.x, 0, 0);
             var attitudeChangeQy = Quaternion.Euler(0, attitudeChangeV3.y, 0);
             
             _rb.MoveRotation(attitudeChangeQy * _rb.rotation * attitudeChangeQx);
         }
-
-        private bool UpsideDown => transform.up.y < 0;
     }
 }

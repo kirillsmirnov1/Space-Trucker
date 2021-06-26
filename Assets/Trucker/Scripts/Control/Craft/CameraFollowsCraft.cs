@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Trucker.Extensions;
+using UnityEngine;
 
 namespace Trucker.Control.Craft
 {
@@ -24,6 +25,7 @@ namespace Trucker.Control.Craft
         {
             var pointToLookAt = craft.position + craft.forward * craftForwardLookDistance;
             var targetRotation = Quaternion.LookRotation(pointToLookAt - transform.position);
+            if(craft.UpsideDown()) targetRotation *= Quaternion.Euler(0, 0, 180); // FIXME should change smoothly 
             transform.rotation = Quaternion.Slerp(transform.rotation,targetRotation, Time.deltaTime * speedRotate);
         }
     }
