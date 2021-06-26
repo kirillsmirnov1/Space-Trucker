@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4075544832193108679}
   - component: {fileID: 2556248687046941930}
   - component: {fileID: 1777226650207755751}
-  - component: {fileID: 7751345650351348883}
+  - component: {fileID: 6065099151998517583}
   m_Layer: 0
   m_Name: meteor_detailed
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MonoBehaviour:
   stayOnOrbitForce: {fileID: 11400000, guid: e4eb316610753954e81f797c21b9b64f, type: 2}
   orbitSpeed: {fileID: 11400000, guid: a7c0a44c0c0a7ea41933c27d2e33d6fb, type: 2}
   rb: {fileID: 2556248687046941930}
---- !u!114 &7751345650351348883
+--- !u!114 &6065099151998517583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,11 +89,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 273551459333336668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ddea0cfb5947a6a6bc5cc4a10a8599, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b983b4719974523965bd23f03cd96eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2556248687046941930}
   zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
+  orbitSpeed: {fileID: 1777226650207755751}
 --- !u!1 &6649628260834910829
 GameObject:
   m_ObjectHideFlags: 0

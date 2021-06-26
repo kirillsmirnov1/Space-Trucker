@@ -15,7 +15,14 @@ namespace Trucker.Control.Zap
 
         protected virtual void TryCatch()
         {
-            Catcher.TryCatch(this);
+            if (Catcher.TryCatch(this))
+                OnCatch();
+            else
+                OnNoCatch();
         }
+
+        protected virtual void OnCatch() { }
+
+        protected virtual void OnNoCatch() { }
     }
 }
