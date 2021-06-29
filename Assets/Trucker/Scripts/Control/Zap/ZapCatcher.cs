@@ -1,17 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityUtils;
+using UnityUtils.Variables;
 
 namespace Trucker.Control.Zap
 {
     public class ZapCatcher : MonoBehaviour
     {
         [SerializeField] private SpringJointSettings springSettings;
+        [SerializeField] private IntVariable catcheesCount;
         
         private List<ZapCatchee> catchees = new List<ZapCatchee>();
 
         private void OnValidate() => this.CheckNullFields();
+
+        private void Awake() => UpdateCatcheesCount();
 
         public bool TryCatch(ZapCatchee zapCatchee)
         {
@@ -20,9 +25,14 @@ namespace Trucker.Control.Zap
             var springJoint = SetSpringJoint(zapCatchee);
             SetAnchorConnection(zapCatchee, springJoint);
             catchees.Add(zapCatchee);
+
+            UpdateCatcheesCount();
             
             return true;
         }
+
+        private void UpdateCatcheesCount() 
+            => catcheesCount.Value = catchees.Count;
 
         private void SetAnchorConnection(ZapCatchee zapCatchee, SpringJoint springJoint)
         {
