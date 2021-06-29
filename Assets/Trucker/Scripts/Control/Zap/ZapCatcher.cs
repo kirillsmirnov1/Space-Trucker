@@ -1,11 +1,17 @@
 ﻿using System.Collections.Generic;
+using Trucker.Model.Zap;
 using UnityEngine;
+using UnityUtils;
 
 namespace Trucker.Control.Zap
 {
     public class ZapCatcher : MonoBehaviour
     {
+        [SerializeField] private SpringJointSettings springSettings;
+        
         private List<ZapCatchee> catchees = new List<ZapCatchee>();
+
+        private void OnValidate() => this.CheckNullFields();
 
         public bool TryCatch(ZapCatchee zapCatchee)
         {
@@ -13,14 +19,12 @@ namespace Trucker.Control.Zap
             
             var bodyToConnectTo = catchees.Count > 0 ? catchees[catchees.Count - 1].transform : transform;
             var springJoint = zapCatchee.gameObject.AddComponent<SpringJoint>();
-
-            // TODO extract to SO 
-            springJoint.autoConfigureConnectedAnchor = false;
-            springJoint.minDistance = 1f;
-            springJoint.maxDistance = 2f;
-            springJoint.enableCollision = true;
-            springJoint.spring = 3;
-            springJoint.damper = 2;
+            
+            springJoint.autoConfigureConnectedAnchor = springSettings.autoConfigureConnectedAnchor;
+            springJoint.minDistance = springSettings.minDistance;
+            springJoint.maxDistance = springSettings.maxDistance;
+            springJoint.spring = springSettings.spring;
+            springJoint.damper = springSettings.damper;
 
             var jointAnchorConnection = zapCatchee.gameObject.AddComponent<JointAnchorConnection>();
             jointAnchorConnection.joint = springJoint;

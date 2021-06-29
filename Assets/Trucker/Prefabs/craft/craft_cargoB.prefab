@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfe41b04fcf49ab8af315da93fe067c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8605797741653826342}
+  springSettings: {fileID: 11400000, guid: e2a0195a0b3950c488a894a405b85a9a, type: 2}
 --- !u!1001 &1336522140943153287
 PrefabInstance:
   m_ObjectHideFlags: 0
