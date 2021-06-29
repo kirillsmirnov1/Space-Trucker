@@ -17,22 +17,31 @@ namespace Trucker.Control.Zap
         {
             if (catchees.Contains(zapCatchee)) return false;
             
-            var bodyToConnectTo = catchees.Count > 0 ? catchees[catchees.Count - 1].transform : transform;
-            var springJoint = zapCatchee.gameObject.AddComponent<SpringJoint>();
+            var springJoint = SetSpringJoint(zapCatchee);
+            SetAnchorConnection(zapCatchee, springJoint);
+            catchees.Add(zapCatchee);
             
+            return true;
+        }
+
+        private void SetAnchorConnection(ZapCatchee zapCatchee, SpringJoint springJoint)
+        {
+            var bodyToConnectTo = catchees.Count > 0 ? catchees[catchees.Count - 1].transform : transform;
+            var jointAnchorConnection = zapCatchee.gameObject.AddComponent<JointAnchorConnection>();
+            jointAnchorConnection.joint = springJoint;
+            jointAnchorConnection.connectedBody = bodyToConnectTo;
+        }
+
+        private SpringJoint SetSpringJoint(ZapCatchee zapCatchee)
+        {
+            var springJoint = zapCatchee.gameObject.AddComponent<SpringJoint>();
+
             springJoint.autoConfigureConnectedAnchor = springSettings.autoConfigureConnectedAnchor;
             springJoint.minDistance = springSettings.minDistance;
             springJoint.maxDistance = springSettings.maxDistance;
             springJoint.spring = springSettings.spring;
             springJoint.damper = springSettings.damper;
-
-            var jointAnchorConnection = zapCatchee.gameObject.AddComponent<JointAnchorConnection>();
-            jointAnchorConnection.joint = springJoint;
-            jointAnchorConnection.connectedBody = bodyToConnectTo;
-            
-            catchees.Add(zapCatchee);
-            
-            return true;
+            return springJoint;
         }
     }
 }
