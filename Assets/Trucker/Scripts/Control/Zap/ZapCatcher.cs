@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityUtils;
@@ -12,7 +13,8 @@ namespace Trucker.Control.Zap
         [SerializeField] private IntVariable catcheesCount;
         
         private List<ZapCatchee> catchees = new List<ZapCatchee>();
-
+        public List<Vector3> CatcheesPositions => catchees.Select(x => x.transform.position).ToList();
+        
         private void OnValidate() => this.CheckNullFields();
 
         private void Awake() => UpdateCatcheesCount();
