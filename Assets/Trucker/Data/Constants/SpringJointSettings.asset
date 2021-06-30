@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpringJointSettings
   m_EditorClassIdentifier: 
   autoConfigureConnectedAnchor: 0
-  minDistance: 1
+  minDistance: 0.5
   maxDistance: 2
-  spring: 3
+  spring: 10
   damper: 2
