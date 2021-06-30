@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 6770305700478332950}
   zapCatcher: {fileID: 32142476923363866}
+  lineMoveSpeed: {fileID: 11400000, guid: e642dfcb000e3804785ebe309b793dca, type: 2}
 --- !u!120 &6770305700478332950
 LineRenderer:
   m_ObjectHideFlags: 0
