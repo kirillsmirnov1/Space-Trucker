@@ -7,6 +7,7 @@ namespace Trucker.Control.Zap.Catchee
     {
         public Action<bool> onStatusChange;
 
+        public bool Reachable => _reachable;
         private bool _reachable;
 
         private void OnTriggerEnter(Collider other)

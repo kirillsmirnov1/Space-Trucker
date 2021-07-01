@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
+  reachableStatus: {fileID: 2515437811874222066}
+  crosshairHolder: {fileID: 743849512063107613}
   orbitSpeed: {fileID: 1777226650207755751}
 --- !u!114 &2515437811874222066
 MonoBehaviour:
@@ -246,6 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+--- !u!1 &743849512063107613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1330295197951600907, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+  m_PrefabInstance: {fileID: 1739664200790092566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8237615219493504274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7671147741217402372, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}

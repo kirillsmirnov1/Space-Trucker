@@ -6,8 +6,8 @@ namespace Trucker.Control.Zap.Catchee
     public class ZapCatcheeOnOrbit : ZapCatchee
     {
         [SerializeField] private ObjectOnOrbitSpeed orbitSpeed;
-        
-        protected override void OnCatch()
+
+        public override void OnCatch()
         {
             base.OnCatch();
             orbitSpeed.enabled = false;
