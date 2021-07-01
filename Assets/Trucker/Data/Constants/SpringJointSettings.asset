@@ -15,5 +15,5 @@ MonoBehaviour:
   autoConfigureConnectedAnchor: 0
   minDistance: 0.5
   maxDistance: 2
-  spring: 10
-  damper: 2
+  spring: 20
+  damper: 7
