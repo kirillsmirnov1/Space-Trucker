@@ -23,6 +23,7 @@ namespace Trucker.Control.Zap.Catchee.States
 
         private void EnlargeCrosshairFiller()
         {
+            // TODO change through shader 
             // FIXME speed 
             FillerScale += Time.deltaTime * Vector3.one;
             if (FillerScale.magnitude >= 1)
