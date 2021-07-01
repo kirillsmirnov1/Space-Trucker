@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5529917887468442378
 CanvasRenderer:
@@ -90,5 +90,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2607486936462869766}
   rectTransform: {fileID: 2703011524059924546}
-  heightRatio: 0.052083332
+  heightRatio: 0.026041664
   screenPos: {x: 0, y: 0, z: 0}
