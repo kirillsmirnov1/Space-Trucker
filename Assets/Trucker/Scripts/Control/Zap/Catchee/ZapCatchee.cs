@@ -19,8 +19,17 @@ namespace Trucker.Control.Zap.Catchee
 
         private void Awake()
         {
-            SetState(new Free(this));
+            InitState();
             SubscribeOnReachableStatusChange();
+        }
+
+        private void InitState()
+        {
+            var initialState = reachableStatus.Reachable 
+                ? (ZapCatcheeState) new FreeReachable(this) 
+                : new FreeUnreachable(this);
+            
+            SetState(initialState);
         }
 
         private void SubscribeOnReachableStatusChange()
