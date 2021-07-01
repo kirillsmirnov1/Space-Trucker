@@ -34,7 +34,7 @@ namespace Trucker.Control.Zap.Catchee.States
 
         public override void ExitState()
         {
-            Catchee.crosshairHolder.transform.localScale = Vector3.one * 0.2f; // FIXME MN 
+            Catchee.crosshairFiller.transform.localScale = Vector3.one * 0.2f; // FIXME MN 
         }
     }
 }
