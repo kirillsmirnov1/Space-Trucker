@@ -1,4 +1,5 @@
-﻿using Trucker.Control.Zap.Catchee.States;
+﻿using System;
+using Trucker.Control.Zap.Catchee.States;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,11 +7,12 @@ using UnityUtils;
 
 namespace Trucker.Control.Zap.Catchee
 {
-    public class ZapCatchee : MonoBehaviour, IPointerDownHandler
+    public class ZapCatchee : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] protected ZapCatcherVariable zapCatcherVariable;
         [SerializeField] public ZapCatcheeReachable reachableStatus;
         [SerializeField] public GameObject crosshairHolder;
+        [SerializeField] public GameObject crosshairFiller;
         
         private ZapCatcheeState _state;
         public ZapCatcher Catcher => zapCatcherVariable.Value;
@@ -22,6 +24,9 @@ namespace Trucker.Control.Zap.Catchee
             InitState();
             SubscribeOnReachableStatusChange();
         }
+
+        private void Update() 
+            => _state.OnUpdate();
 
         private void InitState()
         {
@@ -48,7 +53,11 @@ namespace Trucker.Control.Zap.Catchee
             _state.EnterState();
         }
 
-        public void OnPointerDown(PointerEventData eventData) => _state.OnPointerDown();
+        public void OnPointerDown(PointerEventData eventData) 
+            => _state.OnPointerDown();
+
+        public void OnPointerUp(PointerEventData eventData) 
+            => _state.OnPointerUp();
 
         public virtual void OnCatch() { }
 

@@ -7,6 +7,8 @@
         public override void EnterState()
         {
             Catchee.crosshairHolder.SetActive(false);
+            Catchee.Catcher.TryCatch(Catchee);
+            Catchee.OnCatch();
         }
     }
 }

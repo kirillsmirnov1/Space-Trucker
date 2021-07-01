@@ -8,8 +8,10 @@
             => Catchee = catchee;
 
         public abstract void EnterState();
-        public virtual void ExitState() { }
+        public virtual void ExitState() {}
 
+        public virtual void OnUpdate(){}
+        
         public virtual void OnReachable(){}
         public virtual void OnUnreachable(){}
         

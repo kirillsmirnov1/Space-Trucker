@@ -13,13 +13,7 @@
         public override void OnPointerDown() 
             => TryCatch();
 
-        protected virtual void TryCatch()
-        {
-            if (Catchee.Catcher.TryCatch(Catchee))
-            {
-                Catchee.OnCatch();
-                Catchee.SetState(new Catched(Catchee));
-            }
-        }
+        protected virtual void TryCatch() 
+            => Catchee.SetState(new Catching(Catchee));
     }
 }
