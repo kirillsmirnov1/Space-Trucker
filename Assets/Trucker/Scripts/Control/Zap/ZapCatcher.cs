@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityUtils;

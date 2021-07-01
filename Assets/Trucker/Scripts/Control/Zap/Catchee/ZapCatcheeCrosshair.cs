@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityUtils.Variables;
 
-namespace Trucker.Control.Zap
+namespace Trucker.Control.Zap.Catchee
 {
     public class ZapCatcheeCrosshair : MonoBehaviour
     {

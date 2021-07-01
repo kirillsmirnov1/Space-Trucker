@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Trucker.Control.Zap
+namespace Trucker.Control.Zap.Catchee
 {
     public class JointAnchorConnection : MonoBehaviour
     {

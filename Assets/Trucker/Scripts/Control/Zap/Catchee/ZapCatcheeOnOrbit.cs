@@ -1,7 +1,7 @@
 ﻿using Trucker.Control.Meteor;
 using UnityEngine;
 
-namespace Trucker.Control.Zap
+namespace Trucker.Control.Zap.Catchee
 {
     public class ZapCatcheeOnOrbit : ZapCatchee
     {

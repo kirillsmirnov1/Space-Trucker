@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Trucker.Control.Zap
+namespace Trucker.Control.Zap.Catchee
 {
     public class ZapCatchee : MonoBehaviour, IPointerDownHandler
     {
