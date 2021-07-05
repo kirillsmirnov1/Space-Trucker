@@ -4,29 +4,39 @@ namespace Trucker.Control.Zap.Catchee.States
 {
     public class Catching : ZapCatcheeState
     {
-        private Vector3 FillerScale
-        {
-            get => Catchee.crosshairFiller.transform.localScale;
-            set => Catchee.crosshairFiller.transform.localScale = value;
-        }
         
         public Catching(ZapCatchee catchee) : base(catchee) { }
 
-        public override void EnterState() { }
+        private Material _defaultMaterial;
+        private Material _progressMaterial;
+        private float _progress = 360f;
+        private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
+
+        public override void EnterState() 
+            => SetProgressMaterial();
+
+        private void SetProgressMaterial()
+        {
+            _defaultMaterial = Catchee.progressDisplay.material;
+            _progressMaterial = new Material(_defaultMaterial);
+            Catchee.progressDisplay.material = _progressMaterial;
+        }
 
         public override void OnUpdate()
         {
             // IMPR draw ray 
             // IMPR slowly move towards Catcher 
-            EnlargeCrosshairFiller();
+            UpdateCatchingProgressDisplay();
         }
 
-        private void EnlargeCrosshairFiller()
+        private void UpdateCatchingProgressDisplay()
         {
-            // TODO change through shader 
             // FIXME speed 
-            FillerScale += Time.deltaTime * Vector3.one;
-            if (FillerScale.magnitude >= 1)
+
+            _progress -= Time.deltaTime * 100;
+            _progressMaterial.SetFloat(Arc1, _progress);
+            
+            if (_progress <= 0)
             {
                 Catchee.SetState(new Catched(Catchee));
             }
@@ -39,6 +49,6 @@ namespace Trucker.Control.Zap.Catchee.States
             => Catchee.SetState(new FreeUnreachable(Catchee));
 
         public override void ExitState() 
-            => FillerScale = Vector3.one * 0.2f;
+            => Catchee.progressDisplay.material = _defaultMaterial;
     }
 }
