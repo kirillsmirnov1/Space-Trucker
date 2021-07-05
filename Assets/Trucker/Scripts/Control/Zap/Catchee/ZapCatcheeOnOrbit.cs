@@ -12,5 +12,12 @@ namespace Trucker.Control.Zap.Catchee
             base.OnCatch();
             orbitSpeed.enabled = false;
         }
+
+        public override void OnFree()
+        {
+            base.OnFree();
+            // TODO reset orbit
+            orbitSpeed.enabled = true;
+        }
     }
 }

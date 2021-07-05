@@ -13,7 +13,7 @@ namespace Trucker.Control.Zap
         [SerializeField] private SpringJointSettings springSettings;
         [SerializeField] private IntVariable catcheesCount;
         
-        private List<ZapCatchee> catchees = new List<ZapCatchee>();
+        private LinkedList<ZapCatchee> catchees = new LinkedList<ZapCatchee>();
         public List<Vector3> CatcheesPositions => catchees.Select(x => x.transform.position).ToList();
         
         private void OnValidate() => this.CheckNullFields();
@@ -26,7 +26,7 @@ namespace Trucker.Control.Zap
             
             var springJoint = SetSpringJoint(zapCatchee);
             SetAnchorConnection(zapCatchee, springJoint);
-            catchees.Add(zapCatchee);
+            catchees.AddLast(zapCatchee);
 
             UpdateCatcheesCount();
             
@@ -38,7 +38,7 @@ namespace Trucker.Control.Zap
 
         private void SetAnchorConnection(ZapCatchee zapCatchee, SpringJoint springJoint)
         {
-            var bodyToConnectTo = catchees.Count > 0 ? catchees[catchees.Count - 1].transform : transform;
+            var bodyToConnectTo = catchees.Count > 0 ? catchees.Last.Value.transform : transform;
             var jointAnchorConnection = zapCatchee.gameObject.AddComponent<JointAnchorConnection>();
             jointAnchorConnection.joint = springJoint;
             jointAnchorConnection.connectedBody = bodyToConnectTo;
@@ -54,6 +54,34 @@ namespace Trucker.Control.Zap
             springJoint.spring = springSettings.spring;
             springJoint.damper = springSettings.damper;
             return springJoint;
+        }
+
+        public bool TryFree(ZapCatchee catchee)
+        {
+            if (!catchees.Contains(catchee)) return false;
+            
+            // IMPR what should be done from Catchee
+            // Same as setting those components 
+            Destroy(catchee.GetComponent<JointAnchorConnection>());
+            Destroy(catchee.GetComponent<SpringJoint>());
+
+            var node = catchees.Find(catchee);
+            var prev = node.Previous;
+            var next = node.Next;
+
+            if (next != null)
+            {
+                // IMPR set through ZapCatchee 
+                next.Value.GetComponent<JointAnchorConnection>().connectedBody = 
+                    (prev == null) 
+                        ? transform 
+                        : prev.Value.transform;
+            }
+
+            catchees.Remove(catchee);
+            
+            UpdateCatcheesCount();
+            return true;
         }
     }
 }

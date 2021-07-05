@@ -22,14 +22,14 @@ namespace Trucker.Control.Zap.Catchee
 
         private void Awake()
         {
-            InitState();
+            SetFreeState();
             SubscribeOnReachableStatusChange();
         }
 
         private void Update() 
             => _state.OnUpdate();
 
-        private void InitState()
+        private void SetFreeState()
         {
             var initialState = reachableStatus.Reachable 
                 ? (ZapCatcheeState) new FreeReachable(this) 
@@ -62,6 +62,7 @@ namespace Trucker.Control.Zap.Catchee
 
         public virtual void OnCatch() { }
 
-        protected virtual void OnNoCatch() { }
+        public virtual void OnFree() 
+            => SetFreeState();
     }
 }
