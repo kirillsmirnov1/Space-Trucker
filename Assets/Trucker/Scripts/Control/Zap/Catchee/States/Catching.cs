@@ -9,7 +9,7 @@ namespace Trucker.Control.Zap.Catchee.States
 
         private Material _defaultMaterial;
         private Material _progressMaterial;
-        private float _progress = 360f;
+        private float _timeCatching;
         private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
 
         public override void EnterState() 
@@ -31,12 +31,12 @@ namespace Trucker.Control.Zap.Catchee.States
 
         private void UpdateCatchingProgressDisplay()
         {
-            // FIXME speed 
+            _timeCatching += Time.deltaTime;
 
-            _progress -= Time.deltaTime * 100;
-            _progressMaterial.SetFloat(Arc1, _progress);
+            var progress = Mathf.Lerp(360f, 0f, _timeCatching/Catchee.catchingDuration);
+            _progressMaterial.SetFloat(Arc1, progress);
             
-            if (_progress <= 0)
+            if (_timeCatching >= Catchee.catchingDuration)
             {
                 Catchee.SetState(new Catched(Catchee));
             }

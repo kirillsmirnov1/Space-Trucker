@@ -98,6 +98,7 @@ MonoBehaviour:
   reachableStatus: {fileID: 2515437811874222066}
   crosshairHolder: {fileID: 743849512063107613}
   progressDisplay: {fileID: 8732145434869632335}
+  catchingDuration: {fileID: 11400000, guid: fc7a87f3388329f47bb80728719f6cbd, type: 2}
   orbitSpeed: {fileID: 1777226650207755751}
 --- !u!114 &2515437811874222066
 MonoBehaviour:

@@ -3,6 +3,7 @@ using Trucker.Model.Zap;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityUtils;
+using UnityUtils.Variables;
 
 namespace Trucker.Control.Zap.Catchee
 {
@@ -12,6 +13,7 @@ namespace Trucker.Control.Zap.Catchee
         [SerializeField] public ZapCatcheeReachable reachableStatus;
         [SerializeField] public GameObject crosshairHolder;
         [SerializeField] public SpriteRenderer progressDisplay;
+        [SerializeField] public FloatVariable catchingDuration;
         
         private ZapCatcheeState _state;
         public ZapCatcher Catcher => zapCatcherVariable.Value;
