@@ -16,6 +16,9 @@ namespace Trucker.Control.Zap.Catchee
         [SerializeField] public FloatVariable catchingDuration;
         
         private ZapCatcheeState _state;
+        private SpringJoint _springJoint;
+        private JointAnchorConnection _anchorConnection;
+        
         public ZapCatcher Catcher => zapCatcherVariable.Value;
 
         private void OnValidate() => this.CheckNullFields();
@@ -64,5 +67,42 @@ namespace Trucker.Control.Zap.Catchee
 
         public virtual void OnFree() 
             => SetFreeState();
+
+        public void SetConnection(SpringJointSettings springSettings, Transform bodyToConnectTo)
+        {
+            _springJoint = SetSpringJoint(springSettings);
+            _anchorConnection = SetAnchorConnection(_springJoint);
+            SetConnectedBody(bodyToConnectTo);
+        }
+
+
+        private SpringJoint SetSpringJoint(SpringJointSettings springSettings)
+        {
+            var springJoint = gameObject.AddComponent<SpringJoint>();
+
+            springJoint.autoConfigureConnectedAnchor = springSettings.autoConfigureConnectedAnchor;
+            springJoint.minDistance = springSettings.minDistance;
+            springJoint.maxDistance = springSettings.maxDistance;
+            springJoint.spring = springSettings.spring;
+            springJoint.damper = springSettings.damper;
+            
+            return springJoint;
+        }
+
+        private JointAnchorConnection SetAnchorConnection(SpringJoint springJoint)
+        {
+            var jointAnchorConnection = gameObject.AddComponent<JointAnchorConnection>();
+            jointAnchorConnection.joint = springJoint;
+            return jointAnchorConnection;
+        }
+
+        public void DestroyConnection()
+        {
+            Destroy(_anchorConnection);
+            Destroy(_springJoint);
+        }
+
+        public void SetConnectedBody(Transform bodyToConnectTo) 
+            => _anchorConnection.connectedBody = bodyToConnectTo;
     }
 }

@@ -15,17 +15,20 @@ namespace Trucker.Control.Zap
         
         private LinkedList<ZapCatchee> catchees = new LinkedList<ZapCatchee>();
         public List<Vector3> CatcheesPositions => catchees.Select(x => x.transform.position).ToList();
+
+        private Transform LastCatchedTransform 
+            => catchees.Count > 0 ? catchees.Last.Value.transform : transform;
         
         private void OnValidate() => this.CheckNullFields();
 
         private void Awake() => UpdateCatcheesCount();
-
+        
         public bool TryCatch(ZapCatchee zapCatchee)
         {
             if (catchees.Contains(zapCatchee)) return false;
+
+            zapCatchee.SetConnection(springSettings, LastCatchedTransform);
             
-            var springJoint = SetSpringJoint(zapCatchee);
-            SetAnchorConnection(zapCatchee, springJoint);
             catchees.AddLast(zapCatchee);
 
             UpdateCatcheesCount();
@@ -36,52 +39,29 @@ namespace Trucker.Control.Zap
         private void UpdateCatcheesCount() 
             => catcheesCount.Value = catchees.Count;
 
-        private void SetAnchorConnection(ZapCatchee zapCatchee, SpringJoint springJoint)
-        {
-            var bodyToConnectTo = catchees.Count > 0 ? catchees.Last.Value.transform : transform;
-            var jointAnchorConnection = zapCatchee.gameObject.AddComponent<JointAnchorConnection>();
-            jointAnchorConnection.joint = springJoint;
-            jointAnchorConnection.connectedBody = bodyToConnectTo;
-        }
-
-        private SpringJoint SetSpringJoint(ZapCatchee zapCatchee)
-        {
-            var springJoint = zapCatchee.gameObject.AddComponent<SpringJoint>();
-
-            springJoint.autoConfigureConnectedAnchor = springSettings.autoConfigureConnectedAnchor;
-            springJoint.minDistance = springSettings.minDistance;
-            springJoint.maxDistance = springSettings.maxDistance;
-            springJoint.spring = springSettings.spring;
-            springJoint.damper = springSettings.damper;
-            return springJoint;
-        }
-
         public bool TryFree(ZapCatchee catchee)
         {
             if (!catchees.Contains(catchee)) return false;
-            
-            // IMPR what should be done from Catchee
-            // Same as setting those components 
-            Destroy(catchee.GetComponent<JointAnchorConnection>());
-            Destroy(catchee.GetComponent<SpringJoint>());
 
-            var node = catchees.Find(catchee);
-            var prev = node.Previous;
-            var next = node.Next;
+            catchee.DestroyConnection();      
 
-            if (next != null)
-            {
-                // IMPR set through ZapCatchee 
-                next.Value.GetComponent<JointAnchorConnection>().connectedBody = 
-                    (prev == null) 
-                        ? transform 
-                        : prev.Value.transform;
-            }
+            ReconnectNextCatchee(catchee);
 
             catchees.Remove(catchee);
             
             UpdateCatcheesCount();
             return true;
+        }
+
+        private void ReconnectNextCatchee(ZapCatchee catchee)
+        {
+            var node = catchees.Find(catchee);
+            
+            var prev = node.Previous;
+            var next = node.Next;
+
+            next?.Value.SetConnectedBody(
+                prev == null ? transform : prev.Value.transform);
         }
     }
 }
