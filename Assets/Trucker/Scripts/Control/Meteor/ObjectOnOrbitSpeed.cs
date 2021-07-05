@@ -34,7 +34,7 @@ namespace Trucker.Control.Meteor
             SetStartSpeed();
         }
 
-        private void SetPersonalOrbitRadius() 
+        public void SetPersonalOrbitRadius() 
             => _personalOrbitRadius = ToCentral.magnitude;
 
         private void SetStartSpeed() 

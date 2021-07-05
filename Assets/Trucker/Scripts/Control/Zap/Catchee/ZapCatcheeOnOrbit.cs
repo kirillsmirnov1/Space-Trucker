@@ -16,8 +16,8 @@ namespace Trucker.Control.Zap.Catchee
         public override void OnFree()
         {
             base.OnFree();
-            // TODO reset orbit
             orbitSpeed.enabled = true;
+            orbitSpeed.SetPersonalOrbitRadius();
         }
     }
 }
