@@ -11,18 +11,7 @@
             Catchee.OnCatch();
         }
 
-        public override void OnPointerDown()
-        {
-            // TODO Set Freeing state 
-            Free();
-        }
-
-        private void Free()
-        {
-            if (Catchee.Catcher.TryFree(Catchee))
-            {
-                Catchee.OnFree();
-            }
-        }
+        public override void OnPointerDown() 
+            => Catchee.SetState(new Freeing(Catchee));
     }
 }

@@ -32,7 +32,7 @@ namespace Trucker.Control.Zap.Catchee
         private void Update() 
             => _state.OnUpdate();
 
-        private void SetFreeState()
+        public void SetFreeState()
         {
             var initialState = reachableStatus.Reachable 
                 ? (ZapCatcheeState) new FreeReachable(this) 

@@ -204,6 +204,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrosshairHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 6992497430687819353, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992497430687819353, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992497430687819353, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7671147741217402372, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
       propertyPath: m_RootOrder
       value: 1
