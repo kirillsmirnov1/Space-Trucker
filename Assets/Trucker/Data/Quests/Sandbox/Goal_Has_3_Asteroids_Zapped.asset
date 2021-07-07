@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74add2a47fb5404b8d4bef41a37f7ac0, type: 3}
-  m_Name: Goal_Has_10_Asteroids_Zapped
+  m_Name: Goal_Has_3_Asteroids_Zapped
   m_EditorClassIdentifier: 
-  description: Collect 10 Asteroids
-  requiredValue: 10
+  description: Collect 3 Asteroids
+  requiredValue: 3
   currentValue: {fileID: 11400000, guid: 4d113b66d5589424cbfd161e23a0d2d0, type: 2}

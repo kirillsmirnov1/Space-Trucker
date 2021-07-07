@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a338f67f9c0f4cd9bf9605e6bed48f73, type: 3}
-  m_Name: Quest_Bring_10_Asteroids_To_Institute
+  m_Name: Quest_Shift_Bring_Asteroids_To_Institute
   m_EditorClassIdentifier: 
   title: Shift
   description: Collect some asteroids for our research
   goals:
   - {fileID: 11400000, guid: 3d49f3e6a75123f48abb09b4077e6ac0, type: 2}
   - {fileID: 11400000, guid: e66b7f8d2fb1f2e479f403d2f9162f49, type: 2}
+  currentGoalNumber: -1
