@@ -23,7 +23,9 @@ namespace Trucker.Model.Questing.Goals
             }
         }
         private bool _completed;
-        public virtual void Init(){}
+
+        public virtual void Init() 
+            => _completed = false;
         public virtual void Stop(){}
 
         protected void Complete() => Completed = true;
