@@ -18,7 +18,7 @@ namespace Trucker.Control.Spawn
         
         private static readonly Random Random = new Random();
 
-        private void OnValidate() => this.CheckNullFields();
+        private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
 
         private void Awake()
         {
