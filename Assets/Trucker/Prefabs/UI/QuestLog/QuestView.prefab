@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1230386619739291238}
   - component: {fileID: 6320186783679114693}
   - component: {fileID: 7430662257402709330}
+  - component: {fileID: 8219531139854445516}
   m_Layer: 5
-  m_Name: Quest
+  m_Name: QuestView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,6 +78,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.3
+--- !u!114 &8219531139854445516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895031481761999769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ace14c30db475d85a7f891f006e7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 5099486965582846377}
+  goalsText: {fileID: 2173529681779156208}
 --- !u!1 &7873433814175135425
 GameObject:
   m_ObjectHideFlags: 0
