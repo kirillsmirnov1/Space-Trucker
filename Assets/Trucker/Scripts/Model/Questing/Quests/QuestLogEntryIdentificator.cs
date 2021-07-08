@@ -3,7 +3,7 @@
 namespace Trucker.Model.Questing.Quests
 {
     [Serializable]
-    public struct QuestLogEntryIdentificator
+    public class QuestLogEntryIdentificator
     {
         public string title;
         public QuestStatus status;

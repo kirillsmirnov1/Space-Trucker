@@ -8,7 +8,8 @@ namespace Trucker.Model.Questing.Quests
     [CreateAssetMenu(fileName = "Quest", menuName = "Quests/Quest", order = 0)]
     public class Quest : ScriptableObject
     {
-        public event Action OnFinish;
+        public static event Action<string> OnQuestTaken; 
+        public static event Action<string> OnQuestFinished;
         
         public string title;
         public string description;
@@ -19,11 +20,12 @@ namespace Trucker.Model.Questing.Quests
         public void Take()
         {
             Debug.Log($"Starting quest: {title}");
+            OnQuestTaken?.Invoke(title);
             StartGoal(0);
             // TODO when and how to subscribe to OnNotCompleted 
         }
 
-        private void StartGoal(int goalToStart)
+        public void StartGoal(int goalToStart)
         {
             currentGoalNumber = goalToStart;
 
@@ -64,9 +66,9 @@ namespace Trucker.Model.Questing.Quests
 
         private void FinishQuest()
         {
-            Debug.Log($"Quest {title} finished");
-            OnFinish?.Invoke();
             currentGoalNumber = -1;
+            OnQuestFinished?.Invoke(title);
+            Debug.Log($"Quest {title} finished");
             // TODO give reward
             // TODO consequences (like taking objects from zap catcher)
         }

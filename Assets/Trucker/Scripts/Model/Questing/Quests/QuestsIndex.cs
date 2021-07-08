@@ -45,5 +45,7 @@ namespace Trucker.Model.Questing.Quests
                 Debug.LogWarning($"Quest {quest.name} has non-unique title");
             }
         }
+
+        public Quest this[string title] => Quests[title];
     }
 }
