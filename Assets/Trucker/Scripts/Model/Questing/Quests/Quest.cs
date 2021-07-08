@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Trucker.Model.Questing.Goals;
 using UnityEngine;
 
@@ -13,11 +12,11 @@ namespace Trucker.Model.Questing.Quests
         public static event Action<string> OnQuestFinished;
         
         public string title;
-        public string description;
+        public string description; // TODO use 
         [SerializeField] private List<Goal> goals;
 
         public int currentGoalNumber = -1;
-        public string GoalsText => string.Join("\n", goals.Select(g => g.description)); // TODO format 
+        public string GoalsText => GoalsTextFormatter.Format(goals, currentGoalNumber);
 
         public void Take()
         {

@@ -16,6 +16,7 @@ namespace Trucker.View.Quests
         {
             gameObject.SetActive(true);
             titleText.text = quest.title;
+            // TODO fill quest description text 
             goalsText.text = quest.GoalsText;
         }
         
