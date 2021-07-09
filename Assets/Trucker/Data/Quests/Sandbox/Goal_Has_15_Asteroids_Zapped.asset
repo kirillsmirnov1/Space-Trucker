@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cebf260d484538a7cf950c061ccbdc, type: 3}
-  m_Name: _QuestIndex
+  m_Script: {fileID: 11500000, guid: 74add2a47fb5404b8d4bef41a37f7ac0, type: 3}
+  m_Name: Goal_Has_15_Asteroids_Zapped
   m_EditorClassIdentifier: 
-  questList:
-  - {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}
-  - {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
+  description: Collect 15 Asteroids
+  requiredValue: 15
+  currentValue: {fileID: 11400000, guid: 4d113b66d5589424cbfd161e23a0d2d0, type: 2}
