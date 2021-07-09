@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7631701634764838136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898990924943600282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97415b6cbb434222a0c41b001a27df09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 914514133833384930}
+  rectTransform: {fileID: 3965550518017249718}
+  heightRatio: 0.02604166
+  screenPos: {x: 0, y: 0, z: 0}
+  button: {fileID: 2060879098462216001}
 --- !u!1001 &1336286541196679668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,5 +116,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3265582072810408856, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265582072810408856, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265582072810408856, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7631701634764838136}
+    - target: {fileID: 3265582072810408856, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265582072810408856, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265582072810408856, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Trucker.View.Landmarks.Pointers.ClickableLandmarkPointer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265582072810408856, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6221189629056130456, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+--- !u!1 &3898990924943600282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2634761989327811438, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+  m_PrefabInstance: {fileID: 1336286541196679668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &3965550518017249718 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2703011524059924546, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+  m_PrefabInstance: {fileID: 1336286541196679668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2060879098462216001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1014091778497169077, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+  m_PrefabInstance: {fileID: 1336286541196679668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &914514133833384930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2178176811830041110, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+  m_PrefabInstance: {fileID: 1336286541196679668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
