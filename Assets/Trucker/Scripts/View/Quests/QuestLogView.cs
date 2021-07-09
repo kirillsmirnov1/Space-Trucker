@@ -10,6 +10,7 @@ namespace Trucker.View.Quests
     {
         [SerializeField] private GameEvent openEvent;
         [SerializeField] private GameObject scroll;
+        [SerializeField] private GameObject fade;
         [SerializeField] private Transform scrollContent; 
         [SerializeField] private List<QuestView> questViews;
         [SerializeField] private GameObject questViewPrefab;
@@ -27,7 +28,8 @@ namespace Trucker.View.Quests
         private void Show()
         {
             SetQuestViews();
-            scroll.gameObject.SetActive(true);
+            scroll.SetActive(true);
+            fade.SetActive(true); // TODO create some better animation 
         }
 
         private void SetQuestViews()
