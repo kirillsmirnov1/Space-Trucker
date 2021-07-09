@@ -15,6 +15,10 @@ MonoBehaviour:
   title: Second Shift
   description: Collect some asteroids for our research
   goals:
+  - {fileID: 11400000, guid: 5abc3a5b3c0cf26458f6d1707fd2b6a6, type: 2}
+  - {fileID: 11400000, guid: 3d49f3e6a75123f48abb09b4077e6ac0, type: 2}
+  - {fileID: 11400000, guid: 95f3d1f91e23fb84c9fadd4a7a18c400, type: 2}
+  - {fileID: 11400000, guid: 8d56e8c2191523042a71dd971bf3f499, type: 2}
   - {fileID: 11400000, guid: 4ce7a16076d9ff3448390f1add5bdab2, type: 2}
   - {fileID: 11400000, guid: e66b7f8d2fb1f2e479f403d2f9162f49, type: 2}
   currentGoalNumber: 0
