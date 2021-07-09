@@ -6,10 +6,8 @@ namespace Trucker.View.Landmarks.Pointers
     {
         [SerializeField] private GameObject button;
         
-        public void OnClick()
-        {
-            // TODO
-        }
+        public void OnClick() 
+            => Landmark.onInteraction?.Invoke();
 
         protected override void OnVisibilityChange(bool visible)
         {

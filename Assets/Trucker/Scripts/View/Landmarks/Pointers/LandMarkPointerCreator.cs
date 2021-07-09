@@ -1,5 +1,4 @@
-﻿using Trucker.View.Landmarks.Visibility;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityUtils;
 using UnityUtils.Variables;
 
@@ -10,7 +9,7 @@ namespace Trucker.View.Landmarks.Pointers
         [SerializeField] private GameObject landmarkPointerPrefab;
         [SerializeField] private CanvasVariable canvasForPointersVariable;
         [SerializeField] private Sprite pointerSprite;
-        [SerializeField] private LandmarkVisibility landmarkVisibility;
+        [SerializeField] private Landmark landmark;
 
         private void OnValidate() => this.CheckNullFields();
 
@@ -18,7 +17,7 @@ namespace Trucker.View.Landmarks.Pointers
         {
             Instantiate(landmarkPointerPrefab, canvasForPointersVariable.Value.transform)
                 .GetComponent<LandmarkPointer>()
-                .Init(pointerSprite, landmarkVisibility);    
+                .Init(pointerSprite, landmark);    
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using Trucker.View.Landmarks.Visibility;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils;
@@ -18,7 +17,7 @@ namespace Trucker.View.Landmarks.Pointers
         private static readonly Vector2 ScreenDim = new Vector2(Screen.width/2, Screen.height/2);
         
         private Action _onUpdate;
-        private LandmarkVisibility _landmarkVisibility;
+        protected Landmark Landmark;
         private Camera _cam;
         protected bool LandmarkVisibleOnScreen;
 
@@ -28,7 +27,7 @@ namespace Trucker.View.Landmarks.Pointers
         private void Update() 
             => _onUpdate?.Invoke();
 
-        public void Init(Sprite sprite, LandmarkVisibility landmarkVisibility)
+        public void Init(Sprite sprite, Landmark landmark)
         {
             _cam = Camera.main;
             
@@ -36,15 +35,15 @@ namespace Trucker.View.Landmarks.Pointers
             var size = heightRatio * Screen.height;
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size);
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
-            _landmarkVisibility = landmarkVisibility;
+            Landmark = landmark;
 
-            _landmarkVisibility.onVisibilityChange += OnVisibilityChange;
-            OnVisibilityChange(_landmarkVisibility.Visible);
+            Landmark.OnVisibilityChange += OnVisibilityChange;
+            OnVisibilityChange(Landmark.Visible);
         }
 
         private void OnDestroy()
         {
-            _landmarkVisibility.onVisibilityChange -= OnVisibilityChange;
+            Landmark.OnVisibilityChange -= OnVisibilityChange;
         }
 
         protected virtual void OnVisibilityChange(bool visible)
@@ -58,7 +57,7 @@ namespace Trucker.View.Landmarks.Pointers
 
         private Vector2 GetScreenPos()
         {
-            screenPos = _cam.WorldToScreenPoint(_landmarkVisibility.transform.position);
+            screenPos = _cam.WorldToScreenPoint(Landmark.transform.position);
             return screenPos * Mathf.Sign(screenPos.z);
         }
 

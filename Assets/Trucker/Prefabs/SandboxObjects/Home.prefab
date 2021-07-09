@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6522293544598034604}
   - component: {fileID: 7784517314468049724}
   - component: {fileID: 7139714423532803990}
+  - component: {fileID: 4457877925254265812}
   m_Layer: 0
   m_Name: Home
   m_TagString: Untagged
@@ -115,7 +116,23 @@ MonoBehaviour:
   landmarkPointerPrefab: {fileID: 2634761989327811438, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
   canvasForPointersVariable: {fileID: 11400000, guid: 74067f3ba98b89f4097d38edd3d00262, type: 2}
   pointerSprite: {fileID: 21300000, guid: ab5c88ce31006264688aedc473852dfc, type: 3}
-  landmarkVisibility: {fileID: 7784517314468049724}
+  landmark: {fileID: 4457877925254265812}
+--- !u!114 &4457877925254265812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387684385314630329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3931d43cdc7483886ecb860c9af3832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visibility: {fileID: 7784517314468049724}
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6329532880695484410
 MonoBehaviour:
   m_ObjectHideFlags: 0

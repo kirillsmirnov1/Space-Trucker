@@ -216,6 +216,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1171258226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3794854276482012266, guid: ff554adee7d1ea840beebbf40580ac94, type: 3}
+  m_PrefabInstance: {fileID: 5942701201056315311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1255004883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 855371295, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
@@ -677,6 +682,26 @@ PrefabInstance:
     - target: {fileID: 1734693956636125348, guid: fd897eb0130f227429fb896138ba95cc, type: 3}
       propertyPath: m_Name
       value: Institute
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872814500874705167, guid: fd897eb0130f227429fb896138ba95cc, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872814500874705167, guid: fd897eb0130f227429fb896138ba95cc, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1171258226}
+    - target: {fileID: 5872814500874705167, guid: fd897eb0130f227429fb896138ba95cc, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872814500874705167, guid: fd897eb0130f227429fb896138ba95cc, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872814500874705167, guid: fd897eb0130f227429fb896138ba95cc, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd897eb0130f227429fb896138ba95cc, type: 3}

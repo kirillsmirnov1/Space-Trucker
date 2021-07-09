@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityUtils.Variables;
 
-namespace Trucker.View.Landmarks.Visibility
+namespace Trucker.View.Landmarks.Status
 {
     public class LandmarkVisibility : MonoBehaviour
     {

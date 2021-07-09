@@ -15,7 +15,7 @@ MonoBehaviour:
   landmarkPointerPrefab: {fileID: 3898990924943600282, guid: b784b9ada8d5324408662cb7c52867c1, type: 3}
   canvasForPointersVariable: {fileID: 11400000, guid: 74067f3ba98b89f4097d38edd3d00262, type: 2}
   pointerSprite: {fileID: 21300000, guid: bd545a1be8139b848934ab700ca5bd11, type: 3}
-  landmarkVisibility: {fileID: 8671119773630937007}
+  landmark: {fileID: 5872814500874705167}
 --- !u!114 &8671119773630937007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,6 +30,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visible: 0
   logVisibilityChange: {fileID: 11400000, guid: 09095ca5bb6bc664c840f2e5a9168b1f, type: 2}
+--- !u!114 &5872814500874705167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734693956636125348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3931d43cdc7483886ecb860c9af3832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visibility: {fileID: 8671119773630937007}
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 77c1421076facd74baaed8633a98ad4a, type: 2}
+        m_TargetAssemblyTypeName: UnityUtils.Events.GameEvent, trulden.unity-utils.runtime
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1500744481448465909
 PrefabInstance:
   m_ObjectHideFlags: 0
