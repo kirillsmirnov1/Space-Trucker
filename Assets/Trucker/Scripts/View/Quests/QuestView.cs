@@ -20,7 +20,5 @@ namespace Trucker.View.Quests
             descriptionText.text = quest.description;
             goalsText.text = quest.GoalsText;
         }
-        
-        // TODO change QuestView size 
     }
 }

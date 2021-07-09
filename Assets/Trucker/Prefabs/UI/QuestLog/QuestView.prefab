@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7430662257402709330}
   - component: {fileID: 8219531139854445516}
   - component: {fileID: 6209798956401211463}
+  - component: {fileID: 5030981012126703253}
   m_Layer: 5
   m_Name: QuestView
   m_TagString: Untagged
@@ -40,7 +41,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 440, y: -421.9}
-  m_SizeDelta: {x: 780, y: 400}
+  m_SizeDelta: {x: 780, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6320186783679114693
 CanvasRenderer:
@@ -121,6 +122,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5030981012126703253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895031481761999769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &3975887968618226845
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +147,7 @@ GameObject:
   - component: {fileID: 8141647740594979025}
   - component: {fileID: 503663918088555044}
   - component: {fileID: 3186810265208704595}
+  - component: {fileID: 3416067421496464844}
   m_Layer: 0
   m_Name: Description
   m_TagString: Untagged
@@ -155,8 +171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 51.5}
+  m_AnchoredPosition: {x: 390, y: 0}
+  m_SizeDelta: {x: 730, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &503663918088555044
 CanvasRenderer:
@@ -186,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Just the usual stuff
+  m_text: Just the usual stuff, u know, how it always been
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a53ed57d7d105e246a50f3525c652327, type: 2}
   m_sharedMaterial: {fileID: -2044574325958598151, guid: a53ed57d7d105e246a50f3525c652327, type: 2}
@@ -255,6 +271,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3416067421496464844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975887968618226845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &7873433814175135425
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +430,7 @@ GameObject:
   - component: {fileID: 2292448096238261844}
   - component: {fileID: 9223064176658063814}
   - component: {fileID: 2173529681779156208}
+  - component: {fileID: 6573719215611966622}
   m_Layer: 0
   m_Name: Goals
   m_TagString: Untagged
@@ -423,8 +454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 80}
+  m_AnchoredPosition: {x: 390, y: 0}
+  m_SizeDelta: {x: 730, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &9223064176658063814
 CanvasRenderer:
@@ -523,3 +554,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6573719215611966622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250144686633846274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2

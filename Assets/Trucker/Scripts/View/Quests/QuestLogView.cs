@@ -10,7 +10,7 @@ namespace Trucker.View.Quests
     {
         [SerializeField] private GameEvent openEvent;
         [SerializeField] private GameObject scroll;
-        [SerializeField] private Transform scrollContent; // TODO change Content size 
+        [SerializeField] private Transform scrollContent; 
         [SerializeField] private List<QuestView> questViews;
         [SerializeField] private GameObject questViewPrefab;
         [SerializeField] private QuestLog questLog;
