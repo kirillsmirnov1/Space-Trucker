@@ -20,6 +20,7 @@ namespace Trucker.View.Landmarks.Pointers
         private Action _onUpdate;
         private LandmarkVisibility _landmarkVisibility;
         private Camera _cam;
+        protected bool LandmarkVisibleOnScreen;
 
         private void OnValidate() 
             => this.CheckNullFields();
@@ -37,18 +38,19 @@ namespace Trucker.View.Landmarks.Pointers
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
             _landmarkVisibility = landmarkVisibility;
 
-            _landmarkVisibility.onVisibilityChange += SetDisplayMethod;
-            SetDisplayMethod(_landmarkVisibility.Visible);
+            _landmarkVisibility.onVisibilityChange += OnVisibilityChange;
+            OnVisibilityChange(_landmarkVisibility.Visible);
         }
 
         private void OnDestroy()
         {
-            _landmarkVisibility.onVisibilityChange -= SetDisplayMethod;
+            _landmarkVisibility.onVisibilityChange -= OnVisibilityChange;
         }
 
-        private void SetDisplayMethod(bool visible)
+        protected virtual void OnVisibilityChange(bool visible)
         {
-            _onUpdate = visible ? (Action) DisplayInsideScreen : DisplayOnScreenBorder;
+            LandmarkVisibleOnScreen = visible;
+            _onUpdate = LandmarkVisibleOnScreen ? (Action) DisplayInsideScreen : DisplayOnScreenBorder;
         }
 
         private void DisplayInsideScreen() 
