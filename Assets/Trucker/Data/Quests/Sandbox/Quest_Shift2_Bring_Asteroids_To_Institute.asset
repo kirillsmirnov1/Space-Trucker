@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Quest_Shift2_Bring_Asteroids_To_Institute
   m_EditorClassIdentifier: 
   title: Second Shift
-  description: Collect some asteroids for our research
+  description: Collect more asteroids for research
   goals:
   - {fileID: 11400000, guid: 5abc3a5b3c0cf26458f6d1707fd2b6a6, type: 2}
   - {fileID: 11400000, guid: 3d49f3e6a75123f48abb09b4077e6ac0, type: 2}
