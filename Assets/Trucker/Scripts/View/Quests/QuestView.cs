@@ -8,6 +8,7 @@ namespace Trucker.View.Quests
     public class QuestView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI titleText;
+        [SerializeField] private TextMeshProUGUI descriptionText;
         [SerializeField] private TextMeshProUGUI goalsText;
         
         private void OnValidate() => this.CheckNullFields();
@@ -16,7 +17,7 @@ namespace Trucker.View.Quests
         {
             gameObject.SetActive(true);
             titleText.text = quest.title;
-            // TODO fill quest description text 
+            descriptionText.text = quest.description;
             goalsText.text = quest.GoalsText;
         }
         
