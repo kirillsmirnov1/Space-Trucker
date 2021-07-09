@@ -12,7 +12,7 @@ namespace Trucker.Model.Questing.Quests
         public static event Action<string> OnQuestFinished;
         
         public string title;
-        public string description; // TODO use 
+        public string description;
         [SerializeField] private List<Goal> goals;
 
         public int currentGoalNumber = -1;
