@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a1f1efb921470b8e147fa220a9e408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landmarkPointerPrefab: {fileID: 2634761989327811438, guid: 2ee245e682f100b47901e6526d143a40, type: 3}
+  landmarkPointerPrefab: {fileID: 3898990924943600282, guid: b784b9ada8d5324408662cb7c52867c1, type: 3}
   canvasForPointersVariable: {fileID: 11400000, guid: 74067f3ba98b89f4097d38edd3d00262, type: 2}
   pointerSprite: {fileID: 21300000, guid: bd545a1be8139b848934ab700ca5bd11, type: 3}
   landmarkVisibility: {fileID: 8671119773630937007}
