@@ -26,6 +26,7 @@ namespace Trucker.View.Dialogue
             npcNameText.text = npcName;
             npcPortrait.sprite = npcPicture;
             fade.gameObject.SetActive(true);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(npcNameText.rectTransform);
             // TODO use dialogue 
         }
     }
