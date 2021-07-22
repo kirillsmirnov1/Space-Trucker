@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b0a4774c3d46afabfb00b71ddb6299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Madelynne
+  npcPicture: {fileID: 21300000, guid: cc26c00bd5adf1c46b6bb6a9be4450fa, type: 3}
   dialogueOptions:
   - {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}
   - {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}

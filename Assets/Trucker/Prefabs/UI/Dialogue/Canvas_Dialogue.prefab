@@ -662,6 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade: {fileID: 3794854276482012266}
+  npcNameText: {fileID: 4045067179631217516}
+  npcPortrait: {fileID: 2301677707726232369}
 --- !u!1 &3794854276482012266
 GameObject:
   m_ObjectHideFlags: 0
