@@ -1,19 +1,24 @@
-﻿using TMPro;
+﻿using System.Linq;
+using TMPro;
 using Trucker.Model.NPC;
+using Trucker.View.Util;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils;
 
 namespace Trucker.View.Dialogue
 {
-    public class DialogueView : MonoBehaviour
+    public class DialogueView : ListView<string>
     {
         [SerializeField] private GameObject fade;
         [SerializeField] private TextMeshProUGUI npcNameText;
         [SerializeField] private Image npcPortrait;
 
-        private void OnValidate() 
-            => this.CheckNullFields();
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+            this.CheckNullFields();
+        }
 
         private void Awake() 
             => DialogueProvider.OnDialogueInitiated += ShowDialogue;
@@ -27,7 +32,7 @@ namespace Trucker.View.Dialogue
             npcPortrait.sprite = npcPicture;
             fade.gameObject.SetActive(true);
             LayoutRebuilder.ForceRebuildLayoutImmediate(npcNameText.rectTransform);
-            // TODO use dialogue 
+            SetEntries(dialogues.Select(d => d.GetLines()[0]).ToList()); // IMPR this is the best way???
         }
     }
 }
