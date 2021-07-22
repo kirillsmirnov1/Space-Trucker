@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1291030495183386194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734693956636125348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b0a4774c3d46afabfb00b71ddb6299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueOptions:
+  - {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}
+  - {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
 --- !u!114 &5872814500874705167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,6 +34,18 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 77c1421076facd74baaed8633a98ad4a, type: 2}
         m_TargetAssemblyTypeName: UnityUtils.Events.GameEvent, trulden.unity-utils.runtime
         m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1291030495183386194}
+        m_TargetAssemblyTypeName: Trucker.Model.NPC.DialogueProvider, Assembly-CSharp
+        m_MethodName: InitiateDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -58,21 +85,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visible: 0
   logVisibilityChange: {fileID: 11400000, guid: 09095ca5bb6bc664c840f2e5a9168b1f, type: 2}
---- !u!114 &1291030495183386194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734693956636125348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b0a4774c3d46afabfb00b71ddb6299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueOptions:
-  - {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}
-  - {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
 --- !u!1001 &1500744481448465909
 PrefabInstance:
   m_ObjectHideFlags: 0
