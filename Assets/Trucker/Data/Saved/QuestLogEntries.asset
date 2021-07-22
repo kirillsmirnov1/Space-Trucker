@@ -16,5 +16,6 @@ MonoBehaviour:
     data: []
   save: 1
   logSave: 0
-  defaultValue: {fileID: 11400000, guid: 25c139daf52ddbd4daa460d4cc355b78, type: 2}
+  defaultValue:
+    data: []
   guid: cfe1415b1757da14fbb708ba5d9de0eb
