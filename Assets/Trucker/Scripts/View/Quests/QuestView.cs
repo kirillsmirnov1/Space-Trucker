@@ -1,11 +1,12 @@
 ﻿using TMPro;
 using Trucker.Model.Questing.Quests;
+using Trucker.View.Util;
 using UnityEngine;
 using UnityUtils;
 
 namespace Trucker.View.Quests
 {
-    public class QuestView : MonoBehaviour
+    public class QuestView : ListViewEntry<Quest>
     {
         [SerializeField] private TextMeshProUGUI titleText;
         [SerializeField] private TextMeshProUGUI descriptionText;
@@ -13,7 +14,7 @@ namespace Trucker.View.Quests
         
         private void OnValidate() => this.CheckNullFields();
 
-        public void Fill(Quest quest)
+        public override void Fill(Quest quest)
         {
             gameObject.SetActive(true);
             titleText.text = quest.title;

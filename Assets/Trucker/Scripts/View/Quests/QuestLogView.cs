@@ -1,24 +1,21 @@
-﻿using System.Collections.Generic;
-using Trucker.Model.Questing.Quests;
+﻿using Trucker.Model.Questing.Quests;
+using Trucker.View.Util;
 using UnityEngine;
 using UnityUtils;
 using UnityUtils.Events;
 
 namespace Trucker.View.Quests
 {
-    public class QuestLogView : MonoBehaviour
+    public class QuestLogView : ListView<Quest>
     {
         [SerializeField] private GameEvent openEvent;
         [SerializeField] private GameObject scroll;
         [SerializeField] private GameObject fade;
-        [SerializeField] private Transform scrollContent; 
-        [SerializeField] private List<QuestView> questViews;
-        [SerializeField] private GameObject questViewPrefab;
         [SerializeField] private QuestLog questLog;
 
-        private void OnValidate()
+        protected override void OnValidate()
         {
-            questViews = new List<QuestView>(GetComponentsInChildren<QuestView>(true));
+            base.OnValidate();
             this.CheckNullFields();
         }
 
@@ -27,54 +24,9 @@ namespace Trucker.View.Quests
 
         private void Show()
         {
-            SetQuestViews();
+            SetEntries(questLog.Taken);
             scroll.SetActive(true);
             fade.SetActive(true); // TODO create some better animation 
-        }
-
-        private void SetQuestViews()
-        {
-            var takenQuests = questLog.Taken;
-            CheckConsistency(takenQuests);
-            FillData(takenQuests);
-        }
-
-        private void CheckConsistency(List<Quest> takenQuests)
-        {
-            var viewsToTakenDiff = questViews.Count - takenQuests.Count;
-
-            if (viewsToTakenDiff < 0)
-            {
-                SpawnViews(viewsToTakenDiff);
-            }
-            else if (viewsToTakenDiff > 0)
-            {
-                DisableViews(viewsToTakenDiff);
-            }
-        }
-
-        private void SpawnViews(int viewsToSpawn)
-        {
-            for (int i = 0; i < viewsToSpawn; i++)
-            {
-                questViews.Add(Instantiate(questViewPrefab, scrollContent).GetComponent<QuestView>());
-            }
-        }
-
-        private void DisableViews(int viewsToDisable)
-        {
-            for (int i = 0; i < viewsToDisable; i++)
-            {
-                questViews[questViews.Count - 1 - i].gameObject.SetActive(false);
-            }
-        }
-
-        private void FillData(List<Quest> takenQuests)
-        {
-            for (int i = 0; i < takenQuests.Count; i++)
-            {
-                questViews[i].Fill(takenQuests[i]);
-            }
         }
     }
 }
