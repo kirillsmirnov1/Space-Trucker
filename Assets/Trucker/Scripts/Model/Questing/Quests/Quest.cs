@@ -17,6 +17,10 @@ namespace Trucker.Model.Questing.Quests
         [SerializeField] private List<Goal> goals;
 
         public int currentGoalNumber = -1;
+
+        [Header("IDialogue")]
+        [SerializeField] private string[] lines;
+
         public string GoalsText => GoalsTextFormatter.Format(goals, currentGoalNumber);
 
         public void Take()
@@ -74,5 +78,9 @@ namespace Trucker.Model.Questing.Quests
             // TODO give reward
             // TODO consequences (like taking objects from zap catcher)
         }
+
+        public string[] GetLines() => lines;
+
+        public void OnDialogueEnd() => Take();
     }
 }

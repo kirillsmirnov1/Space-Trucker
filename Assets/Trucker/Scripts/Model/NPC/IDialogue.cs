@@ -2,7 +2,7 @@
 {
     public interface IDialogue
     {
-        // TODO lines
-        // TODO on finish action 
+        public string[] GetLines();
+        public void OnDialogueEnd();
     }
 }
