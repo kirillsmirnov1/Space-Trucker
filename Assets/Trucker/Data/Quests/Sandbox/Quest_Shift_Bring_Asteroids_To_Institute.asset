@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e66b7f8d2fb1f2e479f403d2f9162f49, type: 2}
   currentGoalNumber: -1
   lines:
-  - We need a little of your help.
+  - Got some work?
+  - Yeah we do, actually.
   - Bring us 3 asteroids, we need them for research.
   - It would be very nice of you.
