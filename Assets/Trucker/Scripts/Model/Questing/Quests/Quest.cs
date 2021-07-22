@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Trucker.Model.NPC;
 using Trucker.Model.Questing.Goals;
 using UnityEngine;
 
 namespace Trucker.Model.Questing.Quests
 {
     [CreateAssetMenu(fileName = "Quest", menuName = "Quests/Quest", order = 0)]
-    public class Quest : ScriptableObject
+    public class Quest : ScriptableObject, IDialogue
     {
         public static event Action<string> OnQuestTaken; 
         public static event Action<string> OnQuestFinished;
