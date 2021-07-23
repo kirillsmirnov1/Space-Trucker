@@ -7,7 +7,7 @@ namespace Trucker.Model.NPC
 {
     public class DialogueProvider : MonoBehaviour
     {
-        public static event Action<string, Sprite, IDialogue[]> OnDialogueInitiated;
+        public static event Action<DialogueData> OnDialogueInitiated;
 
         [SerializeField] private string npcName;
         [SerializeField] private Sprite npcPicture;
@@ -20,6 +20,9 @@ namespace Trucker.Model.NPC
             => dialogueOptions.Select(x => (IDialogue) x).ToArray();
 
         public void InitiateDialogue()
-            => OnDialogueInitiated?.Invoke(npcName, npcPicture, GetDialogues());
+            => OnDialogueInitiated?.Invoke(DialogueData());
+
+        private DialogueData DialogueData() 
+            => new DialogueData(npcName, npcPicture, GetDialogues());
     }
 }

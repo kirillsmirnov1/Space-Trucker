@@ -36,9 +36,9 @@ namespace Trucker.View.Dialogue
             DialogueViewEntry.OnDialogueEntryClick -= OnDialogueEntryClick;
         }
 
-        private void ShowDialogue(string npcName, Sprite npcPicture, IDialogue[] dialogues) // IMPR create class
+        private void ShowDialogue(DialogueData dialogueData)
         {
-            SetViewData(npcName, npcPicture, dialogues);
+            SetViewData(dialogueData);
             SetState(new DialogueOptions(this));
             ShowView();
         }
@@ -50,11 +50,11 @@ namespace Trucker.View.Dialogue
             _state.Start();
         }
 
-        private void SetViewData(string npcName, Sprite npcPicture, IDialogue[] dialogues)  
+        private void SetViewData(DialogueData dialogueData)  
         {
-            AllDialogues = dialogues;
-            npcNameText.text = npcName;
-            npcPortrait.sprite = npcPicture;
+            AllDialogues = dialogueData.dialogueOptions;
+            npcNameText.text = dialogueData.npcName;
+            npcPortrait.sprite = dialogueData.npcPicture;
         }
 
         private void ShowView()
