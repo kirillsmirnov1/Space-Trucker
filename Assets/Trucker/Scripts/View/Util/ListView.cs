@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Packages.UnityUtils.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ namespace Trucker.View.Util
         {
             CheckConsistency(data);
             FillData(data);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollContent); // FIXME not working on dialogue
+            this.DelayAction(0f, () => LayoutRebuilder.ForceRebuildLayoutImmediate(scrollContent));
         }
 
         private void CheckConsistency(List<T> data)
