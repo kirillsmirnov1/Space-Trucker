@@ -4,5 +4,6 @@
     {
         public string[] GetLines();
         public void OnDialogueEnd();
+        public bool AvailableAsDialogueOption();
     }
 }

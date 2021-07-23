@@ -25,7 +25,6 @@ namespace Trucker.Model.Questing.Quests
 
         public void Take()
         {
-            // IMPR prevent taking same quest multiple times 
             Debug.Log($"Starting quest: {title}");
             GuaranteeCleanGoals();
             OnQuestTaken?.Invoke(title);
@@ -92,5 +91,9 @@ namespace Trucker.Model.Questing.Quests
         public string[] GetLines() => lines;
 
         public void OnDialogueEnd() => Take();
+        public bool AvailableAsDialogueOption()
+        {
+            return currentGoalNumber == -1; // TODO other conditions
+        }
     }
 }
