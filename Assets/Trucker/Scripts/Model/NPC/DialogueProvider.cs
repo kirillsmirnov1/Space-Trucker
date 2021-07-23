@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityUtils;
@@ -11,7 +11,7 @@ namespace Trucker.Model.NPC
 
         [SerializeField] private string npcName;
         [SerializeField] private Sprite npcPicture;
-        [SerializeField] private ScriptableObject[] dialogueOptions; // Unity still doesnt serialize interfaces, so here we go 
+        [SerializeField] private Dialogue[] dialogueOptions; // Unity still doesnt serialize interfaces, so here we go 
 
         private void OnValidate() 
             => this.CheckNullFields();

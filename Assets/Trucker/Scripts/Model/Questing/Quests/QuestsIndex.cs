@@ -1,36 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Trucker.Model.Util;
 using UnityEngine;
 
 namespace Trucker.Model.Questing.Quests
 {
     [CreateAssetMenu(fileName = "Quests Index", menuName = "Quests/Quests Index", order = 0)]
-    public class QuestsIndex : ScriptableObject
+    public class QuestsIndex : InitiatedScriptableObject
     {
         [SerializeField] private List<Quest> questList;
 
-        private Dictionary<string, Quest> _questDict;
+        private Dictionary<string, Quest> Quests { get; set; }
 
-        public Dictionary<string, Quest> Quests
-        {
-            get
-            {
-                if (_questDict == null)
-                {
-                    InitQuestDictionary();
-                }
-                
-                return _questDict;
-            }
-            private set => _questDict = value;
-        }
+        public override void Init() 
+            => InitQuestDictionary();
 
         private void InitQuestDictionary()
         {
-            _questDict = new Dictionary<string, Quest>();
+            Quests = new Dictionary<string, Quest>();
             foreach (var quest in questList)
             {
-                _questDict.Add(quest.title, quest);
+                Quests.Add(quest.title, quest);
+                quest.currentGoalNumber = -1;
             }
         }
 

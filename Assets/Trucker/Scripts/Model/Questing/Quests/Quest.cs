@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Trucker.Model.NPC;
 using Trucker.Model.Questing.Goals;
 using UnityEngine;
 
 namespace Trucker.Model.Questing.Quests
 {
     [CreateAssetMenu(fileName = "Quest", menuName = "Quests/Quest", order = 0)]
-    public class Quest : ScriptableObject, IDialogue
+    public class Quest : ScriptableObject
     {
         public static event Action<string> OnQuestTaken; 
         public static event Action<string> OnQuestFinished;
@@ -15,11 +14,9 @@ namespace Trucker.Model.Questing.Quests
         public string title;
         public string description;
         [SerializeField] private List<Goal> goals;
-
+        [SerializeField] private bool finishedFromDialog;
+        
         public int currentGoalNumber = -1;
-
-        [Header("IDialogue")]
-        [SerializeField] private string[] lines;
 
         public string GoalsText => GoalsTextFormatter.Format(goals, currentGoalNumber);
 
@@ -75,25 +72,22 @@ namespace Trucker.Model.Questing.Quests
             }
             else
             {
-                FinishQuest();
+                if(!finishedFromDialog) FinishQuest();
             }
         }
 
-        private void FinishQuest()
+        public bool CanBeTaken
+            => currentGoalNumber == -1; // TODO conditions 
+        public bool CanBeFinished 
+            => currentGoalNumber >= goals.Count;
+
+        public void FinishQuest()
         {
             currentGoalNumber = -1;
             OnQuestFinished?.Invoke(title);
             Debug.Log($"Quest {title} finished");
             // TODO give reward
             // TODO consequences (like taking objects from zap catcher)
-        }
-
-        public string[] GetLines() => lines;
-
-        public void OnDialogueEnd() => Take();
-        public bool AvailableAsDialogueOption()
-        {
-            return currentGoalNumber == -1; // TODO other conditions
         }
     }
 }

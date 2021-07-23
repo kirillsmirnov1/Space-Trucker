@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Shift2_End
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: f7e0c0bc86fc5a742b4a852cc312fc8a
+  canBeRepeated: 0
+  lines: 'Wow, you did it!
+
+    Thank you so much.
+
+    You are the best.'
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}

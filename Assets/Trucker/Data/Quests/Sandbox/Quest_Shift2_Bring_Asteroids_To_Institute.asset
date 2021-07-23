@@ -21,10 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d56e8c2191523042a71dd971bf3f499, type: 2}
   - {fileID: 11400000, guid: 4ce7a16076d9ff3448390f1add5bdab2, type: 2}
   - {fileID: 11400000, guid: e66b7f8d2fb1f2e479f403d2f9162f49, type: 2}
+  finishedFromDialog: 1
   currentGoalNumber: -1
-  lines:
-  - I'm ready for something more difficult.
-  - That's good.
-  - Your asteroids were magnificent, we need more.
-  - Bring us 15 asteroids that time.
-  - That would be very nice of you.
