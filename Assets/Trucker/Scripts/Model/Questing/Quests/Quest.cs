@@ -25,11 +25,20 @@ namespace Trucker.Model.Questing.Quests
 
         public void Take()
         {
-            // IMPR prevent taking same quest multiple times and multi-subscription on goals 
+            // IMPR prevent taking same quest multiple times 
             Debug.Log($"Starting quest: {title}");
+            GuaranteeCleanGoals();
             OnQuestTaken?.Invoke(title);
             StartGoal(0);
             // TODO when and how to subscribe to OnNotCompleted 
+        }
+
+        private void GuaranteeCleanGoals()
+        {
+            if (currentGoalNumber >= 0 && currentGoalNumber < goals.Count)
+            {
+                StopCurrentGoal();
+            }
         }
 
         public void StartGoal(int goalToStart)
@@ -45,11 +54,11 @@ namespace Trucker.Model.Questing.Quests
         private void OnGoalCompleted()
         {
             Debug.Log($"Completed goal: {CurrentGoal.description}");
-            StopCompletedGoal();
+            StopCurrentGoal();
             IterateGoals();
         }
 
-        private void StopCompletedGoal()
+        private void StopCurrentGoal()
         {
             CurrentGoal.Stop();
             CurrentGoal.OnCompleted -= OnGoalCompleted;
