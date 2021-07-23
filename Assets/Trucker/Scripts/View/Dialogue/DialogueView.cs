@@ -64,7 +64,6 @@ namespace Trucker.View.Dialogue
             if (dialogueIndex >= _dialogues.Length)
             {
                 HideDialogue();
-                // FIXME click animation not working 
             }
         }
     }
