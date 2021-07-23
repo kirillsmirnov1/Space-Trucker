@@ -25,6 +25,7 @@ namespace Trucker.Model.Questing.Quests
 
         public void Take()
         {
+            // IMPR prevent taking same quest multiple times and multi-subscription on goals 
             Debug.Log($"Starting quest: {title}");
             OnQuestTaken?.Invoke(title);
             StartGoal(0);
