@@ -6,8 +6,10 @@ namespace Trucker.View.Dialogue.State
 {
     public class DialogueOptions : DialogueViewState
     {
-        private IDialogue[] _availableDialogues;
-        public DialogueOptions(DialogueView dialogueView) : base(dialogueView) { }
+        private readonly IDialogue[] _availableDialogues;
+
+        public DialogueOptions(DialogueView dialogueView, IDialogue[] availableDialogues) : base(dialogueView) 
+            => _availableDialogues = availableDialogues;
 
         public override void Start() 
             => SetDialogueOptions();  
@@ -23,13 +25,12 @@ namespace Trucker.View.Dialogue.State
             else
             {
                 var dialogue = _availableDialogues[dialogueIndex];
-                DialogueView.SetState(new DialogueInProgress(DialogueView, dialogue));
+                DialogueView.SetStateDialogueInProgress(dialogue);
             }
         }
 
         private void SetDialogueOptions()
         {
-            _availableDialogues = DialogueView.AllDialogues.Where(x => x.AvailableAsDialogueOption()).ToArray();
             var lines = GetFirstLines(_availableDialogues); 
             lines.Add("Bye."); // TODO customize 
             DialogueView.SetLines(lines);

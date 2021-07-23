@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Trucker.Model.NPC;
 using Trucker.View.Dialogue.State;
@@ -15,8 +16,11 @@ namespace Trucker.View.Dialogue
         [SerializeField] private TextMeshProUGUI npcNameText;
         [SerializeField] private Image npcPortrait;
 
-        internal IDialogue[] AllDialogues;
+        private IDialogue[] _allDialogues;
         private DialogueViewState _state;
+
+        private IDialogue[] AvailableDialogues 
+            => _allDialogues.Where(x => x.AvailableAsDialogueOption()).ToArray();
 
         protected override void OnValidate()
         {
@@ -39,23 +43,29 @@ namespace Trucker.View.Dialogue
         private void ShowDialogue(DialogueData dialogueData)
         {
             SetViewData(dialogueData);
-            SetState(new DialogueOptions(this));
+            SetStateDialogueOptions();
             ShowView();
         }
 
-        public void SetState(DialogueViewState newState)
+        private void SetViewData(DialogueData dialogueData)  
+        {
+            _allDialogues = dialogueData.dialogueOptions;
+            npcNameText.text = dialogueData.npcName;
+            npcPortrait.sprite = dialogueData.npcPicture;
+        }
+
+        private void SetState(DialogueViewState newState)
         {
             _state?.Stop();
             _state = newState;
             _state.Start();
         }
 
-        private void SetViewData(DialogueData dialogueData)  
-        {
-            AllDialogues = dialogueData.dialogueOptions;
-            npcNameText.text = dialogueData.npcName;
-            npcPortrait.sprite = dialogueData.npcPicture;
-        }
+        public void SetStateDialogueOptions() 
+            => SetState(new DialogueOptions(this, AvailableDialogues));
+
+        public void SetStateDialogueInProgress(IDialogue dialogue) 
+            => SetState(new DialogueInProgress(this, dialogue));
 
         private void ShowView()
         {

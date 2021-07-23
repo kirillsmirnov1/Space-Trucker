@@ -30,7 +30,7 @@ namespace Trucker.View.Dialogue.State
             else
             {
                 _dialogue.OnDialogueEnd();
-                DialogueView.SetState(new DialogueOptions(DialogueView));
+                DialogueView.SetStateDialogueOptions();
             }
         }
     }
