@@ -19,7 +19,7 @@ namespace Trucker.View.Util
         {
             CheckConsistency(data);
             FillData(data);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollContent);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollContent); // FIXME not working on dialogue
         }
 
         private void CheckConsistency(List<T> data)

@@ -13,6 +13,7 @@ namespace Trucker.View.Dialogue
         
         public override void Fill(string data)
         {
+            base.Fill(data);
             text.text = data;
         }
 

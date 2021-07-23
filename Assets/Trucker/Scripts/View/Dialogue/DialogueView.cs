@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using Trucker.Model.NPC;
+using Trucker.View.Dialogue.State;
 using Trucker.View.Util;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +14,9 @@ namespace Trucker.View.Dialogue
         [SerializeField] private GameObject fade;
         [SerializeField] private TextMeshProUGUI npcNameText;
         [SerializeField] private Image npcPortrait;
-        
-        private IDialogue[] _dialogues;
+
+        internal IDialogue[] AllDialogues;
+        private DialogueViewState _state;
 
         protected override void OnValidate()
         {
@@ -35,36 +36,42 @@ namespace Trucker.View.Dialogue
             DialogueViewEntry.OnDialogueEntryClick -= OnDialogueEntryClick;
         }
 
-        private void ShowDialogue(string npcName, Sprite npcPicture, IDialogue[] dialogues)
+        private void ShowDialogue(string npcName, Sprite npcPicture, IDialogue[] dialogues) // IMPR create class
         {
-            _dialogues = dialogues;
-            npcNameText.text = npcName;
-            npcPortrait.sprite = npcPicture;
-            fade.gameObject.SetActive(true);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(npcNameText.rectTransform);
-
-            var lines = GetFirstLines(dialogues);
-            lines.Add("Bye."); // TODO customize 
-            
-            SetEntries(lines);
+            SetViewData(npcName, npcPicture, dialogues);
+            SetState(new DialogueOptions(this));
+            ShowView();
         }
 
-        private void HideDialogue()
+        public void SetState(DialogueViewState newState)
+        {
+            _state?.Stop();
+            _state = newState;
+            _state.Start();
+        }
+
+        private void SetViewData(string npcName, Sprite npcPicture, IDialogue[] dialogues)  
+        {
+            AllDialogues = dialogues;
+            npcNameText.text = npcName;
+            npcPortrait.sprite = npcPicture;
+        }
+
+        private void ShowView()
+        {
+            fade.gameObject.SetActive(true);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(npcNameText.rectTransform);
+        }
+
+        public void HideDialogue()
         {
             fade.gameObject.SetActive(false);
         }
 
-        private static List<string> GetFirstLines(IDialogue[] dialogues) // IMPR this is the best way???
-        {
-            return dialogues.Select(d => d.GetLines()[0]).ToList(); 
-        }
+        private void OnDialogueEntryClick(int dialogueIndex) 
+            => _state.OnDialogueEntryClick(dialogueIndex);
 
-        private void OnDialogueEntryClick(int dialogueIndex)
-        {
-            if (dialogueIndex >= _dialogues.Length)
-            {
-                HideDialogue();
-            }
-        }
+        public void SetLines(List<string> lines) 
+            => SetEntries(lines);
     }
 }

@@ -16,7 +16,7 @@ namespace Trucker.View.Quests
 
         public override void Fill(Quest quest)
         {
-            gameObject.SetActive(true);
+            base.Fill(quest);
             titleText.text = quest.title;
             descriptionText.text = quest.description;
             goalsText.text = quest.GoalsText;
