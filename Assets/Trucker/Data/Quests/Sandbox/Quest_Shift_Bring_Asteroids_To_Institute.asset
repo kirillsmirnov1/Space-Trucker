@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Shift
   description: Collect some asteroids for our research
   goals:
-  - {fileID: 11400000, guid: 3d49f3e6a75123f48abb09b4077e6ac0, type: 2}
+  - {fileID: 11400000, guid: 95d7ecd2e98c5d7458e673315f641ce0, type: 2}
   - {fileID: 11400000, guid: e66b7f8d2fb1f2e479f403d2f9162f49, type: 2}
   finishedFromDialog: 1
   currentGoalNumber: -1

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Entities;
@@ -14,6 +15,7 @@ namespace Trucker.Model.Zap
         [SerializeField] private IntVariable catcheesTotalCount;
         
         private Dictionary<EntityType, List<ZapCatchee>> _catcheesByType;
+        public event Action<EntityType, int> OnChange;
 
         public void Init()
         {
@@ -37,12 +39,25 @@ namespace Trucker.Model.Zap
             }
             _catcheesByType[catcheeType].Add(zapCatchee);
             UpdateCatcheesCount();
+            NotifyOnTypeCountChange(catcheeType);
         }
 
         public void ObjectReleased(ZapCatchee zapCatchee)
         {
-            _catcheesByType[zapCatchee.Type].Remove(zapCatchee);
+            var catcheeType = zapCatchee.Type;
+            _catcheesByType[catcheeType].Remove(zapCatchee);
             UpdateCatcheesCount();
+            NotifyOnTypeCountChange(catcheeType);
+        }
+
+        private void NotifyOnTypeCountChange(EntityType catcheeType) 
+            => OnChange?.Invoke(catcheeType, _catcheesByType[catcheeType].Count);
+
+        public int Count(EntityType type)
+        {
+            return _catcheesByType.ContainsKey(type) 
+                ? _catcheesByType[type].Count 
+                : 0;
         }
     }
 }

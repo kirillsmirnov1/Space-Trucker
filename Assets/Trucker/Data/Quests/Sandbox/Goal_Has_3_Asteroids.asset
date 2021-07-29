@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74add2a47fb5404b8d4bef41a37f7ac0, type: 3}
-  m_Name: Goal_Has_15_Asteroids_Zapped
+  m_Script: {fileID: 11500000, guid: 2390718d25ff4592b5f94a0fd71a13d2, type: 3}
+  m_Name: Goal_Has_3_Asteroids
   m_EditorClassIdentifier: 
-  description: Collect 15 Asteroids
-  requiredValue: 15
-  currentValue: {fileID: 11400000, guid: 4d113b66d5589424cbfd161e23a0d2d0, type: 2}
+  description: Catch 3 Asteroids
+  targetCatcheeType: 0
+  requiredAmount: 3
+  catchedByTypes: {fileID: 11400000, guid: c2bdf398f9764a14dbf03b3e251536b7, type: 2}
