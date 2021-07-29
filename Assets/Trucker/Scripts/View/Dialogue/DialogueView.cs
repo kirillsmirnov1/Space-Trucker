@@ -30,28 +30,28 @@ namespace Trucker.View.Dialogue
 
         private void Awake()
         {
-            DialogueProvider.OnDialogueInitiated += ShowDialogue;
+            NpcDialogueProvider.OnDialogueInitiated += ShowDialogue;
             DialogueViewEntry.OnDialogueEntryClick += OnDialogueEntryClick;
         }
 
         private void OnDestroy()
         {
-            DialogueProvider.OnDialogueInitiated -= ShowDialogue;
+            NpcDialogueProvider.OnDialogueInitiated -= ShowDialogue;
             DialogueViewEntry.OnDialogueEntryClick -= OnDialogueEntryClick;
         }
 
-        private void ShowDialogue(DialogueData dialogueData)
+        private void ShowDialogue(NpcData npcData)
         {
-            SetViewData(dialogueData);
+            SetViewData(npcData);
             SetStateDialogueOptions();
             ShowView();
         }
 
-        private void SetViewData(DialogueData dialogueData)  
+        private void SetViewData(NpcData npcData)  
         {
-            _allDialogues = dialogueData.dialogueOptions;
-            npcNameText.text = dialogueData.npcName;
-            npcPortrait.sprite = dialogueData.npcPicture;
+            _allDialogues = npcData.dialogueOptions;
+            npcNameText.text = npcData.npcName;
+            npcPortrait.sprite = npcData.npcPicture;
         }
 
         private void SetState(DialogueViewState newState)
