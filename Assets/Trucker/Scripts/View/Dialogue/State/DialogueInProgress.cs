@@ -12,7 +12,7 @@ namespace Trucker.View.Dialogue.State
         public DialogueInProgress(DialogueView dialogueView, IDialogue dialogue) : base(dialogueView)
         {
             _dialogue = dialogue;
-            _lines = _dialogue.GetLines();
+            _lines = _dialogue.Lines;
         }
 
         public override void Start() 

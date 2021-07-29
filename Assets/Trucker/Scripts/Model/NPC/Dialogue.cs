@@ -18,9 +18,22 @@ namespace Trucker.Model.NPC
         [ConditionalField("consequences", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest})] 
         private Quest quest;
 
-        public string[] GetLines() 
-            => lines.Split('\n');
+        private string[] _lines = null;
 
+        public string[] Lines
+        {
+            get
+            {
+                if (_lines == null || _lines.Length == 0)
+                {
+                    _lines = lines.Split('\n');
+                }
+                return _lines;
+            }
+        }
+
+        public string FirstLine => Lines[0];
+        
         public void OnDialogueEnd()
         {
             Value = true;

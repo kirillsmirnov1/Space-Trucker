@@ -2,7 +2,8 @@
 {
     public interface IDialogue
     {
-        public string[] GetLines();
+        public string[] Lines { get; }
+        public string FirstLine { get; }
         public void OnDialogueEnd();
         public bool AvailableAsDialogueOption();
     }

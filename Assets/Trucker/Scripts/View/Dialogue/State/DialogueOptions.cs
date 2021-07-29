@@ -36,9 +36,7 @@ namespace Trucker.View.Dialogue.State
             DialogueView.SetLines(lines);
         }
 
-        private static List<string> GetFirstLines(IDialogue[] dialogues) // IMPR this is the best way???
-        {
-            return dialogues.Select(d => d.GetLines()[0]).ToList(); 
-        }
+        private static List<string> GetFirstLines(IDialogue[] dialogues) 
+            => dialogues.Select(d => d.FirstLine).ToList();
     }
 }
