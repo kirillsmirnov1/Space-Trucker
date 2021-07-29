@@ -8,6 +8,8 @@ namespace Trucker.View.Landmarks
     public class Landmark : MonoBehaviour
     {
         [SerializeField] private LandmarkVisibility visibility;
+        [SerializeField] private PlayerInRangeDetector playerDetector;
+        
         public UnityEvent onInteraction;
 
         public bool Visible => visibility.Visible;
@@ -15,6 +17,13 @@ namespace Trucker.View.Landmarks
         {
             get => visibility.onVisibilityChange;
             set => visibility.onVisibilityChange = value;
+        }
+
+        public bool PLayerWithinRange => playerDetector.WithinRange;
+        public Action<bool> OnPlayerInRangeChange
+        {
+            get => playerDetector.onPlayerInRangeChange;
+            set => playerDetector.onPlayerInRangeChange = value;
         }
     }
 }

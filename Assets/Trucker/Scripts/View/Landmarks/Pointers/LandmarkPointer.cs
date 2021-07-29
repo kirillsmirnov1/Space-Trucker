@@ -27,7 +27,7 @@ namespace Trucker.View.Landmarks.Pointers
         private void Update() 
             => _onUpdate?.Invoke();
 
-        public void Init(Sprite sprite, Landmark landmark)
+        public virtual void Init(Sprite sprite, Landmark landmark)
         {
             _cam = Camera.main;
             
@@ -41,7 +41,7 @@ namespace Trucker.View.Landmarks.Pointers
             OnVisibilityChange(Landmark.Visible);
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             Landmark.OnVisibilityChange -= OnVisibilityChange;
         }
