@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Trucker.Model.Questing.Consequences;
 using Trucker.Model.Questing.Goals;
 using UnityEngine;
 
@@ -13,8 +14,9 @@ namespace Trucker.Model.Questing.Quests
         
         public string title;
         public string description;
-        [SerializeField] private List<Goal> goals;
         [SerializeField] private bool finishedFromDialog;
+        [SerializeField] private List<Goal> goals;
+        [SerializeField] private List<Consequence> consequences;
         
         public int currentGoalNumber = -1;
 
@@ -84,10 +86,17 @@ namespace Trucker.Model.Questing.Quests
         public void FinishQuest()
         {
             currentGoalNumber = -1;
+            InvokeConsequences();
             OnQuestFinished?.Invoke(title);
             Debug.Log($"Quest {title} finished");
-            // TODO give reward
-            // TODO consequences (like taking objects from zap catcher)
+        }
+
+        private void InvokeConsequences()
+        {
+            foreach (var consequence in consequences)
+            {
+                consequence.Invoke();
+            }
         }
     }
 }
