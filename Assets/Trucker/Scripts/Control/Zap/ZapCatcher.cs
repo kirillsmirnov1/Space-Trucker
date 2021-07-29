@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Trucker.Control.Zap.Catchee;
+using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityUtils;
@@ -59,6 +60,13 @@ namespace Trucker.Control.Zap
 
             next?.Value.SetConnectedBody(
                 prev == null ? transform : prev.Value.transform);
+        }
+
+        public ZapCatchee TryFree(EntityType typeToDestroy)
+        {
+            var catchee = catcheeTypes.GetCatcheeOfType(typeToDestroy);
+            TryFree(catchee);
+            return catchee;
         }
     }
 }

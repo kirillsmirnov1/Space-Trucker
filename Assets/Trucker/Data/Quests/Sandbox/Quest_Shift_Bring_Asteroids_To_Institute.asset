@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Shift
   description: Collect some asteroids for our research
+  finishedFromDialog: 1
   goals:
   - {fileID: 11400000, guid: 95d7ecd2e98c5d7458e673315f641ce0, type: 2}
   - {fileID: 11400000, guid: e66b7f8d2fb1f2e479f403d2f9162f49, type: 2}
-  finishedFromDialog: 1
+  consequences:
+  - {fileID: 11400000, guid: 1b06390ca5a5e834a805c107dd37a2fd, type: 2}
   currentGoalNumber: -1

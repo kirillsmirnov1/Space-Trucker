@@ -59,5 +59,8 @@ namespace Trucker.Model.Zap
                 ? _catcheesByType[type].Count 
                 : 0;
         }
+
+        public ZapCatchee GetCatcheeOfType(EntityType type) 
+            => _catcheesByType[type][0];
     }
 }
