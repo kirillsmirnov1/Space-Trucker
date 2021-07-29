@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springSettings: {fileID: 11400000, guid: e2a0195a0b3950c488a894a405b85a9a, type: 2}
-  catcheesCount: {fileID: 11400000, guid: 4d113b66d5589424cbfd161e23a0d2d0, type: 2}
+  catcheeTypes: {fileID: 11400000, guid: c2bdf398f9764a14dbf03b3e251536b7, type: 2}
 --- !u!1001 &1336522140943153287
 PrefabInstance:
   m_ObjectHideFlags: 0

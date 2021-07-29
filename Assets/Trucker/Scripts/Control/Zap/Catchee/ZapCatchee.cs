@@ -1,4 +1,5 @@
 ﻿using Trucker.Control.Zap.Catchee.States;
+using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,12 +15,14 @@ namespace Trucker.Control.Zap.Catchee
         [SerializeField] public GameObject crosshairHolder;
         [SerializeField] public SpriteRenderer progressDisplay;
         [SerializeField] public FloatVariable catchingDuration;
+        [SerializeField] private EntityId entityId;
         
         private ZapCatcheeState _state;
         private SpringJoint _springJoint;
         private JointAnchorConnection _anchorConnection;
         
         public ZapCatcher Catcher => zapCatcherVariable.Value;
+        public EntityType Type => entityId.type;
 
         private void OnValidate() => this.CheckNullFields();
 

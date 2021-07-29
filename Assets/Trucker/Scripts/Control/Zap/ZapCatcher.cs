@@ -4,16 +4,16 @@ using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityUtils;
-using UnityUtils.Variables;
 
 namespace Trucker.Control.Zap
 {
     public class ZapCatcher : MonoBehaviour
     {
         [SerializeField] private SpringJointSettings springSettings;
-        [SerializeField] private IntVariable catcheesCount;
+        [SerializeField] private TypesOfCatchedObjects catcheeTypes;
         
         private LinkedList<ZapCatchee> catchees = new LinkedList<ZapCatchee>();
+         
         public List<Vector3> CatcheesPositions => catchees.Select(x => x.transform.position).ToList();
 
         private Transform LastCatchedTransform 
@@ -21,7 +21,7 @@ namespace Trucker.Control.Zap
         
         private void OnValidate() => this.CheckNullFields();
 
-        private void Awake() => UpdateCatcheesCount();
+        private void Awake() => catcheeTypes.Init(); 
         
         public bool TryCatch(ZapCatchee zapCatchee)
         {
@@ -31,13 +31,10 @@ namespace Trucker.Control.Zap
             
             catchees.AddLast(zapCatchee);
 
-            UpdateCatcheesCount();
+            catcheeTypes.ObjectCatched(zapCatchee);
             
             return true;
         }
-
-        private void UpdateCatcheesCount() 
-            => catcheesCount.Value = catchees.Count;
 
         public bool TryFree(ZapCatchee catchee)
         {
@@ -49,7 +46,7 @@ namespace Trucker.Control.Zap
 
             catchees.Remove(catchee);
             
-            UpdateCatcheesCount();
+            catcheeTypes.ObjectReleased(catchee);
             return true;
         }
 
