@@ -50,7 +50,7 @@ namespace Trucker.Model.NPC
                     quest.Take();
                     break;
                 case DialogueType.FinishQuest:
-                    quest.FinishQuest();
+                    quest.Finish();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -74,7 +74,7 @@ namespace Trucker.Model.Questing.Quests
             }
             else
             {
-                if(!finishedFromDialog) FinishQuest();
+                if(!finishedFromDialog) Finish();
             }
         }
 
@@ -83,7 +83,7 @@ namespace Trucker.Model.Questing.Quests
         public bool CanBeFinished 
             => currentGoalNumber >= goals.Count;
 
-        public void FinishQuest()
+        public void Finish()
         {
             currentGoalNumber = -1;
             InvokeConsequences();

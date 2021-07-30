@@ -13,6 +13,10 @@ namespace Trucker.Model.Questing.Quests
             {
                 ((Quest)target).Take();
             }
+            if (GUILayout.Button("Finish quest"))
+            {
+                ((Quest)target).Finish();
+            }
         }
     }
 }
