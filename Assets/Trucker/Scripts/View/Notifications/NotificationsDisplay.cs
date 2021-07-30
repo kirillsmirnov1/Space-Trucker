@@ -1,4 +1,5 @@
-﻿using Trucker.Model.Questing.Quests;
+﻿using System;
+using Trucker.Model.Questing.Quests;
 using UnityEngine;
 
 namespace Trucker.View.Notifications
@@ -14,6 +15,7 @@ namespace Trucker.View.Notifications
 
         private void Awake()
         {
+            DisableNotifications(); 
             Quest.OnQuestTaken += OnQuestTaken;
             Quest.OnQuestFinished += OnQuestFinished;
             // TODO goals 
@@ -24,6 +26,14 @@ namespace Trucker.View.Notifications
         {
             Quest.OnQuestTaken -= OnQuestTaken;
             Quest.OnQuestFinished -= OnQuestFinished;
+        }
+
+        private void DisableNotifications()
+        {
+            foreach (var notification in notifications)
+            {
+                notification.gameObject.SetActive(false);
+            }
         }
 
         private void OnQuestTaken(string title) 
