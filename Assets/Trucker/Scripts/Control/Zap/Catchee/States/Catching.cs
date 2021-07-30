@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Trucker.Control.Zap.Catchee.States
 {
     public class Catching : ZapCatcheeState
     {
+        public static event Action<Transform> OnCatchingStarted;
+        public static event Action<Transform> OnCatchingFinished;
         
         public Catching(ZapCatchee catchee) : base(catchee) { }
 
@@ -12,8 +15,11 @@ namespace Trucker.Control.Zap.Catchee.States
         private float _timeCatching;
         private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
 
-        public override void EnterState() 
-            => SetProgressMaterial();
+        public override void EnterState()
+        {
+            OnCatchingStarted?.Invoke(Catchee.transform);
+            SetProgressMaterial();
+        }
 
         private void SetProgressMaterial()
         {
@@ -24,7 +30,6 @@ namespace Trucker.Control.Zap.Catchee.States
 
         public override void OnUpdate()
         {
-            // IMPR draw ray 
             // IMPR slowly move towards Catcher 
             UpdateCatchingProgressDisplay();
         }
@@ -48,7 +53,10 @@ namespace Trucker.Control.Zap.Catchee.States
         public override void OnUnreachable() 
             => Catchee.SetState(new FreeUnreachable(Catchee));
 
-        public override void ExitState() 
-            => Catchee.progressDisplay.material = _defaultMaterial;
+        public override void ExitState()
+        {
+            Catchee.progressDisplay.material = _defaultMaterial;
+            OnCatchingFinished?.Invoke(Catchee.transform);
+        }
     }
 }
