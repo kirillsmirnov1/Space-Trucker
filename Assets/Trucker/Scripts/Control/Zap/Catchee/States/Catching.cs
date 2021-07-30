@@ -13,11 +13,13 @@ namespace Trucker.Control.Zap.Catchee.States
         private Material _defaultMaterial;
         private Material _progressMaterial;
         private float _timeCatching;
+        private float _duration;
         private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
 
         public override void EnterState()
         {
             OnCatchingStarted?.Invoke(Catchee.transform);
+            _duration = Catchee.catcheeSettings.catchingDuration;
             SetProgressMaterial();
         }
 
@@ -37,7 +39,7 @@ namespace Trucker.Control.Zap.Catchee.States
         private void ApproachCatcher()
         {
             var dir = Catchee.Catcher.transform.position - Catchee.transform.position;
-            var translation = dir * (Time.deltaTime * Catchee.approachSpeed);
+            var translation = dir * (Time.deltaTime * Catchee.catcheeSettings.approachSpeed);
             Catchee.transform.Translate(translation);
         }
 
@@ -45,10 +47,10 @@ namespace Trucker.Control.Zap.Catchee.States
         {
             _timeCatching += Time.deltaTime;
 
-            var progress = Mathf.Lerp(360f, 0f, _timeCatching/Catchee.catchingDuration);
+            var progress = Mathf.Lerp(360f, 0f, _timeCatching/_duration);
             _progressMaterial.SetFloat(Arc1, progress);
             
-            if (_timeCatching >= Catchee.catchingDuration)
+            if (_timeCatching >= _duration)
             {
                 Catchee.SetState(new Catched(Catchee));
             }

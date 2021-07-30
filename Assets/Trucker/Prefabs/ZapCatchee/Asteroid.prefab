@@ -95,13 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b983b4719974523965bd23f03cd96eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
   reachableStatus: {fileID: 2515437811874222066}
   crosshairHolder: {fileID: 743849512063107613}
-  progressDisplay: {fileID: 8732145434869632335}
-  catchingDuration: {fileID: 11400000, guid: fc7a87f3388329f47bb80728719f6cbd, type: 2}
-  approachSpeed: {fileID: 11400000, guid: d9584e6f36c1f674ea92f3e32ce3a151, type: 2}
   entityId: {fileID: 545750719421578610}
+  progressDisplay: {fileID: 8732145434869632335}
+  catcheeSettings: {fileID: 11400000, guid: 566ae974f8de5c243904da536f4f87cd, type: 2}
   orbitSpeed: {fileID: 1777226650207755751}
 --- !u!114 &2515437811874222066
 MonoBehaviour:

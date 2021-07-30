@@ -5,6 +5,7 @@ namespace Trucker.Control.Zap.Catchee
 {
     public class ZapCatcheeOnOrbit : ZapCatchee
     {
+        [Header("On Orbit / Components")]
         [SerializeField] private ObjectOnOrbitSpeed orbitSpeed;
 
         public override void OnCatch()

@@ -8,12 +8,14 @@ namespace Trucker.Control.Zap.Catchee.States
 
         private Material _defaultMaterial;
         private Material _progressMaterial;
+        private float _duration;
         private float _timeFreeing;
         private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
 
         public override void EnterState()
         {
             Catchee.crosshairHolder.gameObject.SetActive(true);
+            _duration = Catchee.catcheeSettings.catchingDuration;
             SetProgressMaterial();
         }
 
@@ -32,10 +34,10 @@ namespace Trucker.Control.Zap.Catchee.States
         {
             _timeFreeing += Time.deltaTime;
             
-            var progress = Mathf.Lerp(0f, 360f, _timeFreeing / Catchee.catchingDuration);
+            var progress = Mathf.Lerp(0f, 360f, _duration);
             _progressMaterial.SetFloat(Arc1, progress);
 
-            if (_timeFreeing >= Catchee.catchingDuration)
+            if (_timeFreeing >= _duration)
             {
                 Free();
             }

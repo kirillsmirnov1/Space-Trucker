@@ -1,28 +1,27 @@
-using Trucker.Control.Zap.Catchee.States;
+﻿using Trucker.Control.Zap.Catchee.States;
 using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityUtils;
-using UnityUtils.Variables;
 
 namespace Trucker.Control.Zap.Catchee
 {
     public class ZapCatchee : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
-        [SerializeField] protected ZapCatcherVariable zapCatcherVariable;
+        [Header("Components")]
         [SerializeField] public ZapCatcheeReachable reachableStatus;
         [SerializeField] public GameObject crosshairHolder;
-        [SerializeField] public SpriteRenderer progressDisplay;
-        [SerializeField] public FloatVariable catchingDuration;
-        [SerializeField] public FloatVariable approachSpeed;
         [SerializeField] private EntityId entityId;
+        [SerializeField] public SpriteRenderer progressDisplay;
+        [Header("Settings")]
+        [SerializeField] public CatcheeSettings catcheeSettings;
         
         private ZapCatcheeState _state;
         private SpringJoint _springJoint;
         private JointAnchorConnection _anchorConnection;
         
-        public ZapCatcher Catcher => zapCatcherVariable.Value;
+        public ZapCatcher Catcher => catcheeSettings.zapCatcherVariable.Value;
         public EntityType Type => entityId.type;
 
         private void OnValidate() => this.CheckNullFields();
