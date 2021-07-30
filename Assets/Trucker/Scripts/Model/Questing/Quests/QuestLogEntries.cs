@@ -8,6 +8,14 @@ namespace Trucker.Model.Questing.Quests
     [CreateAssetMenu(fileName = "QuestLogEntries", menuName = "Quests/QuestLogEntries", order = 0)]
     public class QuestLogEntries : XArrayVariable<QuestLogEntryIdentificator>
     {
+        private static QuestLogEntries _instance;
+
+        public override void ReadSave()
+        {
+            base.ReadSave();
+            _instance = this;
+        }
+
         public void QuestTaken(string title) 
             => UpdateQuestStatus(title, QuestStatus.Taken);
 
@@ -23,7 +31,7 @@ namespace Trucker.Model.Questing.Quests
         {
             try
             {
-                var val = value.data.First(entry => entry.title == title);
+                var val = GetIdentificatorByTitle(title);
                 val.status = status;
             }
             catch (InvalidOperationException)
@@ -34,5 +42,25 @@ namespace Trucker.Model.Questing.Quests
 
             WriteSave();
         }
+
+        public static bool NeverBeenStarted(string title) 
+            => _instance.NeverBeenStartedImpl(title);
+
+        private bool NeverBeenStartedImpl(string title)
+        {
+            
+            try
+            {
+                var val = GetIdentificatorByTitle(title);
+                return val.status == QuestStatus.None;
+            }
+            catch (InvalidOperationException)
+            {
+                return true;
+            }
+        }
+
+        private QuestLogEntryIdentificator GetIdentificatorByTitle(string title) 
+            => value.data.First(entry => entry.title == title);
     }
 }

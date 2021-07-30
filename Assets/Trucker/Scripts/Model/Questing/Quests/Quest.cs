@@ -82,10 +82,13 @@ namespace Trucker.Model.Questing.Quests
             }
         }
 
+        public bool NeverBeenStarted // IMPR naming 
+            => QuestLogEntries.NeverBeenStarted(title);
+        
         public bool CanBeTaken
-            => NotStarted && AllConditionsPass;
+            => NotInProgress && AllConditionsPass;
 
-        private bool NotStarted 
+        private bool NotInProgress 
             => currentGoalNumber == -1;
 
         private bool AllConditionsPass 

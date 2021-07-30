@@ -65,7 +65,7 @@ namespace Trucker.Model.NPC
             return dialogueType switch
             {
                 DialogueType.None => DialogueWasNotShown || canBeRepeated,
-                DialogueType.TakeQuest => quest.CanBeTaken,
+                DialogueType.TakeQuest => quest.CanBeTaken && quest.NeverBeenStarted, 
                 DialogueType.FinishQuest => quest.CanBeFinished,
                 _ => throw new ArgumentOutOfRangeException()
             };
