@@ -122,8 +122,24 @@ PrefabInstance:
       value: CrosshairHolder
       objectReference: {fileID: 0}
     - target: {fileID: 3650965230150314543, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650965230150314543, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650965230150314543, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650965230150314543, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958451146918074705, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
+      propertyPath: scale
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7671147741217402372, guid: 65b6a24154cc07a428cf7052d196ca87, type: 3}
       propertyPath: m_RootOrder
