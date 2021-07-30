@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Trucker.Model.Questing.Goals;
 using Trucker.Model.Questing.Quests;
 using UnityEngine;
 
@@ -18,7 +18,8 @@ namespace Trucker.View.Notifications
             DisableNotifications(); 
             Quest.OnQuestTaken += OnQuestTaken;
             Quest.OnQuestFinished += OnQuestFinished;
-            // TODO goals 
+            Goal.OnStart += OnGoalStarted;
+            Goal.OnCompletion += OnGoalCompleted;
             // TODO object detach 
         }
 
@@ -26,6 +27,8 @@ namespace Trucker.View.Notifications
         {
             Quest.OnQuestTaken -= OnQuestTaken;
             Quest.OnQuestFinished -= OnQuestFinished;
+            Goal.OnStart -= OnGoalStarted;
+            Goal.OnCompletion -= OnGoalCompleted;
         }
 
         private void DisableNotifications()
@@ -41,6 +44,12 @@ namespace Trucker.View.Notifications
 
         private void OnQuestFinished(string title) 
             => Notify($"{title} finished", false);
+
+        private void OnGoalStarted(string goalDescription) 
+            => Notify(goalDescription, false);
+
+        private void OnGoalCompleted(string goalDescription) 
+            => Notify(goalDescription, true);
 
         private void Notify(string str, bool strikethrough)
         {
