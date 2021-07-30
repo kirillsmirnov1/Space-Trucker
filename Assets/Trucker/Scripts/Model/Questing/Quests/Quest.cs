@@ -1,8 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Trucker.Model.Questing.Consequences;
 using Trucker.Model.Questing.Goals;
 using UnityEngine;
+using UnityUtils.Variables;
 
 namespace Trucker.Model.Questing.Quests
 {
@@ -15,6 +17,7 @@ namespace Trucker.Model.Questing.Quests
         public string title;
         public string description;
         [SerializeField] private bool finishedFromDialog;
+        [SerializeField] private List<BoolVariable> conditions;
         [SerializeField] private List<Goal> goals;
         [SerializeField] private List<Consequence> consequences;
         
@@ -79,7 +82,14 @@ namespace Trucker.Model.Questing.Quests
         }
 
         public bool CanBeTaken
-            => currentGoalNumber == -1; // TODO conditions 
+            => NotStarted && AllConditionsPass;
+
+        private bool NotStarted 
+            => currentGoalNumber == -1;
+
+        private bool AllConditionsPass 
+            => conditions.All(condition => condition == true);
+
         public bool CanBeFinished 
             => currentGoalNumber >= goals.Count;
 
