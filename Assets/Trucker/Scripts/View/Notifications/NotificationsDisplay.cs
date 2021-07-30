@@ -1,4 +1,6 @@
-﻿using Trucker.Model.Questing.Goals;
+﻿using Trucker.Model.Entities;
+using Trucker.Model.Questing.Consequences;
+using Trucker.Model.Questing.Goals;
 using Trucker.Model.Questing.Quests;
 using UnityEngine;
 
@@ -20,7 +22,7 @@ namespace Trucker.View.Notifications
             Quest.OnQuestFinished += OnQuestFinished;
             Goal.OnStart += OnGoalStarted;
             Goal.OnCompletion += OnGoalCompleted;
-            // TODO object detach 
+            DestroyCatchedObjects.OnObjectsDestroyed += OnCatchedObjectsDestroyed;
         }
 
         private void OnDestroy()
@@ -29,6 +31,7 @@ namespace Trucker.View.Notifications
             Quest.OnQuestFinished -= OnQuestFinished;
             Goal.OnStart -= OnGoalStarted;
             Goal.OnCompletion -= OnGoalCompleted;
+            DestroyCatchedObjects.OnObjectsDestroyed -= OnCatchedObjectsDestroyed;
         }
 
         private void DisableNotifications()
@@ -50,6 +53,13 @@ namespace Trucker.View.Notifications
 
         private void OnGoalCompleted(string goalDescription) 
             => Notify(goalDescription, true);
+
+        private void OnCatchedObjectsDestroyed(EntityType type, int count)
+        {
+            var multiple = count > 1;
+            var str = $"{(multiple ? $"{count} " : "")} {type.ToString()}{(multiple ? "s" : "")} detached";
+            Notify(str, false);
+        }
 
         private void Notify(string str, bool strikethrough)
         {
