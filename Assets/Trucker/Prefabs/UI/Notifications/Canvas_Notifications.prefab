@@ -523,6 +523,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 5 asteroids detached
       objectReference: {fileID: 0}
+    - target: {fileID: 8721207008349815523, guid: 8df622d05be299642805ce3cd9147153, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.5254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721207008349815523, guid: 8df622d05be299642805ce3cd9147153, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 2264924159
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df622d05be299642805ce3cd9147153, type: 3}
 --- !u!224 &4976467207299676035 stripped
