@@ -30,8 +30,15 @@ namespace Trucker.Control.Zap.Catchee.States
 
         public override void OnUpdate()
         {
-            // IMPR slowly move towards Catcher 
+            ApproachCatcher();
             UpdateCatchingProgressDisplay();
+        }
+
+        private void ApproachCatcher()
+        {
+            var dir = Catchee.Catcher.transform.position - Catchee.transform.position;
+            var translation = dir * (Time.deltaTime * Catchee.approachSpeed);
+            Catchee.transform.Translate(translation);
         }
 
         private void UpdateCatchingProgressDisplay()

@@ -100,6 +100,7 @@ MonoBehaviour:
   crosshairHolder: {fileID: 743849512063107613}
   progressDisplay: {fileID: 8732145434869632335}
   catchingDuration: {fileID: 11400000, guid: fc7a87f3388329f47bb80728719f6cbd, type: 2}
+  approachSpeed: {fileID: 11400000, guid: d9584e6f36c1f674ea92f3e32ce3a151, type: 2}
   entityId: {fileID: 545750719421578610}
   orbitSpeed: {fileID: 1777226650207755751}
 --- !u!114 &2515437811874222066

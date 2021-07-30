@@ -1,4 +1,4 @@
-﻿using Trucker.Control.Zap.Catchee.States;
+using Trucker.Control.Zap.Catchee.States;
 using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
@@ -15,6 +15,7 @@ namespace Trucker.Control.Zap.Catchee
         [SerializeField] public GameObject crosshairHolder;
         [SerializeField] public SpriteRenderer progressDisplay;
         [SerializeField] public FloatVariable catchingDuration;
+        [SerializeField] public FloatVariable approachSpeed;
         [SerializeField] private EntityId entityId;
         
         private ZapCatcheeState _state;
