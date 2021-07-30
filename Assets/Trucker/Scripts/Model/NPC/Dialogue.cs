@@ -58,13 +58,13 @@ namespace Trucker.Model.NPC
         }
 
         public bool AvailableAsDialogueOption() 
-            => (DialogueWasNotShown || canBeRepeated) && PassingConditions(); 
+            => PassingConditions(); 
 
         private bool PassingConditions()
         {
             return dialogueType switch
             {
-                DialogueType.None => true,
+                DialogueType.None => DialogueWasNotShown || canBeRepeated,
                 DialogueType.TakeQuest => quest.CanBeTaken,
                 DialogueType.FinishQuest => quest.CanBeFinished,
                 _ => throw new ArgumentOutOfRangeException()
