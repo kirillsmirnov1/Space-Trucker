@@ -13,9 +13,9 @@ namespace Trucker.Model.Questing.Quests
             {
                 ((Quest)target).Take();
             }
-            if (GUILayout.Button("Finish quest"))
+            if (GUILayout.Button("Drop quest"))
             {
-                ((Quest)target).Finish();
+                ((Quest)target).Drop();
             }
         }
     }

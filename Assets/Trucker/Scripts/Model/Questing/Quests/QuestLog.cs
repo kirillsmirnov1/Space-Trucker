@@ -44,6 +44,7 @@ namespace Trucker.Model.Questing.Quests
         {
             Quest.OnQuestTaken += OnQuestTaken;
             Quest.OnQuestFinished += OnQuestFinished;
+            Quest.OnQuestDropped += OnQuestDropped;
         }
 
         private void OnQuestTaken(string title)
@@ -54,6 +55,11 @@ namespace Trucker.Model.Questing.Quests
         private void OnQuestFinished(string title)
         {
             questLogEntries.QuestFinished(title);
+        }
+
+        private void OnQuestDropped(string title)
+        {
+            questLogEntries.QuestDropped(title);
         }
     }
 }

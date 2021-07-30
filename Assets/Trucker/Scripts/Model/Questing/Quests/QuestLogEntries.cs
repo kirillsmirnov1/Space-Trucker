@@ -14,6 +14,11 @@ namespace Trucker.Model.Questing.Quests
         public void QuestFinished(string title) 
             => UpdateQuestStatus(title, QuestStatus.Completed);
 
+        public void QuestDropped(string title)
+        {
+            UpdateQuestStatus(title, QuestStatus.None);
+        }
+
         private void UpdateQuestStatus(string title, QuestStatus status)
         {
             try

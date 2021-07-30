@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Trucker.Model.Questing.Consequences;
@@ -13,6 +13,7 @@ namespace Trucker.Model.Questing.Quests
     {
         public static event Action<string> OnQuestTaken; 
         public static event Action<string> OnQuestFinished;
+        public static event Action<string> OnQuestDropped; 
         
         public string title;
         public string description;
@@ -99,6 +100,12 @@ namespace Trucker.Model.Questing.Quests
             InvokeConsequences();
             OnQuestFinished?.Invoke(title);
             Debug.Log($"Quest {title} finished");
+        }
+
+        public void Drop()
+        {
+            currentGoalNumber = -1;
+            OnQuestDropped?.Invoke(title);
         }
 
         private void InvokeConsequences()
