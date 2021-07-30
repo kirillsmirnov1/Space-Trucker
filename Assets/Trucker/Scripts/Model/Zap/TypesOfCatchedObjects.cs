@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Entities;
+using Trucker.Model.Util;
 using UnityEngine;
 using UnityUtils.Variables;
 
 namespace Trucker.Model.Zap
 {
     [CreateAssetMenu(fileName = "Types Of Catched Objects", menuName = "Data/CatcheeTypes", order = 0)]
-    public class TypesOfCatchedObjects : ScriptableObject
+    public class TypesOfCatchedObjects : InitiatedScriptableObject
     {
         
         [SerializeField] private IntVariable catcheesTotalCount;
@@ -17,7 +18,7 @@ namespace Trucker.Model.Zap
         private Dictionary<EntityType, List<ZapCatchee>> _catcheesByType;
         public event Action<EntityType, int> OnChange;
 
-        public void Init()
+        public override void Init()
         {
             _catcheesByType = new Dictionary<EntityType, List<ZapCatchee>>();
             UpdateCatcheesCount();

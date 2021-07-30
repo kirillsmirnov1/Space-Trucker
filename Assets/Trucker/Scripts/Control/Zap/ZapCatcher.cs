@@ -22,8 +22,6 @@ namespace Trucker.Control.Zap
         
         private void OnValidate() => this.CheckNullFields();
 
-        private void Awake() => catcheeTypes.Init(); 
-        
         public bool TryCatch(ZapCatchee zapCatchee)
         {
             if (catchees.Contains(zapCatchee)) return false;
