@@ -10,9 +10,9 @@ namespace Trucker.Model.Questing.Quests
     {
         private static QuestLogEntries _instance;
 
-        public override void ReadSave()
+        public override void Init()
         {
-            base.ReadSave();
+            base.Init();
             _instance = this;
         }
 

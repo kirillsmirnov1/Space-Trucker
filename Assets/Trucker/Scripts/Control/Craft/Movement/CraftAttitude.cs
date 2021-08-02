@@ -1,4 +1,4 @@
-using Trucker.Extensions;
+using UnityUtils.Extensions;
 using UnityEngine;
 
 namespace Trucker.Control.Craft.Movement

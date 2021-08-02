@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83024a994dd447bb2ee9dab5c4b6e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  variables:
+  objectsToInit:
   - {fileID: 11400000, guid: eb2a626efc7bafd44b6d46724b442d64, type: 2}
   - {fileID: 11400000, guid: 50ffa522ea0232742967e0a3e4813e29, type: 2}
   - {fileID: 11400000, guid: 3cd8fde0ffec06b439d5829ec3dd22af, type: 2}

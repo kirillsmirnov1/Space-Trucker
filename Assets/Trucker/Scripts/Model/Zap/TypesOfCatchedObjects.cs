@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Entities;
-using Trucker.Model.Util;
+using UnityUtils.Saves;
 using UnityEngine;
 using UnityUtils.Variables;
 
