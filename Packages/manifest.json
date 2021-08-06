@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "st.one-line": "https://github.com/slavniyteo/one-line.git",
+    "st.rect-ex": "https://github.com/slavniyteo/rect-ex.git",
     "trulden.joysticks": "https://github.com/kirillsmirnov1/Joysticks.git",
     "trulden.unity-utils": "https://github.com/kirillsmirnov1/unity-utils.git", 
     "com.unity.2d.animation": "5.0.4",
