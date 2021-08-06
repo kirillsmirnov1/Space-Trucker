@@ -23,5 +23,9 @@ MonoBehaviour:
     line: About those asteroids.
   - character: 11
     line: Thank you, your help is much appreciated.
+  - character: 9
+    line: And rewarded?
+  - character: 11
+    line: And rewarded.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}

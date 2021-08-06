@@ -22,10 +22,12 @@ MonoBehaviour:
   - character: 9
     line: Got some work?
   - character: 11
-    line: Yeah, we do, actually.
+    line: Yeah, I do, actually.
   - character: 11
-    line: Bring us 3 asteroids,  we need them for research.
+    line: Bring me 3 asteroids, I need them for research.
+  - character: 9
+    line: Will it, you know, help my worker rating?
   - character: 11
-    line: It would be very nice of you.
+    line: I'll see what I can do
   dialogueType: 1
   quest: {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}
