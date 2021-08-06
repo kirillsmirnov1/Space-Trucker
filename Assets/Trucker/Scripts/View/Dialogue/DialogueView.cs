@@ -12,9 +12,10 @@ namespace Trucker.View.Dialogue
 {
     public class DialogueView : ListView<string>
     {
+        [Header("Dialogue View")]
         [SerializeField] private GameObject fade;
         [SerializeField] private TextMeshProUGUI npcNameText;
-        [SerializeField] private Image npcPortrait;
+        [SerializeField] public CharacterPortrait characterPortrait;
 
         private IDialogue[] _allDialogues;
         private DialogueViewState _state;
@@ -51,7 +52,6 @@ namespace Trucker.View.Dialogue
         {
             _allDialogues = npcData.dialogueOptions;
             npcNameText.text = npcData.npcName;
-            npcPortrait.sprite = npcData.npcPicture;
         }
 
         private void SetState(DialogueViewState newState)

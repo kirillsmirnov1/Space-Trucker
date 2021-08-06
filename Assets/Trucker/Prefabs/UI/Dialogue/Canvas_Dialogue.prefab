@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 2626947284170791815}
   - component: {fileID: 2301677707726232369}
   - component: {fileID: 2392722876591894044}
+  - component: {fileID: 7394190925238408020}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -239,6 +240,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1
+--- !u!114 &7394190925238408020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203764576688757958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c9fd3456be4e9eb32bddb7e0c1bc16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2301677707726232369}
+  characterData: {fileID: 11400000, guid: b93687eb61d40324e8dbe234cac564e0, type: 2}
 --- !u!1 &3716497320589408058
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +375,7 @@ MonoBehaviour:
   listViewEntryPrefab: {fileID: 269447360249996131}
   fade: {fileID: 3794854276482012266}
   npcNameText: {fileID: 4045067179631217516}
-  npcPortrait: {fileID: 2301677707726232369}
+  characterPortrait: {fileID: 7394190925238408020}
 --- !u!1 &3794854276482012266
 GameObject:
   m_ObjectHideFlags: 0

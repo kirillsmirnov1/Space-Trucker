@@ -25,7 +25,9 @@ namespace Trucker.View.Dialogue.State
             _lineIndex++;
             if (_lineIndex < _lines.Length)
             {
-                DialogueView.SetLines(new List<string> {_lines[_lineIndex].line}); // TODO update portrait 
+                var line = _lines[_lineIndex];
+                DialogueView.SetLines(new List<string> {line.line});
+                DialogueView.characterPortrait.SetPortrait(line.character);
             }
             else
             {
