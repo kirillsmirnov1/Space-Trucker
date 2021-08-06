@@ -13,9 +13,7 @@ namespace Trucker.View.Dialogue.State
 
         public override void Start()
         {
-            // FIXME that's fucking horrible 
-            // TODO dialogue must reference giver? Or dialogues must be warped in CharacterClass of some sort 
-            DialogueView.characterPortrait.SetPortrait(_availableDialogues[0].Lines.First(ch => ch.character != CharacterName.Fielding).character);
+            DialogueView.characterPortrait.SetPortrait(_availableDialogues[0].InitialCharacter);
             SetDialogueOptions();
         }
 

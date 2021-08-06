@@ -10,7 +10,9 @@ namespace Trucker.Model.NPC
     [CreateAssetMenu(fileName = "Dialogue", menuName = "Data/Dialogue", order = 0)]
     public class Dialogue : BoolVariable, IDialogue
     {
+        [UnityUtils.Attributes.Separator("Dialogue")]
         [SerializeField] private bool canBeRepeated;
+        [SerializeField] private CharacterName initialCharacter;
         [SerializeField, OneLine, HideLabel] private DialogueLine[] lines;
         
         [Header("Consequences")]
@@ -19,6 +21,7 @@ namespace Trucker.Model.NPC
         [ConditionalField("consequences", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest})] 
         private Quest quest;
 
+        public CharacterName InitialCharacter => initialCharacter;
         public DialogueLine[] Lines => lines;
 
         public string FirstLine => Lines[0].line;

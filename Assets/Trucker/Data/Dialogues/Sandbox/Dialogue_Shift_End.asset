@@ -18,6 +18,7 @@ MonoBehaviour:
   defaultValue: 0
   guid: 50ffa522ea0232742967e0a3e4813e29
   canBeRepeated: 0
+  initialCharacter: 11
   lines:
   - character: 9
     line: About those asteroids.

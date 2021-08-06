@@ -18,6 +18,7 @@ MonoBehaviour:
   defaultValue: 0
   guid: eb2a626efc7bafd44b6d46724b442d64
   canBeRepeated: 0
+  initialCharacter: 11
   lines:
   - character: 9
     line: Got some work?
