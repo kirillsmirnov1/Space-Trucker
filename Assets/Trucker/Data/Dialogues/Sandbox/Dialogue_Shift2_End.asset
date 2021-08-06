@@ -18,10 +18,14 @@ MonoBehaviour:
   defaultValue: 0
   guid: f7e0c0bc86fc5a742b4a852cc312fc8a
   canBeRepeated: 0
-  lines: 'Wow, you did it!
-
-    Thank you so much.
-
-    You are the best.'
+  lines:
+  - character: 9
+    line: Hey..
+  - character: 11
+    line: Wow, you did it!
+  - character: 11
+    line: Thank you so much.
+  - character: 11
+    line: You are the best.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}

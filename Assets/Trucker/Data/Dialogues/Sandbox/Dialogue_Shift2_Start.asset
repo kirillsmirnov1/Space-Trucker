@@ -18,16 +18,16 @@ MonoBehaviour:
   defaultValue: 0
   guid: 3cd8fde0ffec06b439d5829ec3dd22af
   canBeRepeated: 0
-  lines: 'I''m ready for something more difficult.
-
-    That''s good.
-
-    Your
-    asteroids were magnificent, we need more.
-
-    Bring us 15 asteroids that time.
-
-    That
-    would be very nice of you.'
+  lines:
+  - character: 9
+    line: I'm ready for something more difficult.
+  - character: 11
+    line: That's good.
+  - character: 11
+    line: Your asteroids were magnificent, we need more.
+  - character: 11
+    line: Bring us 15 asteroids that time.
+  - character: 11
+    line: That would be very nice of you.
   dialogueType: 1
   quest: {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}

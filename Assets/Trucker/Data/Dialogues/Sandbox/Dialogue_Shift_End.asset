@@ -18,8 +18,10 @@ MonoBehaviour:
   defaultValue: 0
   guid: 50ffa522ea0232742967e0a3e4813e29
   canBeRepeated: 0
-  lines: 'About those asteroids.
-
-    Thank you, your help is much appreciated.'
+  lines:
+  - character: 9
+    line: About those asteroids.
+  - character: 11
+    line: Thank you, your help is much appreciated.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}

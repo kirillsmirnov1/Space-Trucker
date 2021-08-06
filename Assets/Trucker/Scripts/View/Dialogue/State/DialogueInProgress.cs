@@ -7,7 +7,7 @@ namespace Trucker.View.Dialogue.State
     {
         private readonly IDialogue _dialogue;
         private int _lineIndex;
-        private readonly string[] _lines;
+        private readonly DialogueLine[] _lines;
 
         public DialogueInProgress(DialogueView dialogueView, IDialogue dialogue) : base(dialogueView)
         {
@@ -25,7 +25,7 @@ namespace Trucker.View.Dialogue.State
             _lineIndex++;
             if (_lineIndex < _lines.Length)
             {
-                DialogueView.SetLines(new List<string> {_lines[_lineIndex]});
+                DialogueView.SetLines(new List<string> {_lines[_lineIndex].line}); // TODO update portrait 
             }
             else
             {

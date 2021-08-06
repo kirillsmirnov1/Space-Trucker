@@ -1,4 +1,5 @@
 ﻿using System;
+using OneLine;
 using Trucker.Model.Questing.Quests;
 using UnityEngine;
 using UnityUtils.Attributes;
@@ -10,7 +11,7 @@ namespace Trucker.Model.NPC
     public class Dialogue : BoolVariable, IDialogue
     {
         [SerializeField] private bool canBeRepeated;
-        [SerializeField, TextArea(3, 20)] private string lines;
+        [SerializeField, OneLine, HideLabel] private DialogueLine[] lines;
         
         [Header("Consequences")]
         [SerializeField] private DialogueType dialogueType;
@@ -18,21 +19,9 @@ namespace Trucker.Model.NPC
         [ConditionalField("consequences", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest})] 
         private Quest quest;
 
-        private string[] _lines = null;
+        public DialogueLine[] Lines => lines;
 
-        public string[] Lines
-        {
-            get
-            {
-                if (_lines == null || _lines.Length == 0)
-                {
-                    _lines = lines.Split('\n');
-                }
-                return _lines;
-            }
-        }
-
-        public string FirstLine => Lines[0];
+        public string FirstLine => Lines[0].line;
         
         public void OnDialogueEnd()
         {
