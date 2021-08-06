@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614930845e7441d5af85ed1f7f65cb65, type: 3}
+  m_Name: CharactersData
+  m_EditorClassIdentifier: 
+  characters:
+  - name: 0
+    nameText: Ackerley
+    portrait: {fileID: 21300000, guid: 6267b56073d0c3e4b8a9a41af7b92a50, type: 3}
+    description: Dump manager
+  - name: 1
+    nameText: Berthilda
+    portrait: {fileID: 21300000, guid: 30fad336c4799ad4383b4ce3abaf0be0, type: 3}
+    description: Kindergarden nurse
+  - name: 2
+    nameText: Child0
+    portrait: {fileID: 21300000, guid: 003d8f0c75980894ab9206ce1fc56b7d, type: 3}
+    description: 
+  - name: 3
+    nameText: Child1
+    portrait: {fileID: 21300000, guid: 694c9e7c5a4510e4bba584ebbde09226, type: 3}
+    description: 
+  - name: 4
+    nameText: Child2
+    portrait: {fileID: 21300000, guid: 76f300121c5320249b4efd448032b748, type: 3}
+    description: 
+  - name: 5
+    nameText: Child3
+    portrait: {fileID: 21300000, guid: b2ee8d90c61c88d489fb5622f84ebadf, type: 3}
+    description: 
+  - name: 6
+    nameText: Claiborne
+    portrait: {fileID: 21300000, guid: 26614d68f03293843ab691fa7dd5e2fa, type: 3}
+    description: Loves music
+  - name: 7
+    nameText: Darnell
+    portrait: {fileID: 21300000, guid: a7c65806240776244a0eea70db7b2187, type: 3}
+    description: Friend who lost something
+  - name: 8
+    nameText: Eardley
+    portrait: {fileID: 21300000, guid: da139b65a59692f4a82ed031393fb696, type: 3}
+    description: Also a friend
+  - name: 9
+    nameText: Fielding
+    portrait: {fileID: 21300000, guid: 16d668c26590782458a452ca1bf46d0f, type: 3}
+    description: Playable character
+  - name: 10
+    nameText: Godwin
+    portrait: {fileID: 21300000, guid: 3e6125308ef7128479a7bbacdddac7e9, type: 3}
+    description: Rewarder at institute
+  - name: 11
+    nameText: Merrill
+    portrait: {fileID: 21300000, guid: 134113ba13be9424b8084a07bd908884, type: 3}
+    description: Young scientist
