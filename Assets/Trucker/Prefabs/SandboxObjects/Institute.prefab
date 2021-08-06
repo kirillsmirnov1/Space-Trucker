@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b0a4774c3d46afabfb00b71ddb6299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Madelynne
-  npcPicture: {fileID: 21300000, guid: cc26c00bd5adf1c46b6bb6a9be4450fa, type: 3}
+  npcName: Merrill
+  npcPicture: {fileID: 21300000, guid: 134113ba13be9424b8084a07bd908884, type: 3}
   dialogueOptions:
   - {fileID: 11400000, guid: eb2a626efc7bafd44b6d46724b442d64, type: 2}
   - {fileID: 11400000, guid: 50ffa522ea0232742967e0a3e4813e29, type: 2}
