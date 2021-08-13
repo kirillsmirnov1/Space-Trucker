@@ -103,6 +103,7 @@ MonoBehaviour:
   progressDisplay: {fileID: 8732145434869632335}
   catcheeSettings: {fileID: 11400000, guid: 566ae974f8de5c243904da536f4f87cd, type: 2}
   orbitSpeed: {fileID: 1777226650207755751}
+  spawnee: {fileID: 3489316982945864726}
 --- !u!114 &2515437811874222066
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 ﻿using Trucker.Control.Meteor;
+using Trucker.Control.Spawn;
 using UnityEngine;
 
 namespace Trucker.Control.Zap.Catchee
@@ -7,17 +8,21 @@ namespace Trucker.Control.Zap.Catchee
     {
         [Header("On Orbit / Components")]
         [SerializeField] private ObjectOnOrbitSpeed orbitSpeed;
-
+        [SerializeField] private Spawnee spawnee;
+        
         public override void OnCatch()
         {
             base.OnCatch();
             orbitSpeed.enabled = false;
+            spawnee.enabled = false;
         }
 
         public override void OnFree()
         {
             base.OnFree();
             orbitSpeed.enabled = true;
+            spawnee.enabled = true;
+            spawnee.ResetPosition();
             orbitSpeed.SetPersonalOrbitRadius();
         }
     }

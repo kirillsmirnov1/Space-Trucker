@@ -17,7 +17,7 @@ namespace Trucker.Control.Spawn
 
         private void OnTriggerExit(Collider other)
         {
-            if(_respawning || !other.CompareTag("SpawnEdge")) return;
+            if(_respawning || !other.CompareTag("SpawnEdge") || !enabled) return;
             lock (gameObject)
             {
                 OnRespawnStart();
@@ -27,7 +27,7 @@ namespace Trucker.Control.Spawn
 
         }
 
-        private void ResetPosition() 
+        public void ResetPosition() 
             => transform.position = _spaceJunkOrbitSpawn.RespawnPosition(transform.position);
 
         private void OnRespawnStart()
