@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6551805818029996741}
   - component: {fileID: 4999578621480578371}
   - component: {fileID: 6498763754102076128}
+  - component: {fileID: 4651888690117831916}
   m_Layer: 6
   m_Name: SpawnEdge
   m_TagString: SpawnEdge
@@ -43,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 500
+  m_Radius: 250
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6498763754102076128
 MonoBehaviour:
@@ -58,4 +59,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 4999578621480578371}
-  radius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
+  spawnSphereRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
+  orbitRadius: {fileID: 11400000, guid: 6d870cc8e84596340a24b4564d707afe, type: 2}
+--- !u!114 &4651888690117831916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756671278730092304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ceebe081d448d93f8083be9c5cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}

@@ -9,7 +9,7 @@ namespace Trucker.Control.Spawn
     public class SpaceJunkOrbitSpawn : MonoBehaviour
     {
         [SerializeField] private GameObject prefabToSpawn; // might extract factory later
-        [SerializeField] private TransformVariable playerTransform;
+        [SerializeField] private TransformVariable spawnSphere;
         [SerializeField] private FloatVariable spawnEdgeRadius;
         [SerializeField] private FloatVariable respawnDistanceCoefficient;
         [SerializeField] private IntVariable numberOfObjects;
@@ -51,13 +51,12 @@ namespace Trucker.Control.Spawn
 
         private Vector3 NextSpawnPosition()
         {
-            // FIXME stay on orbit 
-            return Random.NextVector(-Vector3.one, Vector3.one) * spawnEdgeRadius + playerTransform.Value.position;
+            return Random.NextVector(-Vector3.one, Vector3.one) * spawnEdgeRadius + spawnSphere.Value.position;
         }
 
         public Vector3 RespawnPosition(Vector3 oldPos)
         {
-            var direction = (playerTransform.Value.position - oldPos).normalized;
+            var direction = (spawnSphere.Value.position - oldPos).normalized;
             return oldPos + direction * respawnDistanceCoefficient * spawnEdgeRadius;
         }
     }

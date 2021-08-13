@@ -633,7 +633,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1756671278730092304, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_Name
-      value: SpawnEdge
+      value: SpawnSphereOnOrbit
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_RootOrder

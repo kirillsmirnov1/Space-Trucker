@@ -44,12 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 273551459333336668, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
-  centralObject: {fileID: 11400000, guid: eeee0971a9b13cb4eb0184c6ac561f75, type: 2}
-  playerTransform: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}
+  spawnSphere: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
   spawnEdgeRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
   respawnDistanceCoefficient: {fileID: 11400000, guid: 8f87e3cdc89d15e43952be8b79d3c23f, type: 2}
   numberOfObjects: {fileID: 11400000, guid: fe1b472d0ad8ccd44b39440544e2aa50, type: 2}
-  orbitRadius: {fileID: 11400000, guid: 6d870cc8e84596340a24b4564d707afe, type: 2}
-  spawnCircleRadius: {fileID: 11400000, guid: 2f572ae80a8ca1243bfe0fc77d53d242, type: 2}
   spaceJunkScale: {fileID: 11400000, guid: fd6c0af014efbb142b1a0c079e7d34df, type: 2}
-  centralObjectDebug: {fileID: 0}
