@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5568023915649504449}
   - component: {fileID: 7486724546874020395}
+  - component: {fileID: 833015124}
   m_Layer: 0
   m_Name: Light of Q
   m_TagString: Untagged
@@ -40,13 +41,13 @@ Light:
   m_GameObject: {fileID: 8455343963087840163}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 2
+  m_Type: 0
   m_Shape: 0
   m_Color: {r: 0, g: 0.3018868, b: 0.010233466, a: 1}
   m_Intensity: 5
   m_Range: 1400
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 40
+  m_InnerSpotAngle: 4
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -93,3 +94,16 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &833015124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455343963087840163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76bf9544b48fc6a4c8c58acddd3b91b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}

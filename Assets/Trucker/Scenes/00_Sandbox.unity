@@ -329,27 +329,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6847513734150958448, guid: 2bb4278f10bfed948ad22b9cb6ea367f, type: 3}
   m_PrefabInstance: {fileID: 417373426}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1255004883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 855371295, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
-  m_PrefabInstance: {fileID: 1393538021889057817}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1255004886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255004883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d2a3cad171f8db438869b251c46a461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scale: 2.55
-  scaleX: 1
-  scaleY: 1
-  scaleZ: 1
 --- !u!4 &1260897081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6847513734150958448, guid: 2bb4278f10bfed948ad22b9cb6ea367f, type: 3}
@@ -655,11 +634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4617043836788443468, guid: 282ce6ff0ea62ed4dbdfb9c39cfc01e1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.540001
+      value: 9.54
       objectReference: {fileID: 0}
     - target: {fileID: 4617043836788443468, guid: 282ce6ff0ea62ed4dbdfb9c39cfc01e1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 9.540002
+      value: 9.54
       objectReference: {fileID: 0}
     - target: {fileID: 4617043836788443468, guid: 282ce6ff0ea62ed4dbdfb9c39cfc01e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -720,22 +699,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 855371297, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1393538023631871858, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
       propertyPath: m_RootOrder
       value: 10
