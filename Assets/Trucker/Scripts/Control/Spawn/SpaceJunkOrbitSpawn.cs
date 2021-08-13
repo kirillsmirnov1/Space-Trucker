@@ -16,6 +16,10 @@ namespace Trucker.Control.Spawn
         [SerializeField] private FloatVariable spawnCircleRadius; // might change to ellipsis later
         [SerializeField] private Vector2Variable spaceJunkScale;
         
+        [Header("Debug")]
+        [SerializeField] private Transform centralObjectDebug;
+        
+        
         private static readonly Random Random = new Random();
 
         private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
@@ -30,9 +34,9 @@ namespace Trucker.Control.Spawn
         {
             if(gameObject.InPrefabScene()) return;
             Handles.color = Color.yellow;
-            Handles.DrawWireDisc(centralObject.Value.position, Vector3.up, orbitRadius);
-            Handles.DrawWireDisc(centralObject.Value.position, Vector3.up, orbitRadius - spawnCircleRadius);
-            Handles.DrawWireDisc(centralObject.Value.position, Vector3.up, orbitRadius + spawnCircleRadius);
+            Handles.DrawWireDisc(centralObjectDebug.position, Vector3.up, orbitRadius);
+            Handles.DrawWireDisc(centralObjectDebug.position, Vector3.up, orbitRadius - spawnCircleRadius);
+            Handles.DrawWireDisc(centralObjectDebug.position, Vector3.up, orbitRadius + spawnCircleRadius);
         }
 #endif
 

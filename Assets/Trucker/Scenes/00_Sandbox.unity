@@ -1674,7 +1674,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5979626603527955484, guid: 7fcdeb2da2dc93a49ae3de342cc74c80, type: 3}
-      propertyPath: centralObject
+      propertyPath: centralObjectDebug
       value: 
       objectReference: {fileID: 1393538021889057818}
     - target: {fileID: 5979626603527955485, guid: 7fcdeb2da2dc93a49ae3de342cc74c80, type: 3}
