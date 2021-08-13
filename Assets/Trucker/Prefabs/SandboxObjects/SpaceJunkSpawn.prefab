@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 273551459333336668, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
-  centralObject: {fileID: 0}
+  centralObject: {fileID: 11400000, guid: eeee0971a9b13cb4eb0184c6ac561f75, type: 2}
   numberOfObjects: {fileID: 11400000, guid: fe1b472d0ad8ccd44b39440544e2aa50, type: 2}
   orbitRadius: {fileID: 11400000, guid: 6d870cc8e84596340a24b4564d707afe, type: 2}
   spawnCircleRadius: {fileID: 11400000, guid: 2f572ae80a8ca1243bfe0fc77d53d242, type: 2}

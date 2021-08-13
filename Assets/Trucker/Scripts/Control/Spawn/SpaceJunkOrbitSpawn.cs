@@ -10,7 +10,7 @@ namespace Trucker.Control.Spawn
     public class SpaceJunkOrbitSpawn : MonoBehaviour
     {
         [SerializeField] private GameObject prefabToSpawn; // might extract factory later
-        [SerializeField] private Transform centralObject;
+        [SerializeField] private TransformVariable centralObject;
         [SerializeField] private IntVariable numberOfObjects;
         [SerializeField] private FloatVariable orbitRadius;
         [SerializeField] private FloatVariable spawnCircleRadius; // might change to ellipsis later
@@ -28,10 +28,11 @@ namespace Trucker.Control.Spawn
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
+            if(gameObject.InPrefabScene()) return;
             Handles.color = Color.yellow;
-            Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius);
-            Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius - spawnCircleRadius);
-            Handles.DrawWireDisc(centralObject.position, Vector3.up, orbitRadius + spawnCircleRadius);
+            Handles.DrawWireDisc(centralObject.Value.position, Vector3.up, orbitRadius);
+            Handles.DrawWireDisc(centralObject.Value.position, Vector3.up, orbitRadius - spawnCircleRadius);
+            Handles.DrawWireDisc(centralObject.Value.position, Vector3.up, orbitRadius + spawnCircleRadius);
         }
 #endif
 
@@ -56,7 +57,7 @@ namespace Trucker.Control.Spawn
         private Vector3 NextPosition()
         {
             var angle = Random.Next(0, 360);
-            var orbitPosition = centralObject.position + Quaternion.Euler(0, angle, 0) * Vector3.right * orbitRadius;
+            var orbitPosition = centralObject.Value.position + Quaternion.Euler(0, angle, 0) * Vector3.right * orbitRadius;
             var shiftRadius = Vector3.one.normalized * spawnCircleRadius;
             var orbitShift = Random.NextVector(-shiftRadius, shiftRadius);
             return orbitPosition + orbitShift; 
