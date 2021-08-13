@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78adedf9dbc4bc69d1914ec6348055c, type: 3}
   m_Name: spaceJunkCount
   m_EditorClassIdentifier: 
-  value: 1000
+  value: 500
   save: 0
   logSave: 0
   defaultValue: 0
