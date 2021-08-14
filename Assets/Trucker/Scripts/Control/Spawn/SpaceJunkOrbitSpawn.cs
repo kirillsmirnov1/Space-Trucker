@@ -51,7 +51,7 @@ namespace Trucker.Control.Spawn
 
         private Vector3 NextSpawnPosition()
         {
-            return Random.NextVector(-Vector3.one, Vector3.one) * spawnEdgeRadius + spawnSphere.Value.position;
+            return UnityEngine.Random.insideUnitSphere * spawnEdgeRadius + spawnSphere.Value.position;
         }
 
         public Vector3 RespawnPosition(Vector3 oldPos)
