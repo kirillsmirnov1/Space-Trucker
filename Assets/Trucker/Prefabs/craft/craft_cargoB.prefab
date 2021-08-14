@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87a014e54bcee20ab76919f777229d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attitudeInput: {fileID: 11400000, guid: 9d13baf8627d77d41af1ae77f2e13787, type: 2}
 --- !u!114 &5801492429987914365
 MonoBehaviour:
   m_ObjectHideFlags: 0
