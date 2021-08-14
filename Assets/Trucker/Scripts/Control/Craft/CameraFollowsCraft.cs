@@ -1,5 +1,7 @@
-﻿using UnityUtils.Extensions;
+﻿using Trucker.Model.Craft;
 using UnityEngine;
+using UnityUtils;
+using UnityUtils.Extensions;
 
 namespace Trucker.Control.Craft
 {
@@ -7,10 +9,9 @@ namespace Trucker.Control.Craft
     {
         [SerializeField] private Transform cameraPivot;
         [SerializeField] private Transform craft;
-        [SerializeField] private float craftForwardLookDistance = 10f;
-        [SerializeField] private float speedMove = 1f;
-        [SerializeField] private float speedRotate = 1f;
-        
+        [SerializeField] private CameraFollowsCraftSettings settings;
+
+        private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
 
         private void FixedUpdate()
         {
@@ -19,14 +20,14 @@ namespace Trucker.Control.Craft
         }
 
         private void MovePosition() 
-            => transform.position = Vector3.Lerp(transform.position, cameraPivot.position, Time.deltaTime * speedMove);
+            => transform.position = Vector3.Lerp(transform.position, cameraPivot.position, Time.deltaTime * settings.speedMove);
 
         private void MoveRotation()
         {
-            var pointToLookAt = craft.position + craft.forward * craftForwardLookDistance;
+            var pointToLookAt = craft.position + craft.forward * settings.craftForwardLookDistance;
             var targetRotation = Quaternion.LookRotation(pointToLookAt - transform.position);
             if(craft.UpsideDown()) targetRotation *= Quaternion.Euler(0, 0, 180); // FIXME should change smoothly 
-            transform.rotation = Quaternion.Slerp(transform.rotation,targetRotation, Time.deltaTime * speedRotate);
+            transform.rotation = Quaternion.Slerp(transform.rotation,targetRotation, Time.deltaTime * settings.speedRotate);
         }
     }
 }
