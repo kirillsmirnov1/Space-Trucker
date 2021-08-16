@@ -21,7 +21,7 @@ namespace Trucker.View.Dialogue
         private IDialogue[] _allDialogues;
         private DialogueViewState _state;
         public CharacterName defaultCharacter;
-        private CharacterName _lastCharacter;
+        private CharacterName _lastCharacter = CharacterName.None;
 
         private IDialogue[] AvailableDialogues 
             => _allDialogues.Where(x => x.AvailableAsDialogueOption()).ToArray();
