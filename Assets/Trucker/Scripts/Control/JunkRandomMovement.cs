@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 using UnityUtils;
 using Random = System.Random;
 
@@ -10,33 +8,48 @@ namespace Trucker.Control
     public class JunkRandomMovement : MonoBehaviour
     {
         [SerializeField] private Rigidbody rb;
-        [SerializeField] private Vector2 forceFromTo = new Vector2(1f, 5f);
+        [SerializeField] private Vector2 speedModificator = new Vector2(50f, 100f);
 
-        private float _forceMod;
-        private readonly Random _random = new Random();
+        private float _speedModificator;
         private Vector3 _direction;
+        private static readonly Random Random = new Random();
 
         private void Awake()
         {
-            _forceMod = _random.NextFloat(forceFromTo.x, forceFromTo.y);
-            ChangeDirection();
+            InitSpeedModificator();
+            RandomizeDirection();
             transform.forward = _direction;
+            SetVelocity();
+        }
+
+        private void InitSpeedModificator()
+        {
+            _speedModificator = Random.NextFloat(speedModificator.x, speedModificator.y);
         }
 
         private void FixedUpdate()
         {
-            var force = transform.forward * (Time.deltaTime * _forceMod);
-            rb.AddForce(force);
+            SetVelocity();
         }
 
-        private void OnCollisionEnter(Collision other) // FIXME not working as intended 
+        private void SetVelocity()
         {
-            ChangeDirection(); 
+            rb.velocity = _direction * (_speedModificator * Time.deltaTime);
         }
 
-        private void ChangeDirection() // FIXME not random 
+        private void OnCollisionEnter(Collision other) 
         {
-            _direction = _random.NextVector(-Vector3.one, Vector3.one);
+            ReflectDirection(other.GetContact(0).normal);
+        }
+        
+        private void ReflectDirection(Vector3 contactNormal)
+        {
+            _direction = Vector3.Reflect(_direction, contactNormal);
+        }
+
+        private void RandomizeDirection()
+        {
+            _direction = Random.NextVector(-Vector3.one, Vector3.one);
         }
     }
 }
