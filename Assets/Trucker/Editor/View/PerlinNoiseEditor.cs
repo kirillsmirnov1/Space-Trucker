@@ -12,8 +12,7 @@ namespace Trucker.View
             if (GUILayout.Button("Regenerate"))
             {
                 var noiseGen = (PerlinNoise) target;
-                noiseGen.RandomizeOffset();
-                noiseGen.GenerateTexture();
+                noiseGen.RegenerateTexture();
             }
 
             if (GUILayout.Button("Apply new texture size"))

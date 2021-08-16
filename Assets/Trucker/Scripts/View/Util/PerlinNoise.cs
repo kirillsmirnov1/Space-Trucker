@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PerlinNoise : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PerlinNoise : MonoBehaviour
     
     private Vector2 _offset;
     private Texture2D _texture;
+    private Action _onUpdate;
 
     private void Awake()
     {
@@ -21,19 +24,25 @@ public class PerlinNoise : MonoBehaviour
         rendererToBeChanged.material.mainTexture = _texture = new Texture2D(dimensions.x, dimensions.y);
     }
 
-    private void Update()
+    private void OnBecameVisible() => _onUpdate = RegenerateTexture;
+
+    private void OnBecameInvisible() => _onUpdate = null;
+
+    private void Update() => _onUpdate?.Invoke();
+
+    public void RegenerateTexture()
     {
         RandomizeOffset();
         GenerateTexture();
     }
 
-    public void RandomizeOffset()
+    private void RandomizeOffset()
     {
         _offset.x += Random.Range(0, offsetSpeed) * Time.deltaTime;
         _offset.y += Random.Range(0, offsetSpeed) * Time.deltaTime;
     }
 
-    public void GenerateTexture()
+    private void GenerateTexture()
     {
         for (var i = 0; i < dimensions.x; i++)
         {
