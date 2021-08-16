@@ -13,8 +13,15 @@ namespace Trucker.View.Dialogue.State
 
         public override void Start()
         {
-            DialogueView.characterPortrait.SetPortrait(_availableDialogues[0].InitialCharacter);
+            DialogueView.SetCharacter(CharacterToShow()); 
             SetDialogueOptions();
+        }
+
+        private CharacterName CharacterToShow()
+        {
+            return _availableDialogues.Length > 0 
+                ? _availableDialogues[0].InitialCharacter 
+                : DialogueView.defaultCharacter;
         }
 
         public override void Stop() { }

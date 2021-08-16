@@ -27,7 +27,7 @@ namespace Trucker.View.Dialogue.State
             {
                 var line = _lines[_lineIndex];
                 DialogueView.SetLines(new List<string> {line.line});
-                DialogueView.characterPortrait.SetPortrait(line.character);
+                DialogueView.SetCharacter(line.character);
             }
             else
             {

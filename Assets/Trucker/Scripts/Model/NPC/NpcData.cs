@@ -4,14 +4,12 @@ namespace Trucker.Model.NPC
 {
     public struct NpcData 
     {
-        public string npcName;
-        public Sprite npcPicture;
+        public CharacterName characterName;
         public IDialogue[] dialogueOptions;
 
-        public NpcData(string npcName, Sprite npcPicture, IDialogue[] dialogueOptions)
+        public NpcData(CharacterName characterName, IDialogue[] dialogueOptions)
         {
-            this.npcName = npcName;
-            this.npcPicture = npcPicture;
+            this.characterName = characterName;
             this.dialogueOptions = dialogueOptions;
         }
     }

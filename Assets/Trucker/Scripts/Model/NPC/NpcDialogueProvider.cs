@@ -9,8 +9,7 @@ namespace Trucker.Model.NPC
     {
         public static event Action<NpcData> OnDialogueInitiated;
 
-        [SerializeField] private string npcName;
-        [SerializeField] private Sprite npcPicture;
+        [SerializeField] private CharacterName characterName;
         [SerializeField] private Dialogue[] dialogueOptions; // Unity still doesnt serialize interfaces, so here we go 
 
         private void OnValidate() 
@@ -23,6 +22,6 @@ namespace Trucker.Model.NPC
             => OnDialogueInitiated?.Invoke(DialogueData());
 
         private NpcData DialogueData() 
-            => new NpcData(npcName, npcPicture, GetDialogues());
+            => new NpcData(characterName, GetDialogues());
     }
 }

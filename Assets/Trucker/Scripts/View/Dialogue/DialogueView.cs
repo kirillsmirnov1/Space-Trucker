@@ -16,9 +16,12 @@ namespace Trucker.View.Dialogue
         [SerializeField] private GameObject fade;
         [SerializeField] private TextMeshProUGUI npcNameText;
         [SerializeField] public CharacterPortrait characterPortrait;
-
+        [SerializeField] private CharactersData charactersData;
+        
         private IDialogue[] _allDialogues;
         private DialogueViewState _state;
+        public CharacterName defaultCharacter;
+        private CharacterName _lastCharacter;
 
         private IDialogue[] AvailableDialogues 
             => _allDialogues.Where(x => x.AvailableAsDialogueOption()).ToArray();
@@ -51,7 +54,7 @@ namespace Trucker.View.Dialogue
         private void SetViewData(NpcData npcData)  
         {
             _allDialogues = npcData.dialogueOptions;
-            npcNameText.text = npcData.npcName;
+            defaultCharacter = npcData.characterName;
         }
 
         private void SetState(DialogueViewState newState)
@@ -83,5 +86,14 @@ namespace Trucker.View.Dialogue
 
         public void SetLines(List<string> lines) 
             => SetEntries(lines);
+
+        public void SetCharacter(CharacterName character)
+        {
+            if(character == _lastCharacter) return;
+            _lastCharacter = character;
+            var characterData = charactersData.GetCharacterData(character);
+            npcNameText.text = characterData.nameText;
+            characterPortrait.SetPortrait(characterData.portrait);
+        }
     }
 }
