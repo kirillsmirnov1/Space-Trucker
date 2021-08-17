@@ -126,12 +126,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererToBeChanged: {fileID: 4015701101799665022}
-  dimensions: {x: 128, y: 128}
+  dimensions: {x: 256, y: 256}
   scale: 30
   baseColor: {r: 0.066497445, g: 1, b: 0, a: 0.5019608}
   offsetSpeed: 1
   tile: {fileID: 21300000, guid: d0b03ebea8d6fda44878e72e8ff5a67b, type: 3}
   tileOffset: {r: 0.20392157, g: 0.20392157, b: 0.20392157, a: 1}
+  tileScale: 4
 --- !u!1 &1843028621477734816
 GameObject:
   m_ObjectHideFlags: 0
