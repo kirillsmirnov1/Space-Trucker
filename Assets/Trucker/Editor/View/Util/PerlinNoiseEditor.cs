@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Trucker.View
+namespace Trucker.View.Util
 {
     [CustomEditor(typeof(PerlinNoise))]
     public class PerlinNoiseEditor : Editor
