@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Trucker.View.Util
 {
-    [CustomEditor(typeof(PerlinNoise))]
+    [CustomEditor(typeof(PerlinNoise), true)]
     public class PerlinNoiseEditor : Editor
     {
         public override void OnInspectorGUI()

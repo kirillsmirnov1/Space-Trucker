@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4015701101799665022}
   - component: {fileID: 5203235062355269545}
   - component: {fileID: 4919070139662044113}
-  - component: {fileID: 4915583205567223156}
+  - component: {fileID: 8061347806836965769}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -113,7 +113,7 @@ MonoBehaviour:
   scaleX: 1
   scaleY: 1
   scaleZ: 1
---- !u!114 &4915583205567223156
+--- !u!114 &8061347806836965769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,14 +122,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484520119028654587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c286c469d3c03124494da05287a0c4e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b5f35a285214207b7b7503eec74dc4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rendererToBeChanged: {fileID: 4015701101799665022}
   dimensions: {x: 128, y: 128}
   scale: 30
-  baseColor: {r: 0, g: 1, b: 0.037703037, a: 0.78431374}
+  baseColor: {r: 0.066497445, g: 1, b: 0, a: 0.5019608}
   offsetSpeed: 1
+  tile: {fileID: 21300000, guid: d0b03ebea8d6fda44878e72e8ff5a67b, type: 3}
+  tileOffset: {r: 0.20392157, g: 0.20392157, b: 0.20392157, a: 1}
 --- !u!1 &1843028621477734816
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,8 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b0a4774c3d46afabfb00b71ddb6299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Ackerley
-  npcPicture: {fileID: 21300000, guid: 6267b56073d0c3e4b8a9a41af7b92a50, type: 3}
+  characterName: 0
   dialogueOptions: []
 --- !u!114 &4235751704484739508
 MonoBehaviour:
