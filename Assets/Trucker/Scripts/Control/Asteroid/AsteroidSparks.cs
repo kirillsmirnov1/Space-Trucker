@@ -55,6 +55,5 @@ namespace Trucker.Control.Asteroid
 
         // TODO catchStart locks sparks
         // TODO catchRelease releases 
-        // TODO make sure quest is accepting AsteroidWithSparks
     }
 }

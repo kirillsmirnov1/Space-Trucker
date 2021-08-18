@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Goal_Has_3_Asteroids
   m_EditorClassIdentifier: 
   description: Catch 3 Asteroids
-  targetCatcheeType: 0
+  targetCatcheeTypes: 0000000003000000
   requiredAmount: 3
   catchedByTypes: {fileID: 11400000, guid: c2bdf398f9764a14dbf03b3e251536b7, type: 2}

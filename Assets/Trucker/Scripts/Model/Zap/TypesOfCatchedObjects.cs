@@ -16,7 +16,7 @@ namespace Trucker.Model.Zap
         [SerializeField] private IntVariable catcheesTotalCount;
         
         private Dictionary<EntityType, List<ZapCatchee>> _catcheesByType;
-        public event Action<EntityType, int> OnChange;
+        public event Action<EntityType> OnChange;
 
         public override void Init()
         {
@@ -52,9 +52,12 @@ namespace Trucker.Model.Zap
         }
 
         private void NotifyOnTypeCountChange(EntityType catcheeType) 
-            => OnChange?.Invoke(catcheeType, _catcheesByType[catcheeType].Count);
+            => OnChange?.Invoke(catcheeType);
 
-        public int Count(EntityType type)
+        public int Count(EntityType[] types) 
+            => types.Select(Count).Sum();
+
+        private int Count(EntityType type)
         {
             return _catcheesByType.ContainsKey(type) 
                 ? _catcheesByType[type].Count 
