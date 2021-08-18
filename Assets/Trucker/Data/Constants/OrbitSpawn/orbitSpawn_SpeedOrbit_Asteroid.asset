@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340e6befe0be4769a330eef47d544e74, type: 3}
-  m_Name: orbitSpawn_scale
+  m_Script: {fileID: 11500000, guid: 921873d815974236975780263b5e64b4, type: 3}
+  m_Name: orbitSpawn_SpeedOrbit_Asteroid
   m_EditorClassIdentifier: 
-  value: {x: 0.5, y: 5}
+  value: 5
   save: 0
   logSave: 0
-  defaultValue: {x: 0, y: 0}
-  guid: fd6c0af014efbb142b1a0c079e7d34df
+  defaultValue: 0
+  guid: a7c0a44c0c0a7ea41933c27d2e33d6fb

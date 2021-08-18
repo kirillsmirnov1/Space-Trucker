@@ -60,6 +60,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1481807398989479699, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
+      propertyPath: m_Time
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481807398989479699, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0.14352834
       objectReference: {fileID: 0}
@@ -119,6 +123,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].outWeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1777226650207755751, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
+      propertyPath: orbitSpeed
+      value: 
+      objectReference: {fileID: 11400000, guid: d1a509a335a13c24db84a98a51001f91, type: 2}
     - target: {fileID: 3169775847271025805, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
       propertyPath: m_IsActive
       value: 0
