@@ -35,7 +35,7 @@ namespace Trucker.Control.Asteroid
             zapCatchee.OnFreed -= UnlockSparks;
         }
 
-        private void LockSparks() 
+        private void LockSparks() // TODO should check Zap level 
             => StopAllCoroutines();
 
         private void UnlockSparks() 
