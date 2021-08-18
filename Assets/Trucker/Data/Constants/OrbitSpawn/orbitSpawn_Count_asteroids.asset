@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340e6befe0be4769a330eef47d544e74, type: 3}
-  m_Name: spaceJunkScale
+  m_Script: {fileID: 11500000, guid: b78adedf9dbc4bc69d1914ec6348055c, type: 3}
+  m_Name: orbitSpawn_Count_asteroids
   m_EditorClassIdentifier: 
-  value: {x: 0.5, y: 5}
+  value: 500
   save: 0
   logSave: 0
-  defaultValue: {fileID: 0}
-  guid: fd6c0af014efbb142b1a0c079e7d34df
+  defaultValue: 0
+  guid: fe1b472d0ad8ccd44b39440544e2aa50

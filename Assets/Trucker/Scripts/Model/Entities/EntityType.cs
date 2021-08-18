@@ -6,5 +6,6 @@
         Person,
         Barrel,
         AsteroidWithSparks,
+        Uranium,
     }
 }
