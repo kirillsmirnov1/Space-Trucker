@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sparkParticles: {fileID: 3186551340596756069}
   entityId: {fileID: 545750719421578610}
+  zapCatchee: {fileID: 6065099151998517583}
   sparkDelay: {fileID: 11400000, guid: acc4fbe93a2eb94468c4b5b9f62488c5, type: 2}
   sparkDuration: {fileID: 11400000, guid: e093e5b0e5f59da4e8e0d15e12846dd4, type: 2}
 --- !u!1 &2833915876401977836

@@ -1,4 +1,5 @@
-﻿using Trucker.Control.Zap.Catchee.States;
+﻿using System;
+using Trucker.Control.Zap.Catchee.States;
 using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
@@ -9,6 +10,9 @@ namespace Trucker.Control.Zap.Catchee
 {
     public class ZapCatchee : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
+        public event Action OnCatchingStarted;
+        public event Action OnFreed;
+        
         [Header("Components")]
         [SerializeField] public ZapCatcheeReachable reachableStatus;
         [SerializeField] public GameObject crosshairHolder;
@@ -68,8 +72,14 @@ namespace Trucker.Control.Zap.Catchee
 
         public virtual void OnCatch() { }
 
-        public virtual void OnFree() 
-            => SetFreeState();
+        public void NotifyOnCatchingStart() 
+            => OnCatchingStarted?.Invoke();
+
+        public virtual void OnFree()
+        {
+            SetFreeState();
+            OnFreed?.Invoke();
+        }
 
         public void SetConnection(SpringJointSettings springSettings, Transform bodyToConnectTo)
         {

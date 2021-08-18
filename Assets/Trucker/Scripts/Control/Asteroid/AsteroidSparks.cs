@@ -1,4 +1,5 @@
 using System.Collections;
+using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Entities;
 using UnityEngine;
 using UnityUtils;
@@ -12,7 +13,8 @@ namespace Trucker.Control.Asteroid
         [Header("Components")]
         [SerializeField] private ParticleSystem sparkParticles;
         [SerializeField] private EntityId entityId;
-
+        [SerializeField] private ZapCatchee zapCatchee;
+        
         [Header("Data")]
         [SerializeField] private Vector2Variable sparkDelay;
         [SerializeField] private Vector2Variable sparkDuration;
@@ -22,8 +24,22 @@ namespace Trucker.Control.Asteroid
         
         private void Awake()
         {
+            zapCatchee.OnCatchingStarted += LockSparks;
+            zapCatchee.OnFreed += UnlockSparks;
             StartCoroutine(DelaySparksTurningOn());
         }
+
+        private void OnDestroy()
+        {
+            zapCatchee.OnCatchingStarted -= LockSparks;
+            zapCatchee.OnFreed -= UnlockSparks;
+        }
+
+        private void LockSparks() 
+            => StopAllCoroutines();
+
+        private void UnlockSparks() 
+            => StartCoroutine(_sparkling ? DelaySparksTurningOff() : DelaySparksTurningOn());
 
         private IEnumerator DelaySparksTurningOn()
         {
@@ -52,8 +68,5 @@ namespace Trucker.Control.Asteroid
             _sparkling = false;
             entityId.type = EntityType.Asteroid;
         }
-
-        // TODO catchStart locks sparks
-        // TODO catchRelease releases 
     }
 }

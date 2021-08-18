@@ -19,6 +19,7 @@ namespace Trucker.Control.Zap.Catchee.States
         public override void EnterState()
         {
             OnCatchingStarted?.Invoke(Catchee.transform);
+            Catchee.NotifyOnCatchingStart();
             _duration = Catchee.catcheeSettings.catchingDuration;
             SetProgressMaterial();
         }
