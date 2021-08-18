@@ -1,4 +1,5 @@
 using System.Collections;
+using Trucker.Model.Entities;
 using UnityEngine;
 using UnityUtils;
 using UnityUtils.Variables;
@@ -8,7 +9,11 @@ namespace Trucker.Control.Asteroid
 {
     public class AsteroidSparks : MonoBehaviour
     {
+        [Header("Components")]
         [SerializeField] private ParticleSystem sparkParticles;
+        [SerializeField] private EntityId entityId;
+
+        [Header("Data")]
         [SerializeField] private Vector2Variable sparkDelay;
         [SerializeField] private Vector2Variable sparkDuration;
         
@@ -23,21 +28,33 @@ namespace Trucker.Control.Asteroid
         private IEnumerator DelaySparksTurningOn()
         {
             yield return new WaitForSeconds(Random.NextFloat(sparkDelay.Value.x, sparkDelay.Value.y)); // IMPR x/y property to v2var
-            sparkParticles.Play();
-            _sparkling = true;
+            TurnSparksOn();
             yield return DelaySparksTurningOff();
         }
 
         private IEnumerator DelaySparksTurningOff()
         {
             yield return new WaitForSeconds(Random.NextFloat(sparkDuration.Value.x, sparkDuration.Value.y));
-            sparkParticles.Stop();
-            _sparkling = false;
+            TurnSparksOff();
             yield return DelaySparksTurningOn();
         }
-        
+
+        private void TurnSparksOn()
+        {
+            sparkParticles.Play();
+            _sparkling = true;
+            entityId.type = EntityType.AsteroidWithSparks;
+        }
+
+        private void TurnSparksOff()
+        {
+            sparkParticles.Stop();
+            _sparkling = false;
+            entityId.type = EntityType.Asteroid;
+        }
+
         // TODO catchStart locks sparks
         // TODO catchRelease releases 
-        // TODO change type to AsteroidWith Sparks 
+        // TODO make sure quest is accepting AsteroidWithSparks
     }
 }
