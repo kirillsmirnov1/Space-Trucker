@@ -2,7 +2,7 @@
 using UnityUtils;
 using Random = System.Random;
 
-namespace Trucker.Control
+namespace Trucker.Control.Movement
 {
     [RequireComponent(typeof(Rigidbody))]
     public class JunkRandomMovement : MonoBehaviour

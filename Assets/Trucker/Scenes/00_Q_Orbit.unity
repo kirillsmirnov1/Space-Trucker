@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.047058824, g: 0.047058824, b: 0.047058824, a: 0}
   m_FogMode: 1
   m_FogDensity: 0.002
@@ -674,6 +674,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855371296, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855371297, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1393538023631871858, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -721,6 +745,18 @@ PrefabInstance:
     - target: {fileID: 1393538023631871870, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
       propertyPath: m_Name
       value: Q
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497717196229335683, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: ShapeModule.arc.value
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497717196229335683, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497717196229335683, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e02ee9cb5687645aac3381ac8bdcd3, type: 3}
