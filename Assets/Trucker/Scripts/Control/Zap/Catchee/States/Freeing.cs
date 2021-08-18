@@ -34,7 +34,7 @@ namespace Trucker.Control.Zap.Catchee.States
         {
             _timeFreeing += Time.deltaTime;
             
-            var progress = Mathf.Lerp(0f, 360f, _duration);
+            var progress = Mathf.Lerp(0f, 360f, _timeFreeing);
             _progressMaterial.SetFloat(Arc1, progress);
 
             if (_timeFreeing >= _duration)
