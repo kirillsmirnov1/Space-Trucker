@@ -1,4 +1,4 @@
-﻿using Trucker.Control.Meteor;
+﻿using Trucker.Control.Asteroid;
 using Trucker.Control.Spawn;
 using UnityEngine;
 

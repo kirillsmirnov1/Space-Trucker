@@ -2,7 +2,7 @@
 using UnityUtils;
 using UnityUtils.Variables;
 
-namespace Trucker.Control.Meteor
+namespace Trucker.Control.Asteroid
 {
     public class ObjectOnOrbitSpeed : MonoBehaviour
     {
