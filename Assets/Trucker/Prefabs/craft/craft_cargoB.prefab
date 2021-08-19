@@ -554,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   springSettings: {fileID: 11400000, guid: e2a0195a0b3950c488a894a405b85a9a, type: 2}
   catcheeTypes: {fileID: 11400000, guid: c2bdf398f9764a14dbf03b3e251536b7, type: 2}
+  zapLevelVariable: {fileID: 11400000, guid: d1921b89bbb172649b7b6e649e1ca477, type: 2}
 --- !u!1001 &1336522140943153287
 PrefabInstance:
   m_ObjectHideFlags: 0
