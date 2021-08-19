@@ -192,6 +192,7 @@ MonoBehaviour:
   zapCatchee: {fileID: 6065099151998517583}
   sparkDelay: {fileID: 11400000, guid: acc4fbe93a2eb94468c4b5b9f62488c5, type: 2}
   sparkDuration: {fileID: 11400000, guid: e093e5b0e5f59da4e8e0d15e12846dd4, type: 2}
+  zapProtectionEnabled: {fileID: 11400000, guid: 70f36c087bbe5424ab8dd82069803abb, type: 2}
 --- !u!1 &2833915876401977836
 GameObject:
   m_ObjectHideFlags: 0

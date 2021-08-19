@@ -18,6 +18,7 @@ namespace Trucker.Control.Asteroid
         [Header("Data")]
         [SerializeField] private Vector2Variable sparkDelay;
         [SerializeField] private Vector2Variable sparkDuration;
+        [SerializeField] private BoolVariable zapProtectionEnabled;
         
         private static readonly Random Random = new Random();
         private bool _sparkling;
@@ -35,11 +36,16 @@ namespace Trucker.Control.Asteroid
             zapCatchee.OnFreed -= UnlockSparks;
         }
 
-        private void LockSparks() // TODO should check Zap level 
-            => StopAllCoroutines();
+        private void LockSparks() 
+        {
+            if(zapProtectionEnabled) StopAllCoroutines();
+        }
 
-        private void UnlockSparks() 
-            => StartCoroutine(_sparkling ? DelaySparksTurningOff() : DelaySparksTurningOn());
+        private void UnlockSparks()
+        {
+            StopAllCoroutines();
+            StartCoroutine(_sparkling ? DelaySparksTurningOff() : DelaySparksTurningOn());
+        }
 
         private IEnumerator DelaySparksTurningOn()
         {
