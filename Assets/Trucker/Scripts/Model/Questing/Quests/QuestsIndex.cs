@@ -21,7 +21,7 @@ namespace Trucker.Model.Questing.Quests
             foreach (var quest in questList)
             {
                 Quests.Add(quest.title, quest);
-                quest.currentGoalNumber = -1;
+                quest.currentStepNumber = -1;
             }
         }
 

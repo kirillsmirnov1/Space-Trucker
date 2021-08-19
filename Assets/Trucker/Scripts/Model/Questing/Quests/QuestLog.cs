@@ -36,7 +36,7 @@ namespace Trucker.Model.Questing.Quests
         {
             foreach (var takenQuest in Taken)
             {
-                takenQuest.StartGoal(0);
+                takenQuest.StartStep(0);
             }
         }
 

@@ -13,9 +13,9 @@ namespace Trucker.Model.Questing.Goals
         
         [SerializeField] private TypesOfCatchedObjects catchedByTypes;
 
-        public override void Init()
+        public override void Start()
         {
-            base.Init();
+            base.Start();
             catchedByTypes.OnChange += OnTypeCountChange;
         }
 

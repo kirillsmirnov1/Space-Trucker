@@ -17,7 +17,7 @@ MonoBehaviour:
   finishedFromDialog: 1
   conditions:
   - {fileID: 11400000, guid: 50ffa522ea0232742967e0a3e4813e29, type: 2}
-  goals:
+  steps:
   - {fileID: 11400000, guid: 86a0f23965e68e14db9acf32073c9c30, type: 2}
   - {fileID: 11400000, guid: 95d7ecd2e98c5d7458e673315f641ce0, type: 2}
   - {fileID: 11400000, guid: 3e8dd32470c0ce9439377cef3ec5a48f, type: 2}
@@ -26,4 +26,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e66b7f8d2fb1f2e479f403d2f9162f49, type: 2}
   consequences:
   - {fileID: 11400000, guid: aee9d59321f402b41a78bedb152d1f86, type: 2}
-  currentGoalNumber: 2
+  currentStepNumber: -1

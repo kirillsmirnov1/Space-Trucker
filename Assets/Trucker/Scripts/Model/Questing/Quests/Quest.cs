@@ -19,62 +19,62 @@ namespace Trucker.Model.Questing.Quests
         public string description;
         [SerializeField] private bool finishedFromDialog;
         [SerializeField] private List<BoolVariable> conditions;
-        [SerializeField] private List<Goal> goals;
+        [SerializeField] private List<Step> steps;
         [SerializeField] private List<Consequence> consequences;
         
-        public int currentGoalNumber = -1;
+        public int currentStepNumber = -1;
 
-        public string GoalsText => GoalsTextFormatter.Format(goals, currentGoalNumber);
+        public string GoalsText => GoalsTextFormatter.Format(Goals, currentStepNumber);
+        private List<Goal> Goals => steps.Where(step => step.Type == StepType.Goal).Select(step => (Goal)step).ToList();
 
         public void Take()
         {
             Debug.Log($"Starting quest: {title}");
-            GuaranteeCleanGoals();
+            GuaranteeCleanSteps();
             OnQuestTaken?.Invoke(title);
-            StartGoal(0);
-            // TODO when and how to subscribe to OnNotCompleted 
+            StartStep(0);
         }
 
-        private void GuaranteeCleanGoals()
+        private void GuaranteeCleanSteps()
         {
-            if (currentGoalNumber >= 0 && currentGoalNumber < goals.Count)
+            if (currentStepNumber >= 0 && currentStepNumber < steps.Count)
             {
-                StopCurrentGoal();
+                StopCurrentStep();
             }
         }
 
-        public void StartGoal(int goalToStart)
+        public void StartStep(int stepToStart)
         {
-            currentGoalNumber = goalToStart;
+            currentStepNumber = stepToStart;
 
-            Debug.Log($"Starting goal: {CurrentGoal.description}");
+            Debug.Log($"Starting step: {CurrentStep.name}");
             
-            CurrentGoal.OnCompleted += OnGoalCompleted;
-            CurrentGoal.Init();
+            CurrentStep.onCompleted += OnStepCompleted;
+            CurrentStep.Start();
         }
 
-        private void OnGoalCompleted()
+        private void OnStepCompleted()
         {
-            Debug.Log($"Completed goal: {CurrentGoal.description}");
-            StopCurrentGoal();
-            IterateGoals();
+            Debug.Log($"Completed step: {CurrentStep.name}");
+            StopCurrentStep();
+            IterateSteps();
         }
 
-        private void StopCurrentGoal()
+        private void StopCurrentStep()
         {
-            CurrentGoal.Stop();
-            CurrentGoal.OnCompleted -= OnGoalCompleted;
+            CurrentStep.Stop();
+            CurrentStep.onCompleted -= OnStepCompleted;
         }
 
-        private Goal CurrentGoal => goals[currentGoalNumber];
+        private Step CurrentStep => steps[currentStepNumber];
 
-        private void IterateGoals()
+        private void IterateSteps()
         {
-            currentGoalNumber++;
+            currentStepNumber++;
 
-            if (currentGoalNumber < goals.Count)
+            if (currentStepNumber < steps.Count)
             {
-                StartGoal(currentGoalNumber);
+                StartStep(currentStepNumber);
             }
             else
             {
@@ -89,17 +89,17 @@ namespace Trucker.Model.Questing.Quests
             => NotInProgress && AllConditionsPass;
 
         private bool NotInProgress 
-            => currentGoalNumber == -1;
+            => currentStepNumber == -1;
 
         private bool AllConditionsPass 
             => conditions.All(condition => condition == true);
 
         public bool CanBeFinished 
-            => currentGoalNumber >= goals.Count;
+            => currentStepNumber >= steps.Count;
 
         public void Finish()
         {
-            currentGoalNumber = -1;
+            currentStepNumber = -1;
             InvokeConsequences();
             OnQuestFinished?.Invoke(title);
             Debug.Log($"Quest {title} finished");
@@ -107,7 +107,7 @@ namespace Trucker.Model.Questing.Quests
 
         public void Drop()
         {
-            currentGoalNumber = -1;
+            currentStepNumber = -1;
             OnQuestDropped?.Invoke(title);
         }
 

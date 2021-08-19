@@ -9,9 +9,9 @@ namespace Trucker.Model.Questing.Goals
         [SerializeField] private int requiredValue;
         [SerializeField] private IntVariable currentValue;
 
-        public override void Init()
+        public override void Start()
         {
-            base.Init();
+            base.Start();
             CheckGoal(currentValue);
             currentValue.OnChange += CheckGoal;
         }
