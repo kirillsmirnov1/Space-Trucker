@@ -1,4 +1,4 @@
-﻿namespace Trucker.Model.Zap
+﻿namespace Trucker.Model.Zap.Level
 {
     public enum ZapLevel
     {
