@@ -13,23 +13,22 @@ MonoBehaviour:
   m_Name: _Quest_01_Get_To_Dump
   m_EditorClassIdentifier: 
   title: Get Back
-  description: '! jump out of orbit
+  description: '! disable radar, zap
 
-    ! disable radar, zap
-
-    ! show controls
-    tutorial
+    ! show controls tutorial
 
     ! reset gyro
 
-    ! goal of returning to dump
+    !
+    goal of returning to dump
 
-    ! dialogue at
-    dump
+    ! dialogue at dump
 
-    ! give second quest as a reward '
+    ! give second quest as
+    a reward '
   finishedFromDialog: 0
   conditions: []
-  steps: []
+  steps:
+  - {fileID: 11400000, guid: c22cdd38edc830342b7308a31e6ab541, type: 2}
   consequences: []
   currentStepNumber: -1
