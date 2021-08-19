@@ -1,20 +1,40 @@
 ﻿using System;
 using UnityEngine;
+using UnityUtils.Variables;
 
 namespace Trucker.Control.Zap.Catchee
 {
     public class ZapCatcheeReachable : MonoBehaviour
     {
         public Action<bool> onStatusChange;
+        [SerializeField] private BoolVariable zapHasSpace;
+        
+        public bool Reachable => _reachableByDistance && _zapHasSpace;
+        private bool _lastReachable;
+        private bool _reachableByDistance;
+        private bool _zapHasSpace;
 
-        public bool Reachable => _reachable;
-        private bool _reachable;
+        private void Awake() 
+            => zapHasSpace.OnChange += OnHasSpaceChange;
+
+        private void Start() 
+            => OnHasSpaceChange(zapHasSpace);
+
+        private void OnDestroy() 
+            => zapHasSpace.OnChange -= OnHasSpaceChange;
+
+        private void OnHasSpaceChange(bool hasSpace)
+        {
+            _zapHasSpace = hasSpace;
+            UpdateStatus();
+        }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                SetStatus(true);
+                _reachableByDistance = true;
+                UpdateStatus();
             }
         }
 
@@ -22,14 +42,16 @@ namespace Trucker.Control.Zap.Catchee
         {
             if (other.CompareTag("Player"))
             {
-                SetStatus(false);
+                _reachableByDistance = false;
+                UpdateStatus();
             }
         }
 
-        private void SetStatus(bool reachable)
+        private void UpdateStatus()
         {
-            _reachable = reachable;
-            onStatusChange?.Invoke(_reachable);
+            if(_lastReachable == Reachable) return;
+            _lastReachable = Reachable;
+            onStatusChange?.Invoke(_lastReachable);
         }
     }
 }

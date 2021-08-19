@@ -15,8 +15,8 @@ namespace Trucker.Model.Zap.Level
         [SerializeField] private BoolVariable hasSpaceForNewCatch;
         [SerializeField] private BoolVariable protectionEnabled;
 
-        private bool HasSpaceForNewCatch(ZapLevel level) 
-            => catchedObjectsCount.Value < (int) level;
+        private bool HasSpaceForNewCatch() 
+            => catchedObjectsCount.Value < (int) levelVariable.Value;
 
         private static bool ProtectionEnabled(ZapLevel level)
             => level == ZapLevel.Plus;
@@ -25,12 +25,18 @@ namespace Trucker.Model.Zap.Level
         {
             SetValues(levelVariable);
             levelVariable.OnChange += SetValues;
+            catchedObjectsCount.OnChange += CheckForSpace;
         }
 
         private void SetValues(ZapLevel newLevel)
         {
-            hasSpaceForNewCatch.Value = HasSpaceForNewCatch(newLevel);
+            CheckForSpace(catchedObjectsCount);
             protectionEnabled.Value = ProtectionEnabled(newLevel);
+        }
+
+        private void CheckForSpace(int catchedObjects)
+        {
+            hasSpaceForNewCatch.Value = HasSpaceForNewCatch();
         }
     }
 }
