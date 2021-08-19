@@ -1,4 +1,4 @@
-﻿namespace Trucker.Model.Questing.Goals
+﻿namespace Trucker.Model.Questing.Steps
 {
     public enum StepType
     {

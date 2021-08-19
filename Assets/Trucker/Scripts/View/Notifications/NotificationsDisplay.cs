@@ -1,7 +1,7 @@
 ﻿using Trucker.Model.Entities;
 using Trucker.Model.Questing.Consequences;
-using Trucker.Model.Questing.Goals;
 using Trucker.Model.Questing.Quests;
+using Trucker.Model.Questing.Steps.Goals;
 using UnityEngine;
 
 namespace Trucker.View.Notifications

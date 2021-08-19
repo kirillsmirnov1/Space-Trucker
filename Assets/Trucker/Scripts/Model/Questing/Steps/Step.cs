@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Trucker.Model.Questing.Goals
+namespace Trucker.Model.Questing.Steps
 {
     public abstract class Step : ScriptableObject
     {

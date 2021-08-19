@@ -3,7 +3,7 @@ using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
 
-namespace Trucker.Model.Questing.Goals
+namespace Trucker.Model.Questing.Steps.Goals
 {
     [CreateAssetMenu(fileName = "CatcheeGoal", menuName = "Quests/Goals/Catchee Goal", order = 0)]
     public class CatcheeGoal : Goal

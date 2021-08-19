@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Trucker.Model.Questing.Goals
+namespace Trucker.Model.Questing.Steps.Goals
 {
     public abstract class Goal : Step
     {

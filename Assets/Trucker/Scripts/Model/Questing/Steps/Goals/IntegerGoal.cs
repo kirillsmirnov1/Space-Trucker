@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityUtils.Variables;
 
-namespace Trucker.Model.Questing.Goals
+namespace Trucker.Model.Questing.Steps.Goals
 {
     [CreateAssetMenu(fileName = "Integer Goal", menuName = "Quests/Goals/Integer Goal", order = 0)]
     public class IntegerGoal : Goal

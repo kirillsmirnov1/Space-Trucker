@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using Trucker.Model.Questing.Goals;
+using Trucker.Model.Questing.Steps.Goals;
 
 namespace Trucker.Model.Questing.Quests
 {

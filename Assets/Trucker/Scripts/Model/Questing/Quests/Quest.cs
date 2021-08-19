@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Trucker.Model.Questing.Consequences;
-using Trucker.Model.Questing.Goals;
+using Trucker.Model.Questing.Steps;
+using Trucker.Model.Questing.Steps.Goals;
 using UnityEngine;
 using UnityUtils.Variables;
 
