@@ -13,12 +13,22 @@ namespace Trucker.Control.Zap.Catchee
         {
             zapCatchee.OnCatched += OnCatched;
             zapCatchee.OnFreed += OnFreed;
+            zapProtectionEnabled.OnChange += OnZapProtectionStatusChange;
         }
 
         private void OnDestroy()
         {
             zapCatchee.OnCatched -= OnCatched;
             zapCatchee.OnFreed -= OnFreed;
+            zapProtectionEnabled.OnChange -= OnZapProtectionStatusChange;
+        }
+
+        private void OnZapProtectionStatusChange(bool protectionEnabled)
+        {
+            if (zapCatchee.Catched)
+            {
+                OnCatched();
+            }
         }
 
         private void OnCatched() 

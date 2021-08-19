@@ -28,6 +28,7 @@ namespace Trucker.Control.Zap.Catchee
         
         public ZapCatcher Catcher => catcheeSettings.zapCatcherVariable.Value;
         public EntityType Type => entityId.type;
+        public bool Catched => _state is Catched;
 
         private void OnValidate() => this.CheckNullFields();
 
