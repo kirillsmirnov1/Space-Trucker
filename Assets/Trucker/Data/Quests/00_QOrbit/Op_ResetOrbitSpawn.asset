@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff27a62fc284442a4525596d2c897aa, type: 3}
+  m_Name: Op_ResetOrbitSpawn
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2453b1eed3a322e4c911ef86dacfdad8, type: 2}
