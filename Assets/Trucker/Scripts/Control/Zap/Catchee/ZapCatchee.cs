@@ -11,6 +11,7 @@ namespace Trucker.Control.Zap.Catchee
     public class ZapCatchee : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         public event Action OnCatchingStarted;
+        public event Action OnCatched; 
         public event Action OnFreed;
         
         [Header("Components")]
@@ -70,7 +71,8 @@ namespace Trucker.Control.Zap.Catchee
         public void OnPointerUp(PointerEventData eventData) 
             => _state.OnPointerUp();
 
-        public virtual void OnCatch() { }
+        public virtual void OnCatch() 
+            => OnCatched?.Invoke();
 
         public void NotifyOnCatchingStart() 
             => OnCatchingStarted?.Invoke();
