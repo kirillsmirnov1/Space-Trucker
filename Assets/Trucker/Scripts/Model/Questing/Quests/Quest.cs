@@ -17,7 +17,7 @@ namespace Trucker.Model.Questing.Quests
         public static event Action<string> OnQuestDropped; 
         
         public string title;
-        public string description;
+        [TextArea(1, 20)] public string description;
         [SerializeField] private bool finishedFromDialog;
         [SerializeField] private List<BoolVariable> conditions;
         [SerializeField] private List<Step> steps;
