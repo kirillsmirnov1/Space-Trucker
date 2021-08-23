@@ -1,36 +1,39 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-public class AddInvertedMeshCollider : MonoBehaviour
+namespace Trucker.View.Util
 {
-    public bool removeExistingColliders = true;
-    public bool runOnAwake = false;
+    public class AddInvertedMeshCollider : MonoBehaviour
+    {
+        public bool removeExistingColliders = true;
+        public bool runOnAwake = false;
 
-    private void Awake()
-    {
-        if(runOnAwake) CreateInvertedMeshCollider();
-    }
+        private void Awake()
+        {
+            if(runOnAwake) CreateInvertedMeshCollider();
+        }
     
-    public void CreateInvertedMeshCollider()
-    {
-        if (removeExistingColliders)
-            RemoveExistingColliders();
+        public void CreateInvertedMeshCollider()
+        {
+            if (removeExistingColliders)
+                RemoveExistingColliders();
  
-        InvertMesh();
+            InvertMesh();
  
-        gameObject.AddComponent<MeshCollider>();
-    }
+            gameObject.AddComponent<MeshCollider>();
+        }
  
-    private void RemoveExistingColliders()
-    {
-        Collider[] colliders = GetComponents<Collider>();
-        for (int i = 0; i < colliders.Length; i++)
-            DestroyImmediate(colliders[i]);
-    }
+        private void RemoveExistingColliders()
+        {
+            Collider[] colliders = GetComponents<Collider>();
+            for (int i = 0; i < colliders.Length; i++)
+                DestroyImmediate(colliders[i]);
+        }
  
-    private void InvertMesh()
-    {
-        Mesh mesh = GetComponent<MeshFilter>().mesh;
-        mesh.triangles = mesh.triangles.Reverse().ToArray();
+        private void InvertMesh()
+        {
+            Mesh mesh = GetComponent<MeshFilter>().mesh;
+            mesh.triangles = mesh.triangles.Reverse().ToArray();
+        }
     }
 }
