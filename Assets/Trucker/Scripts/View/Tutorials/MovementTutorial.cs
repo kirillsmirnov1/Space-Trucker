@@ -45,14 +45,14 @@ namespace Trucker.View.Tutorials
 
         private IEnumerator TiltTutorial()
         {
-            phone.rotation = Quaternion.Euler(0f, 0f, 0f);
+            phone.localRotation = Quaternion.Euler(0f, 0f, 0f);
             rotationPrompt.text = "tilt phone to tilt ship";
             yield return RotateTransform(phone, Vector3.right, 2);
         }
 
         private IEnumerator RotationTutorial()
         {
-            phone.rotation = Quaternion.Euler(0f, 0f, 0f);
+            phone.localRotation = Quaternion.Euler(0f, 0f, 0f);
             rotationPrompt.text = "rotate phone to rotate ship";
             yield return RotateTransform(phone, Vector3.forward, 2);
         }
