@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phone: {fileID: 6287307017259693731}
-  prompt: {fileID: 3772790269517943182}
+  rotationPrompt: {fileID: 3772790269517943182}
   maxAngle: 45
   iterationDuration: 2
   iterationSteps: 120

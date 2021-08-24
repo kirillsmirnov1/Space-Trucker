@@ -8,8 +8,9 @@ namespace Trucker.View.Tutorials
     {
         [Header("Components")]
         [SerializeField] private Transform phone;
-        [SerializeField] private TextMeshProUGUI prompt;
-
+        [SerializeField] private TextMeshProUGUI rotationPrompt;
+        [SerializeField] private GameObject thrustPrompts;
+        
         [Header("Data")]
         [SerializeField] private float maxAngle = 45f;
         [SerializeField] private float iterationDuration = 2f;
@@ -24,31 +25,42 @@ namespace Trucker.View.Tutorials
 
         private IEnumerator Tutorial()
         {
-            SetDefaults();
+            EnableObjects(true, true, false);
             yield return TiltTutorial();
-            SetDefaults();
             yield return RotationTutorial();
-            // TODO thrust 
+            EnableObjects(false, false, true);
+            yield return ThrustTutorial();
             // TODO callback 
+            EnableObjects(false, false, false);
             gameObject.SetActive(false);
         }
 
-        private void SetDefaults()
+        private void EnableObjects(bool phoneImage, bool rotationPromptText, bool thrustPromptTexts)
         {
-            phone.rotation = Quaternion.identity;
-            prompt.text = "";
+            phone.gameObject.SetActive(phoneImage);
+            rotationPrompt.gameObject.SetActive(rotationPromptText);
+            thrustPrompts.SetActive(thrustPromptTexts);
+
         }
 
         private IEnumerator TiltTutorial()
         {
-            prompt.text = "tilt phone to tilt ship";
+            phone.rotation = Quaternion.Euler(0f, 0f, 0f);
+            rotationPrompt.text = "tilt phone to tilt ship";
             yield return RotateTransform(phone, Vector3.right, 2);
         }
 
         private IEnumerator RotationTutorial()
         {
-            prompt.text = "rotate phone to rotate ship";
+            phone.rotation = Quaternion.Euler(0f, 0f, 0f);
+            rotationPrompt.text = "rotate phone to rotate ship";
             yield return RotateTransform(phone, Vector3.forward, 2);
+        }
+
+        private IEnumerator ThrustTutorial()
+        {
+            thrustPrompts.gameObject.SetActive(true);
+            yield return new WaitForSeconds(iterationDuration);
         }
 
         private IEnumerator RotateTransform(Transform subject, Vector3 axis, int times)
