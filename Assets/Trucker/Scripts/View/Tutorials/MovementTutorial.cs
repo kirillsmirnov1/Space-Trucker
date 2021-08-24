@@ -26,7 +26,8 @@ namespace Trucker.View.Tutorials
         {
             SetDefaults();
             yield return TiltTutorial();
-            // TODO rotation 
+            SetDefaults();
+            yield return RotationTutorial();
             // TODO thrust 
             // TODO callback 
             gameObject.SetActive(false);
@@ -42,6 +43,12 @@ namespace Trucker.View.Tutorials
         {
             prompt.text = "tilt phone to tilt ship";
             yield return RotateTransform(phone, Vector3.right, 2);
+        }
+
+        private IEnumerator RotationTutorial()
+        {
+            prompt.text = "rotate phone to rotate ship";
+            yield return RotateTransform(phone, Vector3.forward, 2);
         }
 
         private IEnumerator RotateTransform(Transform subject, Vector3 axis, int times)
