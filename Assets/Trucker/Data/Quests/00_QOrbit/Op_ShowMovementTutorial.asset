@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520f38cda76743dba37220368ea8690f, type: 3}
+  m_Name: Op_ShowMovementTutorial
+  m_EditorClassIdentifier: 
+  actionGameEvent: {fileID: 11400000, guid: 23808c85d60c4424889b5fd50aa6b5b6, type: 2}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -16,14 +17,16 @@ namespace Trucker.View.Tutorials
         [SerializeField] private float iterationDuration = 2f;
         [SerializeField] private int iterationSteps = 120;
 
-        public void StartTutorial()
+        public void StartTutorial() => StartTutorial(null);
+        
+        public void StartTutorial(Action callback)
         {
             gameObject.SetActive(true);
             StopAllCoroutines();
-            StartCoroutine(Tutorial());
+            StartCoroutine(Tutorial(callback));
         }
 
-        private IEnumerator Tutorial()
+        private IEnumerator Tutorial(Action callback)
         {
             EnableObjects(true, true, false);
             yield return TiltTutorial();
@@ -33,6 +36,7 @@ namespace Trucker.View.Tutorials
             // TODO callback 
             EnableObjects(false, false, false);
             gameObject.SetActive(false);
+            callback?.Invoke();
         }
 
         private void EnableObjects(bool phoneImage, bool rotationPromptText, bool thrustPromptTexts)

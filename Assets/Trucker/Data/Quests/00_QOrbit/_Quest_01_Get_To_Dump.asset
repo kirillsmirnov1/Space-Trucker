@@ -13,19 +13,16 @@ MonoBehaviour:
   m_Name: _Quest_01_Get_To_Dump
   m_EditorClassIdentifier: 
   title: Get Back
-  description: '! disable zap
-
-    ! show controls tutorial
+  description: '! set rotation
 
     ! reset gyro
 
+    ! goal of returning to dump
+
     !
-    goal of returning to dump
+    dialogue at dump
 
-    ! dialogue at dump
-
-    ! give second quest as
-    a reward '
+    ! give second quest as a reward '
   finishedFromDialog: 0
   conditions: []
   steps:
@@ -33,6 +30,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 14c86fb7969ca4c459c2376c38931eca, type: 2}
   - {fileID: 11400000, guid: a3c30106c49c8f54185646094f159030, type: 2}
   - {fileID: 11400000, guid: 277e3e3c4616bcd4caebf6e85499b510, type: 2}
+  - {fileID: 11400000, guid: 93eb736e71b012e43871bafba3b443ac, type: 2}
   consequences:
   - {fileID: 11400000, guid: 0e7c4de900bb5de448453323962e1f19, type: 2}
   currentStepNumber: -1

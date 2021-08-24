@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4697690770709135214}
   - component: {fileID: 4697690770709135215}
   - component: {fileID: 6052178073116212169}
+  - component: {fileID: 4492484617255449685}
   m_Layer: 5
   m_Name: Canvas_Tutorials
   m_TagString: Untagged
@@ -121,6 +122,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Trucker.View.Tutorials.MovementTutorial, Assembly-CSharp
         m_MethodName: StartTutorial
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4492484617255449685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697690770709135184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc902f5f5fe04947acea4b38adcef3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 23808c85d60c4424889b5fd50aa6b5b6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3491345838001485901}
+        m_TargetAssemblyTypeName: Trucker.View.Tutorials.MovementTutorial, Assembly-CSharp
+        m_MethodName: StartTutorial
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
