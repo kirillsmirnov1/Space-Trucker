@@ -24,14 +24,20 @@ namespace Trucker.View.Tutorials
 
         private IEnumerator Tutorial()
         {
-            // TODO Idle
+            SetDefaults();
             yield return TiltTutorial();
             // TODO rotation 
             // TODO thrust 
             // TODO callback 
             gameObject.SetActive(false);
         }
-        
+
+        private void SetDefaults()
+        {
+            phone.rotation = Quaternion.identity;
+            prompt.text = "";
+        }
+
         private IEnumerator TiltTutorial()
         {
             prompt.text = "tilt phone to tilt ship";
