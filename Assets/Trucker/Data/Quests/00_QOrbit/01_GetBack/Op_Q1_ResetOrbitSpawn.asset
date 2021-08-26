@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520f38cda76743dba37220368ea8690f, type: 3}
-  m_Name: Op_ShowMovementTutorial
+  m_Script: {fileID: 11500000, guid: 9ff27a62fc284442a4525596d2c897aa, type: 3}
+  m_Name: Op_Q1_ResetOrbitSpawn
   m_EditorClassIdentifier: 
-  actionGameEvent: {fileID: 11400000, guid: 23808c85d60c4424889b5fd50aa6b5b6, type: 2}
+  gameEvent: {fileID: 11400000, guid: 2453b1eed3a322e4c911ef86dacfdad8, type: 2}

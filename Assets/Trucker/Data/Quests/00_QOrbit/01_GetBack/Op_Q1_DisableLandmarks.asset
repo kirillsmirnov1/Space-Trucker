@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff27a62fc284442a4525596d2c897aa, type: 3}
-  m_Name: Op_ResetOrbitSpawn
+  m_Script: {fileID: 11500000, guid: c82cc2dc47d24cbeb87b32d4ac198bf8, type: 3}
+  m_Name: Op_Q1_DisableLandmarks
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 2453b1eed3a322e4c911ef86dacfdad8, type: 2}
+  variable: {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
+  value: 0

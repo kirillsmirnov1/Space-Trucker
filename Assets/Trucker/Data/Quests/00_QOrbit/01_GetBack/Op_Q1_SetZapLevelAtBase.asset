@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aca5573115a4d9cbc9be948f6252822, type: 3}
-  m_Name: Op_SetPlayersQ1Pos
+  m_Script: {fileID: 11500000, guid: 8db4b21e395d4c94887be4dff2209d70, type: 3}
+  m_Name: Op_Q1_SetZapLevelAtBase
   m_EditorClassIdentifier: 
-  subject: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}
-  desiredPosition: {x: 1632, y: 171, z: -291}
-  desiredRotation: {x: 0, y: -79, z: 0}
+  variable: {fileID: 11400000, guid: d1921b89bbb172649b7b6e649e1ca477, type: 2}
+  value: 5

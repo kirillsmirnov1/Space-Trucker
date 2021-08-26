@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c82cc2dc47d24cbeb87b32d4ac198bf8, type: 3}
-  m_Name: Op_DisableLandmarks
+  m_Script: {fileID: 11500000, guid: 8db4b21e395d4c94887be4dff2209d70, type: 3}
+  m_Name: Op_Q1_SetZapLevelAtNone
   m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
+  variable: {fileID: 11400000, guid: d1921b89bbb172649b7b6e649e1ca477, type: 2}
   value: 0
