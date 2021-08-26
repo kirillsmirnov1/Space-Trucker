@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aca5573115a4d9cbc9be948f6252822, type: 3}
-  m_Name: Op_SetPlayersQ1Pos
+  m_Script: {fileID: 11500000, guid: 2d94928d95ac4dc98d9cf877d74dcb57, type: 3}
+  m_Name: Op_Q1_SetRotation
   m_EditorClassIdentifier: 
   subject: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}
-  desiredPosition: {x: 1632, y: 171, z: -291}
-  desiredRotation: {x: 0, y: -79, z: 0}
+  desiredRotation: {x: 0, y: 0.64, z: 0, w: -0.76}
