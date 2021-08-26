@@ -12,6 +12,9 @@ namespace Trucker.View.Dialogue
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private CharactersData charactersData;
         
+        private IDialogue _dialogue;
+        private Action _finishCallback;
+
         private void Awake() 
             => MiniDialogueStep.OnMiniDialogueRequest += ShowMiniDialogue;
 
@@ -20,6 +23,9 @@ namespace Trucker.View.Dialogue
 
         private void ShowMiniDialogue(IDialogue dialogue, Action finishCallback)
         {
+            _dialogue = dialogue;
+            _finishCallback = finishCallback;
+        
             // TODO iterate over lines 
             // TODO invoke finish callback 
         }
