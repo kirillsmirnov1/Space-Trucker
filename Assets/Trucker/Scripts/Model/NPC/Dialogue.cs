@@ -36,6 +36,7 @@ namespace Trucker.Model.NPC
         {
             switch (dialogueType)
             {
+                case DialogueType.Mini:
                 case DialogueType.None:
                     break;
                 case DialogueType.TakeQuest:
@@ -59,6 +60,7 @@ namespace Trucker.Model.NPC
                 DialogueType.None => DialogueWasNotShown || canBeRepeated,
                 DialogueType.TakeQuest => quest.CanBeTaken && quest.NeverBeenStarted, 
                 DialogueType.FinishQuest => quest.CanBeFinished,
+                DialogueType.Mini => true,
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -74,6 +76,7 @@ namespace Trucker.Model.NPC
             None,
             TakeQuest,
             FinishQuest,
+            Mini,
         }
     }
 }
