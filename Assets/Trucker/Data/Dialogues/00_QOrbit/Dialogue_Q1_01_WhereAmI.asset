@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q1_01_WhereAmI
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 0
+  logSave: 0
+  defaultValue: 0
+  guid: 512da47e7bfe34f478554b9966209675
+  canBeRepeated: 0
+  initialCharacter: 9
+  lines:
+  - character: 9
+    line: Oh my god
+  - character: 9
+    line: Where am I?
+  - character: 9
+    line: Fuck, I'm out of rings
+  - character: 9
+    line: Shouldn't be drinking so much
+  - character: 9
+    line: Need to check ship systems
+  dialogueType: 3
+  quest: {fileID: 0}
