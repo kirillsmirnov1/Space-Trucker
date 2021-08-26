@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c939731ca9469d9080c9c16b72adf9, type: 3}
   m_Name: Consequence_Destroy_3_Catched_Asteroids
   m_EditorClassIdentifier: 
-  typeToDestroy: 0
+  typesToDestroy: 0000000003000000
   numberOfObjectsToDestroy: 3
   zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}

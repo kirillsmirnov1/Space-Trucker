@@ -20,10 +20,19 @@ namespace Trucker.Model.Zap
 
         public override void Init()
         {
-            _catcheesByType = new Dictionary<EntityType, List<ZapCatchee>>();
+            InitDictionary();
             UpdateCatcheesCount();
         }
-        
+
+        private void InitDictionary()
+        {
+            _catcheesByType = new Dictionary<EntityType, List<ZapCatchee>>();
+            foreach (EntityType type in Enum.GetValues(typeof(EntityType)))
+            {
+                _catcheesByType.Add(type, new List<ZapCatchee>());
+            }
+        }
+
         private void UpdateCatcheesCount()
         {
             catcheesTotalCount.Value = _catcheesByType
@@ -34,10 +43,6 @@ namespace Trucker.Model.Zap
         public void ObjectCatched(ZapCatchee zapCatchee)
         {
             var catcheeType = zapCatchee.Type;
-            if (!_catcheesByType.ContainsKey(catcheeType))
-            {
-                _catcheesByType.Add(catcheeType, new List<ZapCatchee>());
-            }
             _catcheesByType[catcheeType].Add(zapCatchee);
             UpdateCatcheesCount();
             NotifyOnTypeCountChange(catcheeType);
@@ -64,7 +69,17 @@ namespace Trucker.Model.Zap
                 : 0;
         }
 
-        public ZapCatchee GetCatcheeOfType(EntityType type) 
-            => _catcheesByType[type][0];
+        private List<ZapCatchee> GetCatcheesOfType(EntityType type) => _catcheesByType[type];
+
+        public List<ZapCatchee> GetCatcheesOfTypes(EntityType[] types)
+        {
+            var res = new List<ZapCatchee>();
+            foreach (var type in types)
+            {
+                res.AddRange(GetCatcheesOfType(type));
+            }
+
+            return res;
+        }
     }
 }

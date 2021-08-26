@@ -64,11 +64,15 @@ namespace Trucker.Control.Zap
                 prev == null ? transform : prev.Value.transform);
         }
 
-        public ZapCatchee TryFree(EntityType typeToDestroy)
+        public ZapCatchee[] TryFree(EntityType[] typesToDestroy, int count)
         {
-            var catchee = catcheeTypes.GetCatcheeOfType(typeToDestroy);
-            TryFree(catchee);
-            return catchee;
+            var catcheesToFree = catcheeTypes.GetCatcheesOfTypes(typesToDestroy).Take(count).ToArray();
+            foreach (var catchee in catcheesToFree)
+            {
+                TryFree(catchee);
+            }
+
+            return catcheesToFree;
         }
 
         private void CheckConsistency(ZapLevel newLevel)

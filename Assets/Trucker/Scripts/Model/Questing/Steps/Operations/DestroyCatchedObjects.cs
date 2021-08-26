@@ -11,7 +11,7 @@ namespace Trucker.Model.Questing.Steps.Operations
     {
         public static event Action<EntityType, int> OnObjectsDestroyed; 
         
-        [SerializeField] private EntityType typeToDestroy;
+        [SerializeField] private EntityType[] typesToDestroy;
         [SerializeField] private int numberOfObjectsToDestroy;
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
 
@@ -19,13 +19,13 @@ namespace Trucker.Model.Questing.Steps.Operations
         
         public override void Start()
         {
-            for (var i = 0; i < numberOfObjectsToDestroy; i++)
+
+            var catchees = Catcher.TryFree(typesToDestroy, numberOfObjectsToDestroy);
+            foreach (var catchee in catchees)
             {
-                var catchee = Catcher.TryFree(typeToDestroy);
                 Destroy(catchee.gameObject);
             }
-            
-            OnObjectsDestroyed?.Invoke(typeToDestroy, numberOfObjectsToDestroy);
+            // OnObjectsDestroyed?.Invoke(typesToDestroy, numberOfObjectsToDestroy);
         }
     }
 }
