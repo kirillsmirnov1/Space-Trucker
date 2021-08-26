@@ -505,9 +505,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231dc3685e6e4883b390e0dcf6b03370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueWrap: {fileID: 7354577939509556496}
   characterPortrait: {fileID: 8591579928563912017}
   dialogueText: {fileID: 7093692818967111566}
   charactersData: {fileID: 11400000, guid: b93687eb61d40324e8dbe234cac564e0, type: 2}
+  secondsPerLine: {fileID: 11400000, guid: 1ec6f22817f7ada4385b82f228f19737, type: 2}
 --- !u!1 &7354577939509556496
 GameObject:
   m_ObjectHideFlags: 0
