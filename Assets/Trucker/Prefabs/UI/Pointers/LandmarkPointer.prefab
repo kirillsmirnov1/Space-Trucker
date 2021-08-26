@@ -138,6 +138,7 @@ MonoBehaviour:
   image: {fileID: 2178176811830041110}
   rectTransform: {fileID: 2703011524059924546}
   heightRatio: 0.026041664
+  landmarksRadarEnabled: {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
   screenPos: {x: 0, y: 0, z: 0}
 --- !u!1 &2993923126876597649
 GameObject:

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9dd2e108e6d47908e12b98507b45a37, type: 3}
-  m_Name: LandmarksEnabled
+  m_Name: LandmarksRadarEnabled
   m_EditorClassIdentifier: 
   value: 1
   save: 1

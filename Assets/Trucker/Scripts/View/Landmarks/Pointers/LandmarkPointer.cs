@@ -2,21 +2,23 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils;
+using UnityUtils.Variables;
 
 namespace Trucker.View.Landmarks.Pointers
 {
     public class LandmarkPointer : MonoBehaviour
     {
-        [SerializeField] private Image image;
+        [SerializeField] protected Image image;
         [SerializeField] private RectTransform rectTransform;
         [SerializeField] private float heightRatio;
+        [SerializeField] protected BoolVariable landmarksRadarEnabled;
         
         [Header("Debug")]
         [SerializeField] private Vector3 screenPos;
         
         private static readonly Vector2 ScreenDim = new Vector2(Screen.width/2, Screen.height/2);
         
-        private Action _onUpdate;
+        protected Action onUpdate;
         protected Landmark Landmark;
         private Camera _cam;
         protected bool LandmarkVisibleOnScreen;
@@ -25,7 +27,7 @@ namespace Trucker.View.Landmarks.Pointers
             => this.CheckNullFields();
 
         private void Update() 
-            => _onUpdate?.Invoke();
+            => onUpdate?.Invoke();
 
         public virtual void Init(Sprite sprite, Landmark landmark)
         {
@@ -37,22 +39,42 @@ namespace Trucker.View.Landmarks.Pointers
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
             Landmark = landmark;
 
+            landmarksRadarEnabled.OnChange += OnRadarStatusChange;
             Landmark.OnVisibilityChange += OnVisibilityChange;
             OnVisibilityChange(Landmark.Visible);
         }
 
         protected virtual void OnDestroy()
         {
+            landmarksRadarEnabled.OnChange -= OnRadarStatusChange;
             Landmark.OnVisibilityChange -= OnVisibilityChange;
         }
+
+        private void OnRadarStatusChange(bool radarEnabled) => OnVisibilityChange(Landmark.Visible);
 
         protected virtual void OnVisibilityChange(bool visible)
         {
             LandmarkVisibleOnScreen = visible;
-            _onUpdate = LandmarkVisibleOnScreen ? (Action) DisplayInsideScreen : DisplayOnScreenBorder;
+            SetImageVisibility();
+            SetUpdateMethod();
         }
 
-        private void DisplayInsideScreen() 
+        protected virtual void SetUpdateMethod()
+        {
+            if (landmarksRadarEnabled)
+            {
+                onUpdate = LandmarkVisibleOnScreen ? (Action) DisplayInsideScreen : DisplayOnScreenBorder;
+            }
+            else
+            {
+                onUpdate = null;
+            }
+        }
+
+        protected virtual void SetImageVisibility() 
+            => image.gameObject.SetActive(landmarksRadarEnabled);
+
+        protected void DisplayInsideScreen() 
             => rectTransform.position = GetScreenPos();
 
         private Vector2 GetScreenPos()

@@ -15,6 +15,7 @@ MonoBehaviour:
   image: {fileID: 914514133833384930}
   rectTransform: {fileID: 3965550518017249718}
   heightRatio: 0.02604166
+  landmarksRadarEnabled: {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
   screenPos: {x: 0, y: 0, z: 0}
   button: {fileID: 2060879098462216001}
 --- !u!1001 &1336286541196679668

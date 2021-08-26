@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Trucker.View.Landmarks.Pointers
 {
@@ -6,6 +7,7 @@ namespace Trucker.View.Landmarks.Pointers
     {
         [SerializeField] private GameObject button;
 
+        private bool ButtonVisible => LandmarkVisibleOnScreen && Landmark.PLayerWithinRange; 
         public override void Init(Sprite sprite, Landmark landmark)
         {
             base.Init(sprite, landmark);
@@ -19,7 +21,7 @@ namespace Trucker.View.Landmarks.Pointers
         }
 
         private void OnPlayerInRangeChange(bool playerInRange) 
-            => SetButtonVisibility();
+            => OnVisibilityChange(Landmark.Visible);
 
         public void OnClick() 
             => Landmark.onInteraction?.Invoke();
@@ -30,9 +32,13 @@ namespace Trucker.View.Landmarks.Pointers
             SetButtonVisibility();
         }
 
-        private void SetButtonVisibility()
-        {
-            button.SetActive(LandmarkVisibleOnScreen && Landmark.PLayerWithinRange); 
-        }
+        protected override void SetUpdateMethod() 
+            => onUpdate = ButtonVisible ? (Action) DisplayInsideScreen : null;
+
+        private void SetButtonVisibility() 
+            => button.SetActive(ButtonVisible);
+
+        protected override void SetImageVisibility() 
+            => image.gameObject.SetActive(ButtonVisible || landmarksRadarEnabled);
     }
 }

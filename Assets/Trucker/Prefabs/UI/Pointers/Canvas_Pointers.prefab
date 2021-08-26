@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7004108324441566254}
   - component: {fileID: 7004108324441566255}
   - component: {fileID: 7004108324441566251}
-  - component: {fileID: 5341933197625117536}
   m_Layer: 5
   m_Name: Canvas_Pointers
   m_TagString: Untagged
@@ -114,16 +113,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variable: {fileID: 11400000, guid: 74067f3ba98b89f4097d38edd3d00262, type: 2}
---- !u!114 &5341933197625117536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7004108324441566224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740f08c43cceda94a8f1b6d0880c026b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
