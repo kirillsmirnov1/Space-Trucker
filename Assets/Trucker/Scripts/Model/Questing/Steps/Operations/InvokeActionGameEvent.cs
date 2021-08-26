@@ -10,7 +10,7 @@ namespace Trucker.Model.Questing.Steps.Operations
         
         public override void Start()
         {
-            actionGameEvent.Raise(() => onCompleted?.Invoke());
+            actionGameEvent.Raise(onCompleted);
         }
     }
 }
