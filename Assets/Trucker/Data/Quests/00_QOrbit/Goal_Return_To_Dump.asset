@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d4d0bcf398807499aa1ee3b00cc272, type: 3}
-  m_Name: InteractionWithInstitute
+  m_Script: {fileID: 11500000, guid: a9e0de734e444fa798a551575ecf1b50, type: 3}
+  m_Name: Goal_Return_To_Dump
   m_EditorClassIdentifier: 
+  description: Return to Dump
+  landmarkTypeEvent: {fileID: 11400000, guid: 42972cf8607534f4797a096ab22fee06, type: 2}
+  requiredType: 3
