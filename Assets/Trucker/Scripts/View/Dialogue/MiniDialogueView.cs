@@ -40,7 +40,7 @@ namespace Trucker.View.Dialogue
             dialogueWrap.SetActive(true);
         }
 
-        private void IterateLines() // TODO call on click 
+        public void IterateLines()
         {
             _lineIndex++;
             if (_lineIndex < _lines.Length)
