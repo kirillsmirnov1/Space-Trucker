@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Entities;
@@ -10,6 +11,9 @@ namespace Trucker.Control.Asteroid
 {
     public class AsteroidSparks : MonoBehaviour
     {
+        public static event Action<ZapCatchee> OnSparksOn; 
+        public static event Action<ZapCatchee> OnSparksOff; 
+        
         [Header("Components")]
         [SerializeField] private ParticleSystem sparkParticles;
         [SerializeField] private EntityId entityId;
@@ -66,6 +70,7 @@ namespace Trucker.Control.Asteroid
             sparkParticles.Play();
             _sparkling = true;
             entityId.type = EntityType.AsteroidWithSparks;
+            OnSparksOn?.Invoke(zapCatchee);
         }
 
         private void TurnSparksOff()
@@ -73,6 +78,7 @@ namespace Trucker.Control.Asteroid
             sparkParticles.Stop();
             _sparkling = false;
             entityId.type = EntityType.Asteroid;
+            OnSparksOff?.Invoke(zapCatchee);
         }
     }
 }
