@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 3716497320589408056}
   - component: {fileID: 3716497320589408057}
   - component: {fileID: 1815620938105926833}
+  - component: {fileID: 3130656516854992541}
   m_Layer: 5
   m_Name: Canvas_Dialogue
   m_TagString: Untagged
@@ -377,6 +378,34 @@ MonoBehaviour:
   characterPortrait: {fileID: 7394190925238408020}
   charactersData: {fileID: 11400000, guid: b93687eb61d40324e8dbe234cac564e0, type: 2}
   defaultCharacter: 0
+--- !u!114 &3130656516854992541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716497320589408058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6957297fb206642b2f37e96c30a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 20ab510bb825e99469a773df179cd4e6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1815620938105926833}
+        m_TargetAssemblyTypeName: Trucker.View.Dialogue.DialogueView, Assembly-CSharp
+        m_MethodName: HideDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3794854276482012266
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1339.9999
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -927,7 +956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1014.7999
+      value: 755.60004
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -959,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567401269517368878, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1339.9999
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 7567401269517368878, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -967,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567401269517368878, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 669.99994
+      value: 490
       objectReference: {fileID: 0}
     - target: {fileID: 7567401269517368878, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1032,7 +1061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1339.9999
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1068,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1014.7999
+      value: 755.60004
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1173,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1339.9999
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1209,7 +1238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1014.7999
+      value: 755.60004
       objectReference: {fileID: 0}
     - target: {fileID: 3022277176021365793, guid: 71f7df8f139a1ef4598e821b8e9a634a, type: 3}
       propertyPath: m_AnchoredPosition.y
