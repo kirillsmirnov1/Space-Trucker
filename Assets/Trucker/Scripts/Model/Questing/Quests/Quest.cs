@@ -86,8 +86,10 @@ namespace Trucker.Model.Questing.Quests
         public bool CanBeTaken
             => NotInProgress && AllConditionsPass;
 
+        public bool InProgress
+            => currentStepNumber != -1;
         private bool NotInProgress 
-            => currentStepNumber == -1;
+            => !InProgress;
 
         private bool AllConditionsPass 
             => conditions.All(condition => condition == true);

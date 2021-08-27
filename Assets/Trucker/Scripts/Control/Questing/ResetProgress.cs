@@ -11,23 +11,47 @@ namespace Trucker.Control.Questing
     {
         [SerializeField] private QuestLogEntries questLogEntries;
         [SerializeField] private Dialogue[] dialogues;
+        [SerializeField] private Quest[] quests;
         [SerializeField] private Quest starterQuest;
-
+#if UNITY_EDITOR
         private void OnValidate()
         {
             dialogues = GetAllSoInstances<Dialogue>();
+            quests = GetAllSoInstances<Quest>();
         }
+#endif
 
         public void Invoke()
         {
+            ResetDialogues();
+            DropActiveQuests();
             questLogEntries.Clear();
+            ReloadScene();
+        }
+
+        private void ReloadScene()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.LoadScene(0);
+        }
+
+        private void DropActiveQuests()
+        {
+            foreach (var quest in quests)
+            {
+                if (quest.InProgress)
+                {
+                    quest.Drop();
+                }
+            }
+        }
+
+        private void ResetDialogues()
+        {
             foreach (var dialogue in dialogues)
             {
                 dialogue.Value = false;
             }
-
-            SceneManager.sceneLoaded += OnSceneLoaded;
-            SceneManager.LoadScene(0);
         }
 
         private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -36,6 +60,7 @@ namespace Trucker.Control.Questing
             starterQuest.Take();
         }
 
+#if UNITY_EDITOR
         public static T[] GetAllSoInstances<T>() where T : ScriptableObject // TODO move to UU 
         {
             var guids = AssetDatabase.FindAssets("t:" + typeof(T).Name); //FindAssets uses tags check documentation for more info
@@ -47,5 +72,6 @@ namespace Trucker.Control.Questing
             }
             return instances;
         }
+#endif
     }
 }
