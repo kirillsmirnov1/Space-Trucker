@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: ResetProgress
   m_EditorClassIdentifier: 
   questLogEntries: {fileID: 11400000, guid: cfe1415b1757da14fbb708ba5d9de0eb, type: 2}
-  dialogues: []
+  dialogues:
+  - {fileID: 11400000, guid: 512da47e7bfe34f478554b9966209675, type: 2}
+  - {fileID: 11400000, guid: 3dff43dcdbc99524ebdf02ce09b9a0a3, type: 2}
+  - {fileID: 11400000, guid: 50ffa522ea0232742967e0a3e4813e29, type: 2}
+  - {fileID: 11400000, guid: eb2a626efc7bafd44b6d46724b442d64, type: 2}
+  - {fileID: 11400000, guid: f7e0c0bc86fc5a742b4a852cc312fc8a, type: 2}
+  - {fileID: 11400000, guid: 3cd8fde0ffec06b439d5829ec3dd22af, type: 2}
   starterQuest: {fileID: 11400000, guid: e0085730cdeecc54d913c76830007c3b, type: 2}
