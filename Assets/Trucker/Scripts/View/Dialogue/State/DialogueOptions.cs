@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Trucker.Model.NPC;
+using Trucker.Model.Questing.Steps.Goals;
 
 namespace Trucker.View.Dialogue.State
 {
@@ -13,7 +14,8 @@ namespace Trucker.View.Dialogue.State
 
         public override void Start()
         {
-            DialogueView.SetCharacter(CharacterToShow()); 
+            DialogueView.SetCharacter(CharacterToShow());
+            Goal.OnCompletion += UpdateOptions;
             SetDialogueOptions();
         }
 
@@ -24,7 +26,10 @@ namespace Trucker.View.Dialogue.State
                 : DialogueView.defaultCharacter;
         }
 
-        public override void Stop() { }
+        public override void Stop()
+        {
+            Goal.OnCompletion -= UpdateOptions;
+        }
 
         public override void OnDialogueEntryClick(int dialogueIndex)
         {
@@ -48,5 +53,7 @@ namespace Trucker.View.Dialogue.State
 
         private static List<string> GetFirstLines(IDialogue[] dialogues) 
             => dialogues.Select(d => d.FirstLine).ToList();
+
+        private void UpdateOptions(string obj) => DialogueView.SetStateDialogueOptions();
     }
 }
