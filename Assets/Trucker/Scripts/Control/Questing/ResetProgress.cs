@@ -2,6 +2,7 @@
 using Trucker.Model.Questing.Quests;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Trucker.Control.Questing
 {
@@ -25,6 +26,13 @@ namespace Trucker.Control.Questing
                 dialogue.Value = false;
             }
 
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.LoadScene(0);
+        }
+
+        private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
             starterQuest.Take();
         }
 
