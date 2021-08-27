@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q1_03_MyShipIsBroken
+  m_EditorClassIdentifier: 
+  value: 1
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 7541b23736f20eb48a9502ca140d11a1
+  canBeRepeated: 0
+  initialCharacter: 0
+  lines:
+  - character: 0
+    line: Hey, I need some help.
+  - character: 0
+    line: You totally do, kiddo. Been drinkin' in yesterdays storm?
+  - character: 9
+    line: Storm?... Well, I guess..
+  - character: 9
+    line: Whatever, my ship is damaged, do you have any spare parts?
+  - character: 0
+    line: I do, I do. But only if you help me a bit. You are not the only one damaged
+      by storm, sport.
+  - character: 0
+    line: My humble abode lost it's integrity yesterday and now uranium is flying
+      around. Might kill someone, y'know.
+  - character: 9
+    line: Urggh.. I don't think I can help you on that pile of junk.
+  - character: 9
+    line: Even Radio doesn't work, not speaking of Catcher or Radar.. I had to find you using the old ways.
+  - character: 0
+    line: I can give you Catcher now, but you'll have to return me at least some of the Uranium.
+  - character: 0
+    line: After that, we'll talk about other parts of your ship.
+  - character: 9
+    line: Well, seems like we have a deal.
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: e0085730cdeecc54d913c76830007c3b, type: 2}

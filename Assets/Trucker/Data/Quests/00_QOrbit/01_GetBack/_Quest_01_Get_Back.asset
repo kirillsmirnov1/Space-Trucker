@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Get Back
   description: Trying not to die in outer space.
-  finishedFromDialog: 0
+  finishedFromDialog: 1
   conditions: []
   steps:
   - {fileID: 11400000, guid: c22cdd38edc830342b7308a31e6ab541, type: 2}
@@ -28,5 +28,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ae17415d71efba4b9eeb09d40433f85, type: 2}
   - {fileID: 11400000, guid: 5f26dd228b971bc4e926a85ee6590890, type: 2}
   consequences:
-  - {fileID: 11400000, guid: 0e7c4de900bb5de448453323962e1f19, type: 2}
-  currentStepNumber: -1
+  - {fileID: 11400000, guid: b68e97d9af19dd944a6bdf3853b38ab6, type: 2}
+  currentStepNumber: 9
