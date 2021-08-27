@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
-  m_Name: Dialogue_Q1_01_WhereAmI
+  m_Name: Dialogue_Q1_02_ToJunk
   m_EditorClassIdentifier: 
   value: 0
   save: 0
@@ -21,13 +21,8 @@ MonoBehaviour:
   initialCharacter: 9
   lines:
   - character: 9
-    line: Damn, my head is buzzing...
+    line: 'Okay, the engines are working. We''ll have to return to orbit by eye.  '
   - character: 9
-    line: Where am I? What's happened to the ship?
-  - character: 9
-    line: There's some external damage, but the pressurization's intact, which is good.
-  - character: 9
-    line: Radar's down. Catcher's down. Radio, too, for some reason. What the hell could've happened to it? 
-  - character: 9
-    line: Engines? Gotta check the engines.
+    line: 'I hope it works. Otherwise, this thing belongs in a dump. '
+  dialogueType: 0
   quest: {fileID: 0}

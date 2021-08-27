@@ -13,12 +13,7 @@ MonoBehaviour:
   m_Name: _Quest_01_Get_Back
   m_EditorClassIdentifier: 
   title: Get Back
-  description: '! mini-dialogue at start
-
-    ! dialogue at dump
-
-    ! give second
-    quest as a reward '
+  description: Trying not to die in outer space.
   finishedFromDialog: 0
   conditions: []
   steps:
@@ -30,6 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 277e3e3c4616bcd4caebf6e85499b510, type: 2}
   - {fileID: 11400000, guid: b91f0473820799f4084dc20e333ab77a, type: 2}
   - {fileID: 11400000, guid: 93eb736e71b012e43871bafba3b443ac, type: 2}
+  - {fileID: 11400000, guid: 6ae17415d71efba4b9eeb09d40433f85, type: 2}
   - {fileID: 11400000, guid: 5f26dd228b971bc4e926a85ee6590890, type: 2}
   consequences:
   - {fileID: 11400000, guid: 0e7c4de900bb5de448453323962e1f19, type: 2}
