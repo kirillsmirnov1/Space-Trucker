@@ -107,6 +107,7 @@ namespace Trucker.Model.Questing.Quests
 
         public void Drop()
         {
+            StopCurrentStep();
             currentStepNumber = -1;
             OnQuestDropped?.Invoke(title);
         }
