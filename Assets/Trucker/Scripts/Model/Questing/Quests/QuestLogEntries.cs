@@ -62,5 +62,7 @@ namespace Trucker.Model.Questing.Quests
 
         private QuestLogEntryIdentificator GetIdentificatorByTitle(string title) 
             => value.data.First(entry => entry.title == title);
+
+        public void Clear() => Value = new QuestLogEntryIdentificator[0];
     }
 }
