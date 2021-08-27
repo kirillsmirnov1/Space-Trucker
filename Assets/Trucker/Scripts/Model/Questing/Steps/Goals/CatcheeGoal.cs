@@ -17,6 +17,7 @@ namespace Trucker.Model.Questing.Steps.Goals
         {
             base.Start();
             catchedByTypes.OnChange += OnTypeCountChange;
+            CheckGoal();
         }
 
         public override void Stop()
