@@ -100,9 +100,9 @@ namespace Trucker.Model.Questing.Quests
         public void Finish()
         {
             currentStepNumber = -1;
-            InvokeConsequences();
             OnQuestFinished?.Invoke(title);
             Debug.Log($"Quest {title} finished");
+            InvokeConsequences();
         }
 
         public void Drop()

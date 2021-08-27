@@ -113,12 +113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb9347e4d384c5a98b6cee3e831f880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notifications:
+  notificationViews:
   - {fileID: 526160685165095758}
   - {fileID: 9100296878537101678}
   - {fileID: 9100296878926091426}
   - {fileID: 9100296878339240028}
   - {fileID: 9100296879315209097}
+  delayBetweenNotifications: {fileID: 11400000, guid: 7a78f60fbea2dfd4886e67b6916ef958, type: 2}
 --- !u!1 &4325713076807999049
 GameObject:
   m_ObjectHideFlags: 0
