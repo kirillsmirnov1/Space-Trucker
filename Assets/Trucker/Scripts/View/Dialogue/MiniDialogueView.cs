@@ -42,6 +42,7 @@ namespace Trucker.View.Dialogue
 
         public void IterateLines()
         {
+            _onUpdate = null;
             _lineIndex++;
             if (_lineIndex < _lines.Length)
             {
@@ -73,7 +74,6 @@ namespace Trucker.View.Dialogue
             
             if (_lineTimeLeft <= 0f)
             {
-                _onUpdate = null;
                 IterateLines();
             }
         }
