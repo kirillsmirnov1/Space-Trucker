@@ -1,6 +1,6 @@
-﻿using Trucker.Model.NPC;
+﻿using Trucker.Model;
+using Trucker.Model.NPC;
 using Trucker.Model.Questing.Quests;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,8 +16,8 @@ namespace Trucker.Control.Questing
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            dialogues = GetAllSoInstances<Dialogue>();
-            quests = GetAllSoInstances<Quest>();
+            dialogues = Utils.GetAllSoInstances<Dialogue>();
+            quests = Utils.GetAllSoInstances<Quest>();
         }
 #endif
 
@@ -59,19 +59,5 @@ namespace Trucker.Control.Questing
             SceneManager.sceneLoaded -= OnSceneLoaded;
             starterQuest.Take();
         }
-
-#if UNITY_EDITOR
-        public static T[] GetAllSoInstances<T>() where T : ScriptableObject // TODO move to UU 
-        {
-            var guids = AssetDatabase.FindAssets("t:" + typeof(T).Name); //FindAssets uses tags check documentation for more info
-            var instances = new T[guids.Length];
-            for (var i = 0; i < guids.Length; i++) //probably could get optimized 
-            {
-                var path = AssetDatabase.GUIDToAssetPath(guids[i]);
-                instances[i] = AssetDatabase.LoadAssetAtPath<T>(path);
-            }
-            return instances;
-        }
-#endif
     }
 }

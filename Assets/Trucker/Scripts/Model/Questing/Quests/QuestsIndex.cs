@@ -8,7 +8,7 @@ namespace Trucker.Model.Questing.Quests
     [CreateAssetMenu(fileName = "Quests Index", menuName = "Quests/Quests Index", order = 0)]
     public class QuestsIndex : InitiatedScriptableObject
     {
-        [SerializeField] private List<Quest> questList;
+        [SerializeField] private Quest[] questList;
 
         private Dictionary<string, Quest> Quests { get; set; }
 
@@ -25,8 +25,13 @@ namespace Trucker.Model.Questing.Quests
             }
         }
 
-        private void OnValidate() 
-            => CheckUniqueQuestNames();
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            questList = Utils.GetAllSoInstances<Quest>();
+            CheckUniqueQuestNames();
+        }
+#endif
 
         private void CheckUniqueQuestNames()
         {
