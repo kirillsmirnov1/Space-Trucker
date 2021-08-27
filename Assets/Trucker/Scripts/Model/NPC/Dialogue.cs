@@ -7,7 +7,7 @@ using UnityUtils.Variables;
 
 namespace Trucker.Model.NPC
 {
-    [CreateAssetMenu(fileName = "Dialogue", menuName = "Data/Dialogue", order = 0)]
+    [CreateAssetMenu(fileName = "Dialogue", menuName = "Quests/Dialogue", order = 0)]
     public class Dialogue : BoolVariable, IDialogue
     {
         [UnityUtils.Attributes.Separator("Dialogue")]

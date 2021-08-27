@@ -4,7 +4,7 @@ using UnityUtils.Variables;
 
 namespace Trucker.Model.Zap.Level
 {
-    [CreateAssetMenu(menuName = "Data/ZapPermissionCheck", fileName = "ZapPermissionCheck", order = 0)]
+    [CreateAssetMenu(menuName = "Logic/ZapPermissionCheck", fileName = "ZapPermissionCheck", order = 0)]
     public class ZapPermissionCheck : InitiatedScriptableObject
     {
         [Header("Data")]
