@@ -32,8 +32,17 @@ namespace Trucker.View.Landmarks.Pointers
             SetButtonVisibility();
         }
 
-        protected override void SetUpdateMethod() 
-            => onUpdate = ButtonVisible ? (Action) DisplayInsideScreen : null;
+        protected override void SetUpdateMethod()
+        {
+            if (landmarksRadarEnabled)
+            {
+                base.SetUpdateMethod();
+            }
+            else
+            {
+                onUpdate = ButtonVisible ? (Action) DisplayInsideScreen : null;
+            }
+        }
 
         private void SetButtonVisibility() 
             => button.SetActive(ButtonVisible);
