@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Trucker.Model.Questing.Steps;
-using Trucker.Model.Questing.Steps.Goals;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -24,8 +23,7 @@ namespace Trucker.Model.Questing.Quests
         
         public int currentStepNumber = -1;
 
-        public string GoalsText => GoalsTextFormatter.Format(Goals, currentStepNumber);
-        private List<Goal> Goals => steps.Where(step => step.Type == StepType.Goal).Select(step => (Goal)step).ToList();
+        public string GoalsText => GoalsTextFormatter.Format(steps, currentStepNumber);
 
         public void Take()
         {
