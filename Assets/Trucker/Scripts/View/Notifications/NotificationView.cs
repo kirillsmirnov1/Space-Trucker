@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using TMPro;
+using Trucker.Model.Notifications;
 using UnityEngine;
 
 namespace Trucker.View.Notifications
@@ -12,18 +13,18 @@ namespace Trucker.View.Notifications
         private const float FadeDuration = 1f;
         private const int FadeSteps = 20;
 
-        public void Display(string str, bool strikethrough)
+        public void Display(Notification notification)
         {
             StopAllCoroutines();
-            SetText(str, strikethrough);
+            SetText(notification);
             SetObject();
             StartCoroutine(DisplayCoroutine());
         }
 
-        private void SetText(string str, bool strikethrough)
+        private void SetText(Notification notification)
         {
-            text.text = str;
-            text.fontStyle = strikethrough ? FontStyles.Bold | FontStyles.Strikethrough : FontStyles.Bold;
+            text.text = notification.text;
+            text.fontStyle = notification.strikethrough ? FontStyles.Bold | FontStyles.Strikethrough : FontStyles.Bold;
             text.color = Color.white;
         }
 

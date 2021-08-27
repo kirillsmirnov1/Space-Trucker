@@ -1,4 +1,5 @@
 ﻿using Trucker.Model.Entities;
+using Trucker.Model.Notifications;
 using Trucker.Model.Questing.Quests;
 using Trucker.Model.Questing.Steps.Goals;
 using Trucker.Model.Questing.Steps.Operations;
@@ -42,28 +43,28 @@ namespace Trucker.View.Notifications
             }
         }
 
-        private void OnQuestTaken(string title) 
-            => Notify($"{title} starts", false);
+        private void OnQuestTaken(string title)
+            => Notify(new Notification {text = $"{title} starts"});
 
-        private void OnQuestFinished(string title) 
-            => Notify($"{title} finished", false);
+        private void OnQuestFinished(string title)
+            => Notify(new Notification {text = $"{title} finished"});
 
-        private void OnGoalStarted(string goalDescription) 
-            => Notify(goalDescription, false);
+        private void OnGoalStarted(string goalDescription)
+            => Notify(new Notification {text = goalDescription});
 
-        private void OnGoalCompleted(string goalDescription) 
-            => Notify(goalDescription, true);
+        private void OnGoalCompleted(string goalDescription)
+            => Notify(new Notification {text = goalDescription, strikethrough = true});
 
         private void OnCatchedObjectsDestroyed(EntityType type, int count)
         {
             var multiple = count > 1;
             var str = $"{(multiple ? $"{count} " : "")} {type.ToString()}{(multiple ? "s" : "")} detached";
-            Notify(str, false);
+            Notify(new Notification {text = str});
         }
 
-        private void Notify(string str, bool strikethrough)
+        private void Notify(Notification notification)
         {
-            notifications[_nextNotificationIndex].Display(str, strikethrough);
+            notifications[_nextNotificationIndex].Display(notification);
             _nextNotificationIndex = (_nextNotificationIndex + 1) % notifications.Length;
         }
     }
