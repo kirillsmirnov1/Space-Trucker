@@ -29,7 +29,7 @@ namespace Trucker.View.Notifications
 
         private void SetObject()
         {
-            transform.SetAsFirstSibling();
+            transform.SetAsLastSibling();
             gameObject.SetActive(true);
         }
 
