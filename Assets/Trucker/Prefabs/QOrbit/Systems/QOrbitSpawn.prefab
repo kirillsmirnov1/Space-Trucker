@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127199950974510836}
   - component: {fileID: 2127199950974510839}
+  - component: {fileID: 5133166135663646370}
   m_Layer: 0
   m_Name: UraniumSpawn
   m_TagString: Untagged
@@ -49,6 +50,34 @@ MonoBehaviour:
   respawnDistanceCoefficient: {fileID: 11400000, guid: 8f87e3cdc89d15e43952be8b79d3c23f, type: 2}
   numberOfObjects: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
   spaceJunkScale: {fileID: 11400000, guid: c1bb8a1ff8d26234bbf0e2d3d4a477b5, type: 2}
+--- !u!114 &5133166135663646370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127199950974510838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6957297fb206642b2f37e96c30a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 3a3741da95b8dac499aa34e117f2b6c6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2127199950974510839}
+        m_TargetAssemblyTypeName: Trucker.Control.Spawn.SpaceJunkOrbitSpawn, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2005607047203817865
 MonoBehaviour:
   m_ObjectHideFlags: 0
