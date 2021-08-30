@@ -46,8 +46,8 @@ namespace Trucker.Control.Spawn
             }
         }
 
-        protected virtual Vector3 NextSpawnPosition() => Vector3.zero;
+        protected virtual Vector3 NextSpawnPosition() => transform.position;
 
-        public virtual Vector3 RespawnPosition(Vector3 oldPos) => Vector3.zero;
+        public virtual Vector3 RespawnPosition(Vector3 oldPos) => transform.position;
     }
 }

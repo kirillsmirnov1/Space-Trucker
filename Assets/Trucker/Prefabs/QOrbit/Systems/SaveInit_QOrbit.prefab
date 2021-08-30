@@ -46,6 +46,7 @@ MonoBehaviour:
   objectsToInit:
   - {fileID: 11400000, guid: 7541b23736f20eb48a9502ca140d11a1, type: 2}
   - {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
+  - {fileID: 11400000, guid: 2312fbdb6e187934e8e877b7c0e892eb, type: 2}
   - {fileID: 11400000, guid: eb2a626efc7bafd44b6d46724b442d64, type: 2}
   - {fileID: 11400000, guid: 50ffa522ea0232742967e0a3e4813e29, type: 2}
   - {fileID: 11400000, guid: 3cd8fde0ffec06b439d5829ec3dd22af, type: 2}

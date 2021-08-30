@@ -16,7 +16,8 @@ namespace Trucker.Control.Questing
         [SerializeField] private Quest starterQuest;
 
         [Header("Set defaults")]
-        [SerializeField] private IntVariable uraniumCount;
+        [SerializeField] private IntVariable uraniumCountOrbit;
+        [SerializeField] private IntVariable uraniumCountDump;
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -36,7 +37,8 @@ namespace Trucker.Control.Questing
 
         private void SetDefaults()
         {
-            uraniumCount.SetDefaultValue();
+            uraniumCountOrbit.SetDefaultValue();
+            uraniumCountDump.SetDefaultValue();
         }
 
         private void ReloadScene()
