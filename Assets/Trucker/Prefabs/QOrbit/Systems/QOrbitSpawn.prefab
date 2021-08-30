@@ -47,7 +47,7 @@ MonoBehaviour:
   spawnSphere: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
   spawnEdgeRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
   respawnDistanceCoefficient: {fileID: 11400000, guid: 8f87e3cdc89d15e43952be8b79d3c23f, type: 2}
-  numberOfObjects: {fileID: 11400000, guid: e1471aa3e5538d845b68359a253159a8, type: 2}
+  numberOfObjects: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
   spaceJunkScale: {fileID: 11400000, guid: c1bb8a1ff8d26234bbf0e2d3d4a477b5, type: 2}
 --- !u!114 &2005607047203817865
 MonoBehaviour:

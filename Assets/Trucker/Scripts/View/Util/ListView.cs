@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Packages.UnityUtils.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityUtils.Extensions;
 
 namespace Trucker.View.Util
 {

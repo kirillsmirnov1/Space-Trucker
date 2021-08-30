@@ -3,6 +3,7 @@ using Trucker.Model.NPC;
 using Trucker.Model.Questing.Quests;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityUtils.Variables;
 
 namespace Trucker.Control.Questing
 {
@@ -13,6 +14,9 @@ namespace Trucker.Control.Questing
         [SerializeField] private Dialogue[] dialogues;
         [SerializeField] private Quest[] quests;
         [SerializeField] private Quest starterQuest;
+
+        [Header("Set defaults")]
+        [SerializeField] private IntVariable uraniumCount;
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -26,7 +30,13 @@ namespace Trucker.Control.Questing
             ResetDialogues();
             DropActiveQuests();
             questLogEntries.Clear();
+            SetDefaults();
             ReloadScene();
+        }
+
+        private void SetDefaults()
+        {
+            uraniumCount.SetDefaultValue();
         }
 
         private void ReloadScene()
