@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Trucker.Model.Questing.Steps.Operations
 {
-    [CreateAssetMenu(fileName = "Consequence_DestroyCatchedObjects", menuName = "Quests/Steps/Destroy Catched", order = 0)]
+    [CreateAssetMenu(fileName = "Consequence_DestroyCatchedObjects", menuName = "Quests/Operations/Destroy Catched", order = 0)]
     public class DestroyCatchedObjects : Operation
     {
         public static event Action<EntityType, int> OnObjectsDestroyed; 
