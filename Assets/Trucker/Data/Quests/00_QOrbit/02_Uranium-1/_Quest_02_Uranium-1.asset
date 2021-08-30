@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: _Quest_02_Uranium-1
   m_EditorClassIdentifier: 
   title: Uranium-1
-  description: 'TODO
-
-    -finish  dialogue
-
-    -give credits'
-  finishedFromDialog: 0
+  description: Clean up Q's orbit of Uranium
+  finishedFromDialog: 1
   conditions: []
   steps:
   - {fileID: 11400000, guid: c0a478cfdd3df5c459f5d01ed2134a86, type: 2}
@@ -30,4 +26,4 @@ MonoBehaviour:
   consequences:
   - {fileID: 11400000, guid: f7bc3e58b0fdebf4389394ba861aa38d, type: 2}
   - {fileID: 11400000, guid: 9483d650cf2d3194696fdb29e58911c6, type: 2}
-  currentStepNumber: 6
+  currentStepNumber: -1

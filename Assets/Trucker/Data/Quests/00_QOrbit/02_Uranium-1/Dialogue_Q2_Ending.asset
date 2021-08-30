@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q2_Ending
+  m_EditorClassIdentifier: 
+  value: 1
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: c514cca0a00b54a4081f2b01cfff05f9
+  canBeRepeated: 0
+  initialCharacter: 0
+  lines:
+  - character: 0
+    line: Here's your uranium
+  - character: 0
+    line: Very well.
+  - character: 0
+    line: Now, I've already given you Catcher, but I'll help you some more.
+  - character: 0
+    line: I heard there is some contest, and the reward is brand new ship.
+  - character: 0
+    line: Your friends at diner might know more of it.
+  - character: 0
+    line: I'll report about you helping me. Maybe it'll help you with ship.
+  - character: 0
+    line: Also, there is still some uranium flying around. Bring it to me, and maybe
+      I'll find you a working Radar in those scraps.
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: 8fddc2881b6a20848bb660fb3a700f5c, type: 2}

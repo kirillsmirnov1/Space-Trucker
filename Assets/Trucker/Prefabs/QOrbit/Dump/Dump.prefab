@@ -369,6 +369,7 @@ MonoBehaviour:
   characterName: 0
   dialogueOptions:
   - {fileID: 11400000, guid: 7541b23736f20eb48a9502ca140d11a1, type: 2}
+  - {fileID: 11400000, guid: c514cca0a00b54a4081f2b01cfff05f9, type: 2}
 --- !u!1 &7261193334399025151
 GameObject:
   m_ObjectHideFlags: 0

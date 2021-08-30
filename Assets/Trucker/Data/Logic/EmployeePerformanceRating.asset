@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc3601bc7d24e9ca555c95e5283768d, type: 3}
   m_Name: EmployeePerformanceRating
   m_EditorClassIdentifier: 
-  rewards: []
+  rewards:
+  - trigger: {fileID: 11400000, guid: c514cca0a00b54a4081f2b01cfff05f9, type: 2}
+    ratingChange: 100
