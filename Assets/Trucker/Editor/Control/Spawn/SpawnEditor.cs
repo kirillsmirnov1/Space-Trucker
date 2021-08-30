@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Trucker.Control.Spawn
 {
-    [CustomEditor(typeof(SpaceJunkOrbitSpawn))]
-    public class SpaceJunkOrbitSpawnEditor : Editor
+    [CustomEditor(typeof(SpaceJunkOrbitSpawn), true)]
+    public class SpawnEditor : Editor
     {
         public override void OnInspectorGUI()
         {
-            var obj = (SpaceJunkOrbitSpawn) target;
+            var obj = (BaseSpawn) target;
             if (GUILayout.Button("Spawn"))
             {
                 obj.Spawn();

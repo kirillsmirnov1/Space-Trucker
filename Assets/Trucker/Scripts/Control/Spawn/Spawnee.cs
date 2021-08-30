@@ -7,12 +7,12 @@ namespace Trucker.Control.Spawn
     {
         [SerializeField] private UnityEvent onRespawnStart;
         [SerializeField] private UnityEvent onRespawnEnd;
-        private SpaceJunkOrbitSpawn _spaceJunkOrbitSpawn;
+        private BaseSpawn _spawn;
         private bool _respawning;
 
-        public void Init(SpaceJunkOrbitSpawn spaceJunkOrbitSpawn)
+        public void Init(BaseSpawn spaceJunkOrbitSpawn)
         {
-            _spaceJunkOrbitSpawn = spaceJunkOrbitSpawn;
+            _spawn = spaceJunkOrbitSpawn;
         }
 
         private void OnTriggerExit(Collider other)
@@ -28,7 +28,7 @@ namespace Trucker.Control.Spawn
         }
 
         public void ResetPosition() 
-            => transform.position = _spaceJunkOrbitSpawn.RespawnPosition(transform.position);
+            => transform.position = _spawn.RespawnPosition(transform.position);
 
         private void OnRespawnStart()
         {

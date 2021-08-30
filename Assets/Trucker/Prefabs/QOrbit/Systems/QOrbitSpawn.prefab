@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 4400359852048627477, guid: 76a1fcb1e288e4444b1d11faeb0e660e, type: 3}
+  numberOfObjects: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
+  scale: {fileID: 11400000, guid: c1bb8a1ff8d26234bbf0e2d3d4a477b5, type: 2}
   spawnSphere: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
   spawnEdgeRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
   respawnDistanceCoefficient: {fileID: 11400000, guid: 8f87e3cdc89d15e43952be8b79d3c23f, type: 2}
-  numberOfObjects: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
-  spaceJunkScale: {fileID: 11400000, guid: c1bb8a1ff8d26234bbf0e2d3d4a477b5, type: 2}
 --- !u!114 &5133166135663646370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,11 +136,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 273551459333336668, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
+  numberOfObjects: {fileID: 11400000, guid: fe1b472d0ad8ccd44b39440544e2aa50, type: 2}
+  scale: {fileID: 11400000, guid: fd6c0af014efbb142b1a0c079e7d34df, type: 2}
   spawnSphere: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
   spawnEdgeRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
   respawnDistanceCoefficient: {fileID: 11400000, guid: 8f87e3cdc89d15e43952be8b79d3c23f, type: 2}
-  numberOfObjects: {fileID: 11400000, guid: fe1b472d0ad8ccd44b39440544e2aa50, type: 2}
-  spaceJunkScale: {fileID: 11400000, guid: fd6c0af014efbb142b1a0c079e7d34df, type: 2}
 --- !u!1 &5728213290367721732
 GameObject:
   m_ObjectHideFlags: 0
