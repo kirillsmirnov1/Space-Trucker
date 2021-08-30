@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q2_HowToCatch
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 0
+  logSave: 0
+  defaultValue: 0
+  guid: cd1dba76f4dad8e4bb52a0b961351942
+  canBeRepeated: 0
+  initialCharacter: 0
+  lines:
+  - character: 0
+    line: I set you up with basic Catcher.
+  - character: 0
+    line: It'll allow you to catch up to 5 objects.
+  - character: 0
+    line: They won't be protected, though, but I don't think that'll matter.
+  - character: 0
+    line: Do I need to remind you how to catch stuff?
+  - character: 0
+    line: Fly close enough to objects and you'll see crosshair on them.
+  - character: 0
+    line: Hold them, until they are connected behind your ship.
+  - character: 0
+    line: To free them, hold until they fly away.
+  - character: 0
+    line: Now go and bring me some uranium
+  dialogueType: 3
+  quest: {fileID: 0}
