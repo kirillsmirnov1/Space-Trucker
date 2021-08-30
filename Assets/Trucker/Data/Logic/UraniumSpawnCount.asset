@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990d4d977520415d864c992f2daa49df, type: 3}
+  m_Name: UraniumSpawnCount
+  m_EditorClassIdentifier: 
+  respawnUraniumOnOrbit: {fileID: 11400000, guid: 3a3741da95b8dac499aa34e117f2b6c6, type: 2}
+  respawnUraniumInDump: {fileID: 11400000, guid: 3baa06a80a3a8ac4b9b3ece20e4815a0, type: 2}
+  baseUraniumCount: {fileID: 11400000, guid: 7918386fb33c0ad4a93c3db223dd21e5, type: 2}
+  orbitUraniumCount: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
+  dumpUraniumCount: {fileID: 11400000, guid: 2312fbdb6e187934e8e877b7c0e892eb, type: 2}

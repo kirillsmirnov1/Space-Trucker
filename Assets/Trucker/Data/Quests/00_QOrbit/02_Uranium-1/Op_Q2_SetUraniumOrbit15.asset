@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff27a62fc284442a4525596d2c897aa, type: 3}
-  m_Name: Op_Q2_ResetUraniumSpawn
+  m_Script: {fileID: 11500000, guid: 175a170a61114b67b92fe95bd06c1b0a, type: 3}
+  m_Name: Op_Q2_SetUraniumOrbit15
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 3a3741da95b8dac499aa34e117f2b6c6, type: 2}
+  uraniumSpawnCount: {fileID: 11400000, guid: a4e72f361a71c4e46a283bc99a8c1a27, type: 2}
+  newOrbitCount: 15
