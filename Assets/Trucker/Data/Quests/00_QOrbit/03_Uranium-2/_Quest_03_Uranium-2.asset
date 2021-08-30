@@ -10,21 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a338f67f9c0f4cd9bf9605e6bed48f73, type: 3}
-  m_Name: _Quest_02_Uranium-1
+  m_Name: _Quest_03_Uranium-2
   m_EditorClassIdentifier: 
-  title: Uranium-1
-  description: Clean up Q's orbit of Uranium
+  title: Uranium-2
+  description: 'Clean up Q''s orbit of Uranium'
   finishedFromDialog: 1
   conditions: []
   steps:
-  - {fileID: 11400000, guid: c0a478cfdd3df5c459f5d01ed2134a86, type: 2}
-  - {fileID: 11400000, guid: 0e7c4de900bb5de448453323962e1f19, type: 2}
-  - {fileID: 11400000, guid: ddf787a86272d404fbc8a2db8c2113a0, type: 2}
-  - {fileID: 11400000, guid: 1d217b0f974b2a74386dacb7ac51d814, type: 2}
+  - {fileID: 11400000, guid: 9483d650cf2d3194696fdb29e58911c6, type: 2}
   - {fileID: 11400000, guid: b7afbb65918f7c2428bcb872ad5bc1c0, type: 2}
   - {fileID: 11400000, guid: 5f26dd228b971bc4e926a85ee6590890, type: 2}
   consequences:
   - {fileID: 11400000, guid: f7bc3e58b0fdebf4389394ba861aa38d, type: 2}
-  - {fileID: 11400000, guid: 9483d650cf2d3194696fdb29e58911c6, type: 2}
-  - {fileID: 11400000, guid: a5764d9595227264b84316fe05c07cb7, type: 2}
+  - {fileID: 11400000, guid: 9dcdf4b8777ad3b44b9e0c2be0989360, type: 2}
+  - {fileID: 11400000, guid: b12935c0d14857e45897f6d26ad2f7f1, type: 2}
   currentStepNumber: -1

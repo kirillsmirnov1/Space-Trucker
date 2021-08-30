@@ -15,3 +15,5 @@ MonoBehaviour:
   rewards:
   - trigger: {fileID: 11400000, guid: c514cca0a00b54a4081f2b01cfff05f9, type: 2}
     ratingChange: 100
+  - trigger: {fileID: 11400000, guid: 64e9c301726a8894abeba723c046515f, type: 2}
+    ratingChange: 150
