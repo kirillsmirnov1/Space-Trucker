@@ -5,6 +5,7 @@ using Trucker.Model.Notifications;
 using Trucker.Model.Questing.Quests;
 using Trucker.Model.Questing.Steps.Goals;
 using Trucker.Model.Questing.Steps.Operations;
+using Trucker.Model.Rating;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -30,6 +31,7 @@ namespace Trucker.View.Notifications
             Goal.OnStart += OnGoalStarted;
             Goal.OnCompletion += OnGoalCompleted;
             DestroyCatchedObjects.OnObjectsDestroyed += OnCatchedObjectsDestroyed;
+            EmployeePerformanceRating.OnRatingChange += OnEmployeeRatingChange;
         }
 
         private void OnDestroy()
@@ -39,6 +41,7 @@ namespace Trucker.View.Notifications
             Goal.OnStart -= OnGoalStarted;
             Goal.OnCompletion -= OnGoalCompleted;
             DestroyCatchedObjects.OnObjectsDestroyed -= OnCatchedObjectsDestroyed;
+            EmployeePerformanceRating.OnRatingChange -= OnEmployeeRatingChange;
         }
 
         private void DisableNotifications()
@@ -48,6 +51,9 @@ namespace Trucker.View.Notifications
                 notification.gameObject.SetActive(false);
             }
         }
+
+        private void OnEmployeeRatingChange(int ratingChange) 
+            => Notify(new Notification {text = $"rating {(ratingChange > 0 ? "+" : "")}{ratingChange}"});
 
         private void OnQuestTaken(string title)
             => Notify(new Notification {text = $"{title} starts"});
