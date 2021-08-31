@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175a170a61114b67b92fe95bd06c1b0a, type: 3}
   m_Name: Op_Q3_SetUranium5
   m_EditorClassIdentifier: 
-  uraniumSpawnCount: {fileID: 0}
-  newOrbitCount: 0
+  uraniumSpawnCount: {fileID: 11400000, guid: a4e72f361a71c4e46a283bc99a8c1a27, type: 2}
+  newOrbitCount: 5

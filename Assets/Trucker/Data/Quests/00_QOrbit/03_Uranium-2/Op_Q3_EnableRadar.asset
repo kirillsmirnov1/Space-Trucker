@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Op_Q3_EnableRadar
   m_EditorClassIdentifier: 
   variable: {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
-  value: 0
+  value: 1
