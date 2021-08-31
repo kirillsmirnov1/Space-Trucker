@@ -16,7 +16,12 @@ namespace Trucker.Control.Movement
         public void UpdatePosition()
         {
             // Q is on (0,0,0), so there is no need to subtract it's position, for now
-            transform.position = transformToFollow.Value.position.normalized * orbitRadius;
+            var newPos = transformToFollow.Value.position;
+            newPos.y = 0;
+            newPos.Normalize();
+            newPos *= orbitRadius;
+            transform.position = newPos;
+            transform.forward = transform.position.normalized;
         }
     }
 }
