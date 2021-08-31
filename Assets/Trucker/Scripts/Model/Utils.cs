@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityUtils;
 
 namespace Trucker.Model
 {
@@ -18,5 +19,16 @@ namespace Trucker.Model
             return instances;
         }
 #endif
+
+        public static Vector3 GetRandomPointInsideCollider(this System.Random random, BoxCollider boxCollider)
+        {
+            Vector3 extents = boxCollider.size / 2f;
+            Vector3 point = new Vector3(
+                random.NextFloat(-extents.x, extents.x),
+                random.NextFloat(-extents.y, extents.y),
+                random.NextFloat(-extents.z, extents.z)
+            );
+            return boxCollider.transform.TransformPoint(point);
+        }
     }
 }
