@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6551805818029996741}
-  - component: {fileID: 4999578621480578371}
-  - component: {fileID: 6498763754102076128}
   - component: {fileID: 4651888690117831916}
+  - component: {fileID: 1654653157}
+  - component: {fileID: 2005607047203817865}
   m_Layer: 6
-  m_Name: SpawnEdge
+  m_Name: SpawnZone
   m_TagString: SpawnEdge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,34 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4999578621480578371
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756671278730092304}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 250
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6498763754102076128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756671278730092304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05bcf9d6c1b72f48bd2eb859d9ee7a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sphereCollider: {fileID: 4999578621480578371}
-  spawnSphereRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
-  orbitRadius: {fileID: 11400000, guid: 6d870cc8e84596340a24b4564d707afe, type: 2}
 --- !u!114 &4651888690117831916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,3 +46,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variable: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
+--- !u!65 &1654653157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756671278730092304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1000, y: 100, z: 400}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2005607047203817865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756671278730092304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f58c75018a4b0d95bd96320b649ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitRadius: {fileID: 11400000, guid: 6d870cc8e84596340a24b4564d707afe, type: 2}
+  transformToFollow: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}

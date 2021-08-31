@@ -47,8 +47,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 4400359852048627477, guid: 76a1fcb1e288e4444b1d11faeb0e660e, type: 3}
   numberOfObjects: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
   scale: {fileID: 11400000, guid: c1bb8a1ff8d26234bbf0e2d3d4a477b5, type: 2}
-  spawnSphere: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
-  spawnEdgeRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
+  spawnZone: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
   respawnDistanceCoefficient: {fileID: 11400000, guid: 8f87e3cdc89d15e43952be8b79d3c23f, type: 2}
 --- !u!114 &5133166135663646370
 MonoBehaviour:
@@ -78,20 +77,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2005607047203817865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4431148696374068956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f58c75018a4b0d95bd96320b649ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orbitRadius: {fileID: 11400000, guid: 6d870cc8e84596340a24b4564d707afe, type: 2}
-  transformToFollow: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}
 --- !u!1 &5728213289442755490
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,8 +123,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 273551459333336668, guid: 634d74cf45266dd4f92d28ddaa85e94c, type: 3}
   numberOfObjects: {fileID: 11400000, guid: fe1b472d0ad8ccd44b39440544e2aa50, type: 2}
   scale: {fileID: 11400000, guid: fd6c0af014efbb142b1a0c079e7d34df, type: 2}
-  spawnSphere: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
-  spawnEdgeRadius: {fileID: 11400000, guid: 6acc12c11ff55f94d92e500ef9a63b03, type: 2}
+  spawnZone: {fileID: 11400000, guid: d76b4f77269fe6e4e8a6cbc5d55a9fca, type: 2}
   respawnDistanceCoefficient: {fileID: 11400000, guid: 8f87e3cdc89d15e43952be8b79d3c23f, type: 2}
 --- !u!1 &5728213290367721732
 GameObject:
@@ -191,7 +175,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2005607047203817865}
+      - m_Target: {fileID: 4524764677221371973}
         m_TargetAssemblyTypeName: Trucker.Control.Movement.FollowTransformButStayOnOrbit,
           Assembly-CSharp
         m_MethodName: UpdatePosition
@@ -237,7 +221,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1756671278730092304, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_Name
-      value: SpawnSphereOnOrbit
+      value: SpawnZone
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_RootOrder
@@ -245,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 731.1484
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -253,11 +237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -731.1484
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -265,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -277,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -285,13 +269,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
---- !u!1 &4431148696374068956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1756671278730092304, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
-  m_PrefabInstance: {fileID: 2674691208283511244}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9219670901075387145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6551805818029996741, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
   m_PrefabInstance: {fileID: 2674691208283511244}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4524764677221371973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2005607047203817865, guid: 5a0a5ee712988b04085963e99030cf6d, type: 3}
+  m_PrefabInstance: {fileID: 2674691208283511244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f58c75018a4b0d95bd96320b649ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -16,7 +16,7 @@ namespace Trucker.Control.Spawn
 
         private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
 
-        private void Start()
+        protected virtual void Start()
         {
             Spawn();
         }
