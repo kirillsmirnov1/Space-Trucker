@@ -1,4 +1,5 @@
 ﻿using System;
+using Trucker.Model.Audio;
 using Trucker.Model.Landmarks;
 using Trucker.View.Dialogue;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Trucker.Audio
 
         [Header("Data")]
         [SerializeField] private FloatVariable crossFadeDuration;
+        [SerializeField] private MusicFiles musicFiles;
         
         private Action _onUpdate;
         private AudioSource _from;
@@ -42,7 +44,7 @@ namespace Trucker.Audio
 
         private void OnLandmarkInteractionStart(LandmarkType landmarkType)
         {
-            // TODO set locationMusicFile
+            locationMusic.clip = musicFiles.LandmarkMusic(landmarkType);
             CrossFade(playerMusic, locationMusic);
         }
 

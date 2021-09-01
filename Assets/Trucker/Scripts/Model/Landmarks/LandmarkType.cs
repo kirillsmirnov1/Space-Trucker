@@ -1,4 +1,6 @@
-﻿namespace Trucker.Model.Landmarks
+﻿using System;
+
+namespace Trucker.Model.Landmarks
 {
     public enum LandmarkType
     {
@@ -7,5 +9,6 @@
         Diner,
         Dump,
         Dorm,
+        None = Int32.MinValue, 
     }
 }
