@@ -18,6 +18,7 @@ namespace Trucker.Control.Questing
         [Header("Set defaults")]
         [SerializeField] private IntVariable uraniumCountOrbit;
         [SerializeField] private IntVariable uraniumCountDump;
+        [SerializeField] private BoolVariable musicPlayerEnabledToPlayer;
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -39,6 +40,7 @@ namespace Trucker.Control.Questing
         {
             uraniumCountOrbit.SetDefaultValue();
             uraniumCountDump.SetDefaultValue();
+            musicPlayerEnabledToPlayer.SetDefaultValue();
         }
 
         private void ReloadScene()
