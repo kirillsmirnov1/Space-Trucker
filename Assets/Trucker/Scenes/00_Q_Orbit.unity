@@ -2121,6 +2121,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 7108207607016296888, guid: 7c5d69c34dae07d488e211b0d8235294, type: 3}
+      propertyPath: fromTo.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108207607016296888, guid: 7c5d69c34dae07d488e211b0d8235294, type: 3}
+      propertyPath: fromTo.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5d69c34dae07d488e211b0d8235294, type: 3}
 --- !u!1001 &5942701201056315311
