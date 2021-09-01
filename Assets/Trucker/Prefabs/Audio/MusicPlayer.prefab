@@ -51,6 +51,7 @@ MonoBehaviour:
   onLandmarkInteraction: {fileID: 11400000, guid: 42972cf8607534f4797a096ab22fee06, type: 2}
   crossFadeDuration: {fileID: 11400000, guid: 087477fe29941664297ef2df1f7c05fb, type: 2}
   musicFiles: {fileID: 11400000, guid: 251f7e516a947664ca55c47be4d4c655, type: 2}
+  currentSong: {fileID: 11400000, guid: 3c7844425bf177644b6f300af4100ae9, type: 2}
 --- !u!114 &7108207607016296888
 MonoBehaviour:
   m_ObjectHideFlags: 0

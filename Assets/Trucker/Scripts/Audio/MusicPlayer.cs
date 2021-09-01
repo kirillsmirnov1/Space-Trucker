@@ -20,6 +20,7 @@ namespace Trucker.Audio
         [Header("Data")]
         [SerializeField] private FloatVariable crossFadeDuration;
         [SerializeField] private MusicFiles musicFiles;
+        [SerializeField] private AudioClipVariable currentSong; // TODO save song 
         
         private Action _onUpdate;
         private AudioSource _from;
@@ -32,12 +33,14 @@ namespace Trucker.Audio
         {
             DialogueView.OnClose += OnLandmarkInteractionEnd;
             onLandmarkInteraction.RegisterAction(OnLandmarkInteractionStart);
+            currentSong.OnChange += ChangePlayerSong;
         }
 
         private void OnDestroy()
         {
             DialogueView.OnClose -= OnLandmarkInteractionEnd;
             onLandmarkInteraction.UnregisterAction(OnLandmarkInteractionStart);
+            currentSong.OnChange -= ChangePlayerSong;
         }
 
         private void Update() => _onUpdate?.Invoke();
@@ -77,7 +80,11 @@ namespace Trucker.Audio
                 _onUpdate = null;
             }
         }
-
-        // TODO OnPlayerMusicChange
+        
+        private void ChangePlayerSong(AudioClip newPlayerClip)
+        {
+            playerMusic.clip = newPlayerClip;
+            playerMusic.Play();
+        }
     }
 }
