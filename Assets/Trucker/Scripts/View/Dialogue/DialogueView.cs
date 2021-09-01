@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Trucker.Model.NPC;
@@ -12,6 +13,9 @@ namespace Trucker.View.Dialogue
 {
     public class DialogueView : ListView<string>
     {
+        public static event Action OnOpen;
+        public static event Action OnClose;
+        
         [Header("Dialogue View")]
         [SerializeField] private GameObject fade;
         [SerializeField] private TextMeshProUGUI npcNameText;
@@ -74,11 +78,13 @@ namespace Trucker.View.Dialogue
         {
             fade.gameObject.SetActive(true);
             LayoutRebuilder.ForceRebuildLayoutImmediate(npcNameText.rectTransform);
+            OnOpen?.Invoke();
         }
 
         public void HideDialogue()
         {
             fade.gameObject.SetActive(false);
+            OnClose?.Invoke();
         }
 
         private void OnDialogueEntryClick(int dialogueIndex) 
