@@ -18,7 +18,7 @@ namespace Trucker.Model.NPC
         [Header("Consequences")]
         [SerializeField] private DialogueType dialogueType;
         [SerializeField] 
-        [ConditionalField("consequences", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest})] 
+        [ConditionalField("dialogueType", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest})] 
         private Quest quest;
 
         public CharacterName InitialCharacter => initialCharacter;
