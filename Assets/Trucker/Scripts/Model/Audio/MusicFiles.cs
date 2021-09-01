@@ -27,7 +27,9 @@ namespace Trucker.Model.Audio
             _landmarkMusic = new Dictionary<LandmarkType, AudioClip>();
             for (int i = 0; i < music.Length; i++)
             {
-                _landmarkMusic.Add(music[i].landmark, music[i].clip);
+                var landmark = music[i].landmark;
+                if (landmark == LandmarkType.None) continue;
+                _landmarkMusic.Add(landmark, music[i].clip);
             }
         }
     }
