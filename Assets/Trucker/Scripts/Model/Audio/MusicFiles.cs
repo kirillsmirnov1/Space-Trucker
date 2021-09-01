@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using OneLine;
 using Trucker.Model.Landmarks;
 using UnityEngine;
@@ -13,7 +14,9 @@ namespace Trucker.Model.Audio
         [SerializeField, OneLine, HideLabel] private MusicData[] music;
 
         private Dictionary<LandmarkType, AudioClip> _landmarkMusic;
-        
+        public AudioClip[] AvailableSongs 
+            => music.Select(md => md.clip).ToArray(); // TODO return only available 
+
         public override void Init()
         {
             InitLandmarkMusic();

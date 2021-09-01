@@ -461,7 +461,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8830514501123995361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8200424029003659541}
+        m_TargetAssemblyTypeName: Trucker.View.Ui.MusicPlayerBar, Assembly-CSharp
+        m_MethodName: Iterate
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6870879000681214189
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f9426b94f5418c9b12d3d3f1dc2914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songName: {fileID: 5523086595060886419}
+  music: {fileID: 11400000, guid: 251f7e516a947664ca55c47be4d4c655, type: 2}
+  currentClip: {fileID: 11400000, guid: 3c7844425bf177644b6f300af4100ae9, type: 2}
 --- !u!1 &8744682591265672336
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,4 +898,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 851493887280351911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8200424029003659541}
+        m_TargetAssemblyTypeName: Trucker.View.Ui.MusicPlayerBar, Assembly-CSharp
+        m_MethodName: Iterate
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
