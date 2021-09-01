@@ -23,3 +23,5 @@ MonoBehaviour:
     landmark: -2147483648
   - clip: {fileID: 8300000, guid: 53f32a583466b43429660a9449257b20, type: 3}
     landmark: 4
+  - clip: {fileID: 8300000, guid: fb2768aafb9fdad408a832ae55d12e3c, type: 3}
+    landmark: -2147483648
