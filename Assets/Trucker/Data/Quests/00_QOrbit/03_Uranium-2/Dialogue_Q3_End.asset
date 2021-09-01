@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
   m_Name: Dialogue_Q3_End
   m_EditorClassIdentifier: 
-  value: 0
+  value: 1
   save: 1
   logSave: 0
   defaultValue: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   - character: 9
     line: What are you going to do with it anyway?
   - character: 0
-    line: Me? I'm only keeping it intact, young man. 
+    line: Me? I'm only keeping it intact, young man.
   - character: 0
     line: Those smart guys might do something with it, but I ain't gonna touch it.
   - character: 9
@@ -35,6 +35,6 @@ MonoBehaviour:
   - character: 0
     line: I surely do. It's yours. You deserve it.
   - character: 0
-    line: And if you bring me last of uranium, I maybe even find a Radio for you.
+    line: And if you bring me last of uranium, I maybe even find a Player for you.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 61e67476bd9b7b84aaf1becfd5989d4c, type: 2}

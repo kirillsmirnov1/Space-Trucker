@@ -27,7 +27,7 @@ MonoBehaviour:
   - character: 9
     line: There's some external damage, but the pressurization's intact, which is good.
   - character: 9
-    line: Radar's down. Catcher's down. Radio, too, for some reason. What the hell could've happened to it? 
+    line: Radar's down. Catcher's down. Player is stuck on one song. What the hell could've happened to it? 
   - character: 9
     line: Engines? Gotta check the engines.
   quest: {fileID: 0}
