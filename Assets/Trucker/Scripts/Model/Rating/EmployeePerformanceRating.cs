@@ -12,10 +12,12 @@ namespace Trucker.Model.Rating
     {
         public static event Action<int> OnRatingChange;
 
+        [SerializeField] private int requiredRating;
         [SerializeField, OneLine, HideLabel] private TaskReward[] rewards;
 
         private int _rating;
         public int Rating => _rating;
+        public int RequiredRating => requiredRating;
 
         public override void Init()
         {

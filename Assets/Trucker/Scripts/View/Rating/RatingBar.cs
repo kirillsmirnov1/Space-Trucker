@@ -15,8 +15,17 @@ namespace Trucker.View.Rating
         
         private void OnEnable()
         {
-            // TODO 
+            SetValues();
         }
 
+        private void SetValues()
+        {
+            var currentRating = rating.Rating;
+            var requiredRating = rating.RequiredRating;
+            var percent = (int)((float) currentRating / requiredRating * 100);
+
+            progressPercents.text = $"[{percent}%]";
+            progressRelation.text = $"{currentRating} / {requiredRating}";
+        }
     }
 }
