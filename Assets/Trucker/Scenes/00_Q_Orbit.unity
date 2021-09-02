@@ -2625,7 +2625,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 70350252014062201, guid: 439bf2a2b1ee5d1459c83f39981d04a7, type: 3}
       propertyPath: m_Name
-      value: Canvas_QuestLog
+      value: Canvas_PDA
       objectReference: {fileID: 0}
     - target: {fileID: 70350252014062205, guid: 439bf2a2b1ee5d1459c83f39981d04a7, type: 3}
       propertyPath: m_Pivot.x
