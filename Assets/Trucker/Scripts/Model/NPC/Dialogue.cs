@@ -65,7 +65,7 @@ namespace Trucker.Model.NPC
                 DialogueType.TakeQuest => quest.CanBeTaken && quest.NeverBeenStarted, 
                 DialogueType.FinishQuest => quest.CanBeFinished,
                 DialogueType.Mini => true,
-                DialogueType.Unlockable => unlockCondition.Value,
+                DialogueType.Unlockable => unlockCondition.Value && DialogueWasNotShown,
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
