@@ -5,6 +5,7 @@ using OneLine;
 using Trucker.Model.Landmarks;
 using UnityEngine;
 using UnityUtils.Saves;
+using UnityUtils.Variables;
 
 namespace Trucker.Model.Audio
 {
@@ -15,7 +16,10 @@ namespace Trucker.Model.Audio
 
         private Dictionary<LandmarkType, AudioClip> _landmarkMusic;
         public AudioClip[] AvailableSongs 
-            => music.Select(md => md.clip).ToArray(); // TODO return only available 
+            => music
+                .Where(md => md.available == null || md.available.Value) // TODO check on nul on validate 
+                .Select(md => md.clip)
+                .ToArray(); 
 
         public override void Init()
         {
@@ -50,5 +54,6 @@ namespace Trucker.Model.Audio
     {
         public AudioClip clip;
         public LandmarkType landmark;
+        public BoolVariable available;
     }
 }

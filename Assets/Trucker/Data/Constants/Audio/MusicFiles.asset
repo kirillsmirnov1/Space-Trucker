@@ -15,13 +15,19 @@ MonoBehaviour:
   music:
   - clip: {fileID: 8300000, guid: c1fe85edbc2b30f4089c6d45ee97f88f, type: 3}
     landmark: 2
+    available: {fileID: 0}
   - clip: {fileID: 8300000, guid: e57f4a0561b06314d85af1c7e11bec15, type: 3}
     landmark: 3
+    available: {fileID: 0}
   - clip: {fileID: 8300000, guid: 38dc66b44d3b9a043a81261122734331, type: 3}
     landmark: 1
+    available: {fileID: 0}
   - clip: {fileID: 8300000, guid: 2ce970de7744e8f419de5a185ccedb6d, type: 3}
     landmark: -2147483648
+    available: {fileID: 11400000, guid: b8136bfd1b80e1b4b89c91cdd008c336, type: 2}
   - clip: {fileID: 8300000, guid: 53f32a583466b43429660a9449257b20, type: 3}
     landmark: 4
+    available: {fileID: 0}
   - clip: {fileID: 8300000, guid: fb2768aafb9fdad408a832ae55d12e3c, type: 3}
     landmark: -2147483648
+    available: {fileID: 0}
