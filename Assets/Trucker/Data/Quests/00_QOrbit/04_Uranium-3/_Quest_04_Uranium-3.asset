@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7afbb65918f7c2428bcb872ad5bc1c0, type: 2}
   - {fileID: 11400000, guid: 5f26dd228b971bc4e926a85ee6590890, type: 2}
   consequences:
+  - {fileID: 11400000, guid: f7bc3e58b0fdebf4389394ba861aa38d, type: 2}
   - {fileID: 11400000, guid: 185ee7d1c975d704eb0d6c19bf9750b3, type: 2}
   - {fileID: 11400000, guid: f912562c3032bf249af34f8e18dfb849, type: 2}
   currentStepNumber: -1
