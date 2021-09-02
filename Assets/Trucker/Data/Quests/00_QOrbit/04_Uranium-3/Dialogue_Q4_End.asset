@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q4_End
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 5cba0e7d32a7fc14195c836306f2f821
+  canBeRepeated: 0
+  initialCharacter: 0
+  lines:
+  - character: 0
+    line: Here is your uranium, old man.
+  - character: 0
+    line: Oh, that's nice.
+  - character: 0
+    line: I knew I can count on you.
+  - character: 9
+    line: It's not like I'm doing that for free.
+  - character: 0
+    line: Yeah, yeah, I just found brand new Player for you.
+  - character: 0
+    line: Lemme attach it to your PDA.
+  - character: 0
+    line: It even has a recorder, you know?
+  - character: 9
+    line: It does?
+  - character: 0
+    line: Yeah, you can record songs anywhere
+  - character: 9
+    line: Let me check it
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: 9a35a3da9683dde46a6b6799c8c13111, type: 2}

@@ -10,19 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a338f67f9c0f4cd9bf9605e6bed48f73, type: 3}
-  m_Name: _Quest_03_Uranium-2
+  m_Name: _Quest_04_Uranium-3
   m_EditorClassIdentifier: 
-  title: Uranium-2
-  description: Clean up Q's orbit of Uranium
+  title: Uranium-3
+  description: Bring last load of uranium to dump.
   finishedFromDialog: 1
   conditions: []
   steps:
-  - {fileID: 11400000, guid: 9483d650cf2d3194696fdb29e58911c6, type: 2}
+  - {fileID: 11400000, guid: 9dcdf4b8777ad3b44b9e0c2be0989360, type: 2}
   - {fileID: 11400000, guid: b7afbb65918f7c2428bcb872ad5bc1c0, type: 2}
   - {fileID: 11400000, guid: 5f26dd228b971bc4e926a85ee6590890, type: 2}
   consequences:
-  - {fileID: 11400000, guid: f7bc3e58b0fdebf4389394ba861aa38d, type: 2}
-  - {fileID: 11400000, guid: 9dcdf4b8777ad3b44b9e0c2be0989360, type: 2}
-  - {fileID: 11400000, guid: b12935c0d14857e45897f6d26ad2f7f1, type: 2}
-  - {fileID: 11400000, guid: 4cbd61ac2755d754d96d2054d030329d, type: 2}
-  currentStepNumber: 1
+  - {fileID: 11400000, guid: 185ee7d1c975d704eb0d6c19bf9750b3, type: 2}
+  - {fileID: 11400000, guid: f912562c3032bf249af34f8e18dfb849, type: 2}
+  currentStepNumber: -1

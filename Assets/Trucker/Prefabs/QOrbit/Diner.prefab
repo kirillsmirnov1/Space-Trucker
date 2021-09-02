@@ -325,7 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 8
-  dialogueOptions: []
+  dialogueOptions:
+  - {fileID: 11400000, guid: f15d07b68f3efd9409f8acae88203d19, type: 2}
 --- !u!114 &6594878754717847991
 MonoBehaviour:
   m_ObjectHideFlags: 0

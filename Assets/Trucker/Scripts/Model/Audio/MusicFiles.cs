@@ -17,9 +17,25 @@ namespace Trucker.Model.Audio
         private Dictionary<LandmarkType, AudioClip> _landmarkMusic;
         public AudioClip[] AvailableSongs 
             => music
-                .Where(md => md.available == null || md.available.Value) // TODO check on nul on validate 
+                .Where(md => md.available != null && md.available.Value) // TODO check on nul on validate 
                 .Select(md => md.clip)
-                .ToArray(); 
+                .ToArray();
+
+        private void OnValidate()
+        {
+            CheckTriggers();
+        }
+
+        private void CheckTriggers()
+        {
+            foreach (var md in music)
+            {
+                if (md.available == null)
+                {
+                    Debug.LogWarning($"MusicFiles: song «{md.clip.name}» has no trigger");
+                }
+            }
+        }
 
         public override void Init()
         {

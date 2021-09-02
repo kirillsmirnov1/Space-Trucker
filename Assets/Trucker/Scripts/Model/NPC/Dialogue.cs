@@ -15,11 +15,14 @@ namespace Trucker.Model.NPC
         [SerializeField] private CharacterName initialCharacter;
         [SerializeField, OneLine, HideLabel] private DialogueLine[] lines;
         
-        [Header("Consequences")]
+        [Header("Conditions")]
         [SerializeField] private DialogueType dialogueType;
         [SerializeField] 
         [ConditionalField("dialogueType", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest})] 
         private Quest quest;
+        [SerializeField]
+        [ConditionalField("dialogueType", compareValues: new object[]{DialogueType.Unlockable})] 
+        private BoolVariable unlockCondition;
 
         public CharacterName InitialCharacter => initialCharacter;
         public DialogueLine[] Lines => lines;
@@ -38,6 +41,7 @@ namespace Trucker.Model.NPC
             {
                 case DialogueType.Mini:
                 case DialogueType.None:
+                case DialogueType.Unlockable:
                     break;
                 case DialogueType.TakeQuest:
                     quest.Take();
@@ -61,6 +65,7 @@ namespace Trucker.Model.NPC
                 DialogueType.TakeQuest => quest.CanBeTaken && quest.NeverBeenStarted, 
                 DialogueType.FinishQuest => quest.CanBeFinished,
                 DialogueType.Mini => true,
+                DialogueType.Unlockable => unlockCondition.Value,
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -77,6 +82,7 @@ namespace Trucker.Model.NPC
             TakeQuest,
             FinishQuest,
             Mini,
+            Unlockable,
         }
     }
 }
