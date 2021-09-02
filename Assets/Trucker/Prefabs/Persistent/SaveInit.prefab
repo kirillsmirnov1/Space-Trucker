@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToInit:
+  - {fileID: 11400000, guid: 14ff50252f68ab649b07660316319c91, type: 2}
   - {fileID: 11400000, guid: cfe1415b1757da14fbb708ba5d9de0eb, type: 2}
   - {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
   - {fileID: 11400000, guid: d1921b89bbb172649b7b6e649e1ca477, type: 2}

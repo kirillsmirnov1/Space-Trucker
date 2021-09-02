@@ -35,6 +35,14 @@ namespace Trucker.Model.Audio
                 _landmarkMusic.Add(landmark, music[i].clip);
             }
         }
+
+        public AudioClip GetSongByName(string songName)
+        {
+            var song = music
+                .Select(md => md.clip)
+                .FirstOrDefault(clip => clip.name.Equals(songName));
+            return song == null ? AvailableSongs[0] : song;
+        }
     }
 
     [Serializable]
