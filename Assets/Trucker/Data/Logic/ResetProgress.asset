@@ -40,3 +40,4 @@ MonoBehaviour:
   uraniumCountOrbit: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
   uraniumCountDump: {fileID: 11400000, guid: 2312fbdb6e187934e8e877b7c0e892eb, type: 2}
   musicPlayerEnabledToPlayer: {fileID: 11400000, guid: 9b0fa638f0db4684cb1101ae62b8da62, type: 2}
+  ratingEnabled: {fileID: 11400000, guid: a535918f2649e3047a9dae2dd4221b4f, type: 2}
