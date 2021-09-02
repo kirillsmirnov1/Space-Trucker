@@ -15,7 +15,7 @@ MonoBehaviour:
   value: 
   save: 1
   logSave: 0
-  defaultValue: 
+  defaultValue: Space Cadet
   guid: 14ff50252f68ab649b07660316319c91
   playerClipVariable: {fileID: 11400000, guid: 3c7844425bf177644b6f300af4100ae9, type: 2}
   musicFiles: {fileID: 11400000, guid: 251f7e516a947664ca55c47be4d4c655, type: 2}
