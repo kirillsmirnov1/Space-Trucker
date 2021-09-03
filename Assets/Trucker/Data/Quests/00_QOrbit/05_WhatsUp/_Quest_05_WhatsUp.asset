@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: _Quest_05_WhatsUp
   m_EditorClassIdentifier: 
   title: What's Up
-  description: "-Dialogue \n>Start Q6"
+  description: Check your friends
   finishedFromDialog: 1
   conditions: []
   steps:

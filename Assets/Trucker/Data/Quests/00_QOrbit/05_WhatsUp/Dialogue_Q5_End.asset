@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q5_End
+  m_EditorClassIdentifier: 
+  value: 1
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: f6fa7bb71be1f4641a93b3224de092e5
+  canBeRepeated: 0
+  initialCharacter: 6
+  lines:
+  - character: 9
+    line: Heyyy..
+  - character: 6
+    line: Oh
+  - character: 8
+    line: So he didn't die! Just like I said.
+  - character: 6
+    line: We've been worrying about you. How are you?
+  - character: 9
+    line: Well, my ship is barely functions, but I'm allright.
+  - character: 9
+    line: Does anybody know that happened the other night?
+  - character: 8
+    line: EMI storm happened.
+  - character: 8
+    line: Lots of damage, the order of being is disrupted, the science devision can't
+      keep their gadgets in their pants.
+  - character: 8
+    line: We even thought that you and Darnell got smashed, but here both you are, 
+      safe and sound, so no casualties, yet.
+  - character: 9
+    line: D, you got in that too?
+  - character: 7
+    line: I did. Just started with new assignment, when everything started sparkling
+      around.
+  - character: 6
+    line: Poor thing..
+  - character: 8
+    line: And you, where have you been when it started?
+  - character: 9
+    line: I guess... I had a few more bottles than I needed yesterday..
+  - character: 8
+    line: So you missed it all? The most fascinating thing happening here, and you
+      slept it all the way through?
+  - character: 6
+    line: Speaking about keeping it in pants..
+  - character: 8
+    line: Oh, chill, you know I...
+  - character: 9
+    line: Hey, hey, I have one question.
+  - character: 9
+    line: "What's up with \xABEmployee of the month\xBB reward? I guess it's my only
+      hope to get nice ship fast."
+  - character: 8
+    line: "Oh, that's easy, you just need to get more \xABperfomance points\xBB than
+      everybody else around these places and you'll get brand new speedster."
+  - character: 8
+    line: Aaaand contest ends today. Aaaand you are pretty far from..
+  - character: 6
+    line: Stop it. Darnell, how many points does Fieldy actually need?
+  - character: 7
+    line: Well... Let me check..
+  - character: 7
+    line: Just a minute, it loads..
+  - character: 7
+    line: ...If I just had finished putting those stations in their places, the signal
+      would've been much better...
+  - character: 7
+    line: Oh, here it is.
+  - character: 7
+    line: So, you need to get only.. 1200 points in one day.
+  - character: 7
+    line: And Ackerley already logged in something for you.
+  - character: 7
+    line: I'll connect your PDA to leaderboard, so you'll be able to check it.
+  - character: 6
+    line: 1200 points? Well, that's hard, but doable.
+  - character: 6
+    line: Lots of people might need your help today.
+  - character: 7
+    line: I can include you in my report, if you help me.
+  - character: 6
+    line: That's good. I would also recomment you to check on Institute and Dorm.
+  - character: 6
+    line: And, well, I have something to ask of you too..
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: a30904ca5dcc8914fbd052845c24f6c7, type: 2}
+  unlockCondition: {fileID: 0}
