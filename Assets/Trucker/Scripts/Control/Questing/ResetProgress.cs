@@ -14,12 +14,7 @@ namespace Trucker.Control.Questing
         [SerializeField] private Dialogue[] dialogues;
         [SerializeField] private Quest[] quests;
         [SerializeField] private Quest starterQuest;
-
-        [Header("Set defaults")]
-        [SerializeField] private IntVariable uraniumCountOrbit;
-        [SerializeField] private IntVariable uraniumCountDump;
-        [SerializeField] private BoolVariable musicPlayerEnabledToPlayer;
-        [SerializeField] private BoolVariable ratingEnabled;
+        [SerializeField] private AVariable[] setDefaults;
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -39,10 +34,10 @@ namespace Trucker.Control.Questing
 
         private void SetDefaults() 
         {
-            uraniumCountOrbit.SetDefaultValue(); // TODO move SDV to AVariable 
-            uraniumCountDump.SetDefaultValue();
-            musicPlayerEnabledToPlayer.SetDefaultValue();
-            ratingEnabled.SetDefaultValue();
+            foreach (var aVariable in setDefaults)
+            {
+                aVariable.SetDefaultValue();
+            }
         }
 
         private void ReloadScene()

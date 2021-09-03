@@ -39,7 +39,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}
   - {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
   starterQuest: {fileID: 11400000, guid: e0085730cdeecc54d913c76830007c3b, type: 2}
-  uraniumCountOrbit: {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
-  uraniumCountDump: {fileID: 11400000, guid: 2312fbdb6e187934e8e877b7c0e892eb, type: 2}
-  musicPlayerEnabledToPlayer: {fileID: 11400000, guid: 9b0fa638f0db4684cb1101ae62b8da62, type: 2}
-  ratingEnabled: {fileID: 11400000, guid: a535918f2649e3047a9dae2dd4221b4f, type: 2}
+  setDefaults:
+  - {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
+  - {fileID: 11400000, guid: 2312fbdb6e187934e8e877b7c0e892eb, type: 2}
+  - {fileID: 11400000, guid: 9b0fa638f0db4684cb1101ae62b8da62, type: 2}
+  - {fileID: 11400000, guid: a535918f2649e3047a9dae2dd4221b4f, type: 2}
