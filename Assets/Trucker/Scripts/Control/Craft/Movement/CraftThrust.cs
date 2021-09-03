@@ -24,10 +24,13 @@ namespace Trucker.Control.Craft.Movement
 
         private void ApplyThrust()
         {
-            var speed = thrustValue * _craftMass * thrustMod;
-            if (!(Mathf.Abs(speed) > 0f)) return;
-            var thrustForce = transform.forward * speed;
-            _rb.velocity = thrustForce;
+            var maxSpeed = thrustValue * _craftMass * thrustMod; // TODO turn to variable 
+            if (!(Mathf.Abs(thrustValue) > 0f)) return;
+            
+            var currentSpeed = _rb.velocity.magnitude;
+            var speedToAdd = Mathf.Clamp(maxSpeed - currentSpeed, 0, thrustMod);
+            var thrustForce = transform.forward * speedToAdd;
+            _rb.AddForce(thrustForce, ForceMode.Acceleration);
         }
     }
 }
