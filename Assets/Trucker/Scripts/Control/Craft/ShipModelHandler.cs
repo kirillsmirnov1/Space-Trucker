@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using OneLine;
 using Trucker.Model.Craft;
 using UnityEngine;
@@ -44,8 +44,8 @@ namespace Trucker.Control.Craft
 
         private void SetMesh(GameObject newMesh)
         {
-            newMesh.gameObject.SetActive(true);
             lastMesh.SetActive(false);
+            newMesh.gameObject.SetActive(true);
             lastMesh = newMesh;
         }
 
