@@ -31,15 +31,15 @@ MonoBehaviour:
   - character: 9
     line: Well, my ship is barely functions, but I'm allright.
   - character: 9
-    line: Does anybody know that happened the other night?
+    line: Does anybody know what happened the other night?
   - character: 8
     line: EMI storm happened.
   - character: 8
     line: Lots of damage, the order of being is disrupted, the science devision can't
       keep their gadgets in their pants.
   - character: 8
-    line: We even thought that you and Darnell got smashed, but here both you are, 
-      safe and sound, so no casualties, yet.
+    line: We even thought that you and Darnell got smashed, but here both of you
+      are,  safe and sound, so, no casualties, yet.
   - character: 9
     line: D, you got in that too?
   - character: 7
@@ -92,7 +92,7 @@ MonoBehaviour:
   - character: 7
     line: I can include you in my report, if you help me.
   - character: 6
-    line: That's good. I would also recomment you to check on Institute and Dorm.
+    line: That's good. I would also recommend you to check on Institute and Dorm.
   - character: 6
     line: And, well, I have something to ask of you too..
   dialogueType: 2
