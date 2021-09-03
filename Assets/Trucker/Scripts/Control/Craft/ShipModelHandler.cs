@@ -17,8 +17,8 @@ namespace Trucker.Control.Craft
         [SerializeField] private FloatVariable thrustMod;
         [SerializeField] private FloatVariable maxSpeed;
         
-        [Header("Set default mesh")]
-        [SerializeField] private GameObject lastMesh;
+        [Header("Components")]
+        [SerializeField] private Transform shipMeshHolder;
         
         private void Awake()
         {
@@ -41,9 +41,12 @@ namespace Trucker.Control.Craft
 
         private void SetMesh(GameObject newMesh)
         {
-            lastMesh.SetActive(false);
-            newMesh.gameObject.SetActive(true);
-            lastMesh = newMesh;
+            var currentMesh = shipMeshHolder.GetChild(0).gameObject;
+            
+            if (currentMesh.name == newMesh.name) return;
+            
+            Destroy(currentMesh);
+            Instantiate(newMesh, shipMeshHolder);
         }
 
         private ShipModelData Data(ShipModel model)
@@ -53,7 +56,7 @@ namespace Trucker.Control.Craft
     [Serializable]
     public struct ShipModelData // IMPR turn to class 
     {
-        public GameObject mesh; // IMPR prefab
+        public GameObject mesh; 
         public float thrustMod;
         public float maxSpeed;
     }
