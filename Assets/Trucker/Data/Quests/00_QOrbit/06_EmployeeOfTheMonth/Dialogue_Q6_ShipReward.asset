@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q6_ShipReward
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 3cda469950e7d7142bfc8becbb26586d
+  canBeRepeated: 0
+  initialCharacter: 10
+  lines:
+  - character: 9
+    line: "I'm here to get an \xABEmployee of the month reward\xBB."
+  - character: 10
+    line: Good day to you, sir.
+  - character: 10
+    line: You arrived just in time.
+  - character: 10
+    line: Let me check the database.
+  - character: 9
+    line: ...
+  - character: 10
+    line: You are the winner indeed.
+  - character: 10
+    line: The new ship will be granted to you immediately.
+  - character: 10
+    line: And looking at your statistics, you were of great help today.
+  - character: 10
+    line: Considering circumstances, that should be rewarded in an extra way.
+  - character: 10
+    line: Unfortunately, my gratitude is the only thing I can dispose of right now.
+  - character: 10
+    line: However, your exceptional efforts will not be forgotten.
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: 7fe561d38861e2940a34fce741554514, type: 2}
+  unlockCondition: {fileID: 0}
