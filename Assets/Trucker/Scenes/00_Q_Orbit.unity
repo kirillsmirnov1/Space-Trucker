@@ -3152,6 +3152,14 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.height
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4556419221928992427, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
+      propertyPath: modelData.Array.data[0].thrustMod
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556419221928992427, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
+      propertyPath: modelData.Array.data[1].thrustMod
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 8135565870645640399, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
       propertyPath: m_RootOrder
       value: 30

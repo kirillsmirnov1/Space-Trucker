@@ -8,7 +8,8 @@ namespace Trucker.Control.Craft.Movement
     {
         [SerializeField] private FloatVariable thrustValue;
         [SerializeField] private FloatVariable thrustMod;
-
+        [SerializeField] private FloatVariable maxSpeed;
+        
         private Rigidbody _rb;
         private float _craftMass;
 
@@ -24,13 +25,14 @@ namespace Trucker.Control.Craft.Movement
 
         private void ApplyThrust()
         {
-            var maxSpeed = thrustValue * _craftMass * thrustMod; // TODO turn to variable 
             if (!(Mathf.Abs(thrustValue) > 0f)) return;
             
             var currentSpeed = _rb.velocity.magnitude;
-            var speedToAdd = Mathf.Clamp(maxSpeed - currentSpeed, 0, thrustMod);
+            var speedToAdd = Mathf.Clamp(maxSpeed - currentSpeed, 0, MaxSpeedToAdd);
             var thrustForce = transform.forward * speedToAdd;
             _rb.AddForce(thrustForce, ForceMode.Acceleration);
         }
+
+        private float MaxSpeedToAdd => thrustMod * thrustValue * _craftMass;
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using OneLine;
 using Trucker.Model.Craft;
 using UnityEngine;
@@ -10,11 +10,12 @@ namespace Trucker.Control.Craft
     public class ShipModelHandler : MonoBehaviour
     {
         [NamedArray(typeof(ShipModel))] [OneLine]
-        [SerializeField] private ShipModelData[] modelData;
+        [SerializeField] private ShipModelData[] modelData; // IMPR to SO, pass instances 
         
         [Header("Variables")]
         [SerializeField] private ShipModelVariable shipModelVariable;
         [SerializeField] private FloatVariable thrustMod;
+        [SerializeField] private FloatVariable maxSpeed;
         
         [Header("Set default mesh")]
         [SerializeField] private GameObject lastMesh;
@@ -34,12 +35,8 @@ namespace Trucker.Control.Craft
         {
             var newModelData = Data(newShipModel);
             SetMesh(newModelData.mesh);
-            SetThrustMod(newModelData.thrustMod);
-        }
-
-        private void SetThrustMod(float newThrustMod)
-        {
-            thrustMod.Value = newThrustMod;
+            thrustMod.Value = newModelData.thrustMod;
+            maxSpeed.Value = newModelData.maxSpeed;
         }
 
         private void SetMesh(GameObject newMesh)
@@ -54,9 +51,10 @@ namespace Trucker.Control.Craft
     }
 
     [Serializable]
-    public struct ShipModelData
+    public struct ShipModelData // IMPR turn to class 
     {
-        public GameObject mesh;
+        public GameObject mesh; // IMPR prefab
         public float thrustMod;
+        public float maxSpeed;
     }
 }
