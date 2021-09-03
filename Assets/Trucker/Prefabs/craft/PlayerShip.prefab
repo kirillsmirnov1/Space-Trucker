@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 5801492429987914365}
   - component: {fileID: 1914312358508938226}
   - component: {fileID: 32142476923363866}
+  - component: {fileID: 4556419221928992427}
   m_Layer: 6
   m_Name: PlayerShip
   m_TagString: Player
@@ -586,6 +587,23 @@ MonoBehaviour:
   springSettings: {fileID: 11400000, guid: e2a0195a0b3950c488a894a405b85a9a, type: 2}
   catcheeTypes: {fileID: 11400000, guid: c2bdf398f9764a14dbf03b3e251536b7, type: 2}
   zapLevelVariable: {fileID: 11400000, guid: d1921b89bbb172649b7b6e649e1ca477, type: 2}
+--- !u!114 &4556419221928992427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911645796159432309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7a10efe91447499b83adb9b4fc98c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipModelVariable: {fileID: 11400000, guid: a4ae2792bafa6124a84a6d047cf35d4f, type: 2}
+  modelData:
+  - mesh: {fileID: 4899196615912649571}
+  - mesh: {fileID: 512565571321806369}
+  lastMesh: {fileID: 4899196615912649571}
 --- !u!1001 &855004955113030512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -647,6 +665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00998069993dc4d4d91ea324abaf4ecc, type: 3}
+--- !u!1 &512565571321806369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00998069993dc4d4d91ea324abaf4ecc, type: 3}
+  m_PrefabInstance: {fileID: 855004955113030512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &889231160554251419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00998069993dc4d4d91ea324abaf4ecc, type: 3}
