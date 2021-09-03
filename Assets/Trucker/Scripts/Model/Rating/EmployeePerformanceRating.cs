@@ -4,6 +4,7 @@ using OneLine;
 using Trucker.Model.NPC;
 using UnityEngine;
 using UnityUtils.Saves;
+using UnityUtils.Variables;
 
 namespace Trucker.Model.Rating
 {
@@ -13,6 +14,7 @@ namespace Trucker.Model.Rating
         public static event Action<int> OnRatingChange;
 
         [SerializeField] private int requiredRating;
+        [SerializeField] private IntVariable ratingVariable;
         [SerializeField, OneLine, HideLabel] private TaskReward[] rewards;
 
         private int _rating;
@@ -43,6 +45,8 @@ namespace Trucker.Model.Rating
             _rating = rewards
                 .Where(reward => reward.trigger.Value)
                 .Sum(reward => reward.ratingChange);
+
+            ratingVariable.Value = _rating;
 
             if(!init) OnRatingChange?.Invoke(_rating - oldRating);
         }

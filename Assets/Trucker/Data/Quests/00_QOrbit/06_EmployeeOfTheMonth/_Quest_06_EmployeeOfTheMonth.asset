@@ -13,9 +13,18 @@ MonoBehaviour:
   m_Name: _Quest_06_EmployeeOfTheMonth
   m_EditorClassIdentifier: 
   title: Employee of the month
-  description: get rekt
+  description: 'get rekt
+
+    ! dialogue'
   finishedFromDialog: 1
   conditions: []
-  steps: []
-  consequences: []
-  currentStepNumber: -1
+  steps:
+  - {fileID: 11400000, guid: 54adb5af404d9a245aede46cc9485376, type: 2}
+  - {fileID: 11400000, guid: f4da0e58d2528034f876cd326e8830c1, type: 2}
+  consequences:
+  - {fileID: 11400000, guid: 91f68ad98e0bd974182e03abc1f2f9e7, type: 2}
+  - {fileID: 11400000, guid: b12935c0d14857e45897f6d26ad2f7f1, type: 2}
+  - {fileID: 11400000, guid: 50a38d2706b75b24c94b4d0f067d4f7b, type: 2}
+  - {fileID: 11400000, guid: 185ee7d1c975d704eb0d6c19bf9750b3, type: 2}
+  - {fileID: 11400000, guid: 1ea9453a5a940024489ac0ecf5b02857, type: 2}
+  currentStepNumber: 0
