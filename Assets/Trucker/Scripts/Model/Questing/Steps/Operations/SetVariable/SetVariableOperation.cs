@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityUtils.Variables;
 
-namespace Trucker.Model.Questing.Steps.Operations
+namespace Trucker.Model.Questing.Steps.Operations.SetVariable
 {
     public abstract class SetVariableOperation <T> : Operation
     {
