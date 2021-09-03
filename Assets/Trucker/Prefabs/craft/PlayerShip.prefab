@@ -602,8 +602,11 @@ MonoBehaviour:
   shipModelVariable: {fileID: 11400000, guid: a4ae2792bafa6124a84a6d047cf35d4f, type: 2}
   modelData:
   - mesh: {fileID: 4899196615912649571}
+    thrustMod: 0.025
   - mesh: {fileID: 512565571321806369}
+    thrustMod: 0.045
   lastMesh: {fileID: 4899196615912649571}
+  thrustMod: {fileID: 11400000, guid: b777c39383547484abf498954108e9ad, type: 2}
 --- !u!1001 &855004955113030512
 PrefabInstance:
   m_ObjectHideFlags: 0

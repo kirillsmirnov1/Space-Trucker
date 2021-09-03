@@ -3,16 +3,22 @@ using OneLine;
 using Trucker.Model.Craft;
 using UnityEngine;
 using UnityUtils.Attributes;
+using UnityUtils.Variables;
 
 namespace Trucker.Control.Craft
 {
     public class ShipModelHandler : MonoBehaviour
     {
-        [SerializeField] private ShipModelVariable shipModelVariable;
         [NamedArray(typeof(ShipModel))] [OneLine]
         [SerializeField] private ShipModelData[] modelData;
+        
+        [Header("Variables")]
+        [SerializeField] private ShipModelVariable shipModelVariable;
+        [SerializeField] private FloatVariable thrustMod;
+        
+        [Header("Set default mesh")]
         [SerializeField] private GameObject lastMesh;
-
+        
         private void Awake()
         {
             SetShipModel(shipModelVariable);
@@ -28,6 +34,12 @@ namespace Trucker.Control.Craft
         {
             var newModelData = Data(newShipModel);
             SetMesh(newModelData.mesh);
+            SetThrustMod(newModelData.thrustMod);
+        }
+
+        private void SetThrustMod(float newThrustMod)
+        {
+            thrustMod.Value = newThrustMod;
         }
 
         private void SetMesh(GameObject newMesh)
@@ -45,5 +57,6 @@ namespace Trucker.Control.Craft
     public struct ShipModelData
     {
         public GameObject mesh;
+        public float thrustMod;
     }
 }
