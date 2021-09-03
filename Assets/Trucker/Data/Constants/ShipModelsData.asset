@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelData:
   - mesh: {fileID: 4693684586352304481, guid: 1d486a88a44ada543b3e0d8127391ae1, type: 3}
-    thrustMod: 0.02
+    acceleration: 0.02
     maxSpeed: 25
   - mesh: {fileID: 3760785703304819853, guid: 021626bcd67b16046b855692951bc169, type: 3}
-    thrustMod: 0.04
+    acceleration: 0.04
     maxSpeed: 75

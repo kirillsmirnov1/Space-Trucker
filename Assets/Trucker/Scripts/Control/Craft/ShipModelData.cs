@@ -7,7 +7,7 @@ namespace Trucker.Control.Craft
     public class ShipModelData 
     {
         public GameObject mesh; 
-        public float thrustMod;
+        public float acceleration;
         public float maxSpeed;
     }
 }
