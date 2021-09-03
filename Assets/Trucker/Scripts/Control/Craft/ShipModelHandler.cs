@@ -1,22 +1,17 @@
-﻿using System;
-using OneLine;
+﻿using Trucker.Control.Craft.Movement;
 using Trucker.Model.Craft;
 using UnityEngine;
-using UnityUtils.Attributes;
-using UnityUtils.Variables;
 
 namespace Trucker.Control.Craft
 {
     public class ShipModelHandler : MonoBehaviour
     {
-        [NamedArray(typeof(ShipModel))] [OneLine]
-        [SerializeField] private ShipModelData[] modelData; // IMPR to SO, pass instances 
+        [SerializeField] private ShipModelsData modelData;  
         
         [Header("Variables")]
         [SerializeField] private ShipModelVariable shipModelVariable;
-        [SerializeField] private FloatVariable thrustMod;
-        [SerializeField] private FloatVariable maxSpeed;
-        
+        [SerializeField] private ShipModelParamsVariable shipModelParamsVariable;
+
         [Header("Components")]
         [SerializeField] private Transform shipMeshHolder;
         
@@ -33,10 +28,9 @@ namespace Trucker.Control.Craft
 
         private void SetShipModel(ShipModel newShipModel)
         {
-            var newModelData = Data(newShipModel);
+            var newModelData = modelData.Get(newShipModel);
             SetMesh(newModelData.mesh);
-            thrustMod.Value = newModelData.thrustMod;
-            maxSpeed.Value = newModelData.maxSpeed;
+            shipModelParamsVariable.Value = newModelData;
         }
 
         private void SetMesh(GameObject newMesh)
@@ -48,16 +42,5 @@ namespace Trucker.Control.Craft
             Destroy(currentMesh);
             Instantiate(newMesh, shipMeshHolder);
         }
-
-        private ShipModelData Data(ShipModel model)
-            => modelData[(int) model];
-    }
-
-    [Serializable]
-    public struct ShipModelData // IMPR turn to class 
-    {
-        public GameObject mesh; 
-        public float thrustMod;
-        public float maxSpeed;
     }
 }

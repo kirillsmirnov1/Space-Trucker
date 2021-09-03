@@ -9,11 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 921873d815974236975780263b5e64b4, type: 3}
-  m_Name: thrustMod
+  m_Script: {fileID: 11500000, guid: b456d80a57d5417db5a3c57633924cb5, type: 3}
+  m_Name: ShipModelDataVariable
   m_EditorClassIdentifier: 
-  value: 0.04
+  value:
+    mesh: {fileID: 0}
+    thrustMod: 0
+    maxSpeed: 0
   save: 0
   logSave: 0
-  defaultValue: 0
-  guid: b777c39383547484abf498954108e9ad
+  defaultValue:
+    mesh: {fileID: 0}
+    thrustMod: 0
+    maxSpeed: 0
+  guid: 

@@ -418,8 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrustValue: {fileID: 11400000, guid: cc7067f00ba4d2c4bb443da7ceae6658, type: 2}
-  thrustMod: {fileID: 11400000, guid: b777c39383547484abf498954108e9ad, type: 2}
-  maxSpeed: {fileID: 0}
+  shipModelParamsVariable: {fileID: 11400000, guid: ae80922bec839b349a0567fd5d1c1589, type: 2}
 --- !u!114 &2839290903199738242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,16 +513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7a10efe91447499b83adb9b4fc98c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelData:
-  - mesh: {fileID: 4693684586352304481, guid: 1d486a88a44ada543b3e0d8127391ae1, type: 3}
-    thrustMod: 0.02
-    maxSpeed: 25
-  - mesh: {fileID: 3760785703304819853, guid: 021626bcd67b16046b855692951bc169, type: 3}
-    thrustMod: 0.04
-    maxSpeed: 75
+  modelData: {fileID: 11400000, guid: 7c97a1f39b64c16449ad0f9eee1220a3, type: 2}
   shipModelVariable: {fileID: 11400000, guid: a4ae2792bafa6124a84a6d047cf35d4f, type: 2}
-  thrustMod: {fileID: 11400000, guid: b777c39383547484abf498954108e9ad, type: 2}
-  maxSpeed: {fileID: 11400000, guid: 06ba0301992966d44b385727543965d9, type: 2}
+  shipModelParamsVariable: {fileID: 11400000, guid: ae80922bec839b349a0567fd5d1c1589, type: 2}
   shipMeshHolder: {fileID: 3739803474090157421}
 --- !u!1001 &206637946680742402
 PrefabInstance:

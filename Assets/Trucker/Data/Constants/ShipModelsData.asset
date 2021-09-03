@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9831a024be2b4d7796ccf0350981a8a2, type: 3}
+  m_Name: ShipModelsData
+  m_EditorClassIdentifier: 
+  modelData:
+  - mesh: {fileID: 4693684586352304481, guid: 1d486a88a44ada543b3e0d8127391ae1, type: 3}
+    thrustMod: 0.02
+    maxSpeed: 25
+  - mesh: {fileID: 3760785703304819853, guid: 021626bcd67b16046b855692951bc169, type: 3}
+    thrustMod: 0.04
+    maxSpeed: 75
