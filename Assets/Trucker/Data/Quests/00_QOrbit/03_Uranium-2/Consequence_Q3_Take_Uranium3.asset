@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c82cc2dc47d24cbeb87b32d4ac198bf8, type: 3}
-  m_Name: Op_Q3_EnableRadar
+  m_Script: {fileID: 11500000, guid: fdc028313dbd427baf5e2790149fd635, type: 3}
+  m_Name: Consequence_Q3_Take_Uranium3
   m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: b34978ced1ceaab4c8c444022ee45141, type: 2}
-  value: 1
+  quest: {fileID: 11400000, guid: 9a35a3da9683dde46a6b6799c8c13111, type: 2}
