@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: _Quest_06_EmployeeOfTheMonth
   m_EditorClassIdentifier: 
   title: Employee of the month
-  description: 'get rekt
-
-    ! dialogue'
+  description: Working hard is the only option
   finishedFromDialog: 1
   conditions: []
   steps:
