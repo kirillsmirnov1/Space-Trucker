@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
-  m_Name: Dialogue_Shift_Start
+  m_Name: Dialogue_Q7_Shift_End
   m_EditorClassIdentifier: 
   value: 0
   save: 1
   logSave: 0
   defaultValue: 0
-  guid: eb2a626efc7bafd44b6d46724b442d64
+  guid: 50ffa522ea0232742967e0a3e4813e29
   canBeRepeated: 0
   initialCharacter: 11
   lines:
   - character: 9
-    line: Got some work?
+    line: Hey, here is your rocks.
   - character: 11
-    line: Yeah, I do, actually.
-  - character: 11
-    line: Bring me 3 asteroids, I need them for research.
+    line: Thank you, your help is much appreciated.
   - character: 9
-    line: Will it, you know, help my worker rating?
+    line: And rewarded?
   - character: 11
-    line: I'll see what I can do
-  dialogueType: 1
+    line: And rewarded.
+  - character: 11
+    line: I'm going to check on them really fast, don't go anywhere far away.
+  dialogueType: 2
   quest: {fileID: 11400000, guid: 2d5db95d5c0f44a438ac5fb2fbab6eb7, type: 2}
+  unlockCondition: {fileID: 0}

@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2390718d25ff4592b5f94a0fd71a13d2, type: 3}
-  m_Name: Goal_Has_3_Asteroids
+  m_Script: {fileID: 11500000, guid: c0c939731ca9469d9080c9c16b72adf9, type: 3}
+  m_Name: Consequence_Q7_Destroy_3_Catched_Asteroids
   m_EditorClassIdentifier: 
-  description: Catch 3 Asteroids
-  targetCatcheeTypes: 0000000003000000
-  requiredAmount: 3
-  catchedByTypes: {fileID: 11400000, guid: c2bdf398f9764a14dbf03b3e251536b7, type: 2}
+  typesToDestroy: 0000000003000000
+  numberOfObjectsToDestroy: 3
+  zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
