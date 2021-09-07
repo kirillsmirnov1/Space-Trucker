@@ -1,4 +1,5 @@
-﻿using Trucker.Model.Craft;
+﻿using Trucker.Control.Craft.Movement;
+using Trucker.Model.Craft;
 using UnityEngine;
 using UnityUtils;
 using UnityUtils.Extensions;
@@ -10,7 +11,9 @@ namespace Trucker.Control.Craft
         [SerializeField] private Transform cameraPivot;
         [SerializeField] private Transform craft;
         [SerializeField] private CameraFollowsCraftSettings settings;
-
+        [SerializeField] private ShipModelParamsVariable shipModelParams;
+        
+        
         private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
 
         private void FixedUpdate()
@@ -20,8 +23,11 @@ namespace Trucker.Control.Craft
         }
 
         private void MovePosition() 
-            => transform.position = Vector3.Lerp(transform.position, cameraPivot.position, Time.deltaTime * settings.speedMove);
+            => transform.position = Vector3.Lerp(transform.position, cameraPivot.position, Time.deltaTime * MovementSpeed);
 
+        private float MovementSpeed 
+            => settings.speedMove * shipModelParams.Value.maxSpeed;
+        
         private void MoveRotation()
         {
             var pointToLookAt = craft.position + craft.forward * settings.craftForwardLookDistance;

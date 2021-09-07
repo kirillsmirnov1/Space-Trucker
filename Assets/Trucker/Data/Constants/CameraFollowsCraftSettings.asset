@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CameraFollowsCraftSettings
   m_EditorClassIdentifier: 
   craftForwardLookDistance: 10
-  speedMove: 7
+  speedMove: 0.1
   speedRotate: 10

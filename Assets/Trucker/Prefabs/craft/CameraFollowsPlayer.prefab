@@ -101,6 +101,7 @@ MonoBehaviour:
   cameraPivot: {fileID: 0}
   craft: {fileID: 0}
   settings: {fileID: 11400000, guid: 61038cfcd2bbc4148ab48dd963dac261, type: 2}
+  shipModelParams: {fileID: 11400000, guid: ae80922bec839b349a0567fd5d1c1589, type: 2}
 --- !u!114 &4092939529503534561
 MonoBehaviour:
   m_ObjectHideFlags: 0
