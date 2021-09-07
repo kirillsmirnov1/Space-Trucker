@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 219.595, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 168.81}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5786321139818370969
 CanvasRenderer:
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
-  m_VerticalFit: 2
+  m_VerticalFit: 0
 --- !u!1 &2203764576688757958
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +377,7 @@ MonoBehaviour:
   npcNameText: {fileID: 4045067179631217516}
   characterPortrait: {fileID: 7394190925238408020}
   charactersData: {fileID: 11400000, guid: b93687eb61d40324e8dbe234cac564e0, type: 2}
+  namePlank: {fileID: 7884387145429751546}
   defaultCharacter: 0
 --- !u!114 &3130656516854992541
 MonoBehaviour:
@@ -521,7 +522,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50, y: 50}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 168.81}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8362633842233178719
 CanvasRenderer:
@@ -574,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
-  m_VerticalFit: 2
+  m_VerticalFit: 0
 --- !u!114 &1419271448536102660
 MonoBehaviour:
   m_ObjectHideFlags: 0

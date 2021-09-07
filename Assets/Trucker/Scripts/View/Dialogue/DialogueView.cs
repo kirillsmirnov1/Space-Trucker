@@ -8,6 +8,7 @@ using Trucker.View.Util;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils;
+using UnityUtils.Extensions;
 
 namespace Trucker.View.Dialogue
 {
@@ -21,6 +22,7 @@ namespace Trucker.View.Dialogue
         [SerializeField] private TextMeshProUGUI npcNameText;
         [SerializeField] public CharacterPortrait characterPortrait;
         [SerializeField] private CharactersData charactersData;
+        [SerializeField] private RectTransform namePlank;
         
         private IDialogue[] _allDialogues;
         private DialogueViewState _state;
@@ -100,6 +102,7 @@ namespace Trucker.View.Dialogue
             var characterData = charactersData.GetCharacterData(character);
             npcNameText.text = characterData.nameText;
             characterPortrait.SetPortrait(characterData.portrait);
+            this.DelayAction(0f, () => LayoutRebuilder.ForceRebuildLayoutImmediate(namePlank));
         }
     }
 }
