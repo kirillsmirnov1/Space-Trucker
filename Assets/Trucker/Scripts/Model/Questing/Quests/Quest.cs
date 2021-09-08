@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Trucker.Model.Questing.Steps;
+using Trucker.Model.Questing.Steps.Operations;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -19,7 +20,7 @@ namespace Trucker.Model.Questing.Quests
         [SerializeField] private bool finishedFromDialog;
         [SerializeField] private List<BoolVariable> conditions;
         [SerializeField] private List<Step> steps;
-        [SerializeField] private List<Step> consequences;
+        [SerializeField] private List<Operation> consequences;
         
         public int currentStepNumber = -1;
 
