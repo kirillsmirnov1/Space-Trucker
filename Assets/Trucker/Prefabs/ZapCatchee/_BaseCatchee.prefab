@@ -209,6 +209,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8337146704126884150}
     m_Modifications:
+    - target: {fileID: 1344992584171944314, guid: 218573642b6910949913facd052d6cbd, type: 3}
+      propertyPath: zapCatchee
+      value: 
+      objectReference: {fileID: 7882215031207427478}
     - target: {fileID: 4068680925136945254, guid: 218573642b6910949913facd052d6cbd, type: 3}
       propertyPath: m_Name
       value: CatcheeProtectiveSphere
