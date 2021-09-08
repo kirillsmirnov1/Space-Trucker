@@ -15,4 +15,9 @@ MonoBehaviour:
   zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
   catchedByTypes: {fileID: 11400000, guid: c2bdf398f9764a14dbf03b3e251536b7, type: 2}
   typeToCheck: 1
-  prefabs: []
+  prefabs:
+  - {fileID: 5348089008279240043, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}
+  - {fileID: 8717278910673236232, guid: 28a469eb5d78c1c4da62d2be53b24719, type: 3}
+  - {fileID: 8265040262429865110, guid: 784361fe44b8b1041a856614e1cad55b, type: 3}
+  - {fileID: 3241940516785435587, guid: 2706ce2ff1b85244eb490a38d2afc349, type: 3}
+  - {fileID: 1030548734432984646, guid: 0471870751eee0744ab8f4156a70eedc, type: 3}
