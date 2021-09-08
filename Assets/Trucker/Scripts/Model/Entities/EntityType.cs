@@ -3,7 +3,7 @@
     public enum EntityType
     {
         Asteroid,
-        Person,
+        Character,
         Barrel,
         AsteroidWithSparks,
         Uranium,
