@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Trucker.Model.Questing.Steps.Operations
 {
+    [CreateAssetMenu(menuName = "Quests/Operations/MonitorStatusChange", fileName = "MonitorStatusChange", order = 0)]
     public class MonitorStatusChange : Operation
     {
         [SerializeField] private Monitor monitor;
@@ -15,6 +16,7 @@ namespace Trucker.Model.Questing.Steps.Operations
                 monitor.Start();
             else
                 monitor.Stop();
+            onCompleted?.Invoke();
         }
         
         [Serializable]
