@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
-  m_Name: Dialogue_Shift2_Start
+  m_Name: Dialogue_Q8_Shift2_Start
   m_EditorClassIdentifier: 
   value: 0
   save: 1
@@ -32,3 +32,4 @@ MonoBehaviour:
     line: That would be very nice of you.
   dialogueType: 1
   quest: {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
+  unlockCondition: {fileID: 0}
