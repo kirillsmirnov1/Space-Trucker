@@ -21,13 +21,13 @@ MonoBehaviour:
   initialCharacter: 11
   lines:
   - character: 9
-    line: Hey..
+    line: I got you those sparkling asteroids.
   - character: 11
-    line: Wow, you did it!
+    line: Wow! That's great! You're awesome!
   - character: 11
-    line: Thank you so much.
+    line: I'll get right down to studying them. 
   - character: 11
-    line: You are the best.
+    line: Don't go too far, I might need your help.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
   unlockCondition: {fileID: 0}

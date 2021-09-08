@@ -21,15 +21,39 @@ MonoBehaviour:
   initialCharacter: 11
   lines:
   - character: 9
-    line: I'm ready for something more difficult.
+    line: So, what's up with those asteroids?
   - character: 11
-    line: That's good.
+    line: So much, man, so much.
   - character: 11
-    line: Your asteroids were magnificent, we need more.
+    line: They cause electromagnetic fields fluctuations on impact.
   - character: 11
-    line: Bring us 15 asteroids that time.
+    line: Have you seen sparkling asteroids in space?
+  - character: 9
+    line: Yeah, a couple of times.
   - character: 11
-    line: That would be very nice of you.
+    line: That's what I'm talking about.
+  - character: 11
+    line: But I can't quite replicate that effect in the lab.
+  - character: 11
+    line: Listen, do you have a model of Catcher with stasis?
+  - character: 9
+    line: With what?
+  - character: 11
+    line: Apparently not. 
+  - character: 11
+    line: Stasis spheres. It's a new development. They protect the object from external influences, slow down the processes inside. 
+  - character: 11
+    line: Perhaps stasis can preserve the effect I'm interested in.
+  - character: 9
+    line: Well, what am I supposed to do?
+  - character: 11
+    line: First of all, here's the new Catcher.
+  - character: 11
+    line: It's got stasis, and it can hold up to 15 objects.
+  - character: 11
+    line: Second, go get me five sparkling asteroids.
+  - character: 11
+    line: And hurry, we don't know how long they'll spark after the storm!  
   dialogueType: 1
   quest: {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
   unlockCondition: {fileID: 0}
