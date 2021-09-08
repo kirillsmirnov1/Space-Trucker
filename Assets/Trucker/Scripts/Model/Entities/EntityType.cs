@@ -7,5 +7,7 @@
         Barrel,
         AsteroidWithSparks,
         Uranium,
+        
+        Undefined = int.MaxValue,
     }
 }
