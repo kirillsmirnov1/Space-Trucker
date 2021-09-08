@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Uranium
       objectReference: {fileID: 0}
+    - target: {fileID: 2869218011463552828, guid: 0847348f58572aa408636629a5ef7072, type: 3}
+      propertyPath: m_TagString
+      value: Uranium
+      objectReference: {fileID: 0}
     - target: {fileID: 5472780776570014634, guid: 0847348f58572aa408636629a5ef7072, type: 3}
       propertyPath: m_IsActive
       value: 0
