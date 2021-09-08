@@ -13,8 +13,7 @@ namespace Trucker.Model.Questing.Quests
     public class Quest : ScriptableObject
     {
         public static event Action<string> OnQuestTaken; 
-        public static event Action<string> OnQuestFinished;
-        public static event Action<string> OnQuestDropped; 
+        public static event Action<string, QuestStatus> OnQuestStop;
         
         public string title;
         [TextArea(1, 20)] public string description;
@@ -96,8 +95,10 @@ namespace Trucker.Model.Questing.Quests
             => QuestLogEntries.NeverBeenStarted(title);
         
         public bool CanBeTaken
-            => NotInProgress && AllConditionsPass;
+            => NotInProgress && AllConditionsPass && NotFailed;
 
+        private bool NotFailed 
+            => QuestLogEntries.NotFailed(title);
         public bool InProgress
             => currentStepNumber != -1;
         private bool NotInProgress 
@@ -112,7 +113,7 @@ namespace Trucker.Model.Questing.Quests
         public void Finish()
         {
             currentStepNumber = -1;
-            OnQuestFinished?.Invoke(title);
+            OnQuestStop?.Invoke(title, QuestStatus.Completed);
             Debug.Log($"Quest {title} finished");
             InvokeConsequences();
         }
@@ -121,7 +122,14 @@ namespace Trucker.Model.Questing.Quests
         {
             StopCurrentStep();
             currentStepNumber = -1;
-            OnQuestDropped?.Invoke(title);
+            OnQuestStop?.Invoke(title, QuestStatus.None);
+        }
+
+        public void Fail()
+        {
+            StopCurrentStep();
+            currentStepNumber = -1;
+            OnQuestStop?.Invoke(title, QuestStatus.Failed);
         }
 
         private void InvokeConsequences()

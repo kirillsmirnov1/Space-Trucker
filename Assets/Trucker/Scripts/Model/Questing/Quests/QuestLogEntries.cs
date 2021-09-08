@@ -19,13 +19,8 @@ namespace Trucker.Model.Questing.Quests
         public void QuestTaken(string title) 
             => UpdateQuestStatus(title, QuestStatus.Taken);
 
-        public void QuestFinished(string title) 
-            => UpdateQuestStatus(title, QuestStatus.Completed);
-
-        public void QuestDropped(string title)
-        {
-            UpdateQuestStatus(title, QuestStatus.None);
-        }
+        public void QuestStopped(string title, QuestStatus questStatus) 
+            => UpdateQuestStatus(title, questStatus);
 
         private void UpdateQuestStatus(string title, QuestStatus status)
         {
@@ -48,11 +43,26 @@ namespace Trucker.Model.Questing.Quests
 
         private bool NeverBeenStartedImpl(string title)
         {
-            
             try
             {
                 var val = GetIdentificatorByTitle(title);
                 return val.status == QuestStatus.None;
+            }
+            catch (InvalidOperationException)
+            {
+                return true;
+            }
+        }
+
+        public static bool NotFailed(string title) 
+            => _instance.NotFailedImpl(title);
+
+        private bool NotFailedImpl(string title)
+        {
+            try
+            {
+                var val = GetIdentificatorByTitle(title);
+                return val.status != QuestStatus.Failed;
             }
             catch (InvalidOperationException)
             {

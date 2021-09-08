@@ -43,8 +43,7 @@ namespace Trucker.Model.Questing.Quests
         private void SubscribeOnCallbacks()
         {
             Quest.OnQuestTaken += OnQuestTaken;
-            Quest.OnQuestFinished += OnQuestFinished;
-            Quest.OnQuestDropped += OnQuestDropped;
+            Quest.OnQuestStop += OnQuestStop;
         }
 
         private void OnQuestTaken(string title)
@@ -52,14 +51,9 @@ namespace Trucker.Model.Questing.Quests
             questLogEntries.QuestTaken(title);
         }
 
-        private void OnQuestFinished(string title)
+        private void OnQuestStop(string title, QuestStatus questStatus)
         {
-            questLogEntries.QuestFinished(title);
-        }
-
-        private void OnQuestDropped(string title)
-        {
-            questLogEntries.QuestDropped(title);
+            questLogEntries.QuestStopped(title, questStatus);
         }
     }
 }

@@ -8,9 +8,17 @@ namespace Trucker.Model.Questing.Steps.Monitors
     public abstract class Monitor : ScriptableObject
     {
         [SerializeField] protected List<Operation> consequences;
-        private Quest _quest;
-        public virtual void Init(Quest quest) => _quest = quest;
+        protected Quest quest;
+        public virtual void Init(Quest quest) => this.quest = quest;
         public abstract void Start();
         public abstract void Stop();
+
+        protected virtual void InvokeConsequences()
+        {
+            foreach (var consequence in consequences)
+            {
+                consequence.Start();
+            }
+        }
     }
 }

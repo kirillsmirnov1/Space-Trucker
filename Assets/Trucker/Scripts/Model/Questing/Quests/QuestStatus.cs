@@ -5,5 +5,6 @@
         None,
         Taken,
         Completed,
+        Failed,
     }
 }

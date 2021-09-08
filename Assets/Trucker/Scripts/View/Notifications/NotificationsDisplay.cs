@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Trucker.Model.Entities;
 using Trucker.Model.Notifications;
@@ -27,7 +28,7 @@ namespace Trucker.View.Notifications
         {
             DisableNotifications(); 
             Quest.OnQuestTaken += OnQuestTaken;
-            Quest.OnQuestFinished += OnQuestFinished;
+            Quest.OnQuestStop += OnQuestStop;
             Goal.OnStart += OnGoalStarted;
             Goal.OnCompletion += OnGoalCompleted;
             DestroyCatchedObjects.OnObjectsDestroyed += OnCatchedObjectsDestroyed;
@@ -37,7 +38,7 @@ namespace Trucker.View.Notifications
         private void OnDestroy()
         {
             Quest.OnQuestTaken -= OnQuestTaken;
-            Quest.OnQuestFinished -= OnQuestFinished;
+            Quest.OnQuestStop -= OnQuestStop;
             Goal.OnStart -= OnGoalStarted;
             Goal.OnCompletion -= OnGoalCompleted;
             DestroyCatchedObjects.OnObjectsDestroyed -= OnCatchedObjectsDestroyed;
@@ -58,8 +59,27 @@ namespace Trucker.View.Notifications
         private void OnQuestTaken(string title)
             => Notify(new Notification {text = $"{title} starts"});
 
-        private void OnQuestFinished(string title)
-            => Notify(new Notification {text = $"{title} finished"});
+        private void OnQuestStop(string title, QuestStatus questStatus)
+        {
+            string notificationText;
+            
+            switch (questStatus)
+            {
+                case QuestStatus.None: 
+                case QuestStatus.Taken:
+                    return;
+                case QuestStatus.Completed:
+                    notificationText = $"{title} completed";
+                    break;
+                case QuestStatus.Failed:
+                    notificationText = $"{title} failed";
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(questStatus), questStatus, null);
+            }
+            
+            Notify(new Notification {text = notificationText});
+        }
 
         private void OnGoalStarted(string goalDescription)
             => Notify(new Notification {text = goalDescription});
