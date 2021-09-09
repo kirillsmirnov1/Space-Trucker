@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q12_1_Start
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 5328c225b0b594d47a2d242781151995
+  canBeRepeated: 0
+  initialCharacter: 1
+  lines:
+  - character: 9
+    line: Hey, how things are going?
+  - character: 1
+    line: Not good, young man.
+  - character: 1
+    line: We've been promised a nice field-trip around bases, but that nasty storm ruined everything
+  - character: 1
+    line: And now I have four sweet but very sad children on me.
+  - character: 9
+    line: Well, maybe I can help?
+  - character: 1
+    line: How's that?
+  - character: 9
+    line: I can take you and your sweet children around, tell some stuff.
+  - character: 1
+    line: But what means of transportation do you have? 
+  - character: 1
+    line: If I remember correctly, you are simple station worker, no offense.
+  - character: 9
+    line: None taken. 
+  - character: 9
+    line: I may not have a school bus, but I have a reliable ship and miracles of science to handle your children.
+  - character: 1
+    line: And by miracles of science you mean what exactly?
+  - character: 9
+    line: Catcher!
+  - character: 1
+    line: Catcher? That thing they use to handle scraps flying around? You want to handle my children with that?
+  - character: 9
+    line: Ma'am, it's completely safe. We put your children in nice space suits and let them have some open-space fun.
+  - character: 1
+    line: Isn't that dangerous?
+  - character: 9
+    line: You are talking with proffesional here. Anyway, do you have any other ideas how to entertain the little ones?
+  - character: 1
+    line: Seems like... Yeah, it might be okay. Let's go then!
+  dialogueType: 1
+  quest: {fileID: 11400000, guid: a1504ffd9268c0b4295fca0f1f6b9420, type: 2}
+  unlockCondition: {fileID: 0}
