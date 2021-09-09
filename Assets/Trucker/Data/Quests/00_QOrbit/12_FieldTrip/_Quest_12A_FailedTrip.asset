@@ -27,7 +27,9 @@ MonoBehaviour:
     > destroy children
 
     > takes
-    credits away'
+    credits away
+
+    ! description'
   finishedFromDialog: 1
   conditions: []
   monitors: []
