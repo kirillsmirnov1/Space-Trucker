@@ -15,7 +15,8 @@ namespace Trucker.Control.Zap
         [SerializeField] private TypesOfCatchedObjects catcheeTypes;
         [SerializeField] private ZapLevelVariable zapLevelVariable;
         
-        private LinkedList<ZapCatchee> catchees = new LinkedList<ZapCatchee>();
+        private readonly LinkedList<ZapCatchee> catchees = new LinkedList<ZapCatchee>();
+        public ZapCatchee[] Catchees => catchees.ToArray();
          
         public List<Vector3> CatcheesPositions => catchees.Select(x => x.transform.position).ToList();
 

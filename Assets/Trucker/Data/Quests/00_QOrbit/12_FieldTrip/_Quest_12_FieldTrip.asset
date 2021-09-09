@@ -13,14 +13,10 @@ MonoBehaviour:
   m_Name: _Quest_12_FieldTrip
   m_EditorClassIdentifier: 
   title: Field Trip
-  description: "! [ \u043E\u0431\u0449\u0430\u0433\u0430 ]\n  ! \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
-    \u043C\u043E\u0434\u0435\u043B\u044C\u043A\u0438\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
-    [ \u0438\u043D\u0441\u0442\u0438\u0442\u0443\u0442 ]\n  ! \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
-    \u043C\u043E\u0434\u0435\u043B\u044C\u043A\u0438\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
-    [ \u0441\u0442\u043E\u043B\u043E\u0432\u0430\u044F ]\n  ! \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
-    \u043C\u043E\u0434\u0435\u043B\u044C\u043A\u0438\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
-    [ \u0441\u0432\u0430\u043B\u043A\u0430 ]\n  ! \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
-    \u043C\u043E\u0434\u0435\u043B\u044C\u043A\u0438\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
+  description: "! [ \u043E\u0431\u0449\u0430\u0433\u0430 ]\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
+    [ \u0438\u043D\u0441\u0442\u0438\u0442\u0443\u0442 ]\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
+    [ \u0441\u0442\u043E\u043B\u043E\u0432\u0430\u044F ]\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
+    [ \u0441\u0432\u0430\u043B\u043A\u0430 ]\n  ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n!
     \u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u0432 \u043E\u0431\u0449\u0430\u0433\u0443\n!
     \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C \u0434\u0435\u0442\u0435\u0439\n>
     \u0443\u0441\u043F\u0435\u0448\u043D\u044B\u0439 \u0434\u0438\u0430\u043B\u043E\u0433\n>
@@ -36,9 +32,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3bfe4b4ead705c94db95a469a2d93cbd, type: 2}
   - {fileID: 11400000, guid: ddf787a86272d404fbc8a2db8c2113a0, type: 2}
   - {fileID: 11400000, guid: 98a6bb04c95d7754ca139ecf497547ae, type: 2}
+  - {fileID: 11400000, guid: 90fbf16388ec08d4bb6f2b577fd5d047, type: 2}
   - {fileID: 11400000, guid: f2b06c762eba40e4cbf8c878fc5c400b, type: 2}
+  - {fileID: 11400000, guid: addd1376e1e09bb458121ba4bd080bfa, type: 2}
   - {fileID: 11400000, guid: d454a09375af6ff41804227f33a50b9e, type: 2}
+  - {fileID: 11400000, guid: 65d78fda9795be84abb5383017c443dd, type: 2}
   - {fileID: 11400000, guid: 9d4e98dd77bc00048bdcf63d22bc37e0, type: 2}
+  - {fileID: 11400000, guid: ef84a8c15aadaed488058411f6226f3b, type: 2}
   consequences:
   - {fileID: 11400000, guid: 0f7eed0f8aa5ebe47b9aba9f7c21cea4, type: 2}
   currentStepNumber: -1
