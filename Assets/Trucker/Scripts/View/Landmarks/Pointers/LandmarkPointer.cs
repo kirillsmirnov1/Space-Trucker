@@ -40,14 +40,14 @@ namespace Trucker.View.Landmarks.Pointers
             Landmark = landmark;
 
             landmarksRadarEnabled.OnChange += OnRadarStatusChange;
-            Landmark.OnVisibilityChange += OnVisibilityChange;
+            Landmark.VisibilityChange += OnVisibilityChange;
             OnVisibilityChange(Landmark.Visible);
         }
 
         protected virtual void OnDestroy()
         {
             landmarksRadarEnabled.OnChange -= OnRadarStatusChange;
-            Landmark.OnVisibilityChange -= OnVisibilityChange;
+            Landmark.VisibilityChange -= OnVisibilityChange;
         }
 
         private void OnRadarStatusChange(bool radarEnabled) => OnVisibilityChange(Landmark.Visible);

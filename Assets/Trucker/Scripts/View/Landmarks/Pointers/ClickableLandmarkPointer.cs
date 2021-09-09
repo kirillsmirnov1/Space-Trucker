@@ -11,13 +11,13 @@ namespace Trucker.View.Landmarks.Pointers
         public override void Init(Sprite sprite, Landmark landmark)
         {
             base.Init(sprite, landmark);
-            Landmark.OnPlayerInRangeChange += OnPlayerInRangeChange;
+            Landmark.playerInRangeChange += OnPlayerInRangeChange;
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            Landmark.OnPlayerInRangeChange -= OnPlayerInRangeChange;
+            Landmark.playerInRangeChange -= OnPlayerInRangeChange;
         }
 
         private void OnPlayerInRangeChange(bool playerInRange) 

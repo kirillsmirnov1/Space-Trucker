@@ -15,20 +15,20 @@ namespace Trucker.View.Landmarks
         public UnityEvent onInteraction;
 
         public bool Visible => visibility.Visible;
-        public Action<bool> OnVisibilityChange
+        public Action<bool> VisibilityChange
         {
             get => visibility.onVisibilityChange;
             set => visibility.onVisibilityChange = value;
         }
 
         public bool PlayerWithinRange => playerInRange.Value;
-        public Action<bool> OnPlayerInRangeChange;
+        public Action<bool> playerInRangeChange;
 
         private void OnValidate() => this.CheckNullFields();
         private void Awake() => playerInRange.OnChange += InvokeRangeChange;
         private void OnDestroy() => playerInRange.OnChange -= InvokeRangeChange;
 
         private void InvokeRangeChange(bool inRange) 
-            => OnPlayerInRangeChange?.Invoke(inRange);
+            => playerInRangeChange?.Invoke(inRange);
     }
 }
