@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7720cafa7b4cb4bbca1d19b92038b6, type: 3}
+  m_Name: Monitor_Q12_ChildrenNotGettingHitByUranium
+  m_EditorClassIdentifier: 
+  consequences:
+  - {fileID: 11400000, guid: 0f7eed0f8aa5ebe47b9aba9f7c21cea4, type: 2}
+  - {fileID: 11400000, guid: 67498eebd4277cc418f65226e43fa205, type: 2}
+  - {fileID: 11400000, guid: 05093d436c689ac4986237c7b901718d, type: 2}
+  zapLevelVariable: {fileID: 11400000, guid: d1921b89bbb172649b7b6e649e1ca477, type: 2}

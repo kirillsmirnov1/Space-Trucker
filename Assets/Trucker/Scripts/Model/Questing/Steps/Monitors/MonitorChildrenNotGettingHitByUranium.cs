@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Trucker.Model.Questing.Steps.Monitors
 {
+    [CreateAssetMenu(menuName = "Quests/Monitors/MonitorChildrenNotGettingHitByUranium", fileName = "MonitorChildrenNotGettingHitByUranium", order = 0)]
     public class MonitorChildrenNotGettingHitByUranium : Monitor
     {
         [SerializeField] private ZapLevelVariable zapLevelVariable;
