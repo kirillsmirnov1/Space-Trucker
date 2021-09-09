@@ -11,7 +11,8 @@
         public virtual void ExitState() {}
 
         public virtual void OnUpdate(){}
-        
+        public virtual void OnFixedUpdate(){}
+
         public virtual void OnReachable(){}
         public virtual void OnUnreachable(){}
         

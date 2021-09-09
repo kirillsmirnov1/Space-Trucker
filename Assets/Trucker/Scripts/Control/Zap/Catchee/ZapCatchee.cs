@@ -19,6 +19,7 @@ namespace Trucker.Control.Zap.Catchee
         [SerializeField] public GameObject crosshairHolder;
         [SerializeField] private EntityId entityId;
         [SerializeField] public SpriteRenderer progressDisplay;
+        [SerializeField] public Rigidbody rb;
         [Header("Settings")]
         [SerializeField] public CatcheeSettings catcheeSettings;
         public bool interactableByPlayer = true;
@@ -41,6 +42,9 @@ namespace Trucker.Control.Zap.Catchee
 
         private void Update() 
             => _state.OnUpdate();
+
+        private void FixedUpdate() 
+            => _state.OnFixedUpdate();
 
         public void SetFreeState()
         {

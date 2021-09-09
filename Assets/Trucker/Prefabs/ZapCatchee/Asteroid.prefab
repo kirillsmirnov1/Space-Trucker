@@ -58,6 +58,7 @@ MonoBehaviour:
   crosshairHolder: {fileID: 1455162370378622697}
   entityId: {fileID: 1723392773293936091}
   progressDisplay: {fileID: 7443809469013977531}
+  rb: {fileID: 4619861624694195311}
   catcheeSettings: {fileID: 11400000, guid: 566ae974f8de5c243904da536f4f87cd, type: 2}
   interactableByPlayer: 1
   orbitSpeed: {fileID: 8122728148690291928}

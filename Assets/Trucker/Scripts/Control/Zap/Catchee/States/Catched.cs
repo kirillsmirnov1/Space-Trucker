@@ -16,5 +16,13 @@
             if(Catchee.interactableByPlayer)
                 Catchee.SetState(new Freeing(Catchee));
         }
+
+        public override void OnFixedUpdate()
+        {
+            base.OnUpdate();
+            PreventGettingStuck();
+        }
+
+        private void PreventGettingStuck() => Catchee.rb.AddForce(0.00001f, 0, 0);
     }
 }
