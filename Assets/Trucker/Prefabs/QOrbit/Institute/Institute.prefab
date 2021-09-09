@@ -91,6 +91,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visible: 0
   logVisibilityChange: {fileID: 11400000, guid: 09095ca5bb6bc664c840f2e5a9168b1f, type: 2}
+--- !u!114 &6859679662852492838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734693956636125348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ceebe081d448d93f8083be9c5cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: 14392b49f91b0d74395fc06630a4331e, type: 2}
 --- !u!1001 &556167467222393358
 PrefabInstance:
   m_ObjectHideFlags: 0

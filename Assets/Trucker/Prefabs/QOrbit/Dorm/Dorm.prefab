@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 334767513377018870}
   - component: {fileID: 3998062264077352811}
   - component: {fileID: 5401457111777214710}
+  - component: {fileID: 2689307234708663673}
   m_Layer: 0
   m_Name: Dorm
   m_TagString: Untagged
@@ -175,6 +176,19 @@ MonoBehaviour:
   dialogueOptions:
   - {fileID: 11400000, guid: dfb76ecf0e87ef146be200dfc7ab3fed, type: 2}
   - {fileID: 11400000, guid: 5328c225b0b594d47a2d242781151995, type: 2}
+--- !u!114 &2689307234708663673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089590300111450253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ceebe081d448d93f8083be9c5cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: 790070b77e3c101409e3783b12b46d2b, type: 2}
 --- !u!1 &8469164255563922128
 GameObject:
   m_ObjectHideFlags: 0

@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 84896653066162841}
   - component: {fileID: 7023962487603694004}
   - component: {fileID: 6594878754717847991}
+  - component: {fileID: 3668657347377681868}
   m_Layer: 0
   m_Name: Diner
   m_TagString: Untagged
@@ -342,6 +343,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visible: 0
   logVisibilityChange: {fileID: 11400000, guid: 09095ca5bb6bc664c840f2e5a9168b1f, type: 2}
+--- !u!114 &3668657347377681868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024894136752537976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ceebe081d448d93f8083be9c5cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: adade933670ab404fa174c6c95af8351, type: 2}
 --- !u!1001 &2024894137029483630
 PrefabInstance:
   m_ObjectHideFlags: 0
