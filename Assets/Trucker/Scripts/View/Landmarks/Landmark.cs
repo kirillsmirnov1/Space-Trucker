@@ -2,13 +2,15 @@
 using Trucker.View.Landmarks.Status;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityUtils;
+using UnityUtils.Variables;
 
 namespace Trucker.View.Landmarks
 {
     public class Landmark : MonoBehaviour
     {
         [SerializeField] private LandmarkVisibility visibility;
-        [SerializeField] private PlayerInRangeDetector playerDetector;
+        [SerializeField] private BoolVariable playerInRange;
         
         public UnityEvent onInteraction;
 
@@ -19,11 +21,14 @@ namespace Trucker.View.Landmarks
             set => visibility.onVisibilityChange = value;
         }
 
-        public bool PLayerWithinRange => playerDetector.WithinRange;
-        public Action<bool> OnPlayerInRangeChange
-        {
-            get => playerDetector.onPlayerInRangeChange;
-            set => playerDetector.onPlayerInRangeChange = value;
-        }
+        public bool PlayerWithinRange => playerInRange.Value;
+        public Action<bool> OnPlayerInRangeChange;
+
+        private void OnValidate() => this.CheckNullFields();
+        private void Awake() => playerInRange.OnChange += InvokeRangeChange;
+        private void OnDestroy() => playerInRange.OnChange -= InvokeRangeChange;
+
+        private void InvokeRangeChange(bool inRange) 
+            => OnPlayerInRangeChange?.Invoke(inRange);
     }
 }

@@ -7,7 +7,7 @@ namespace Trucker.View.Landmarks.Pointers
     {
         [SerializeField] private GameObject button;
 
-        private bool ButtonVisible => LandmarkVisibleOnScreen && Landmark.PLayerWithinRange; 
+        private bool ButtonVisible => LandmarkVisibleOnScreen && Landmark.PlayerWithinRange; 
         public override void Init(Sprite sprite, Landmark landmark)
         {
             base.Init(sprite, landmark);

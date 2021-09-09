@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibility: {fileID: 3998062264077352811}
-  playerDetector: {fileID: 392569555374346531}
+  playerInRange: {fileID: 11400000, guid: 93303c1cb296375499bc01b19c67f857, type: 2}
   onInteraction:
     m_PersistentCalls:
       m_Calls:
@@ -1007,6 +1007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LandmarkPlayerInRangeTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 8868989992273167746, guid: 864d2f12ca0d8694a97346952c164a33, type: 3}
+      propertyPath: playerInRange
+      value: 
+      objectReference: {fileID: 11400000, guid: 93303c1cb296375499bc01b19c67f857, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864d2f12ca0d8694a97346952c164a33, type: 3}
 --- !u!4 &5652052043422652850 stripped
@@ -1014,14 +1018,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3465040410369133843, guid: 864d2f12ca0d8694a97346952c164a33, type: 3}
   m_PrefabInstance: {fileID: 9108060231783896225}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &392569555374346531 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8868989992273167746, guid: 864d2f12ca0d8694a97346952c164a33, type: 3}
-  m_PrefabInstance: {fileID: 9108060231783896225}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a29d190c3bf94afea8f1ccec1bfb3469, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

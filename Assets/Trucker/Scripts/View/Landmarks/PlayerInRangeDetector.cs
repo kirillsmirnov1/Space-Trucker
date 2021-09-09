@@ -1,29 +1,20 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityUtils;
+using UnityUtils.Variables;
 
 namespace Trucker.View.Landmarks
 {
     [RequireComponent(typeof(SphereCollider))]
     public class PlayerInRangeDetector : MonoBehaviour
     {
-        public Action<bool> onPlayerInRangeChange;
-        
-        private bool _withinRange;
+        [SerializeField] private BoolVariable playerInRange;
 
-        public bool WithinRange
-        {
-            get => _withinRange;
-            private set
-            {
-                _withinRange = value;
-                onPlayerInRangeChange?.Invoke(_withinRange);
-            }
-        }
+        private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
 
         private void OnTriggerEnter(Collider other) 
-            => WithinRange = true;
+            => playerInRange.Value = true;
 
         private void OnTriggerExit(Collider other) 
-            => WithinRange = false;
+            => playerInRange.Value = false;
     }
 }
