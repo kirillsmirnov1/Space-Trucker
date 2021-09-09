@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: _Quest_12_FieldTrip
   m_EditorClassIdentifier: 
   title: Field Trip
-  description: "! \u0432\u044B\u0434\u0430\u0442\u044C \u0434\u0435\u0442\u0435\u0439\n!
-    [ \u043E\u0431\u0449\u0430\u0433\u0430 ]\n  ! \u0434\u043E\u043B\u0435\u0442\u0435\u0442\u044C
+  description: "! [ \u043E\u0431\u0449\u0430\u0433\u0430 ]\n  ! \u0434\u043E\u043B\u0435\u0442\u0435\u0442\u044C
     \n  ! \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u043C\u043E\u0434\u0435\u043B\u044C\u043A\u0438\n 
     ! \u043C\u0438\u043D\u0438-\u0434\u0438\u0430\u043B\u043E\u0433\n! [ \u0438\u043D\u0441\u0442\u0438\u0442\u0443\u0442
     ]\n  ! \u0434\u043E\u043B\u0435\u0442\u0435\u0442\u044C \n  ! \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
@@ -36,6 +35,7 @@ MonoBehaviour:
   monitors:
   - {fileID: 11400000, guid: 77b5a8ef853709d498b4c9edeeaa3e4b, type: 2}
   steps:
+  - {fileID: 11400000, guid: 0e1ce6f17b1620f42976454928a4af35, type: 2}
   - {fileID: 11400000, guid: 3bfe4b4ead705c94db95a469a2d93cbd, type: 2}
   - {fileID: 11400000, guid: ddf787a86272d404fbc8a2db8c2113a0, type: 2}
   - {fileID: 11400000, guid: 0f7eed0f8aa5ebe47b9aba9f7c21cea4, type: 2}
