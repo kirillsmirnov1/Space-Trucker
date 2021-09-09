@@ -22,7 +22,7 @@ namespace Trucker.View.Landmarks
         }
 
         public bool PlayerWithinRange => playerInRange.Value;
-        public Action<bool> playerInRangeChange;
+        [NonSerialized] public Action<bool> playerInRangeChange;
 
         private void OnValidate() => this.CheckNullFields();
         private void Awake() => playerInRange.OnChange += InvokeRangeChange;
