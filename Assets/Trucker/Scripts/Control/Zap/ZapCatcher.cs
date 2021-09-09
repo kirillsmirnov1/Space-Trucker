@@ -19,7 +19,7 @@ namespace Trucker.Control.Zap
          
         public List<Vector3> CatcheesPositions => catchees.Select(x => x.transform.position).ToList();
 
-        private Transform LastCatchedTransform 
+        private Transform TailTransform 
             => catchees.Count > 0 ? catchees.Last.Value.transform : transform;
         
         private void OnValidate() => this.CheckNullFields();
@@ -30,7 +30,7 @@ namespace Trucker.Control.Zap
         {
             if (catchees.Contains(zapCatchee)) return false;
 
-            zapCatchee.SetConnection(springSettings, LastCatchedTransform);
+            zapCatchee.SetConnection(springSettings, TailTransform);
             
             catchees.AddLast(zapCatchee);
 
