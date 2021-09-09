@@ -11,6 +11,8 @@ namespace Trucker.View.Landmarks
 
         private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
 
+        private void Awake() => playerInRange.Value = false;
+
         private void OnTriggerEnter(Collider other) 
             => playerInRange.Value = true;
 
