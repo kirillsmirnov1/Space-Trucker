@@ -21,6 +21,7 @@ namespace Trucker.Control.Zap.Catchee
         [SerializeField] public SpriteRenderer progressDisplay;
         [Header("Settings")]
         [SerializeField] public CatcheeSettings catcheeSettings;
+        public bool interactableByPlayer = true;
         
         private ZapCatcheeState _state;
         private SpringJoint _springJoint;

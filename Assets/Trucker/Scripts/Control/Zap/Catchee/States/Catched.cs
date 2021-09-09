@@ -11,7 +11,10 @@
             Catchee.OnCatch();
         }
 
-        public override void OnPointerDown() 
-            => Catchee.SetState(new Freeing(Catchee));
+        public override void OnPointerDown()
+        {
+            if(Catchee.interactableByPlayer)
+                Catchee.SetState(new Freeing(Catchee));
+        }
     }
 }

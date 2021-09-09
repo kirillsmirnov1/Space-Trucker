@@ -54,6 +54,7 @@ MonoBehaviour:
   entityId: {fileID: 1142154201084424674}
   progressDisplay: {fileID: 9186990213098247554}
   catcheeSettings: {fileID: 11400000, guid: 566ae974f8de5c243904da536f4f87cd, type: 2}
+  interactableByPlayer: 1
 --- !u!114 &1142154201084424674
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -59,6 +59,7 @@ MonoBehaviour:
   entityId: {fileID: 1723392773293936091}
   progressDisplay: {fileID: 7443809469013977531}
   catcheeSettings: {fileID: 11400000, guid: 566ae974f8de5c243904da536f4f87cd, type: 2}
+  interactableByPlayer: 1
   orbitSpeed: {fileID: 8122728148690291928}
   spawnee: {fileID: 1258160971558327073}
 --- !u!114 &8122728148690291928
@@ -5144,7 +5145,7 @@ PrefabInstance:
       objectReference: {fileID: 8078234492105354850}
     - target: {fileID: 4603388266207671045, guid: f66d2547c06497140a7211dc99b969b0, type: 3}
       propertyPath: m_Name
-      value: Asteroid_
+      value: Asteroid
       objectReference: {fileID: 0}
     - target: {fileID: 6354029330446235734, guid: f66d2547c06497140a7211dc99b969b0, type: 3}
       propertyPath: m_Mass
