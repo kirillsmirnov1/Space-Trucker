@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Trucker.Model.Entities;
 using Trucker.Model.Notifications;
 using Trucker.Model.Questing.Quests;
 using Trucker.Model.Questing.Steps.Goals;
-using Trucker.Model.Questing.Steps.Operations;
 using Trucker.Model.Rating;
 using UnityEngine;
 using UnityUtils.Variables;
@@ -31,7 +29,6 @@ namespace Trucker.View.Notifications
             Quest.OnQuestStop += OnQuestStop;
             Goal.OnStart += OnGoalStarted;
             Goal.OnCompletion += OnGoalCompleted;
-            DestroyCatchedObjects.OnObjectsDestroyed += OnCatchedObjectsDestroyed;
             EmployeePerformanceRating.OnRatingChange += OnEmployeeRatingChange;
         }
 
@@ -41,7 +38,6 @@ namespace Trucker.View.Notifications
             Quest.OnQuestStop -= OnQuestStop;
             Goal.OnStart -= OnGoalStarted;
             Goal.OnCompletion -= OnGoalCompleted;
-            DestroyCatchedObjects.OnObjectsDestroyed -= OnCatchedObjectsDestroyed;
             EmployeePerformanceRating.OnRatingChange -= OnEmployeeRatingChange;
         }
 
@@ -86,13 +82,6 @@ namespace Trucker.View.Notifications
 
         private void OnGoalCompleted(string goalDescription)
             => Notify(new Notification {text = goalDescription, strikethrough = true});
-
-        private void OnCatchedObjectsDestroyed(EntityType type, int count)
-        {
-            var multiple = count > 1;
-            var str = $"{(multiple ? $"{count} " : "")} {type.ToString()}{(multiple ? "s" : "")} detached";
-            Notify(new Notification {text = str});
-        }
 
         private void Notify(Notification notification)
         {

@@ -1,5 +1,4 @@
-﻿using System;
-using Trucker.Control.Zap;
+﻿using Trucker.Control.Zap;
 using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
@@ -9,8 +8,6 @@ namespace Trucker.Model.Questing.Steps.Operations
     [CreateAssetMenu(fileName = "Consequence_DestroyCatchedObjects", menuName = "Quests/Operations/Destroy Catched", order = 0)]
     public class DestroyCatchedObjects : Operation
     {
-        public static event Action<EntityType, int> OnObjectsDestroyed; 
-        
         [SerializeField] private EntityType[] typesToDestroy;
         [SerializeField] private int numberOfObjectsToDestroy;
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
@@ -25,7 +22,6 @@ namespace Trucker.Model.Questing.Steps.Operations
             {
                 Destroy(catchee.gameObject);
             }
-            // OnObjectsDestroyed?.Invoke(typesToDestroy, numberOfObjectsToDestroy);
         }
     }
 }
