@@ -176,6 +176,7 @@ MonoBehaviour:
   dialogueOptions:
   - {fileID: 11400000, guid: dfb76ecf0e87ef146be200dfc7ab3fed, type: 2}
   - {fileID: 11400000, guid: 5328c225b0b594d47a2d242781151995, type: 2}
+  - {fileID: 11400000, guid: c3b64dcd6e5db3d43a7173561713bad9, type: 2}
 --- !u!114 &2689307234708663673
 MonoBehaviour:
   m_ObjectHideFlags: 0
