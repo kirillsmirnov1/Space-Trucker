@@ -21,7 +21,27 @@ MonoBehaviour:
   initialCharacter: 1
   lines:
   - character: 1
-    line: sup
+    line: The jewel of our station is the Q Institute.
+  - character: 1
+    line: Named after the planet it studies.
+  - character: 2
+    line: Ma'am. And why is the planet called Q?
+  - character: 1
+    line: It's a temporary name, they haven't decided on a real one yet, don't
+      interrupt.
+  - character: 1
+    line: Now, where was I? Ah yes, the Institute. An exploratory mission was sent
+      to Q to investigate the possibility of extracting Q's resources.
+  - character: 3
+    line: Could you tell us about the storm yesterday? Do you know why it happened?
+  - character: 1
+    line: No one reported it to me. Kipp, please don't interrupt.
+  - character: 5
+    line: Maybe our driver knows. Driver, do you know why there was a storm?
+  - character: 9
+    line: There's something about asteroid collisions, a chain reaction.
+  - character: 1
+    line: How many times can you interrupt? You're impossible! Let's keep moving!
   dialogueType: 3
   quest: {fileID: 0}
   unlockCondition: {fileID: 0}

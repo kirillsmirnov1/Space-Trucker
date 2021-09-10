@@ -21,7 +21,44 @@ MonoBehaviour:
   initialCharacter: 1
   lines:
   - character: 1
-    line: sup
+    line: Right in front of you you can see the dormitory where all the inhabitants
+      of the station live.
+  - character: 5
+    line: We see it every day anyway. Let's hit the road!
+  - character: 1
+    line: Don't interrupt the seniors!
+  - character: 1
+    line: The dormitory is a marvel of engineering. Provides everything the inhabitants
+      need, from water and oxygen to entertainment.
+  - character: 5
+    line: Well, we're definitely out of entertainment.
+  - character: 1
+    line: ...
+  - character: 1
+    line: Holly, why don't you take the tour for me?
+  - character: 5
+    line: Oh, easy, the dorm is a boring space box our parents put us in because
+      they wanted to go to space and our opinion...
+  - character: 1
+    line: All right, enough. Does anyone else have anything to say? Ida?
+  - character: 4
+    line: Me? Oh. Well, I like it here very much. The food is good. The people
+      are nice. The view through the porthole windows is beautiful.
+  - character: 1
+    line: Kipp?
+  - character: 3
+    line: Yeah, the portholes are nice and big. I like sitting in them.
+  - character: 1
+    line: Lomar, do you have anything to say?
+  - character: 2
+    line: Well. This one's fine.
+  - character: 1
+    line: That's good. I just wish there was more enthusiasm from some people.
+      And less from others...
+  - character: 1
+    line: However, our next target is the Institute, the main part of our station.
+  - character: 5
+    line: Driver, drive!
   dialogueType: 3
   quest: {fileID: 0}
   unlockCondition: {fileID: 0}

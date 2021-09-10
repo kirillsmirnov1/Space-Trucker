@@ -21,7 +21,25 @@ MonoBehaviour:
   initialCharacter: 1
   lines:
   - character: 1
-    line: sup
+    line: And this, my children, is the waste dump.
+  - character: 1
+    line: Not the most interesting part of our station...
+  - character: 3
+    line: But without the waste dump, there'd be rubbish flying around in orbit.
+      Even uranium!
+  - character: 5
+    line: Who told you that?
+  - character: 1
+    line: Kipp's right. The waste dump is important to our station.
+  - character: 2
+    line: Is uranium dangerous? What if it does fly around somewhere and hit me?
+  - character: 1
+    line: We'll just have to rely on professionals like Mr Fielding to do their
+      job properly.
+  - character: 9
+    line: Doing my best.
+  - character: 1
+    line: I think we're done here. Let's go home.
   dialogueType: 3
   quest: {fileID: 0}
   unlockCondition: {fileID: 0}

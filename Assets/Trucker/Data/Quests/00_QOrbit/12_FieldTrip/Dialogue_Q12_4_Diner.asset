@@ -21,7 +21,29 @@ MonoBehaviour:
   initialCharacter: 1
   lines:
   - character: 1
-    line: sup
+    line: There is also a diner on our station's orbit for workers...
+  - character: 9
+    line: For employees. Scientists go there too, you know.
+  - character: 1
+    line: Oh, so you're the expert? Why don't you enlighten us?
+  - character: 9
+    line: Easy as pie.
+  - character: 9
+    line: Kids, it's a diner. The food tastes better than in the cafeteria. And
+      there's... hamburgers. Would you like to come in?
+  - character: 5
+    line: So there's real food here? Why didn't anyone tell me?
+  - character: 2
+    line: Mmm... hamburgers...
+  - character: 4
+    line: Oh, can I...?
+  - character: 1
+    line: You can't. You have a dinner schedule. And you, don't spoil the kids.
+  - character: 5
+    line: We never can do anything. What's all this science for if I can't have
+      a good meal?
+  - character: 1
+    line: All right, let's get a move on!
   dialogueType: 3
   quest: {fileID: 0}
   unlockCondition: {fileID: 0}
