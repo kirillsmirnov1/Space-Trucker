@@ -16,12 +16,12 @@ namespace Trucker.Model.Questing.Steps.Operations
         
         public override void Start()
         {
-
             var catchees = Catcher.TryFree(typesToDestroy, numberOfObjectsToDestroy);
             foreach (var catchee in catchees)
             {
                 Destroy(catchee.gameObject);
             }
+            onCompleted?.Invoke();
         }
     }
 }

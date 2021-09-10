@@ -11,13 +11,11 @@ namespace Trucker.Model.Questing.Steps.Monitors
         
         public override void Start()
         {
-            if(HasZapProtection) return;
             UraniumHitWatcher.OnUraniumHit += FailQuest;
         }
 
         public override void Stop()
         {
-            if(HasZapProtection) return;
             UraniumHitWatcher.OnUraniumHit -= FailQuest;
         }
 
@@ -25,6 +23,7 @@ namespace Trucker.Model.Questing.Steps.Monitors
 
         private void FailQuest()
         {
+            if(HasZapProtection) return;
             quest.Fail();
             InvokeConsequences();
         }

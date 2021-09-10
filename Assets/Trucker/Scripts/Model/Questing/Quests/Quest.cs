@@ -71,6 +71,7 @@ namespace Trucker.Model.Questing.Quests
 
         private void StopCurrentStep()
         {
+            if(currentStepNumber == -1) return;
             CurrentStep.Stop();
             CurrentStep.onCompleted -= OnStepCompleted;
         }
@@ -127,6 +128,7 @@ namespace Trucker.Model.Questing.Quests
 
         public void Fail()
         {
+            if(currentStepNumber == -1) return;
             StopCurrentStep();
             currentStepNumber = -1;
             OnQuestStop?.Invoke(title, QuestStatus.Failed);
