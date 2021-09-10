@@ -13,26 +13,14 @@ MonoBehaviour:
   m_Name: _Quest_12A_FailedTrip
   m_EditorClassIdentifier: 
   title: Failed Trip
-  description: '< Start from monitor
-
-    ! guarantee catchee children
-
-    ! mini-dialogue
-
-    !
-    get to institute
-
-    > Failure Dialogue
-
-    > destroy children
-
-    > takes
-    credits away
-
-    ! description'
+  description: Walk of shame
   finishedFromDialog: 1
   conditions: []
   monitors: []
-  steps: []
+  steps:
+  - {fileID: 11400000, guid: 0e1ce6f17b1620f42976454928a4af35, type: 2}
+  - {fileID: 11400000, guid: 7b641ff6ef13b4548bf7bf87a7fab776, type: 2}
+  - {fileID: 11400000, guid: 03c9a229372b08d4da7b38bd6bd402e8, type: 2}
+  - {fileID: 11400000, guid: a71ccc987c1b4474b831bb01a695216e, type: 2}
   consequences: []
   currentStepNumber: -1

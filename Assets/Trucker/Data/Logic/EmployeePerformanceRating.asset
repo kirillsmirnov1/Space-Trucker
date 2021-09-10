@@ -27,3 +27,5 @@ MonoBehaviour:
     ratingChange: 300
   - trigger: {fileID: 11400000, guid: c3b64dcd6e5db3d43a7173561713bad9, type: 2}
     ratingChange: 200
+  - trigger: {fileID: 11400000, guid: d8d76f11b27fa94449ced5138e9f655c, type: 2}
+    ratingChange: -200
