@@ -33,12 +33,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ddf787a86272d404fbc8a2db8c2113a0, type: 2}
   - {fileID: 11400000, guid: 98a6bb04c95d7754ca139ecf497547ae, type: 2}
   - {fileID: 11400000, guid: 90fbf16388ec08d4bb6f2b577fd5d047, type: 2}
+  - {fileID: 11400000, guid: d248b5328fc0b584399655236060bc76, type: 2}
   - {fileID: 11400000, guid: f2b06c762eba40e4cbf8c878fc5c400b, type: 2}
   - {fileID: 11400000, guid: addd1376e1e09bb458121ba4bd080bfa, type: 2}
+  - {fileID: 11400000, guid: 37d8e8119f3547145906960dbccf88a6, type: 2}
   - {fileID: 11400000, guid: d454a09375af6ff41804227f33a50b9e, type: 2}
   - {fileID: 11400000, guid: 65d78fda9795be84abb5383017c443dd, type: 2}
+  - {fileID: 11400000, guid: 60b2da822e8b843458e35a6c00d35f5a, type: 2}
   - {fileID: 11400000, guid: 9d4e98dd77bc00048bdcf63d22bc37e0, type: 2}
   - {fileID: 11400000, guid: ef84a8c15aadaed488058411f6226f3b, type: 2}
+  - {fileID: 11400000, guid: d686b7e6638314748987a703761c98ed, type: 2}
   consequences:
   - {fileID: 11400000, guid: 0f7eed0f8aa5ebe47b9aba9f7c21cea4, type: 2}
   currentStepNumber: -1
