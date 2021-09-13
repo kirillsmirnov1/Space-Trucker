@@ -27,34 +27,38 @@ SpriteAtlas:
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
-      enableTightPacking: 1
+      enableTightPacking: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 3ca18e5e8d85e4d49b9a8ba8483c8dde, type: 3}
-    - {fileID: 2800000, guid: affbb11318c238d478719946b3277a21, type: 3}
-    - {fileID: 2800000, guid: 4d84ba21d04b4784e810c3ea145b3341, type: 3}
-    - {fileID: 2800000, guid: cda5f9cb5f798804e9a5b5eb78bc9efe, type: 3}
-    - {fileID: 2800000, guid: 230db5bf6f984dd48afea151957d7b01, type: 3}
-    - {fileID: 2800000, guid: 36cd5ba158890d748ba6b7deeeb6a3ef, type: 3}
-    - {fileID: 2800000, guid: b80a4d8ce76ef714f954b39481f0feb7, type: 3}
-    totalSpriteSurfaceArea: 1835008
+    - {fileID: 102900000, guid: 04410e4f0cc52a24ea3a8ef0cdec71c9, type: 3}
+    totalSpriteSurfaceArea: 3145728
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 4d84ba21d04b4784e810c3ea145b3341, type: 3}
+  - {fileID: 21300000, guid: 4494317177466aa488171bb79b2e1456, type: 3}
   - {fileID: 21300000, guid: 36cd5ba158890d748ba6b7deeeb6a3ef, type: 3}
   - {fileID: 21300000, guid: affbb11318c238d478719946b3277a21, type: 3}
+  - {fileID: 21300000, guid: d4a020d3f2a87ef49896f5b9fa0fdbf1, type: 3}
+  - {fileID: 21300000, guid: 17d93104b2c5c004fbda5c78a21aa3d6, type: 3}
+  - {fileID: 21300000, guid: 43a44c98ffa2fb24ca9ab3c57fe3af07, type: 3}
+  - {fileID: 21300000, guid: 721a192a964ab2d43b6fcb5a39ef66da, type: 3}
   - {fileID: 21300000, guid: cda5f9cb5f798804e9a5b5eb78bc9efe, type: 3}
   - {fileID: 21300000, guid: b80a4d8ce76ef714f954b39481f0feb7, type: 3}
   - {fileID: 21300000, guid: 3ca18e5e8d85e4d49b9a8ba8483c8dde, type: 3}
   - {fileID: 21300000, guid: 230db5bf6f984dd48afea151957d7b01, type: 3}
   m_PackedSpriteNamesToIndex:
   - spark_03
+  - smoke_07
   - spark_06
   - spark_02
+  - light_03
+  - twirl_01
+  - twirl_03
+  - twirl_02
   - spark_04
   - spark_07
   - spark_01
