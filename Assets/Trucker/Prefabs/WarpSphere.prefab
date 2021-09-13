@@ -9690,11 +9690,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4683865645465773215, guid: 78762076ce523b842b4d0f77977f4107, type: 3}
       propertyPath: dimensions.x
-      value: 256
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4683865645465773215, guid: 78762076ce523b842b4d0f77977f4107, type: 3}
       propertyPath: dimensions.y
-      value: 256
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4683865645465773215, guid: 78762076ce523b842b4d0f77977f4107, type: 3}
       propertyPath: tileOffset.b
