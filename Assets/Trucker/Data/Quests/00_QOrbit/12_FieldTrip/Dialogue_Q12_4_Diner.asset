@@ -29,8 +29,9 @@ MonoBehaviour:
   - character: 9
     line: Easy as pie.
   - character: 9
-    line: Kids, it's a diner. The food tastes better than in the cafeteria. And
-      there's... hamburgers. Would you like to come in?
+    line: Kids, it's a diner. The food tastes better than in the cafeteria. 
+  - character: 9
+    line: And there's... hamburgers. Would you like to come in?
   - character: 5
     line: So there's real food here? Why didn't anyone tell me?
   - character: 2
@@ -38,10 +39,13 @@ MonoBehaviour:
   - character: 4
     line: Oh, can I...?
   - character: 1
-    line: You can't. You have a dinner schedule. And you, don't spoil the kids.
+    line: You can't. You have a dinner schedule. 
+  - character: 1
+    line: And you, don't spoil the kids.
   - character: 5
-    line: We never can do anything. What's all this science for if I can't have
-      a good meal?
+    line: We never can do anything.
+  - character: 5
+    line: What's all this science for if I can't have a good meal?
   - character: 1
     line: All right, let's get a move on!
   dialogueType: 3

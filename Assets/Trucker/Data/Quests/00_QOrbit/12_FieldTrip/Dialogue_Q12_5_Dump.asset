@@ -26,7 +26,8 @@ MonoBehaviour:
     line: Not the most interesting part of our station...
   - character: 3
     line: But without the waste dump, there'd be rubbish flying around in orbit.
-      Even uranium!
+  - character: 3
+    line: Even uranium!
   - character: 5
     line: Who told you that?
   - character: 1

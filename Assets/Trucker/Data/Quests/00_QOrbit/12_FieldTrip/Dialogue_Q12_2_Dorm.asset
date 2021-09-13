@@ -21,15 +21,17 @@ MonoBehaviour:
   initialCharacter: 1
   lines:
   - character: 1
-    line: Right in front of you you can see the dormitory where all the inhabitants
-      of the station live.
+    line: Here you can see the dormitory. 
+  - character: 1
+    line: All the inhabitants of the station live there.
   - character: 5
     line: We see it every day anyway. Let's hit the road!
   - character: 1
     line: Don't interrupt the seniors!
   - character: 1
-    line: The dormitory is a marvel of engineering. Provides everything the inhabitants
-      need, from water and oxygen to entertainment.
+    line: The dormitory is a marvel of engineering. 
+  - character: 1
+    line: Provides everything we need, from water to entertainment.
   - character: 5
     line: Well, we're definitely out of entertainment.
   - character: 1
@@ -37,13 +39,23 @@ MonoBehaviour:
   - character: 1
     line: Holly, why don't you take the tour for me?
   - character: 5
-    line: Oh, easy, the dorm is a boring space box our parents put us in because
-      they wanted to go to space and our opinion...
+    line: Oh, easy.
+  - character: 5
+    line: The dorm is a boring space box.
+  - character: 5
+    line: And our parents put us in it because they wanted to go to space and our opinion...
   - character: 1
     line: All right, enough. Does anyone else have anything to say? Ida?
   - character: 4
-    line: Me? Oh. Well, I like it here very much. The food is good. The people
-      are nice. The view through the porthole windows is beautiful.
+    line: Me? Oh. Well..
+  - character: 4
+    line: I like it here very much. 
+  - character: 4
+    line: The food is good. 
+  - character: 4
+    line: The people are nice. 
+  - character: 4
+    line: The view through the porthole windows is beautiful.
   - character: 1
     line: Kipp?
   - character: 3

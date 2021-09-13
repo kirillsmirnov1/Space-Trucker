@@ -30,8 +30,9 @@ MonoBehaviour:
     line: It's a temporary name, they haven't decided on a real one yet, don't
       interrupt.
   - character: 1
-    line: Now, where was I? Ah yes, the Institute. An exploratory mission was sent
-      to Q to investigate the possibility of extracting Q's resources.
+    line: Now, where was I? Ah yes, the Institute. 
+  - character: 1
+    line: An exploratory mission was sent to Q to investigate the possibility of extracting Q's resources.
   - character: 3
     line: Could you tell us about the storm yesterday? Do you know why it happened?
   - character: 1

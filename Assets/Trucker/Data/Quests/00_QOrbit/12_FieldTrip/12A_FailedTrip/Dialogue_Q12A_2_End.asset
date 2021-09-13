@@ -29,7 +29,7 @@ MonoBehaviour:
   - character: 1
     line: You should have warned us about the uranium flying around.
   - character: 1
-    line: I'll make sure you want get away with this.
+    line: I'll make sure you won't get away with this.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 499a14b476428914ba6893fe1317c3b9, type: 2}
   unlockCondition: {fileID: 0}
