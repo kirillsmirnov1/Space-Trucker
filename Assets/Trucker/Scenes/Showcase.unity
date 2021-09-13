@@ -838,9 +838,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1626948118, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626948118, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626948118, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883992405023529558, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
+      propertyPath: scale
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2446399100471987219, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446399100471987219, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446399100471987219, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446399100471987219, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2446399100471987219, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
       propertyPath: m_LocalPosition.x

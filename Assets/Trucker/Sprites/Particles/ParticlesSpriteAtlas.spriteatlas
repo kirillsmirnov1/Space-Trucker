@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParticlesSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 3ca18e5e8d85e4d49b9a8ba8483c8dde, type: 3}
+    - {fileID: 2800000, guid: affbb11318c238d478719946b3277a21, type: 3}
+    - {fileID: 2800000, guid: 4d84ba21d04b4784e810c3ea145b3341, type: 3}
+    - {fileID: 2800000, guid: cda5f9cb5f798804e9a5b5eb78bc9efe, type: 3}
+    - {fileID: 2800000, guid: 230db5bf6f984dd48afea151957d7b01, type: 3}
+    - {fileID: 2800000, guid: 36cd5ba158890d748ba6b7deeeb6a3ef, type: 3}
+    - {fileID: 2800000, guid: b80a4d8ce76ef714f954b39481f0feb7, type: 3}
+    totalSpriteSurfaceArea: 1835008
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4d84ba21d04b4784e810c3ea145b3341, type: 3}
+  - {fileID: 21300000, guid: 36cd5ba158890d748ba6b7deeeb6a3ef, type: 3}
+  - {fileID: 21300000, guid: affbb11318c238d478719946b3277a21, type: 3}
+  - {fileID: 21300000, guid: cda5f9cb5f798804e9a5b5eb78bc9efe, type: 3}
+  - {fileID: 21300000, guid: b80a4d8ce76ef714f954b39481f0feb7, type: 3}
+  - {fileID: 21300000, guid: 3ca18e5e8d85e4d49b9a8ba8483c8dde, type: 3}
+  - {fileID: 21300000, guid: 230db5bf6f984dd48afea151957d7b01, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - spark_03
+  - spark_06
+  - spark_02
+  - spark_04
+  - spark_07
+  - spark_01
+  - spark_05
+  m_RenderDataMap: {}
+  m_Tag: ParticlesSpriteAtlas
+  m_IsVariant: 0
