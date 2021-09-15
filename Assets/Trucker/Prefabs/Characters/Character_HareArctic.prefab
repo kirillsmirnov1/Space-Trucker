@@ -61,6 +61,7 @@ MonoBehaviour:
   zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
   speed: {fileID: 11400000, guid: 7942aa9dba5dc494fad3a4508eb59092, type: 2}
   scientistAsteroidDistEps: {fileID: 11400000, guid: ad852c4a6177493418ad091e90f8e10f, type: 2}
+  warpedAsteroidsCounter: {fileID: 11400000, guid: 164a4e94e73c20147b046ce4d32d54da, type: 2}
   warpShotPrefab: {fileID: 4060694713266866574, guid: 3cf74c8f0e2bf174b80fb396d1b06e33, type: 3}
   warpSpherePrefab: {fileID: 5403006771723776124, guid: 0df07e2a13826e140a14961e0f966a1f, type: 3}
 --- !u!114 &5877014880266574722

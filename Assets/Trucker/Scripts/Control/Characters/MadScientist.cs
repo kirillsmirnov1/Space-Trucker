@@ -20,6 +20,9 @@ namespace Trucker.Control.Characters
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
         [SerializeField] private FloatVariable speed;
         [SerializeField] private FloatVariable scientistAsteroidDistEps;
+
+        [Header("Variables")]
+        [SerializeField] private IntVariable warpedAsteroidsCounter;
         
         [Header("Prefabs")]
         [SerializeField] private GameObject warpShotPrefab;
@@ -146,7 +149,6 @@ namespace Trucker.Control.Characters
 
             private IEnumerator InitiateWarpSphere()
             {
-                // TODO tick counter 
                 var sphere = scientist._warpSphere ??= Instantiate(scientist.warpSpherePrefab);
                 var sphereTransform = sphere.transform;
                 sphereTransform.parent = scientist._asteroidTarget;
@@ -170,6 +172,9 @@ namespace Trucker.Control.Characters
                 sphere.gameObject.SetActive(false);
 
                 Destroy(scientist._asteroidTarget.gameObject);
+
+                scientist.warpedAsteroidsCounter.Value++;
+                
                 scientist.DelayAction(1f, () => scientist.SetSearchState());
             }
         }
