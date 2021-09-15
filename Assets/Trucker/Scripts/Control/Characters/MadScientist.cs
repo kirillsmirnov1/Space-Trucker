@@ -13,9 +13,16 @@ namespace Trucker.Control.Characters
     [RequireComponent(typeof(SphereCollider))]
     public class MadScientist : MonoBehaviour // I'm really free-writing it now
     {
+        [Header("Components")]
         [SerializeField] private ZapCatchee catchee;
+        
+        [Header("Data")]
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
         [SerializeField] private FloatVariable speed;
+        
+        [Header("Prefabs")]
+        [SerializeField] private GameObject warpObjectPrefab;
+        [SerializeField] private GameObject warpSpherePrefab;
         
         private ZapCatcher ZapCatcher => zapCatcherVariable.Value;
         
