@@ -6,7 +6,6 @@ using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityUtils;
-using UnityUtils.Extensions;
 using UnityUtils.Variables;
 
 namespace Trucker.Control.Characters
@@ -22,7 +21,8 @@ namespace Trucker.Control.Characters
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
         [SerializeField] private FloatVariable speed;
         [SerializeField] private FloatVariable scientistAsteroidDistEps;
-
+        [SerializeField] private TransformVariable playerTransform;
+        
         [Header("Variables")]
         [SerializeField] private IntVariable warpedAsteroidsCounter;
         
@@ -40,14 +40,12 @@ namespace Trucker.Control.Characters
         
         private void OnValidate() => this.CheckNullFields();
         private void Start() => SetSearchState();
-        private void SetSearchState() => SetState(new SparklingAsteroidSearch());
-        private void SetFlyingToTargetState() => SetState(new FlyingToTarget());
-        private void SetInteractionState() => SetState(new InteractWithAsteroid());
+        private void SetSearchState() => SetState(new SparklingAsteroidSearch(this));
         private void SetState(MadScientistState newState)
         {
             _state?.Stop();
             _state = newState;
-            newState.Start(this);
+            newState.Start();
         }
 
         private void OnTriggerEnter(Collider other) => _state.OnTriggerEnter(other);
@@ -60,24 +58,31 @@ namespace Trucker.Control.Characters
 
         private abstract class MadScientistState
         {
-            protected MadScientist scientist;
-            
-            public virtual void Start(MadScientist scientistInstance)
+            protected readonly MadScientist scientist;
+
+            protected MadScientistState(MadScientist scientistInstance)
             {
                 scientist = scientistInstance;
-                Debug.Log($"MadScientistState: {GetType().Name}");
             }
-
+            public virtual void Start(){}
             public virtual void Stop(){}
             public virtual void OnTriggerEnter(Collider other) { }
         }
 
         private class SparklingAsteroidSearch : MadScientistState // IMPR maybe add trigger sphere on player? 
         {
-            public override void Start(MadScientist scientistInstance)
+            public SparklingAsteroidSearch(MadScientist scientistInstance) : base(scientistInstance) { }
+
+            public override void Start()
             {
-                base.Start(scientistInstance);
+                base.Start();
                 scientist.ConnectToCatcher();
+            }
+
+            public override void Stop()
+            {
+                base.Stop();
+                scientist.DisconnectFromCatcher();
             }
 
             public override void OnTriggerEnter(Collider other)
@@ -85,56 +90,57 @@ namespace Trucker.Control.Characters
                 base.OnTriggerEnter(other);
                 if (other.TryGetComponent<EntityId>(out var id) && id.type == EntityType.AsteroidWithSparks)
                 {
-                    scientist._asteroidTarget = other.transform;
-                    scientist.SetFlyingToTargetState();
+                    var target = scientist._asteroidTarget = other.transform;
+                    scientist.SetState(new FlyingToTarget(scientist, target, new InteractWithAsteroid(scientist)));
                 }
             }
         }
 
         private class FlyingToTarget : MadScientistState
         {
-            private Transform _scientistTransform;
-            private Transform _asteroidTarget;
-            
-            public override void Start(MadScientist scientistInstance)
+            private readonly Transform _scientistTransform;
+            private readonly Transform _target;
+            private readonly MadScientistState _nextState;
+
+            public FlyingToTarget(MadScientist scientist, Transform targetTransformInstance, MadScientistState nextState) : base(scientist)
             {
-                base.Start(scientistInstance);
+                _target = targetTransformInstance;
+                _nextState = nextState;
+                _scientistTransform = scientist.transform.parent;
+            }
+            
+            public override void Start()
+            {
+                base.Start();
                 // TODO enable jetpack
                 // TODO show mini-dialogue 
-                InitTransforms();
-                scientist.DisconnectFromCatcher();
-                scientist.StartCoroutine(MovementToAsteroid());
+                scientist.StartCoroutine(Movement());
             }
 
-            private void InitTransforms()
+            private IEnumerator Movement()
             {
-                _scientistTransform = scientist.transform.parent;
-                _asteroidTarget = scientist._asteroidTarget;
+                yield return FlyToTarget();
+                scientist.SetState(_nextState);
             }
 
-            private IEnumerator MovementToAsteroid()
-            {
-                yield return FlyToAsteroid();
-                scientist.SetInteractionState();
-            }
-
-            private IEnumerator FlyToAsteroid()
+            private IEnumerator FlyToTarget()
             {
                 yield return MoveTo(
                     _scientistTransform,
-                    _asteroidTarget,
+                    _target,
                     scientist.speed,
                     scientist.scientistAsteroidDistEps,
                     scientist.MoveRbByForce);
             }
         }
-
-
+        
         private class InteractWithAsteroid : MadScientistState
         {
-            public override void Start(MadScientist scientistInstance)
+            public InteractWithAsteroid(MadScientist scientistInstance) : base(scientistInstance) { }
+
+            public override void Start()
             {
-                base.Start(scientistInstance);
+                base.Start();
                 scientist.StartCoroutine(InteractionWithAsteroid());
             }
 
@@ -148,7 +154,7 @@ namespace Trucker.Control.Characters
                 DisableWarpSphere(warpSphere, warpSphereTransform);
                 DestroyTargetAsteroid();
                 IterateWarpedAsteroidsCounter();
-                DelayConnectionToPlayer();
+                FlyToPlayer();
             }
 
             private GameObject InitWarpShot()
@@ -211,8 +217,8 @@ namespace Trucker.Control.Characters
             private void IterateWarpedAsteroidsCounter() 
                 => scientist.warpedAsteroidsCounter.Value++;
 
-            private void DelayConnectionToPlayer() 
-                => scientist.DelayAction(1f, () => scientist.SetSearchState());
+            private void FlyToPlayer() 
+                => scientist.SetState(new FlyingToTarget(scientist, scientist.playerTransform.Value, new SparklingAsteroidSearch(scientist)));
         }
 
         private static IEnumerator MoveTo(Transform movable, Transform target, float movementSpeed, float eps, Action<Vector3> moveAction)
