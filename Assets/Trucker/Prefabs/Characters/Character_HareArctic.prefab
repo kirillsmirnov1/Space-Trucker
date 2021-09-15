@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catchee: {fileID: 8413573129780739159}
+  rb: {fileID: 4723793198209563031}
   zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
   speed: {fileID: 11400000, guid: 7942aa9dba5dc494fad3a4508eb59092, type: 2}
   scientistAsteroidDistEps: {fileID: 11400000, guid: ad852c4a6177493418ad091e90f8e10f, type: 2}
@@ -210,6 +211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ddea0cfb5947a6a6bc5cc4a10a8599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &4723793198209563031 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3311469133627717176, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}
+  m_PrefabInstance: {fileID: 7816836368455372719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8046976761971537743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 276516153298385120, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}

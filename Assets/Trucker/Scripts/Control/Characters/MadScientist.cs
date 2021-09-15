@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Trucker.Control.Zap;
 using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Entities;
@@ -15,6 +16,7 @@ namespace Trucker.Control.Characters
     {
         [Header("Components")]
         [SerializeField] private ZapCatchee catchee;
+        [SerializeField] private Rigidbody rb;
         
         [Header("Data")]
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
@@ -52,6 +54,9 @@ namespace Trucker.Control.Characters
 
         private void ConnectToCatcher() => ZapCatcher.TryCatch(catchee);
         private void DisconnectFromCatcher() => ZapCatcher.TryFree(catchee);
+        
+        private void MoveRbByForce(Vector3 force) 
+            => rb.AddForce(force, ForceMode.Acceleration); 
 
         private abstract class MadScientistState
         {
@@ -115,14 +120,15 @@ namespace Trucker.Control.Characters
 
             private IEnumerator FlyToAsteroid()
             {
-                // IMPR move scientist using rb.AddForce
                 yield return MoveTo(
                     _scientistTransform,
                     _asteroidTarget,
                     scientist.speed,
-                    scientist.scientistAsteroidDistEps);
+                    scientist.scientistAsteroidDistEps,
+                    scientist.MoveRbByForce);
             }
         }
+
 
         private class InteractWithAsteroid : MadScientistState
         {
@@ -161,7 +167,8 @@ namespace Trucker.Control.Characters
                     shotsTransform, 
                     scientist._asteroidTarget, 
                     scientist.speed * 3, 
-                    0.1f);
+                    0.1f,
+                    direction => shotsTransform.Translate(direction, Space.World));
             }
 
             private static void DisableWarpShot(GameObject shot) => shot.gameObject.SetActive(false);
@@ -208,7 +215,7 @@ namespace Trucker.Control.Characters
                 => scientist.DelayAction(1f, () => scientist.SetSearchState());
         }
 
-        private static IEnumerator MoveTo(Transform movable, Transform target, float movementSpeed, float eps)
+        private static IEnumerator MoveTo(Transform movable, Transform target, float movementSpeed, float eps, Action<Vector3> moveAction)
         {
             Vector3 toTarget;
             do
@@ -216,7 +223,7 @@ namespace Trucker.Control.Characters
                 toTarget = target.position - movable.position;
                 var distToMove = toTarget.normalized * movementSpeed * 3;
                 distToMove = Vector3.ClampMagnitude(distToMove, Mathf.Max(toTarget.magnitude, eps));
-                movable.Translate(distToMove, Space.World);
+                moveAction.Invoke(distToMove);
                 yield return null;
             } while (Mathf.Abs(toTarget.magnitude) > eps);
         }
