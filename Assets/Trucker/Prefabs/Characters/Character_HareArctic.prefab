@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2883428253108241473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7564840691273597811}
+  - component: {fileID: 3046248485506910791}
+  - component: {fileID: 1810706452095554620}
+  m_Layer: 0
+  m_Name: MadScientist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7564840691273597811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883428253108241473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7643516907157190903}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3046248485506910791
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883428253108241473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1810706452095554620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883428253108241473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b78f43a88f40a2af99b352dddfea4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catchee: {fileID: 8413573129780739159}
+  zapCatcherVariable: {fileID: 11400000, guid: d73a04e1dfedfda41a5e90b8bfdebfba, type: 2}
+  speed: {fileID: 11400000, guid: 7942aa9dba5dc494fad3a4508eb59092, type: 2}
 --- !u!114 &5877014880266574722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +187,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.068
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3052872159674116044, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}
+--- !u!4 &7643516907157190903 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 462113064589260632, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}
+  m_PrefabInstance: {fileID: 7816836368455372719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8413573129780739159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1781735967954646008, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}
+  m_PrefabInstance: {fileID: 7816836368455372719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ddea0cfb5947a6a6bc5cc4a10a8599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8046976761971537743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 276516153298385120, guid: 203c9b53d69ca8746b8395ff7335acf4, type: 3}
