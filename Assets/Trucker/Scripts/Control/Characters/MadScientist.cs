@@ -116,7 +116,6 @@ namespace Trucker.Control.Characters
             public override void Start(MadScientist scientistInstance)
             {
                 base.Start(scientistInstance);
-                Debug.Log("Should be shooting rn");
                 Destroy(scientist._asteroidTarget.gameObject);
                 scientist.DelayAction(1f, () => scientist.SetSearchState());
             }
