@@ -33,6 +33,7 @@ namespace Trucker.Control.Characters
         private MadScientistState _state;
         private Transform _asteroidTarget;
         private GameObject _warpShot;
+        private TrailRenderer _warpShotTrail;
         private GameObject _warpSphere;
         
         private void OnValidate() => this.CheckNullFields();
@@ -95,10 +96,21 @@ namespace Trucker.Control.Characters
                 base.Start(scientistInstance);
                 // TODO enable jetpack
                 // TODO show mini-dialogue 
+                InitTransforms();
+                scientist.DisconnectFromCatcher();
+                scientist.StartCoroutine(MovementToAsteroid());
+            }
+
+            private void InitTransforms()
+            {
                 _scientistTransform = scientist.transform.parent;
                 _asteroidTarget = scientist._asteroidTarget;
-                scientist.DisconnectFromCatcher();
-                scientist.StartCoroutine(FlyToAsteroid());
+            }
+
+            private IEnumerator MovementToAsteroid()
+            {
+                yield return FlyToAsteroid();
+                scientist.SetInteractionState();
             }
 
             private IEnumerator FlyToAsteroid()
@@ -109,8 +121,6 @@ namespace Trucker.Control.Characters
                     _asteroidTarget,
                     scientist.speed,
                     scientist.scientistAsteroidDistEps);
-
-                scientist.SetInteractionState();
             }
         }
 
@@ -119,43 +129,56 @@ namespace Trucker.Control.Characters
             public override void Start(MadScientist scientistInstance)
             {
                 base.Start(scientistInstance);
-                PerformWarpShot();
+                scientist.StartCoroutine(InteractionWithAsteroid());
             }
 
-            private void PerformWarpShot()
+            private IEnumerator InteractionWithAsteroid()
             {
-                // IMPR into init shot 
-                var shot = scientist._warpShot ??= Instantiate(scientist.warpShotPrefab);
-                var shotsTransform = shot.transform;
-                shot.GetComponentInChildren<TrailRenderer>().Clear();
-                shotsTransform.position = scientist.transform.position;
-                shot.gameObject.SetActive(true);
-
-                scientist.StartCoroutine(MoveWarpShot(shot, shotsTransform));
+                var shot = InitWarpShot();
+                yield return MoveWarpShot(shot.transform);
+                DisableWarpShot(shot);
+                var warpSphere = InitWarpSphere(out var warpSphereTransform);
+                yield return WarpSphereScale(warpSphereTransform);
+                DisableWarpSphere(warpSphere, warpSphereTransform);
+                DestroyTargetAsteroid();
+                IterateWarpedAsteroidsCounter();
+                DelayConnectionToPlayer();
             }
 
-            private IEnumerator MoveWarpShot(GameObject shot, Transform shotsTransform)
+            private GameObject InitWarpShot()
+            {
+                var shot = scientist._warpShot ??= Instantiate(scientist.warpShotPrefab);
+                var shotTrail = scientist._warpShotTrail ??= shot.GetComponentInChildren<TrailRenderer>();
+                shotTrail.Clear(); 
+                shot.transform.position = scientist.transform.position;
+                shot.gameObject.SetActive(true);
+                return shot;
+            }
+
+            private IEnumerator MoveWarpShot(Transform shotsTransform)
             {
                 yield return MoveTo(
                     shotsTransform, 
                     scientist._asteroidTarget, 
                     scientist.speed * 3, 
                     0.1f);
-
-                shot.gameObject.SetActive(false);
-
-                yield return InitiateWarpSphere();
             }
 
-            private IEnumerator InitiateWarpSphere()
+            private static void DisableWarpShot(GameObject shot) => shot.gameObject.SetActive(false);
+
+            private GameObject InitWarpSphere(out Transform sphereTransform)
             {
                 var sphere = scientist._warpSphere ??= Instantiate(scientist.warpSpherePrefab);
-                var sphereTransform = sphere.transform;
+                sphereTransform = sphere.transform;
                 sphereTransform.parent = scientist._asteroidTarget;
                 sphereTransform.localScale = Vector3.zero;
                 sphereTransform.localPosition = Vector3.zero;
                 sphere.gameObject.SetActive(true);
+                return sphere;
+            }
 
+            private IEnumerator WarpSphereScale(Transform sphereTransform)
+            {
                 while (sphereTransform.localScale.x < 2)
                 {
                     sphereTransform.localScale += Vector3.one * 0.05f;
@@ -167,16 +190,22 @@ namespace Trucker.Control.Characters
                     scientist._asteroidTarget.localScale -= Vector3.one * 0.15f;
                     yield return null;
                 }
-
-                sphereTransform.parent = scientist.transform;
-                sphere.gameObject.SetActive(false);
-
-                Destroy(scientist._asteroidTarget.gameObject);
-
-                scientist.warpedAsteroidsCounter.Value++;
-                
-                scientist.DelayAction(1f, () => scientist.SetSearchState());
             }
+
+            private void DisableWarpSphere(GameObject warpSphere, Transform sphereTransform)
+            {
+                sphereTransform.parent = scientist.transform;
+                warpSphere.gameObject.SetActive(false);
+            }
+
+            private void DestroyTargetAsteroid() 
+                => Destroy(scientist._asteroidTarget.gameObject);
+
+            private void IterateWarpedAsteroidsCounter() 
+                => scientist.warpedAsteroidsCounter.Value++;
+
+            private void DelayConnectionToPlayer() 
+                => scientist.DelayAction(1f, () => scientist.SetSearchState());
         }
 
         private static IEnumerator MoveTo(Transform movable, Transform target, float movementSpeed, float eps)
