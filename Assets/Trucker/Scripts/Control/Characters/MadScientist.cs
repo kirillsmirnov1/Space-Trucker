@@ -30,6 +30,7 @@ namespace Trucker.Control.Characters
         private MadScientistState _state;
         private Transform _asteroidTarget;
         private GameObject _warpShot;
+        private GameObject _warpSphere;
         
         private void OnValidate() => this.CheckNullFields();
         private void Start() => SetSearchState();
@@ -145,9 +146,29 @@ namespace Trucker.Control.Characters
 
             private IEnumerator InitiateWarpSphere()
             {
-                // TODO shoot warp sphere, wait for it destruction
                 // TODO tick counter 
-                yield return null;
+                var sphere = scientist._warpSphere ??= Instantiate(scientist.warpSpherePrefab);
+                var sphereTransform = sphere.transform;
+                sphereTransform.parent = scientist._asteroidTarget;
+                sphereTransform.localScale = Vector3.zero;
+                sphereTransform.localPosition = Vector3.zero;
+                sphere.gameObject.SetActive(true);
+
+                while (sphereTransform.localScale.x < 2)
+                {
+                    sphereTransform.localScale += Vector3.one * 0.05f;
+                    yield return null;
+                }
+
+                while (scientist._asteroidTarget.localScale.x > 0.001f)
+                {
+                    scientist._asteroidTarget.localScale -= Vector3.one * 0.15f;
+                    yield return null;
+                }
+
+                sphereTransform.parent = scientist.transform;
+                sphere.gameObject.SetActive(false);
+
                 Destroy(scientist._asteroidTarget.gameObject);
                 scientist.DelayAction(1f, () => scientist.SetSearchState());
             }
