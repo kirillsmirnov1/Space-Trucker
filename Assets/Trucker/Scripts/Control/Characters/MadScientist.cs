@@ -59,8 +59,8 @@ namespace Trucker.Control.Characters
         private void FlyToAsteroid()
             => SetState(new FlyingToTarget(this, _asteroidTarget, new InteractWithAsteroid(this)));
         
-        private void MoveRbByForce(Vector3 force) 
-            => rb.AddForce(force, ForceMode.Acceleration); 
+        private void MoveForward(Vector3 force) 
+            => rb.AddForce(transform.forward * force.magnitude, ForceMode.Acceleration); 
 
         private abstract class MadScientistState
         {
@@ -149,7 +149,7 @@ namespace Trucker.Control.Characters
                     _target,
                     scientist.speed,
                     scientist.scientistAsteroidDistEps,
-                    scientist.MoveRbByForce);
+                    scientist.MoveForward);
             }
 
             public override void Stop()
