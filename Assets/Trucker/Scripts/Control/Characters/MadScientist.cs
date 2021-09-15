@@ -16,6 +16,7 @@ namespace Trucker.Control.Characters
         [Header("Components")]
         [SerializeField] private ZapCatchee catchee;
         [SerializeField] private Rigidbody rb;
+        [SerializeField] private GameObject jetpackTrails;
         
         [Header("Data")]
         [SerializeField] private FloatVariable speed;
@@ -81,6 +82,7 @@ namespace Trucker.Control.Characters
             public override void Start()
             {
                 base.Start();
+                scientist.jetpackTrails.gameObject.SetActive(false);
                 scientist.ConnectToCatcher();
             }
 
@@ -118,7 +120,7 @@ namespace Trucker.Control.Characters
             public override void Start()
             {
                 base.Start();
-                // TODO enable jetpack
+                scientist.jetpackTrails.gameObject.SetActive(true);
                 // TODO show mini-dialogue 
                 scientist.StartCoroutine(Movement());
             }
