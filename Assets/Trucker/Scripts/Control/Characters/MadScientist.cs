@@ -52,6 +52,10 @@ namespace Trucker.Control.Characters
 
         private void ConnectToCatcher() => ZapCatcher.TryCatch(catchee);
         private void DisconnectFromCatcher() => ZapCatcher.TryFree(catchee);
+        private void FlyToPlayer() 
+            => SetState(new FlyingToTarget(this, playerTransform.Value, new SparklingAsteroidSearch(this)));
+        private void FlyToAsteroid()
+            => SetState(new FlyingToTarget(this, _asteroidTarget, new InteractWithAsteroid(this)));
         
         private void MoveRbByForce(Vector3 force) 
             => rb.AddForce(force, ForceMode.Acceleration); 
@@ -90,8 +94,8 @@ namespace Trucker.Control.Characters
                 base.OnTriggerEnter(other);
                 if (other.TryGetComponent<EntityId>(out var id) && id.type == EntityType.AsteroidWithSparks)
                 {
-                    var target = scientist._asteroidTarget = other.transform;
-                    scientist.SetState(new FlyingToTarget(scientist, target, new InteractWithAsteroid(scientist)));
+                    scientist._asteroidTarget = other.transform;
+                    scientist.FlyToAsteroid();
                 }
             }
         }
@@ -218,7 +222,7 @@ namespace Trucker.Control.Characters
                 => scientist.warpedAsteroidsCounter.Value++;
 
             private void FlyToPlayer() 
-                => scientist.SetState(new FlyingToTarget(scientist, scientist.playerTransform.Value, new SparklingAsteroidSearch(scientist)));
+                => scientist.FlyToPlayer();
         }
 
         private static IEnumerator MoveTo(Transform movable, Transform target, float movementSpeed, float eps, Action<Vector3> moveAction)
