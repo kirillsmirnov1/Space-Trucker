@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921873d815974236975780263b5e64b4, type: 3}
   m_Name: MadScientistSpeed
   m_EditorClassIdentifier: 
-  value: 0.1
+  value: 5
   save: 0
   logSave: 0
   defaultValue: 0
