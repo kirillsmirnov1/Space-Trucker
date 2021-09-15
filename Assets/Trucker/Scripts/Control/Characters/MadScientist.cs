@@ -19,16 +19,18 @@ namespace Trucker.Control.Characters
         [Header("Data")]
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
         [SerializeField] private FloatVariable speed;
+        [SerializeField] private FloatVariable scientistAsteroidDistEps;
         
         [Header("Prefabs")]
-        [SerializeField] private GameObject warpObjectPrefab;
+        [SerializeField] private GameObject warpShotPrefab;
         [SerializeField] private GameObject warpSpherePrefab;
         
         private ZapCatcher ZapCatcher => zapCatcherVariable.Value;
         
         private MadScientistState _state;
         private Transform _asteroidTarget;
-
+        private GameObject _warpShot;
+        
         private void OnValidate() => this.CheckNullFields();
         private void Start() => SetSearchState();
         private void SetSearchState() => SetState(new SparklingAsteroidSearch());
@@ -97,28 +99,71 @@ namespace Trucker.Control.Characters
 
             private IEnumerator FlyToAsteroid()
             {
-                Vector3 toAsteroid;
-                do
-                {
-                    toAsteroid = _asteroidTarget.position - _scientistTransform.position;
-                    var distToMove = toAsteroid.normalized * scientist.speed;
-                    _scientistTransform.Translate(distToMove, Space.World); // IMPR use rb.AddForce 
-                    yield return null;
-                } while (Mathf.Abs(toAsteroid.magnitude) > 5f);
+                // IMPR move scientist using rb.AddForce
+                yield return MoveTo(
+                    _scientistTransform,
+                    _asteroidTarget,
+                    scientist.speed,
+                    scientist.scientistAsteroidDistEps);
+
                 scientist.SetInteractionState();
             }
         }
 
         private class InteractWithAsteroid : MadScientistState
         {
-            // TODO shoot warp sphere, wait for it destruction, connect to ZapCatcher
-            // TODO tick counter 
             public override void Start(MadScientist scientistInstance)
             {
                 base.Start(scientistInstance);
+                PerformWarpShot();
+            }
+
+            private void PerformWarpShot()
+            {
+                // IMPR into init shot 
+                var shot = scientist._warpShot ??= Instantiate(scientist.warpShotPrefab);
+                var shotsTransform = shot.transform;
+                shot.GetComponentInChildren<TrailRenderer>().Clear();
+                shotsTransform.position = scientist.transform.position;
+                shot.gameObject.SetActive(true);
+
+                scientist.StartCoroutine(MoveWarpShot(shot, shotsTransform));
+            }
+
+            private IEnumerator MoveWarpShot(GameObject shot, Transform shotsTransform)
+            {
+                yield return MoveTo(
+                    shotsTransform, 
+                    scientist._asteroidTarget, 
+                    scientist.speed * 3, 
+                    0.1f);
+
+                shot.gameObject.SetActive(false);
+
+                yield return InitiateWarpSphere();
+            }
+
+            private IEnumerator InitiateWarpSphere()
+            {
+                // TODO shoot warp sphere, wait for it destruction
+                // TODO tick counter 
+                yield return null;
                 Destroy(scientist._asteroidTarget.gameObject);
                 scientist.DelayAction(1f, () => scientist.SetSearchState());
             }
+        }
+
+        private static IEnumerator MoveTo(Transform movable, Transform target, float movementSpeed, float eps)
+        {
+            Vector3 toTarget;
+            do
+            {
+                toTarget = target.position - movable.position;
+                var distToMove = toTarget.normalized * movementSpeed * 3;
+                distToMove = Vector3.ClampMagnitude(distToMove, Mathf.Max(toTarget.magnitude, eps));
+                movable.Translate(distToMove, Space.World);
+                yield return null;
+            } while (Mathf.Abs(toTarget.magnitude) > eps);
         }
     }
 
