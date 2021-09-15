@@ -7,8 +7,8 @@
         public override void EnterState() => 
             Catchee.crosshairHolder.SetActive(Catchee.interactableByPlayer);
 
-        public override void OnUnreachable() 
-            => Catchee.SetState(new FreeUnreachable(Catchee));
+        public override void OnUnreachable()
+            => Catchee.SetFreeState();
 
         public override void OnPointerDown()
         {
@@ -17,6 +17,6 @@
         }
 
         protected virtual void TryCatch() 
-            => Catchee.SetState(new Catching(Catchee));
+            => Catchee.SetCatchingState();
     }
 }

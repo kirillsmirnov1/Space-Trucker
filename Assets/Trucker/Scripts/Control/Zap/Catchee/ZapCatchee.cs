@@ -55,6 +55,10 @@ namespace Trucker.Control.Zap.Catchee
             SetState(initialState);
         }
 
+        public void SetCatchedState() => SetState(new Catched(this));
+        public void SetFreeingState() => SetState(new Freeing(this));
+        public void SetCatchingState() => SetState(new Catching(this));
+        
         private void SubscribeOnReachableStatusChange()
         {
             reachableStatus.onStatusChange += reachable =>
@@ -64,7 +68,7 @@ namespace Trucker.Control.Zap.Catchee
             };
         }
 
-        public void SetState(ZapCatcheeState newState)
+        private void SetState(ZapCatcheeState newState)
         {
             _state?.ExitState();
             _state = newState;
@@ -82,12 +86,6 @@ namespace Trucker.Control.Zap.Catchee
 
         public void NotifyOnCatchingStart() 
             => OnCatchingStarted?.Invoke();
-
-        public virtual void OnFree()
-        {
-            SetFreeState();
-            OnFreed?.Invoke();
-        }
 
         public void SetConnection(SpringJointSettings springSettings, Transform bodyToConnectTo)
         {
@@ -125,5 +123,35 @@ namespace Trucker.Control.Zap.Catchee
 
         public void SetConnectedBody(Transform bodyToConnectTo) 
             => _anchorConnection.connectedBody = bodyToConnectTo;
+
+        public void OnCatchAttempt(bool catched)
+        {
+            if (catched)
+            {
+                SetCatchedState();
+            }
+            else
+            {
+                SetFreeState();
+            }
+        }
+
+        public void OnFreeAttempt(bool freed)
+        {
+            if (freed)
+            {
+                OnCatcheeFreed();
+            }
+            else
+            {
+                SetCatchedState();
+            }
+        }
+
+        protected virtual void OnCatcheeFreed()
+        {
+            SetFreeState();
+            OnFreed?.Invoke();
+        }
     }
 }

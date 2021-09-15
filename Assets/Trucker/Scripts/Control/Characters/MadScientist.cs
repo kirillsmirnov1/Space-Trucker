@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using Trucker.Control.Zap;
 using Trucker.Control.Zap.Catchee;
-using Trucker.Control.Zap.Catchee.States;
 using Trucker.Model.Entities;
 using Trucker.Model.Zap;
 using UnityEngine;
@@ -37,12 +36,8 @@ namespace Trucker.Control.Characters
 
         private void OnTriggerEnter(Collider other) => _state.OnTriggerEnter(other);
 
-        private void ConnectToCatcher() => catchee.SetState(new Catched(catchee));
-        private void DisconnectFromCatcher()
-        {
-            ZapCatcher.TryFree(catchee); // FIXME make all calls go through Catcher 
-            catchee.OnFree();
-        }
+        private void ConnectToCatcher() => ZapCatcher.TryCatch(catchee);
+        private void DisconnectFromCatcher() => ZapCatcher.TryFree(catchee);
 
         private abstract class MadScientistState
         {

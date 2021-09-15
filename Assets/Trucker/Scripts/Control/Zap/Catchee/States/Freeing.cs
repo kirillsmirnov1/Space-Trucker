@@ -43,16 +43,10 @@ namespace Trucker.Control.Zap.Catchee.States
             }
         }
 
-        private void Free()
-        {
-            if (Catchee.Catcher.TryFree(Catchee))
-            {
-                Catchee.OnFree();
-            }
-        }
+        private void Free() => Catchee.Catcher.TryFree(Catchee);
 
         public override void OnPointerUp() 
-            => Catchee.SetState(new Catched(Catchee));
+            => Catchee.SetCatchedState();
 
         public override void ExitState() 
             => Catchee.progressDisplay.material = _defaultMaterial;

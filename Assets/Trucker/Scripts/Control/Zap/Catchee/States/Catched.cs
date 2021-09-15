@@ -7,14 +7,13 @@
         public override void EnterState()
         {
             Catchee.crosshairHolder.SetActive(false);
-            Catchee.Catcher.TryCatch(Catchee);
             Catchee.OnCatch();
         }
 
         public override void OnPointerDown()
         {
             if(Catchee.interactableByPlayer)
-                Catchee.SetState(new Freeing(Catchee));
+                Catchee.SetFreeingState();
         }
 
         public override void OnFixedUpdate()

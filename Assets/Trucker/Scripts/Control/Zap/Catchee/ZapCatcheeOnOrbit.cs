@@ -17,9 +17,9 @@ namespace Trucker.Control.Zap.Catchee
             spawnee.enabled = false;
         }
 
-        public override void OnFree()
+        protected override void OnCatcheeFreed()
         {
-            base.OnFree();
+            base.OnCatcheeFreed();
             orbitSpeed.enabled = true;
             spawnee.enabled = true;
             spawnee.ResetPosition();

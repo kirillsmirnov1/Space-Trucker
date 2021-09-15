@@ -27,31 +27,29 @@ namespace Trucker.Control.Zap
         private void Awake() => zapLevelVariable.OnChange += CheckConsistency;
         private void OnDestroy() => zapLevelVariable.OnChange -= CheckConsistency;
 
-        public bool TryCatch(ZapCatchee zapCatchee)
+        public void TryCatch(ZapCatchee zapCatchee)
         {
-            if (catchees.Contains(zapCatchee)) return false;
-
-            zapCatchee.SetConnection(springSettings, TailTransform);
+            if (!catchees.Contains(zapCatchee))
+            {
+                zapCatchee.SetConnection(springSettings, TailTransform);
+                catchees.AddLast(zapCatchee);
+                catcheeTypes.ObjectCatched(zapCatchee);
+            }
             
-            catchees.AddLast(zapCatchee);
-
-            catcheeTypes.ObjectCatched(zapCatchee);
-            
-            return true;
+            zapCatchee.OnCatchAttempt(true);
         }
 
-        public bool TryFree(ZapCatchee catchee)
+        public void TryFree(ZapCatchee catchee)
         {
-            if (!catchees.Contains(catchee)) return false;
+            if (catchees.Contains(catchee))
+            {
+                catchee.DestroyConnection();
+                ReconnectNextCatchee(catchee);
+                catchees.Remove(catchee);
+                catcheeTypes.ObjectReleased(catchee);
+            }
 
-            catchee.DestroyConnection();      
-
-            ReconnectNextCatchee(catchee);
-
-            catchees.Remove(catchee);
-            
-            catcheeTypes.ObjectReleased(catchee);
-            return true;
+            catchee.OnFreeAttempt(true);
         }
 
         private void ReconnectNextCatchee(ZapCatchee catchee)

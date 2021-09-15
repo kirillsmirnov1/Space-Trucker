@@ -33,7 +33,7 @@ namespace Trucker.Model.Questing.Steps.Operations
             {
                 var newGo = Instantiate(prefab, pos, Quaternion.identity);
                 var catchee = newGo.GetComponent<ZapCatchee>();
-                catchee.SetState(new Catched(catchee));
+                zapCatcherVariable.Value.TryCatch(catchee);
             }
         }
     }

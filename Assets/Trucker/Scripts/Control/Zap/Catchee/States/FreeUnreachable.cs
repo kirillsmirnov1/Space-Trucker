@@ -8,6 +8,6 @@
             => Catchee.crosshairHolder.SetActive(false);
 
         public override void OnReachable() 
-            => Catchee.SetState(new FreeReachable(Catchee));
+            => Catchee.SetFreeState();
     }
 }

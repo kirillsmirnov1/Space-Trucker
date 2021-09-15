@@ -53,15 +53,15 @@ namespace Trucker.Control.Zap.Catchee.States
             
             if (_timeCatching >= _duration)
             {
-                Catchee.SetState(new Catched(Catchee));
+                Catchee.Catcher.TryCatch(Catchee);
             }
         }
 
         public override void OnPointerUp() 
-            => Catchee.SetState(new FreeReachable(Catchee));
+            => Catchee.SetFreeState();
 
         public override void OnUnreachable() 
-            => Catchee.SetState(new FreeUnreachable(Catchee));
+            => Catchee.SetFreeState();
 
         public override void ExitState()
         {
