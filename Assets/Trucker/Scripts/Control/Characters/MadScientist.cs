@@ -80,6 +80,8 @@ namespace Trucker.Control.Characters
             public override void Start(MadScientist scientistInstance)
             {
                 base.Start(scientistInstance);
+                // TODO enable jetpack
+                // TODO show mini-dialogue 
                 _scientistTransform = scientist.transform.parent;
                 _asteroidTarget = scientist._asteroidTarget;
                 scientist.DisconnectFromCatcher();
@@ -103,6 +105,7 @@ namespace Trucker.Control.Characters
         private class InteractWithAsteroid : MadScientistState
         {
             // TODO shoot warp sphere, wait for it destruction, connect to ZapCatcher
+            // TODO tick counter 
             public override void Start(MadScientist scientistInstance)
             {
                 base.Start(scientistInstance);
