@@ -18,9 +18,10 @@ namespace Trucker.Control.Characters
         [SerializeField] private Rigidbody rb;
         
         [Header("Data")]
-        [SerializeField] private ZapCatcherVariable zapCatcherVariable;
         [SerializeField] private FloatVariable speed;
+        [SerializeField] private FloatVariable rotationSpeed;
         [SerializeField] private FloatVariable scientistAsteroidDistEps;
+        [SerializeField] private ZapCatcherVariable zapCatcherVariable;
         [SerializeField] private TransformVariable playerTransform;
         
         [Header("Variables")]
@@ -105,6 +106,7 @@ namespace Trucker.Control.Characters
             private readonly Transform _scientistTransform;
             private readonly Transform _target;
             private readonly MadScientistState _nextState;
+            private Coroutine _rotationCoroutine;
 
             public FlyingToTarget(MadScientist scientist, Transform targetTransformInstance, MadScientistState nextState) : base(scientist)
             {
@@ -123,8 +125,19 @@ namespace Trucker.Control.Characters
 
             private IEnumerator Movement()
             {
+                _rotationCoroutine = scientist.StartCoroutine(Rotation());
                 yield return FlyToTarget();
                 scientist.SetState(_nextState);
+            }
+
+            private IEnumerator Rotation()
+            {
+                while (true)
+                {
+                    var lookRotation = Quaternion.LookRotation(_target.position - _scientistTransform.position);
+                    _scientistTransform.rotation = Quaternion.Slerp(_scientistTransform.rotation,lookRotation,scientist.rotationSpeed);
+                    yield return null;
+                }
             }
 
             private IEnumerator FlyToTarget()
@@ -135,6 +148,12 @@ namespace Trucker.Control.Characters
                     scientist.speed,
                     scientist.scientistAsteroidDistEps,
                     scientist.MoveRbByForce);
+            }
+
+            public override void Stop()
+            {
+                base.Stop();
+                scientist.StopCoroutine(_rotationCoroutine);
             }
         }
         
