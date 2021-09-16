@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q09_Start
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 6b13ba8cbf9d57a4bbb5a0175662b263
+  canBeRepeated: 0
+  initialCharacter: 11
+  lines:
+  - character: 9
+    line: So, is there any progress?
+  - character: 11
+    line: OH MY GOD YEAS
+  - character: 11
+    line: I think I managed to reproduce some storm-like effects
+  - character: 11
+    line: But I'll need to check it in field. I mean, in space.
+  - character: 11
+    line: Will you help me?
+  - character: 9
+    line: Well, we've come this far, so, yeah.
+  - character: 11
+    line: Great!
+  - character: 11
+    line: I just need to check on some sparkling asteroids.
+  - character: 11
+    line: Just tow me to them and I'll do everything else!
+  - character: 9
+    line: Yeah, okay, let's go.
+  dialogueType: 1
+  quest: {fileID: 11400000, guid: ce9d49e0d329d8e42acbe60ec231364f, type: 2}
+  unlockCondition: {fileID: 0}
