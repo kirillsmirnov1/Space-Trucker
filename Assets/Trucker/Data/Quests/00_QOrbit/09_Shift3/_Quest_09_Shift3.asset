@@ -15,12 +15,10 @@ MonoBehaviour:
   title: Space Rocks 3
   description: 'Help Merrill study asteroids up close
 
-    ! lines for mini-dialogues
+    ! detach merrill
 
     !
-    detach merrill
-
-    ! end dialogue
+    end dialogue
 
     ! reward '
   finishedFromDialog: 1
@@ -34,4 +32,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bee5979f616f67743a6b2c3f48b74d48, type: 2}
   - {fileID: 11400000, guid: f4da0e58d2528034f876cd326e8830c1, type: 2}
   consequences: []
-  currentStepNumber: 2
+  currentStepNumber: 4

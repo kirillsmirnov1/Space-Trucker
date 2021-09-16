@@ -1,6 +1,5 @@
 ﻿using System;
 using Trucker.Model.Dialogues;
-using Trucker.Model.NPC;
 using UnityEngine;
 
 namespace Trucker.Model.Questing.Steps.Operations
@@ -14,7 +13,12 @@ namespace Trucker.Model.Questing.Steps.Operations
         
         public override void Start()
         {
-            OnMiniDialogueRequest?.Invoke(dialogueToPlay, onCompleted);
+            Invoke(dialogueToPlay, onCompleted);
+        }
+
+        public void Invoke(IDialogue miniDialogue, Action onDialogueEndAction = null)
+        {
+            OnMiniDialogueRequest?.Invoke(miniDialogue, onDialogueEndAction);
         }
     }
 }

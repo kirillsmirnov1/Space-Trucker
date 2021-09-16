@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340e6befe0be4769a330eef47d544e74, type: 3}
-  m_Name: sparkDelay
+  m_Script: {fileID: 11500000, guid: a8c4d64107ce4298b78a998aecdc0f79, type: 3}
+  m_Name: InvokeMiniDialogue
   m_EditorClassIdentifier: 
-  value: {x: 5, y: 180}
-  save: 0
-  logSave: 0
-  defaultValue: {x: 0, y: 0}
-  guid: acc4fbe93a2eb94468c4b5b9f62488c5
+  dialogueToPlay: {fileID: 0}

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using Trucker.Control.Zap;
 using Trucker.Control.Zap.Catchee;
+using Trucker.Model.Dialogues;
 using Trucker.Model.Entities;
+using Trucker.Model.Questing.Steps.Operations;
 using Trucker.Model.Zap;
 using UnityEngine;
 using UnityUtils;
@@ -11,7 +14,7 @@ using UnityUtils.Variables;
 namespace Trucker.Control.Characters
 {
     [RequireComponent(typeof(SphereCollider))]
-    public class MadScientist : MonoBehaviour // I'm really free-writing it now
+    public class MadScientist : MonoBehaviour // I'm really free-writing it now // That should be SO, or attached in runtime 
     {
         [Header("Components")]
         [SerializeField] private ZapCatchee catchee;
@@ -24,6 +27,8 @@ namespace Trucker.Control.Characters
         [SerializeField] private FloatVariable scientistAsteroidDistEps;
         [SerializeField] private ZapCatcherVariable zapCatcherVariable;
         [SerializeField] private TransformVariable playerTransform;
+        [SerializeField] private Oneliners asteroidFoundLines;
+        [SerializeField] private MiniDialogueStep miniDialogueInvoker;
         
         [Header("Variables")]
         [SerializeField] private IntVariable warpedAsteroidsCounter;
@@ -98,8 +103,15 @@ namespace Trucker.Control.Characters
                 if (other.TryGetComponent<EntityId>(out var id) && id.type == EntityType.AsteroidWithSparks)
                 {
                     scientist._asteroidTarget = other.transform;
+                    ShowMiniDialogueOneliner();
                     scientist.FlyToAsteroid();
                 }
+            }
+            
+            private void ShowMiniDialogueOneliner()
+            {
+                var line = scientist.asteroidFoundLines.Entries.Shuffle().First();
+                scientist.miniDialogueInvoker.Invoke(line);
             }
         }
 
@@ -121,7 +133,6 @@ namespace Trucker.Control.Characters
             {
                 base.Start();
                 scientist.jetpackTrails.gameObject.SetActive(true);
-                // TODO show mini-dialogue 
                 scientist.StartCoroutine(Movement());
             }
 

@@ -1,11 +1,13 @@
-﻿using Trucker.Model.NPC;
+﻿using OneLine;
+using Trucker.Model.NPC;
 using UnityEngine;
 
 namespace Trucker.Model.Dialogues
 {
+    [CreateAssetMenu(menuName = "Quests/Dialogues/Oneliners", fileName = "Oneliners", order = 0)]
     public class Oneliners : ScriptableObject
     {
-        [SerializeField] private DialogueLine[] lines;
+        [SerializeField, OneLine, HideLabel] private DialogueLine[] lines;
 
         private IDialogue[] _entries;
         
