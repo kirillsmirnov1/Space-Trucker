@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿using Trucker.Model.Dialogues;
 
 namespace Trucker.Model.NPC
 {

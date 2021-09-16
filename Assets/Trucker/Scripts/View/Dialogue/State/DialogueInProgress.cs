@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Trucker.Model.NPC;
+using Trucker.Model.Dialogues;
 
 namespace Trucker.View.Dialogue.State
 {

@@ -1,4 +1,5 @@
 ﻿using Trucker.Model;
+using Trucker.Model.Dialogues;
 using Trucker.Model.NPC;
 using Trucker.Model.Questing.Quests;
 using UnityEngine;

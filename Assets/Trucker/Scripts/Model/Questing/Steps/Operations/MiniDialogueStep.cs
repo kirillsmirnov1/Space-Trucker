@@ -1,4 +1,5 @@
 ﻿using System;
+using Trucker.Model.Dialogues;
 using Trucker.Model.NPC;
 using UnityEngine;
 

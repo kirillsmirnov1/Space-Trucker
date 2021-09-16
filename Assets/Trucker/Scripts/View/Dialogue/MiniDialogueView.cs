@@ -1,5 +1,6 @@
 ﻿using System;
 using TMPro;
+using Trucker.Model.Dialogues;
 using Trucker.Model.NPC;
 using Trucker.Model.Questing.Steps.Operations;
 using UnityEngine;

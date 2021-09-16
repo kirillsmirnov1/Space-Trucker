@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using OneLine;
-using Trucker.Model.NPC;
+using Trucker.Model.Dialogues;
 using UnityEngine;
 using UnityUtils.Saves;
 using UnityUtils.Variables;

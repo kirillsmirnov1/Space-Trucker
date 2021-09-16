@@ -1,4 +1,6 @@
-﻿namespace Trucker.Model.NPC
+﻿using Trucker.Model.NPC;
+
+namespace Trucker.Model.Dialogues
 {
     public interface IDialogue
     {

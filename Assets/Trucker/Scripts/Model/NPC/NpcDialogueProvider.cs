@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Trucker.Model.Dialogues;
 using UnityEngine;
 using UnityUtils;
 

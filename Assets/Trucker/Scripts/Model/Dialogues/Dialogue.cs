@@ -1,11 +1,12 @@
 ﻿using System;
 using OneLine;
+using Trucker.Model.NPC;
 using Trucker.Model.Questing.Quests;
 using UnityEngine;
 using UnityUtils.Attributes;
 using UnityUtils.Variables;
 
-namespace Trucker.Model.NPC
+namespace Trucker.Model.Dialogues
 {
     [CreateAssetMenu(fileName = "Dialogue", menuName = "Quests/Dialogue", order = 0)]
     public class Dialogue : BoolVariable, IDialogue
