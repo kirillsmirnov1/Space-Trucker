@@ -15,12 +15,10 @@ MonoBehaviour:
   title: Audiophile
   description: 'Collect station music for Claiborne
 
-    >start dialogue
+    >get radio
 
-    >get
-    radio
-
-    >parallel goal for songs
+    >parallel
+    goal for songs
 
     >end dialogue
 
