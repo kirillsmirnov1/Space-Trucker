@@ -83,6 +83,10 @@ namespace Trucker.Control.Characters
 
         private class SparklingAsteroidSearch : MadScientistState // IMPR maybe add trigger sphere on player? 
         {
+            private Coroutine _rotationCoroutine;
+            private Transform _scientistTransform;
+            private Transform _playerTransform;
+            
             public SparklingAsteroidSearch(MadScientist scientistInstance) : base(scientistInstance) { }
 
             public override void Start()
@@ -90,12 +94,30 @@ namespace Trucker.Control.Characters
                 base.Start();
                 scientist.jetpackTrails.gameObject.SetActive(false);
                 scientist.ConnectToCatcher();
+                AlignWithPlayer();
+            }
+
+            private void AlignWithPlayer()
+            {
+                _scientistTransform = scientist.transform.parent;
+                _playerTransform = scientist.playerTransform;
+                _rotationCoroutine = scientist.StartCoroutine(PlayerAlignment());
             }
 
             public override void Stop()
             {
                 base.Stop();
                 scientist.DisconnectFromCatcher();
+                scientist.StopCoroutine(_rotationCoroutine);
+            }
+
+            private IEnumerator PlayerAlignment()
+            {
+                while (true)
+                {
+                    _scientistTransform.rotation = Quaternion.Slerp(_scientistTransform.rotation, _playerTransform.rotation, 0.01f);
+                    yield return null;
+                }
             }
 
             public override void OnTriggerEnter(Collider other)
