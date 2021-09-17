@@ -15,21 +15,19 @@ MonoBehaviour:
   title: Audiophile
   description: 'Collect station music for Claiborne
 
-    >Q2 as condition
+    >start dialogue
 
-    >start
-    dialogue
-
-    >get radio
+    >get
+    radio
 
     >parallel goal for songs
 
     >end dialogue
 
-    >unlock
-    song '
+    >unlock song '
   finishedFromDialog: 1
-  conditions: []
+  conditions:
+  - {fileID: 11400000, guid: f6fa7bb71be1f4641a93b3224de092e5, type: 2}
   monitors: []
   steps: []
   consequences: []
