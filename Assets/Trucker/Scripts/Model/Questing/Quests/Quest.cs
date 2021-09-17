@@ -33,9 +33,14 @@ namespace Trucker.Model.Questing.Quests
         public void Take()
         {
             Log($"Starting quest: {title}");
+            OnQuestTaken?.Invoke(title);
+            StartQuest();
+        }
+
+        public void StartQuest()
+        {
             InitMonitors();
             GuaranteeCleanSteps();
-            OnQuestTaken?.Invoke(title);
             StartStep(0);
         }
 
@@ -60,7 +65,7 @@ namespace Trucker.Model.Questing.Quests
             }
         }
 
-        public void StartStep(int stepToStart)
+        private void StartStep(int stepToStart)
         {
             currentStepNumber = stepToStart;
 
