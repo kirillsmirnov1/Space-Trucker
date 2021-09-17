@@ -4,22 +4,19 @@ using System.Linq;
 using System.Text;
 using Trucker.Model.Questing.Steps;
 using Trucker.Model.Questing.Steps.Goals;
-using UnityEngine.Rendering;
 
 namespace Trucker.Model.Questing.Quests
 {
     public static class GoalsTextFormatter
     {
-        public static string Format(List<Step> steps, int currentGoal)
+        public static string Format(List<Step> steps)
         {
             var str = new StringBuilder();
-
-            AppendGoalDescriptions(steps, currentGoal, str);
-
+            AppendGoalsDescriptions(steps, str);
             return str.ToString();
         }
 
-        private static void AppendGoalDescriptions(List<Step> steps, int currentGoal, StringBuilder str)
+        private static void AppendGoalsDescriptions(List<Step> steps, StringBuilder str)
         {
             for (int i = 0; i < steps.Count; i++)
             {
@@ -29,27 +26,32 @@ namespace Trucker.Model.Questing.Quests
                 switch (step)
                 {
                     case ParallelGoal pg:
-                        AppendGoalDescriptions(pg.goals.Select(g => (Step) g).ToList(), currentGoal, str);
+                        AppendGoalsDescriptions(pg.goals.Select(g => (Step) g).ToList(), str);
                         break;
                     case Goal goal:
-                        AppendGoalDescription(str, goal, i - currentGoal);
+                        AppendGoalDescription(str, goal);
                         break;
                 }
             }
         }
 
-        private static void AppendGoalDescription(StringBuilder strToAppendTo, Goal goal, int distanceFromCurrentGoal)
+        private static void AppendGoalDescription(StringBuilder strToAppendTo, Goal goal)
         {
-            strToAppendTo.Append(Prefix(distanceFromCurrentGoal));
+            strToAppendTo.Append(Prefix(goal.Stage));
             strToAppendTo.Append(" ");
             strToAppendTo.Append(goal.description);
             strToAppendTo.Append("\n");
         }
 
-        private static string Prefix(int distanceFromCurrent) // IMPR dont use index 
+        private static string Prefix(Goal.GoalStage stage) 
         {
-            if (distanceFromCurrent == 0) return "•";
-            return distanceFromCurrent < 0 ? "+" : "-";
+            return stage switch
+            {
+                Goal.GoalStage.Completed => "+",
+                Goal.GoalStage.InProgress => "•",
+                Goal.GoalStage.NotStarted => "-",
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
     }
 }

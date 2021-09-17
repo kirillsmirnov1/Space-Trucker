@@ -8,6 +8,16 @@ namespace Trucker.Model.Questing.Steps.Goals
     public class ParallelGoal : Goal
     {
         [SerializeField] public List<Goal> goals;
+
+        public override void Init()
+        {
+            base.Init();
+            foreach (var goal in goals)
+            {
+                goal.Init();
+            }
+        }
+
         public override void Start()
         {
             base.Start();

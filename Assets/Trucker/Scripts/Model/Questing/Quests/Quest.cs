@@ -28,7 +28,7 @@ namespace Trucker.Model.Questing.Quests
         [Header("Debug")]
         [SerializeField] private BoolVariable logQuestSteps;
         
-        public string GoalsText => GoalsTextFormatter.Format(steps, currentStepNumber);
+        public string GoalsText => GoalsTextFormatter.Format(steps);
 
         public void Take()
         {
@@ -52,6 +52,11 @@ namespace Trucker.Model.Questing.Quests
             if (currentStepNumber >= 0 && currentStepNumber < steps.Count)
             {
                 StopCurrentStep();
+            }
+
+            foreach (var step in steps)
+            {
+                step.Init();
             }
         }
 
