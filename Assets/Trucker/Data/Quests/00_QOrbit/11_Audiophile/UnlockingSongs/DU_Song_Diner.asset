@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
   m_Name: DU_Song_Diner
   m_EditorClassIdentifier: 
-  value: 1
+  value: 0
   save: 1
   logSave: 0
   defaultValue: 0
-  guid: 2a6862fc5b5f4224086b46c3dbc8474d
+  guid: f15d07b68f3efd9409f8acae88203d19
   canBeRepeated: 0
   initialCharacter: 6
   lines:

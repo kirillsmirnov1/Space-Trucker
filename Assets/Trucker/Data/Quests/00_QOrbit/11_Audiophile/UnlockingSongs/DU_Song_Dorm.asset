@@ -16,7 +16,7 @@ MonoBehaviour:
   save: 1
   logSave: 0
   defaultValue: 0
-  guid: 2a6862fc5b5f4224086b46c3dbc8474d
+  guid: dfb76ecf0e87ef146be200dfc7ab3fed
   canBeRepeated: 0
   initialCharacter: 1
   lines:
