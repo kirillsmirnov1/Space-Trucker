@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Trucker.Model.Questing.Steps.Goals
@@ -6,8 +7,7 @@ namespace Trucker.Model.Questing.Steps.Goals
     [CreateAssetMenu(menuName = "Quests/Goals/ParallelGoal", fileName = "ParallelGoal", order = 0)]
     public class ParallelGoal : Goal
     {
-        [SerializeField] private Goal[] goals;
-        
+        [SerializeField] public List<Goal> goals;
         public override void Start()
         {
             base.Start();
