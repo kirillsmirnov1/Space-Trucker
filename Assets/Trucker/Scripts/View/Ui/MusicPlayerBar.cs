@@ -27,10 +27,17 @@ namespace Trucker.View.Ui
 
         private void SetIterator()
         {
-            while (currentClip.Value.name != _clips[_currentSongIndex].name)
+            for (var i = 0; i < _clips.Length; i++)
             {
-                _currentSongIndex++;
+                if (_clips[i].name == currentClip.Value.name)
+                {
+                    _currentSongIndex = i;
+                    return;
+                }
             }
+
+            _currentSongIndex = 0;
+            UpdateClipVariable();
         }
 
         private void SetSongName()
@@ -43,9 +50,11 @@ namespace Trucker.View.Ui
             _currentSongIndex = (_currentSongIndex + i) % _clips.Length;
             if (_currentSongIndex < 0) _currentSongIndex += _clips.Length;
             
-            var newClip = _clips[_currentSongIndex];
-            currentClip.Value = newClip;
+            UpdateClipVariable();
             SetSongName();
         }
+
+        private void UpdateClipVariable() 
+            => currentClip.Value = _clips[_currentSongIndex];
     }
 }
