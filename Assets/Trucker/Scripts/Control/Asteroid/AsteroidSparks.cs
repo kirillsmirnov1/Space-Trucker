@@ -29,21 +29,24 @@ namespace Trucker.Control.Asteroid
         
         private void Awake()
         {
-            zapCatchee.OnCatchingStarted += LockSparks;
+            zapCatchee.OnCatchingStarted += OnCatchingStarted;
             zapCatchee.OnFreed += UnlockSparks;
             StartCoroutine(DelaySparksTurningOn());
         }
 
         private void OnDestroy()
         {
-            zapCatchee.OnCatchingStarted -= LockSparks;
+            zapCatchee.OnCatchingStarted -= OnCatchingStarted;
             zapCatchee.OnFreed -= UnlockSparks;
         }
 
-        private void LockSparks() 
+        private void OnCatchingStarted() 
         {
             if(zapProtectionEnabled) StopAllCoroutines();
         }
+        
+        public void LockSparks() 
+            => StopAllCoroutines();
 
         private void UnlockSparks()
         {

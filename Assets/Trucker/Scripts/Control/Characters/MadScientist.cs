@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using Trucker.Control.Asteroid;
 using Trucker.Control.Zap;
 using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Dialogues;
@@ -103,6 +104,8 @@ namespace Trucker.Control.Characters
                 if (other.TryGetComponent<EntityId>(out var id) && id.type == EntityType.AsteroidWithSparks)
                 {
                     scientist._asteroidTarget = other.transform;
+                    other.GetComponent<AsteroidSparks>().LockSparks();
+                    other.GetComponent<ZapCatchee>().SetUnavailableState();
                     ShowMiniDialogueOneliner();
                     scientist.FlyToAsteroid();
                 }

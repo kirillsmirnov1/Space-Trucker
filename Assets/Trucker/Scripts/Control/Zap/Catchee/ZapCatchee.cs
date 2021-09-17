@@ -58,7 +58,9 @@ namespace Trucker.Control.Zap.Catchee
         public void SetCatchedState() => SetState(new Catched(this));
         public void SetFreeingState() => SetState(new Freeing(this));
         public void SetCatchingState() => SetState(new Catching(this));
-        
+
+        public void SetUnavailableState() => SetState(new Unavailable(this));
+
         private void SubscribeOnReachableStatusChange()
         {
             reachableStatus.onStatusChange += reachable =>
