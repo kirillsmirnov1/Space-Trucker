@@ -34,9 +34,12 @@ namespace Trucker.Control.Zap
                 zapCatchee.SetConnection(springSettings, TailTransform);
                 catchees.AddLast(zapCatchee);
                 catcheeTypes.ObjectCatched(zapCatchee);
+                zapCatchee.OnCatchAttempt(true);
             }
-            
-            zapCatchee.OnCatchAttempt(true);
+            else
+            {
+                zapCatchee.OnCatchAttempt(false);
+            }
         }
 
         public void TryFree(ZapCatchee catchee)
@@ -47,9 +50,12 @@ namespace Trucker.Control.Zap
                 ReconnectNextCatchee(catchee);
                 catchees.Remove(catchee);
                 catcheeTypes.ObjectReleased(catchee);
+                catchee.OnFreeAttempt(true);
             }
-
-            catchee.OnFreeAttempt(true);
+            else
+            {
+                catchee.OnFreeAttempt(false);
+            }
         }
 
         private void ReconnectNextCatchee(ZapCatchee catchee)

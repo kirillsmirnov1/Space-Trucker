@@ -132,10 +132,6 @@ namespace Trucker.Control.Zap.Catchee
             {
                 SetCatchedState();
             }
-            else
-            {
-                SetFreeState();
-            }
         }
 
         public void OnFreeAttempt(bool freed)
@@ -143,10 +139,6 @@ namespace Trucker.Control.Zap.Catchee
             if (freed)
             {
                 OnCatcheeFreed();
-            }
-            else
-            {
-                SetCatchedState();
             }
         }
 
