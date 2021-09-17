@@ -38,5 +38,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03c9a229372b08d4da7b38bd6bd402e8, type: 2}
   - {fileID: 11400000, guid: 0f7eed0f8aa5ebe47b9aba9f7c21cea4, type: 2}
   - {fileID: 11400000, guid: a71ccc987c1b4474b831bb01a695216e, type: 2}
-  consequences:
+  consequences: []
   currentStepNumber: -1
+  logQuestSteps: {fileID: 11400000, guid: 49da0d8eb05d45f46934e6ee3391fff4, type: 2}

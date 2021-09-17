@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Clean up Q's orbit of Uranium
   finishedFromDialog: 1
   conditions: []
+  monitors: []
   steps:
   - {fileID: 11400000, guid: 9483d650cf2d3194696fdb29e58911c6, type: 2}
   - {fileID: 11400000, guid: b7afbb65918f7c2428bcb872ad5bc1c0, type: 2}
@@ -25,4 +26,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9dcdf4b8777ad3b44b9e0c2be0989360, type: 2}
   - {fileID: 11400000, guid: b12935c0d14857e45897f6d26ad2f7f1, type: 2}
   - {fileID: 11400000, guid: 4cbd61ac2755d754d96d2054d030329d, type: 2}
-  currentStepNumber: 1
+  currentStepNumber: -1
+  logQuestSteps: {fileID: 11400000, guid: 49da0d8eb05d45f46934e6ee3391fff4, type: 2}

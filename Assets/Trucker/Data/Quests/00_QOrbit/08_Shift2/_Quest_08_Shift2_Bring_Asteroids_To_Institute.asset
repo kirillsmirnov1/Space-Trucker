@@ -17,6 +17,7 @@ MonoBehaviour:
   finishedFromDialog: 1
   conditions:
   - {fileID: 11400000, guid: 50ffa522ea0232742967e0a3e4813e29, type: 2}
+  monitors: []
   steps:
   - {fileID: 11400000, guid: 4d7f21337961ae349842387f28f7ded7, type: 2}
   - {fileID: 11400000, guid: 3be836351f90b43478250c6e9a79d933, type: 2}
@@ -24,3 +25,4 @@ MonoBehaviour:
   consequences:
   - {fileID: 11400000, guid: 5485f044ba6584547903b9e516e5c76b, type: 2}
   currentStepNumber: -1
+  logQuestSteps: {fileID: 11400000, guid: 49da0d8eb05d45f46934e6ee3391fff4, type: 2}

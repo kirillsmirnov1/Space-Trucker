@@ -25,11 +25,14 @@ namespace Trucker.Model.Questing.Quests
         
         public int currentStepNumber = -1;
 
+        [Header("Debug")]
+        [SerializeField] private BoolVariable logQuestSteps;
+        
         public string GoalsText => GoalsTextFormatter.Format(steps, currentStepNumber);
 
         public void Take()
         {
-            Debug.Log($"Starting quest: {title}");
+            Log($"Starting quest: {title}");
             InitMonitors();
             GuaranteeCleanSteps();
             OnQuestTaken?.Invoke(title);
@@ -56,7 +59,7 @@ namespace Trucker.Model.Questing.Quests
         {
             currentStepNumber = stepToStart;
 
-            Debug.Log($"Starting step: {CurrentStep.name}");
+            Log($"Starting step: {CurrentStep.name}");
             
             CurrentStep.onCompleted += OnStepCompleted;
             CurrentStep.Start();
@@ -64,7 +67,7 @@ namespace Trucker.Model.Questing.Quests
 
         private void OnStepCompleted()
         {
-            Debug.Log($"Completed step: {CurrentStep.name}");
+            Log($"Completed step: {CurrentStep.name}");
             StopCurrentStep();
             IterateSteps();
         }
@@ -94,14 +97,16 @@ namespace Trucker.Model.Questing.Quests
 
         public bool NeverBeenStarted // IMPR naming 
             => QuestLogEntries.NeverBeenStarted(title);
-        
+
         public bool CanBeTaken
             => NotInProgress && AllConditionsPass && NotFailed;
 
         private bool NotFailed 
             => QuestLogEntries.NotFailed(title);
+
         public bool InProgress
             => currentStepNumber != -1;
+
         private bool NotInProgress 
             => !InProgress;
 
@@ -115,7 +120,7 @@ namespace Trucker.Model.Questing.Quests
         {
             currentStepNumber = -1;
             OnQuestStop?.Invoke(title, QuestStatus.Completed);
-            Debug.Log($"Quest {title} finished");
+            Log($"Quest {title} finished");
             InvokeConsequences();
         }
 
@@ -140,6 +145,11 @@ namespace Trucker.Model.Questing.Quests
             {
                 consequence.Start();
             }
+        }
+
+        private void Log(string s)
+        {
+            if(logQuestSteps) Debug.Log(s);
         }
     }
 }

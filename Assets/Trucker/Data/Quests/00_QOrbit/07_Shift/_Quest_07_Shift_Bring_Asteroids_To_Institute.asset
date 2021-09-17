@@ -17,9 +17,11 @@ MonoBehaviour:
   finishedFromDialog: 1
   conditions:
   - {fileID: 11400000, guid: 7541b23736f20eb48a9502ca140d11a1, type: 2}
+  monitors: []
   steps:
   - {fileID: 11400000, guid: 95d7ecd2e98c5d7458e673315f641ce0, type: 2}
   - {fileID: 11400000, guid: f4da0e58d2528034f876cd326e8830c1, type: 2}
   consequences:
   - {fileID: 11400000, guid: 1b06390ca5a5e834a805c107dd37a2fd, type: 2}
-  currentStepNumber: 0
+  currentStepNumber: 1
+  logQuestSteps: {fileID: 11400000, guid: 49da0d8eb05d45f46934e6ee3391fff4, type: 2}

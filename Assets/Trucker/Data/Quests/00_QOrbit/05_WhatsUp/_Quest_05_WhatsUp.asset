@@ -16,9 +16,11 @@ MonoBehaviour:
   description: Check your friends
   finishedFromDialog: 1
   conditions: []
+  monitors: []
   steps:
   - {fileID: 11400000, guid: 61f6848effed8254cb23fd8ba6fd11a5, type: 2}
   consequences:
   - {fileID: 11400000, guid: fef89cbf020477b4388e01d7c848502f, type: 2}
   - {fileID: 11400000, guid: b2b9b5e18ef4d794cba8d648d91aff02, type: 2}
   currentStepNumber: -1
+  logQuestSteps: {fileID: 11400000, guid: 49da0d8eb05d45f46934e6ee3391fff4, type: 2}

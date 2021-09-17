@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Trying not to die in outer space.
   finishedFromDialog: 1
   conditions: []
+  monitors: []
   steps:
   - {fileID: 11400000, guid: c22cdd38edc830342b7308a31e6ab541, type: 2}
   - {fileID: 11400000, guid: 45641e4dada94df4f9f6984993fe54b2, type: 2}
@@ -29,4 +30,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f26dd228b971bc4e926a85ee6590890, type: 2}
   consequences:
   - {fileID: 11400000, guid: b68e97d9af19dd944a6bdf3853b38ab6, type: 2}
-  currentStepNumber: 9
+  currentStepNumber: -1
+  logQuestSteps: {fileID: 11400000, guid: 49da0d8eb05d45f46934e6ee3391fff4, type: 2}
