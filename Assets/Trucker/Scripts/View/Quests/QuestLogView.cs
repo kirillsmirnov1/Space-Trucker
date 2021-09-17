@@ -1,8 +1,8 @@
 ﻿using Trucker.Model.Questing.Quests;
-using Trucker.View.Util;
 using UnityEngine;
 using UnityUtils;
 using UnityUtils.Events;
+using UnityUtils.View;
 
 namespace Trucker.View.Quests
 {

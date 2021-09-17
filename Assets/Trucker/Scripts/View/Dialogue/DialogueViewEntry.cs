@@ -1,7 +1,7 @@
 ﻿using System;
 using TMPro;
-using Trucker.View.Util;
 using UnityEngine;
+using UnityUtils.View;
 
 namespace Trucker.View.Dialogue
 {

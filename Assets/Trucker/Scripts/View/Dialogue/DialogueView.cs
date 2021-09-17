@@ -5,11 +5,11 @@ using TMPro;
 using Trucker.Model.Dialogues;
 using Trucker.Model.NPC;
 using Trucker.View.Dialogue.State;
-using Trucker.View.Util;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils;
 using UnityUtils.Extensions;
+using UnityUtils.View;
 
 namespace Trucker.View.Dialogue
 {

@@ -1,8 +1,8 @@
 ﻿using TMPro;
 using Trucker.Model.Questing.Quests;
-using Trucker.View.Util;
 using UnityEngine;
 using UnityUtils;
+using UnityUtils.View;
 
 namespace Trucker.View.Quests
 {
