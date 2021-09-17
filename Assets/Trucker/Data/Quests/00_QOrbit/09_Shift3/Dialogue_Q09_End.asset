@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q09_End
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 6b13ba8cbf9d57a4bbb5a0175662b263
+  canBeRepeated: 0
+  initialCharacter: 11
+  lines:
+  - character: 9
+    line: What was that?
+  - character: 11
+    line: Miracles of science!
+  - character: 11
+    line: I was able to amplify the electromagnetic vibrations of the asteroids.
+  - character: 9
+    line: But what happened to them? Where did they go?
+  - character: 11
+    line: To answer that question I'll need to make more experiments.
+  - character: 9
+    line: Be careful with that, okay? That thing looked really dangerous.
+  - character: 11
+    line: Oh, you know, I'm all safety.
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: ce9d49e0d329d8e42acbe60ec231364f, type: 2}
+  unlockCondition: {fileID: 0}

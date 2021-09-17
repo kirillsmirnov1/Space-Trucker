@@ -13,12 +13,7 @@ MonoBehaviour:
   m_Name: _Quest_09_Shift3
   m_EditorClassIdentifier: 
   title: Space Rocks 3
-  description: 'Help Merrill study asteroids up close
-
-    ! end dialogue
-
-    !
-    reward '
+  description: Help Merrill study asteroids up close
   finishedFromDialog: 1
   conditions:
   - {fileID: 11400000, guid: f7e0c0bc86fc5a742b4a852cc312fc8a, type: 2}
@@ -31,4 +26,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f4da0e58d2528034f876cd326e8830c1, type: 2}
   - {fileID: 11400000, guid: 805273299f5796b4a8868c5c273692ed, type: 2}
   consequences: []
-  currentStepNumber: 4
+  currentStepNumber: -1
