@@ -22,12 +22,7 @@ namespace Trucker.Model.Questing.Steps.Goals
             variable.OnChange -= Check;
         }
 
-        private void Check(bool newValue)
-        {
-            if (newValue == requiredValue)
-            {
-                onCompleted?.Invoke();
-            }
-        }
+        private void Check(bool newValue) 
+            => Completed = newValue == requiredValue;
     }
 }
