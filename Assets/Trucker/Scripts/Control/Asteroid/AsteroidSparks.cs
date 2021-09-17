@@ -42,7 +42,7 @@ namespace Trucker.Control.Asteroid
 
         private void OnCatchingStarted() 
         {
-            if(zapProtectionEnabled) StopAllCoroutines();
+            if(zapProtectionEnabled) LockSparks();
         }
         
         public void LockSparks() 

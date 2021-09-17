@@ -104,13 +104,13 @@ namespace Trucker.Control.Characters
                 if (other.TryGetComponent<EntityId>(out var id) && id.type == EntityType.AsteroidWithSparks)
                 {
                     scientist._asteroidTarget = other.transform;
-                    other.GetComponent<AsteroidSparks>().LockSparks();
                     other.GetComponent<ZapCatchee>().SetUnavailableState();
+                    other.GetComponent<AsteroidSparks>().LockSparks();
                     ShowMiniDialogueOneliner();
                     scientist.FlyToAsteroid();
                 }
             }
-            
+
             private void ShowMiniDialogueOneliner()
             {
                 var line = scientist.asteroidFoundLines.Entries.Shuffle().First();

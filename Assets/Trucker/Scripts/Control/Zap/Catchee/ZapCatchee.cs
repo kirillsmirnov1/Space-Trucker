@@ -155,5 +155,7 @@ namespace Trucker.Control.Zap.Catchee
             SetFreeState();
             OnFreed?.Invoke();
         }
+
+        private void OnDestroy() => Catcher?.TryFree(this);
     }
 }
