@@ -30,4 +30,4 @@ MonoBehaviour:
     available: {fileID: 11400000, guid: dfb76ecf0e87ef146be200dfc7ab3fed, type: 2}
   - clip: {fileID: 8300000, guid: fb2768aafb9fdad408a832ae55d12e3c, type: 3}
     landmark: -2147483648
-    available: {fileID: 0}
+    available: {fileID: 11400000, guid: dc4d06f2b761f5141bfc56fec2f6f272, type: 2}

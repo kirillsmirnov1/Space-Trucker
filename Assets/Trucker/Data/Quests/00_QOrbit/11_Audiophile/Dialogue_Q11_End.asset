@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q11_End
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: dc4d06f2b761f5141bfc56fec2f6f272
+  canBeRepeated: 0
+  initialCharacter: 6
+  lines:
+  - character: 9
+    line: Clai, I got all songs!
+  - character: 6
+    line: That's good, that is really good.
+  - character: 6
+    line: You're such a nice friend
+  - character: 6
+    line: Here, check it, I've got one for you.
+  - character: 6
+    line: My favourite one.
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: d7f95fea2f4eb184586b9a88fb3db86a, type: 2}
+  unlockCondition: {fileID: 0}
