@@ -2921,22 +2921,6 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 
       objectReference: {fileID: 11400000, guid: 06ba0301992966d44b385727543965d9, type: 2}
-    - target: {fileID: 680746486, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 680746486, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 680746486, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 680746486, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8135565870645640399, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
       propertyPath: m_RootOrder
       value: 29

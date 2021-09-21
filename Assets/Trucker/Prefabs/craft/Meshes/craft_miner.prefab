@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2345322025757035878, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Time
-      value: 0.06
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 2345322025757035878, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_MinVertexDistance
@@ -154,11 +154,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2345322025757035878, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2345322025757035878, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Parameters.colorGradient.atime0
-      value: 14264
+      value: 10987
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345322025757035878, guid: c98c9eaf9e32446418bf424782869410, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 41441
       objectReference: {fileID: 0}
     - target: {fileID: 2345322025757035878, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.a
@@ -206,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7482700071266305465, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Time
-      value: 0.06
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 7482700071266305465, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_MinVertexDistance
@@ -218,11 +222,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7482700071266305465, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482700071266305465, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Parameters.colorGradient.atime0
-      value: 14264
+      value: 10987
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482700071266305465, guid: c98c9eaf9e32446418bf424782869410, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 41441
       objectReference: {fileID: 0}
     - target: {fileID: 7482700071266305465, guid: c98c9eaf9e32446418bf424782869410, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.a
