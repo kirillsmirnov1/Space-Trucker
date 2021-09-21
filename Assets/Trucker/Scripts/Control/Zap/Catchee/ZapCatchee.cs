@@ -29,7 +29,10 @@ namespace Trucker.Control.Zap.Catchee
         private ZapCatcheeState _state;
         private SpringJoint _springJoint;
         private JointAnchorConnection _anchorConnection;
-        
+        public float SafeRadius => protectiveSphereCollider.radius 
+                                 * protectiveSphereCollider.transform.localScale.x 
+                                 * transform.localScale.x;
+
         public ZapCatcher Catcher => catcheeSettings.zapCatcherVariable.Value;
         public EntityType Type => entityId.type;
         public bool Catched => _state is Catched;
@@ -91,24 +94,22 @@ namespace Trucker.Control.Zap.Catchee
         public void NotifyOnCatchingStart() 
             => OnCatchingStarted?.Invoke();
 
-        public void SetConnection(SpringJointSettings springSettings, Transform bodyToConnectTo)
+        public void SetConnection(SpringJointSettings springSettings, Transform bodyToConnectTo, float prevSafeRadius)
         {
-            _springJoint = SetSpringJoint(springSettings);
+            _springJoint = SetSpringJoint(springSettings, prevSafeRadius);
             _anchorConnection = SetAnchorConnection(_springJoint);
             SetConnectedBody(bodyToConnectTo);
         }
 
 
-        private SpringJoint SetSpringJoint(SpringJointSettings springSettings)
+        private SpringJoint SetSpringJoint(SpringJointSettings springSettings, float prevSafeRadius)
         {
             var springJoint = gameObject.AddComponent<SpringJoint>();
-            var radius = protectiveSphereCollider.radius 
-                         * protectiveSphereCollider.transform.localScale.x 
-                         * transform.localScale.x;
+            var safeDistance = prevSafeRadius + SafeRadius;
 
             springJoint.autoConfigureConnectedAnchor = springSettings.autoConfigureConnectedAnchor;
-            springJoint.minDistance = 2 * radius;  
-            springJoint.maxDistance = 3 * radius;
+            springJoint.minDistance = safeDistance;  
+            springJoint.maxDistance = safeDistance * 1.2f;
             springJoint.spring = springSettings.spring;
             springJoint.damper = springSettings.damper;
             

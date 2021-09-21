@@ -20,8 +20,17 @@ namespace Trucker.Control.Zap
          
         public List<Vector3> CatcheesPositions => catchees.Select(x => x.transform.position).ToList();
 
+        private bool HasCatchees 
+            => catchees.Count > 0;
+
+        private ZapCatchee LastCatchee 
+            => catchees.Last.Value;
+
         private Transform TailTransform 
-            => catchees.Count > 0 ? catchees.Last.Value.transform : transform;
+            => HasCatchees ? LastCatchee.transform : transform;
+
+        private float TailSafeRadius
+            => HasCatchees ? LastCatchee.SafeRadius : 1.31f;
         
         private void OnValidate() => this.CheckNullFields();
         private void Awake() => zapLevelVariable.OnChange += CheckConsistency;
@@ -31,7 +40,7 @@ namespace Trucker.Control.Zap
         {
             if (!catchees.Contains(zapCatchee))
             {
-                zapCatchee.SetConnection(springSettings, TailTransform);
+                zapCatchee.SetConnection(springSettings, TailTransform, TailSafeRadius);
                 catchees.AddLast(zapCatchee);
                 catcheeTypes.ObjectCatched(zapCatchee);
                 zapCatchee.OnCatchAttempt(true);
