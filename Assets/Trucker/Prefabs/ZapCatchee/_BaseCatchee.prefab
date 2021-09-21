@@ -54,6 +54,7 @@ MonoBehaviour:
   entityId: {fileID: 1142154201084424674}
   progressDisplay: {fileID: 9186990213098247554}
   rb: {fileID: 6354029330446235734}
+  protectiveSphereCollider: {fileID: 1818004121969272689}
   catcheeSettings: {fileID: 11400000, guid: 566ae974f8de5c243904da536f4f87cd, type: 2}
   interactableByPlayer: 1
 --- !u!114 &1142154201084424674
@@ -217,11 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 175d4b2f0327ffe41a1e5aeb7db43ba0, type: 3}
     - target: {fileID: 442685796544508053, guid: 218573642b6910949913facd052d6cbd, type: 3}
       propertyPath: dimensions.x
-      value: 64
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 442685796544508053, guid: 218573642b6910949913facd052d6cbd, type: 3}
       propertyPath: dimensions.y
-      value: 64
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1344992584171944314, guid: 218573642b6910949913facd052d6cbd, type: 3}
       propertyPath: zapCatchee
@@ -284,5 +285,10 @@ PrefabInstance:
 --- !u!4 &4944961762522871888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958889321414670740, guid: 218573642b6910949913facd052d6cbd, type: 3}
+  m_PrefabInstance: {fileID: 4104000651051565508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1818004121969272689 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 2436042523681629877, guid: 218573642b6910949913facd052d6cbd, type: 3}
   m_PrefabInstance: {fileID: 4104000651051565508}
   m_PrefabAsset: {fileID: 0}

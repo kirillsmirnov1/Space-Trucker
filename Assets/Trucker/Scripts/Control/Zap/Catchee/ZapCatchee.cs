@@ -20,6 +20,8 @@ namespace Trucker.Control.Zap.Catchee
         [SerializeField] private EntityId entityId;
         [SerializeField] public SpriteRenderer progressDisplay;
         [SerializeField] public Rigidbody rb;
+        [SerializeField] private SphereCollider protectiveSphereCollider;
+        
         [Header("Settings")]
         [SerializeField] public CatcheeSettings catcheeSettings;
         public bool interactableByPlayer = true;
@@ -100,10 +102,13 @@ namespace Trucker.Control.Zap.Catchee
         private SpringJoint SetSpringJoint(SpringJointSettings springSettings)
         {
             var springJoint = gameObject.AddComponent<SpringJoint>();
+            var radius = protectiveSphereCollider.radius 
+                         * protectiveSphereCollider.transform.localScale.x 
+                         * transform.localScale.x;
 
             springJoint.autoConfigureConnectedAnchor = springSettings.autoConfigureConnectedAnchor;
-            springJoint.minDistance = springSettings.minDistance;
-            springJoint.maxDistance = springSettings.maxDistance;
+            springJoint.minDistance = 2 * radius;  
+            springJoint.maxDistance = 3 * radius;
             springJoint.spring = springSettings.spring;
             springJoint.damper = springSettings.damper;
             
