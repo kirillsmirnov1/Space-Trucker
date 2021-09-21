@@ -37,3 +37,4 @@ MonoBehaviour:
       I'll find you a working Radar in those scraps.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 8fddc2881b6a20848bb660fb3a700f5c, type: 2}
+  unlockCondition: {fileID: 0}

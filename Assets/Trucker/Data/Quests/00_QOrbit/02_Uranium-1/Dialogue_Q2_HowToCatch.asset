@@ -38,3 +38,4 @@ MonoBehaviour:
     line: Now go and bring me some uranium
   dialogueType: 3
   quest: {fileID: 0}
+  unlockCondition: {fileID: 0}

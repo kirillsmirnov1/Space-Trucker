@@ -42,3 +42,4 @@ MonoBehaviour:
     line: Let me check it
   dialogueType: 2
   quest: {fileID: 11400000, guid: 9a35a3da9683dde46a6b6799c8c13111, type: 2}
+  unlockCondition: {fileID: 0}

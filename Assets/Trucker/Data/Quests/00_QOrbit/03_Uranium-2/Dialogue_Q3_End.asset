@@ -38,3 +38,4 @@ MonoBehaviour:
     line: And if you bring me last of uranium, I maybe even find a Player for you.
   dialogueType: 2
   quest: {fileID: 11400000, guid: 61e67476bd9b7b84aaf1becfd5989d4c, type: 2}
+  unlockCondition: {fileID: 0}

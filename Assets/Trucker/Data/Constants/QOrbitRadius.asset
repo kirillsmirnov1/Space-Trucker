@@ -15,5 +15,5 @@ MonoBehaviour:
   value: 1034
   save: 0
   logSave: 0
-  defaultValue: {fileID: 0}
+  defaultValue: 0
   guid: 6d870cc8e84596340a24b4564d707afe

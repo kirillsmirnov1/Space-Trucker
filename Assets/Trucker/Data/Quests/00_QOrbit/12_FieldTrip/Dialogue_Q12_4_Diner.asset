@@ -16,7 +16,7 @@ MonoBehaviour:
   save: 0
   logSave: 0
   defaultValue: 0
-  guid: f40022e2350cf3f45b7c8318b3a45f2f
+  guid: e17ae83bdfcc6414696077df216d637b
   canBeRepeated: 0
   initialCharacter: 1
   lines:
@@ -29,7 +29,7 @@ MonoBehaviour:
   - character: 9
     line: Easy as pie.
   - character: 9
-    line: Kids, it's a diner. The food tastes better than in the cafeteria. 
+    line: Kids, it's a diner. The food tastes better than in the cafeteria.
   - character: 9
     line: And there's... hamburgers. Would you like to come in?
   - character: 5
@@ -39,7 +39,7 @@ MonoBehaviour:
   - character: 4
     line: Oh, can I...?
   - character: 1
-    line: You can't. You have a dinner schedule. 
+    line: You can't. You have a dinner schedule.
   - character: 1
     line: And you, don't spoil the kids.
   - character: 5

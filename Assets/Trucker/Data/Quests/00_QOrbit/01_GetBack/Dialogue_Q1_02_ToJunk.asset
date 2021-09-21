@@ -16,7 +16,7 @@ MonoBehaviour:
   save: 0
   logSave: 0
   defaultValue: 0
-  guid: 512da47e7bfe34f478554b9966209675
+  guid: 3dff43dcdbc99524ebdf02ce09b9a0a3
   canBeRepeated: 0
   initialCharacter: 9
   lines:
@@ -26,3 +26,4 @@ MonoBehaviour:
     line: 'I hope it works. Otherwise, this thing belongs in a dump. '
   dialogueType: 0
   quest: {fileID: 0}
+  unlockCondition: {fileID: 0}
