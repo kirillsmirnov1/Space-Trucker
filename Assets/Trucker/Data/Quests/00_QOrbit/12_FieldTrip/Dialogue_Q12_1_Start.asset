@@ -25,8 +25,7 @@ MonoBehaviour:
   - character: 1
     line: Not good, young man.
   - character: 1
-    line: We've been promised a nice field-trip around bases, but that nasty storm
-      ruined everything
+    line: We've been promised a nice field-trip around bases, but that nasty storm ruined everything
   - character: 1
     line: And now I have four sweet but very sad children on me.
   - character: 9
@@ -36,29 +35,25 @@ MonoBehaviour:
   - character: 9
     line: I can take you and your sweet children around, tell some stuff.
   - character: 1
-    line: But what means of transportation do you have?
+    line: But what means of transportation do you have? 
   - character: 1
     line: If I remember correctly, you are simple station worker, no offense.
   - character: 9
-    line: None taken.
+    line: None taken. 
   - character: 9
-    line: I may not have a school bus, but I have a reliable ship and miracles of
-      science to handle your children.
+    line: I may not have a school bus, but I have a reliable ship and miracles of science to handle your children.
   - character: 1
     line: And by miracles of science you mean what exactly?
   - character: 9
     line: Catcher!
   - character: 1
-    line: Catcher? That thing they use to handle scraps flying around? You want to
-      handle my children with that?
+    line: Catcher? That thing they use to handle scraps flying around? You want to handle my children with that?
   - character: 9
-    line: Ma'am, it's completely safe. We put your children in nice space suits and
-      let them have some open-space fun.
+    line: Ma'am, it's completely safe. We put your children in nice space suits and let them have some open-space fun.
   - character: 1
     line: Isn't that dangerous?
   - character: 9
-    line: You are talking with proffesional here. Anyway, do you have any other ideas
-      how to entertain the little ones?
+    line: You are talking with proffesional here. Anyway, do you have any other ideas how to entertain the little ones?
   - character: 1
     line: Seems like... Yeah, it might be okay. Let's go then!
   dialogueType: 1

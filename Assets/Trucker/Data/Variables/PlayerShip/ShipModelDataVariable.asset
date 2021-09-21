@@ -20,6 +20,6 @@ MonoBehaviour:
   logSave: 0
   defaultValue:
     mesh: {fileID: 0}
-    acceleration: 0
+    thrustMod: 0
     maxSpeed: 0
-  guid: ae80922bec839b349a0567fd5d1c1589
+  guid: 

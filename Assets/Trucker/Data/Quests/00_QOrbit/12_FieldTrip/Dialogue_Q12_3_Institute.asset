@@ -16,7 +16,7 @@ MonoBehaviour:
   save: 0
   logSave: 0
   defaultValue: 0
-  guid: 3c5d9ea13c5645d4c93d94ba1b8d1c4b
+  guid: f40022e2350cf3f45b7c8318b3a45f2f
   canBeRepeated: 0
   initialCharacter: 1
   lines:
@@ -27,12 +27,12 @@ MonoBehaviour:
   - character: 2
     line: Ma'am. And why is the planet called Q?
   - character: 1
-    line: It's a temporary name, they haven't decided on a real one yet, don't interrupt.
+    line: It's a temporary name, they haven't decided on a real one yet, don't
+      interrupt.
   - character: 1
-    line: Now, where was I? Ah yes, the Institute.
+    line: Now, where was I? Ah yes, the Institute. 
   - character: 1
-    line: An exploratory mission was sent to Q to investigate the possibility of
-      extracting Q's resources.
+    line: An exploratory mission was sent to Q to investigate the possibility of extracting Q's resources.
   - character: 3
     line: Could you tell us about the storm yesterday? Do you know why it happened?
   - character: 1

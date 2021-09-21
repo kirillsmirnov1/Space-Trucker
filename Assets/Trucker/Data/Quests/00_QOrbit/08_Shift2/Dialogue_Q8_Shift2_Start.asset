@@ -39,10 +39,9 @@ MonoBehaviour:
   - character: 9
     line: With what?
   - character: 11
-    line: Apparently not.
+    line: Apparently not. 
   - character: 11
-    line: Stasis spheres. It's a new development. They protect the object from external
-      influences, slow down the processes inside.
+    line: Stasis spheres. It's a new development. They protect the object from external influences, slow down the processes inside. 
   - character: 11
     line: Perhaps stasis can preserve the effect I'm interested in.
   - character: 9
@@ -54,7 +53,7 @@ MonoBehaviour:
   - character: 11
     line: Second, go get me five sparkling asteroids.
   - character: 11
-    line: And hurry, we don't know how long they'll spark after the storm!
+    line: And hurry, we don't know how long they'll spark after the storm!  
   dialogueType: 1
   quest: {fileID: 11400000, guid: 303ca5cf37951974393f9b8aadc0497c, type: 2}
   unlockCondition: {fileID: 0}

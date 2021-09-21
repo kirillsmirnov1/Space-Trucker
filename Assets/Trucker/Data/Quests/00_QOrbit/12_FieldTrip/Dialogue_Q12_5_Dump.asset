@@ -16,7 +16,7 @@ MonoBehaviour:
   save: 0
   logSave: 0
   defaultValue: 0
-  guid: 95488428fa7ba4b409e649ef2e47c28c
+  guid: f40022e2350cf3f45b7c8318b3a45f2f
   canBeRepeated: 0
   initialCharacter: 1
   lines:
@@ -35,8 +35,8 @@ MonoBehaviour:
   - character: 2
     line: Is uranium dangerous? What if it does fly around somewhere and hit me?
   - character: 1
-    line: We'll just have to rely on professionals like Mr Fielding to do their job
-      properly.
+    line: We'll just have to rely on professionals like Mr Fielding to do their
+      job properly.
   - character: 9
     line: Doing my best.
   - character: 1
