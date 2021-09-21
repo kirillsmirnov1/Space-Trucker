@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6eb8721011b4646a460ff403057584d, type: 3}
   m_Name: attitudeValue
   m_EditorClassIdentifier: 
-  value: {x: 0, y: 0, z: 0}
+  value: {x: 0, y: -0, z: 0}
   save: 0
   logSave: 0
   defaultValue: {x: 0, y: 0, z: 0}
-  guid: 
+  guid: 9d13baf8627d77d41af1ae77f2e13787

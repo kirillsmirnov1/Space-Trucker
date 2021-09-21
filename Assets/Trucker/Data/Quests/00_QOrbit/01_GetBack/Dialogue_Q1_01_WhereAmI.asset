@@ -25,9 +25,13 @@ MonoBehaviour:
   - character: 9
     line: Where am I? What's happened to the ship?
   - character: 9
-    line: There's some external damage, but the pressurization's intact, which is good.
+    line: There's some external damage, but the pressurization's intact, which is
+      good.
   - character: 9
-    line: Radar's down. Catcher's down. Player is stuck on one song. What the hell could've happened to it? 
+    line: Radar's down. Catcher's down. Player is stuck on one song. What the hell
+      could've happened to it?
   - character: 9
     line: Engines? Gotta check the engines.
+  dialogueType: 0
   quest: {fileID: 0}
+  unlockCondition: {fileID: 0}

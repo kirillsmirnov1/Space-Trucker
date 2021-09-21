@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: ShipModelDataVariable
   m_EditorClassIdentifier: 
   value:
-    mesh: {fileID: 0}
-    thrustMod: 0
+    mesh: {fileID: 4693684586352304481, guid: 1d486a88a44ada543b3e0d8127391ae1, type: 3}
+    acceleration: 0
     maxSpeed: 0
   save: 0
   logSave: 0
   defaultValue:
     mesh: {fileID: 0}
-    thrustMod: 0
+    acceleration: 0
     maxSpeed: 0
-  guid: 
+  guid: ae80922bec839b349a0567fd5d1c1589

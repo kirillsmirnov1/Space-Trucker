@@ -37,12 +37,15 @@ MonoBehaviour:
   - character: 9
     line: Urggh.. I don't think I can help you on that pile of junk.
   - character: 9
-    line: Even Player is damaged, not speaking of Catcher or Radar.. I had to find you using the old ways.
+    line: Even Player is damaged, not speaking of Catcher or Radar.. I had to find
+      you using the old ways.
   - character: 0
-    line: I can give you Catcher now, but you'll have to return me at least some of the Uranium.
+    line: I can give you Catcher now, but you'll have to return me at least some
+      of the Uranium.
   - character: 0
     line: After that, we'll talk about other parts of your ship.
   - character: 9
     line: Well, seems like we have a deal.
   dialogueType: 2
   quest: {fileID: 11400000, guid: e0085730cdeecc54d913c76830007c3b, type: 2}
+  unlockCondition: {fileID: 0}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9dd2e108e6d47908e12b98507b45a37, type: 3}
   m_Name: playerInRange_Diner
   m_EditorClassIdentifier: 
-  value: 0
+  value: 1
   save: 0
   logSave: 0
   defaultValue: 0
-  guid: efc4b790883b9064db2517e7d66d301b
+  guid: 19953db5c9c779a4b89de011a8f00cc6

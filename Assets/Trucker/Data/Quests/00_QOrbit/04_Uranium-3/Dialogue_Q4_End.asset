@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
   m_Name: Dialogue_Q4_End
   m_EditorClassIdentifier: 
-  value: 0
+  value: 1
   save: 1
   logSave: 0
   defaultValue: 0
@@ -42,3 +42,4 @@ MonoBehaviour:
     line: Let me check it
   dialogueType: 2
   quest: {fileID: 11400000, guid: 9a35a3da9683dde46a6b6799c8c13111, type: 2}
+  unlockCondition: {fileID: 0}
