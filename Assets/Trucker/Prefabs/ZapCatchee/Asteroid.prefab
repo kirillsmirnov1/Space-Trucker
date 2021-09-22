@@ -59,6 +59,7 @@ MonoBehaviour:
   entityId: {fileID: 1723392773293936091}
   progressDisplay: {fileID: 7443809469013977531}
   rb: {fileID: 4619861624694195311}
+  protectiveSphereCollider: {fileID: 74835735733001032}
   catcheeSettings: {fileID: 11400000, guid: 566ae974f8de5c243904da536f4f87cd, type: 2}
   interactableByPlayer: 1
   orbitSpeed: {fileID: 8122728148690291928}
@@ -5258,5 +5259,10 @@ GameObject:
 --- !u!212 &7443809469013977531 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9186990213098247554, guid: f66d2547c06497140a7211dc99b969b0, type: 3}
+  m_PrefabInstance: {fileID: 1743745904880548921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &74835735733001032 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 1818004121969272689, guid: f66d2547c06497140a7211dc99b969b0, type: 3}
   m_PrefabInstance: {fileID: 1743745904880548921}
   m_PrefabAsset: {fileID: 0}
