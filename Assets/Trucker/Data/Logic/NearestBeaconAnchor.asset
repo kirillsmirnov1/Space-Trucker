@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playersTransformVariable: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}
   anchorPositions: {fileID: 11400000, guid: 7fa9e87c83df72140bf658ff907b28f9, type: 2}
+  anchorsLocked: {fileID: 11400000, guid: 5fefaa4a08612724abb3639f9177fe05, type: 2}

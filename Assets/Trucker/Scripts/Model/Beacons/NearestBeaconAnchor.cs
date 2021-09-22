@@ -9,10 +9,10 @@ namespace Trucker.Model.Beacons
     {
         [SerializeField] private TransformVariable playersTransformVariable;
         [SerializeField] private Vector3ArrayVariable anchorPositions;
+        [SerializeField] private BoolArrayVariable anchorsLocked;
 
         private Transform _player;
         private Vector3[] _anchors;
-        private bool[] _anchorLocked;
         
         private static readonly object Lock = new object();
         
@@ -20,7 +20,6 @@ namespace Trucker.Model.Beacons
         {
             _player = playersTransformVariable;
             _anchors = anchorPositions.Value;
-            _anchorLocked = new bool[_anchors.Length];
         }
 
         public Vector3 NearestAnchor()
@@ -34,7 +33,7 @@ namespace Trucker.Model.Beacons
             
             for (int i = 0; i < anchors.Length; i++)
             {
-                if(_anchorLocked[i]) continue;
+                if(anchorsLocked[i]) continue;
                 var anchor = anchors[i];
                 var distance = Vector3.Distance(playerPos, anchor); 
                 if (distance < bestDistance)
@@ -55,9 +54,9 @@ namespace Trucker.Model.Beacons
 
                 if (index == -1) return false;
                 
-                if (_anchorLocked[index]) return false;
+                if (anchorsLocked[index]) return false;
                 
-                _anchorLocked[index] = true;
+                anchorsLocked[index] = true;
                 return true;
             }
         }
@@ -68,7 +67,7 @@ namespace Trucker.Model.Beacons
             {
                 var index = FindAnchorIndex(anchorPos);
                 if (index == -1) return;
-                _anchorLocked[index] = false;
+                anchorsLocked[index] = false;
             }
         }
 
