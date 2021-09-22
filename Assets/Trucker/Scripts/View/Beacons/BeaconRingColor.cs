@@ -9,9 +9,14 @@ namespace Trucker.View.Beacons
         [SerializeField] private BeaconStatusProvider beaconStatusProvider;
         [SerializeField] private MeshRenderer[] renderers;
         
+        [Header("Pulsation")]
+        [SerializeField] private AnimationCurve intensity;
+        [SerializeField] private float pulsationSpeed = 1f;
+        
         private Material _material;
         private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
         private Color _statusColor;
+        private float _pulsationTime;
 
         private void OnValidate()
         {
@@ -35,6 +40,23 @@ namespace Trucker.View.Beacons
             beaconStatusProvider.OnBeaconStatusChange -= UpdateRingColor;
         }
 
+        private void Update()
+        {
+            PulsateRingEmission();
+        }
+
+        private void PulsateRingEmission()
+        {
+            _pulsationTime += Time.deltaTime * pulsationSpeed;
+            _pulsationTime %= 1f;
+
+            var currentIntensity = intensity.Evaluate(_pulsationTime);
+            var factor = Mathf.Pow(2f, currentIntensity);
+            var emissionColor = _statusColor * factor;
+            
+            _material.SetColor(EmissionColor, emissionColor);
+        }
+
         private void InitMaterial()
         {
             _material = new Material(renderers[0].material);
@@ -48,7 +70,6 @@ namespace Trucker.View.Beacons
         {
             _statusColor = StatusColor(beaconStatus);
             _material.color = _statusColor;
-            _material.SetColor(EmissionColor, _statusColor);
         }
 
         private static Color StatusColor(BeaconStatus beaconStatus) =>

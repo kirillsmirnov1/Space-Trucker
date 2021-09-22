@@ -101,6 +101,58 @@ MonoBehaviour:
   - {fileID: 3148227367560944050}
   - {fileID: 2870480402470698132}
   - {fileID: 4001044724923573927}
+  intensity:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -2.5
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 2
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.45
+      value: 1
+      inSlope: 0.00091077056
+      outSlope: 0.00091077056
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.3333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.55
+      value: 1
+      inSlope: -0.00048200128
+      outSlope: -0.00048200128
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 0.33333337
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  pulsationSpeed: 0.25
 --- !u!1 &5248648655355344142
 GameObject:
   m_ObjectHideFlags: 0
