@@ -1,4 +1,5 @@
-﻿using Trucker.Control.Zap.Catchee;
+﻿using System;
+using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Beacons;
 using UnityEngine;
 
@@ -13,7 +14,18 @@ namespace Trucker.Control.Beacons
         [SerializeField] private ZapCatchee catchee;
         [SerializeField] private NearestBeaconAnchor nearestBeaconAnchor;
 
-        public bool Anchored { get; private set; }
+        public bool Anchored
+        {
+            get => _anchored;
+            private set
+            {
+                if(value == _anchored) return;
+                _anchored = value;
+                OnAnchored?.Invoke(value);
+            }
+        }
+        private bool _anchored;
+        public event Action<bool> OnAnchored;
 
         private void OnValidate()
         {
@@ -60,10 +72,10 @@ namespace Trucker.Control.Beacons
 
         private void Unlock()
         {
-            Anchored = false;
             nearestBeaconAnchor.Unlock(anchorPosProvider.Pos);
             anchorPosProvider.Unlock();
             catchee.SetFreeState();
+            Anchored = false;
         }
 
         private void TryLock()
@@ -78,9 +90,9 @@ namespace Trucker.Control.Beacons
 
         private void Lock(Vector3 anchorPos)
         {
-            Anchored = true;
             anchorPosProvider.Lock(anchorPos);
             catchee.SetUnavailableState();
+            Anchored = true;
         }
 
         public void InitLock(Vector3 pos) 

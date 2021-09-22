@@ -20,6 +20,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 876487374622028512}
     m_Modifications:
+    - target: {fileID: 3060288067736945634, guid: dbea3466a1c183c4286fcbf40ef73a6a, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3098965142084069740, guid: dbea3466a1c183c4286fcbf40ef73a6a, type: 3}
       propertyPath: catchee
       value: 

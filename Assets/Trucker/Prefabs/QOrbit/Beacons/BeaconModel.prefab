@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 8649901618212974086}
   - component: {fileID: 3869142633709130285}
   - component: {fileID: 3098965142084069740}
+  - component: {fileID: 3060288067736945634}
   m_Layer: 0
   m_Name: BeaconModel
   m_TagString: Untagged
@@ -348,6 +349,23 @@ MonoBehaviour:
   anchorPosProvider: {fileID: 3869142633709130285}
   catchee: {fileID: 0}
   nearestBeaconAnchor: {fileID: 11400000, guid: d72be573156300441b8c78e2bd3f1577, type: 2}
+--- !u!114 &3060288067736945634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358415977301840174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3eedadabe5403c8f1cdfe8379fe1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorLock: {fileID: 3098965142084069740}
+  posProvider: {fileID: 3869142633709130285}
+  rb: {fileID: 0}
+  driftForceModificator: {fileID: 11400000, guid: 28b495d59a1e9bf4e862ef865148a17d, type: 2}
+  maxDistanceFromAnchor: {fileID: 11400000, guid: b18eeac2b8114714dbe09bfc2ffe89f8, type: 2}
 --- !u!1 &7845870371196589798
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,14 +550,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa155da6a57faf747a38a745e548b2aa, type: 3}
---- !u!1 &2249029005820193108 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa155da6a57faf747a38a745e548b2aa, type: 3}
-  m_PrefabInstance: {fileID: 1438704534866842629}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1476608225742042094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa155da6a57faf747a38a745e548b2aa, type: 3}
+  m_PrefabInstance: {fileID: 1438704534866842629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2249029005820193108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa155da6a57faf747a38a745e548b2aa, type: 3}
   m_PrefabInstance: {fileID: 1438704534866842629}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1606751542608282803
@@ -611,14 +629,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a51501155f87d46808e6a2a7052ff4, type: 3}
---- !u!4 &1280972272236438360 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 83a51501155f87d46808e6a2a7052ff4, type: 3}
-  m_PrefabInstance: {fileID: 1606751542608282803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1913253389919549922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 83a51501155f87d46808e6a2a7052ff4, type: 3}
+  m_PrefabInstance: {fileID: 1606751542608282803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1280972272236438360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 83a51501155f87d46808e6a2a7052ff4, type: 3}
   m_PrefabInstance: {fileID: 1606751542608282803}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2325833622120544803
@@ -690,14 +708,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72c2537e8114b594abc228fb6fcbabaa, type: 3}
---- !u!4 &2868155410099658184 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72c2537e8114b594abc228fb6fcbabaa, type: 3}
-  m_PrefabInstance: {fileID: 2325833622120544803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &4001044724923573927 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 72c2537e8114b594abc228fb6fcbabaa, type: 3}
+  m_PrefabInstance: {fileID: 2325833622120544803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2868155410099658184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72c2537e8114b594abc228fb6fcbabaa, type: 3}
   m_PrefabInstance: {fileID: 2325833622120544803}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3464511757221814288
