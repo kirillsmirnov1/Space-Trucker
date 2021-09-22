@@ -6,7 +6,7 @@ using UnityUtils.Variables;
 namespace Trucker.Model.Beacons
 {
     [CreateAssetMenu(menuName = "Logic/NearestBeaconAnchor", fileName = "NearestBeaconAnchor", order = 0)]
-    public class NearestBeaconAnchor : InitiatedScriptableObject
+    public class NearestBeaconAnchor : InitiatedScriptableObject // IMPR that's actually beacon's anchors data 
     {
         [SerializeField] private TransformVariable playersTransformVariable;
         [SerializeField] private Vector3Variable[] anchorPositions;
@@ -15,6 +15,8 @@ namespace Trucker.Model.Beacons
         private Vector3[] _anchors;
         private bool[] _anchorLocked;
         
+        private static readonly object Lock = new object();
+        
         public override void Init()
         {
             _player = playersTransformVariable;
@@ -22,7 +24,7 @@ namespace Trucker.Model.Beacons
             _anchorLocked = new bool[_anchors.Length];
         }
 
-        public Vector3 NearestAnchor() 
+        public Vector3 NearestAnchor()
             => PickNearestAnchorFrom(_anchors);
 
         private Vector3 PickNearestAnchorFrom(Vector3[] anchors)
@@ -44,6 +46,47 @@ namespace Trucker.Model.Beacons
             }
 
             return nearestAnchor;
+        }
+
+        public bool TryLock(Vector3 anchorPos)
+        {
+            lock (Lock)
+            {
+                var index = FindAnchorIndex(anchorPos);
+
+                if (index == -1) return false;
+                
+                if (_anchorLocked[index]) return false;
+                
+                _anchorLocked[index] = true;
+                return true;
+            }
+        }
+
+        public void Unlock(Vector3 anchorPos)
+        {
+            lock (Lock)
+            {
+                var index = FindAnchorIndex(anchorPos);
+                if (index == -1) return;
+                _anchorLocked[index] = false;
+            }
+        }
+
+        private int FindAnchorIndex(Vector3 anchorPos)
+        {
+            var index = -1;
+            
+            for (int i = 0; i < _anchors.Length; i++)
+            {
+                if (anchorPos.Equals(_anchors[i]))
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            return index;
         }
     }
 }
