@@ -1,8 +1,8 @@
 ﻿namespace Trucker.Control.Zap.Catchee.States
 {
-    public class Unavailable : ZapCatcheeState
+    public class FreeUnavailable : ZapCatcheeState
     {
-        public Unavailable(ZapCatchee zapCatchee) : base(zapCatchee) { }
+        public FreeUnavailable(ZapCatchee zapCatchee) : base(zapCatchee) { }
         public override void EnterState() 
             => Catchee.crosshairHolder.SetActive(false);
     }

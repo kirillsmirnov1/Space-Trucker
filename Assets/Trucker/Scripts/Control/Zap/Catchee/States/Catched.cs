@@ -12,8 +12,7 @@
 
         public override void OnPointerDown()
         {
-            if(Catchee.interactableByPlayer)
-                Catchee.SetFreeingState();
+            Catchee.SetFreeingState();
         }
 
         public override void OnFixedUpdate()

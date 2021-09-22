@@ -53,18 +53,28 @@ namespace Trucker.Control.Zap.Catchee
 
         public void SetFreeState()
         {
-            var initialState = reachableStatus.Reachable 
-                ? (ZapCatcheeState) new FreeReachable(this) 
-                : new FreeUnreachable(this);
+            var initialState = interactableByPlayer ? 
+                reachableStatus.Reachable 
+                    ? (ZapCatcheeState) new FreeReachable(this) 
+                    : new FreeUnreachable(this)
+                : new FreeUnavailable(this);
             
             SetState(initialState);
         }
 
-        public void SetCatchedState() => SetState(new Catched(this));
+        public void SetCatchedState()
+        {
+            var catchedState = interactableByPlayer 
+                ? new Catched(this) 
+                : new CatchedUnavailable(this);
+            
+            SetState(catchedState);
+        }
+
         public void SetFreeingState() => SetState(new Freeing(this));
         public void SetCatchingState() => SetState(new Catching(this));
 
-        public void SetUnavailableState() => SetState(new Unavailable(this));
+        public void SetUnavailableState() => SetState(new FreeUnavailable(this));
 
         private void SubscribeOnReachableStatusChange()
         {

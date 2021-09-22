@@ -5,15 +5,14 @@
         public FreeReachable(ZapCatchee catchee) : base(catchee) { }
         
         public override void EnterState() => 
-            Catchee.crosshairHolder.SetActive(Catchee.interactableByPlayer);
+            Catchee.crosshairHolder.SetActive(true); 
 
         public override void OnUnreachable()
             => Catchee.SetFreeState();
 
         public override void OnPointerDown()
         {
-            if(Catchee.interactableByPlayer)
-                TryCatch();
+            TryCatch();
         }
 
         protected virtual void TryCatch() 
