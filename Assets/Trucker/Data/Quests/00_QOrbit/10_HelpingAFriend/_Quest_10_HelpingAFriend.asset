@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: _Quest_10_HelpingAFriend
   m_EditorClassIdentifier: 
   title: Helping A Friend
-  description: '! description
+  description: 'Tow beacons to desired positions
 
     ! dialogue 1
 
-    ! beacon goal 1, 2, 3
+    ! beacon
+    goal 1, 2, 3
 
-    !
-    dialogue 2
+    ! dialogue 2
 
     ! reward '
   finishedFromDialog: 1
