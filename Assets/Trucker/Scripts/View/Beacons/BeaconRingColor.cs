@@ -11,6 +11,7 @@ namespace Trucker.View.Beacons
         
         private Material _material;
         private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+        private Color _statusColor;
 
         private void OnValidate()
         {
@@ -21,17 +22,17 @@ namespace Trucker.View.Beacons
         private void Awake()
         {
             InitMaterial();
-            beaconStatusProvider.OnBeaconStatusChange += SetRingColor;
+            beaconStatusProvider.OnBeaconStatusChange += UpdateRingColor;
         }
 
         private void Start()
         {
-            SetRingColor(beaconStatusProvider.Status);
+            UpdateRingColor(beaconStatusProvider.Status);
         }
 
         private void OnDestroy()
         {
-            beaconStatusProvider.OnBeaconStatusChange -= SetRingColor;
+            beaconStatusProvider.OnBeaconStatusChange -= UpdateRingColor;
         }
 
         private void InitMaterial()
@@ -43,12 +44,11 @@ namespace Trucker.View.Beacons
             }
         }
 
-        private void SetRingColor(BeaconStatus beaconStatus)
+        private void UpdateRingColor(BeaconStatus beaconStatus)
         {
-            var statusColor = StatusColor(beaconStatus);
-            
-            _material.color = statusColor;
-            _material.SetColor(EmissionColor, statusColor);
+            _statusColor = StatusColor(beaconStatus);
+            _material.color = _statusColor;
+            _material.SetColor(EmissionColor, _statusColor);
         }
 
         private static Color StatusColor(BeaconStatus beaconStatus) =>
