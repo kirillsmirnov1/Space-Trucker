@@ -63,7 +63,7 @@ namespace Trucker.Control.Beacons
             Anchored = false;
             nearestBeaconAnchor.Unlock(anchorPosProvider.Pos);
             anchorPosProvider.Unlock();
-            // TODO unlock catchee 
+            catchee.SetFreeState();
         }
 
         private void TryLock()
@@ -74,7 +74,7 @@ namespace Trucker.Control.Beacons
             {
                 Anchored = true;
                 anchorPosProvider.Lock(currentAnchorPos);
-                // TODO lock catchee 
+                catchee.SetUnavailableState();
             }
         }
     }
