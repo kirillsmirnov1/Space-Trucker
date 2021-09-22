@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityUtils.Saves;
 using UnityUtils.Variables;
 
@@ -9,7 +8,7 @@ namespace Trucker.Model.Beacons
     public class NearestBeaconAnchor : InitiatedScriptableObject // IMPR that's actually beacon's anchors data 
     {
         [SerializeField] private TransformVariable playersTransformVariable;
-        [SerializeField] private Vector3Variable[] anchorPositions; // IMPR into V3ArrayVariable 
+        [SerializeField] private Vector3ArrayVariable anchorPositions;
 
         private Transform _player;
         private Vector3[] _anchors;
@@ -20,7 +19,7 @@ namespace Trucker.Model.Beacons
         public override void Init()
         {
             _player = playersTransformVariable;
-            _anchors = anchorPositions.Select(anchorPosVariable => anchorPosVariable.Value).ToArray();
+            _anchors = anchorPositions.Value;
             _anchorLocked = new bool[_anchors.Length];
         }
 

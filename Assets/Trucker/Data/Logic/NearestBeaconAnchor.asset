@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: NearestBeaconAnchor
   m_EditorClassIdentifier: 
   playersTransformVariable: {fileID: 11400000, guid: c6f4a96bf0d92974980d7a5c9465ab39, type: 2}
-  anchorPositions:
-  - {fileID: 11400000, guid: 6d55ea30a31cb4f4a9abf61475d2d219, type: 2}
-  - {fileID: 11400000, guid: 41d45b1597719b94baed080ad1c72230, type: 2}
-  - {fileID: 11400000, guid: 1e6d397c4fa7dea458e4677d725a79ef, type: 2}
+  anchorPositions: {fileID: 11400000, guid: 7fa9e87c83df72140bf658ff907b28f9, type: 2}
