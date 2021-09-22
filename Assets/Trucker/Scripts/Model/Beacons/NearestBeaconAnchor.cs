@@ -7,35 +7,28 @@ namespace Trucker.Model.Beacons
     [CreateAssetMenu(menuName = "Logic/NearestBeaconAnchor", fileName = "NearestBeaconAnchor", order = 0)]
     public class NearestBeaconAnchor : InitiatedScriptableObject // IMPR that's actually beacon's anchors data 
     {
-        [SerializeField] private TransformVariable playersTransformVariable;
         [SerializeField] private Vector3ArrayVariable anchorPositions;
         [SerializeField] private BoolArrayVariable anchorsLocked;
-
-        private Transform _player;
+        
         private Vector3[] _anchors;
         
         private static readonly object Lock = new object();
         
         public override void Init()
         {
-            _player = playersTransformVariable;
             _anchors = anchorPositions.Value;
         }
 
-        public Vector3 NearestAnchor()
-            => PickNearestAnchorFrom(_anchors);
-
-        private Vector3 PickNearestAnchorFrom(Vector3[] anchors)
+        public Vector3 NearestAnchorFor(Vector3 targetPos)
         {
-            var playerPos = _player.position;
             var bestDistance = float.MaxValue;
             var nearestAnchor = Vector3.zero;
             
-            for (int i = 0; i < anchors.Length; i++)
+            for (int i = 0; i < _anchors.Length; i++)
             {
                 if(anchorsLocked[i]) continue;
-                var anchor = anchors[i];
-                var distance = Vector3.Distance(playerPos, anchor); 
+                var anchor = _anchors[i];
+                var distance = Vector3.Distance(targetPos, anchor); 
                 if (distance < bestDistance)
                 {
                     bestDistance = distance;

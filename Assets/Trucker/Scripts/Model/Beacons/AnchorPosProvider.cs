@@ -36,7 +36,7 @@ namespace Trucker.Model.Beacons
         {
             public Free(AnchorPosProvider posProvider) : base(posProvider) { }
             public override Vector3 Pos 
-                => posProvider.nearestAnchor.NearestAnchor();
+                => posProvider.nearestAnchor.NearestAnchorFor(posProvider.transform.position);
         }
 
         private class Locked : AnchorProviderState
