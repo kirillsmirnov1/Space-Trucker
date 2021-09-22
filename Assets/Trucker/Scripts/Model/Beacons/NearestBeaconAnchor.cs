@@ -13,15 +13,17 @@ namespace Trucker.Model.Beacons
 
         private Transform _player;
         private Vector3[] _anchors;
+        private bool[] _anchorLocked;
         
         public override void Init()
         {
             _player = playersTransformVariable;
             _anchors = anchorPositions.Select(anchorPosVariable => anchorPosVariable.Value).ToArray();
+            _anchorLocked = new bool[_anchors.Length];
         }
 
         public Vector3 NearestAnchor() 
-            => PickNearestAnchorFrom(_anchors); // TODO pass available ones 
+            => PickNearestAnchorFrom(_anchors);
 
         private Vector3 PickNearestAnchorFrom(Vector3[] anchors)
         {
@@ -31,6 +33,7 @@ namespace Trucker.Model.Beacons
             
             for (int i = 0; i < anchors.Length; i++)
             {
+                if(_anchorLocked[i]) continue;
                 var anchor = anchors[i];
                 var distance = Vector3.Distance(playerPos, anchor); 
                 if (distance < bestDistance)
