@@ -17,10 +17,8 @@ MonoBehaviour:
 
     ! dialogue 1
 
-    ! beacon
-    goal 1, 2, 3
-
-    ! dialogue 2
+    ! dialogue
+    2
 
     ! reward '
   finishedFromDialog: 1
@@ -28,6 +26,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6fa7bb71be1f4641a93b3224de092e5, type: 2}
   monitors: []
   steps:
+  - {fileID: 11400000, guid: 133f3e002bbddaf41b3f67c14c912806, type: 2}
+  - {fileID: 11400000, guid: bdc054d7744ccbf40816f7cb9ddcf52f, type: 2}
+  - {fileID: 11400000, guid: 53a9d473882026a4d82eebeb66f5e220, type: 2}
   - {fileID: 11400000, guid: 61f6848effed8254cb23fd8ba6fd11a5, type: 2}
   consequences: []
   currentStepNumber: -1
