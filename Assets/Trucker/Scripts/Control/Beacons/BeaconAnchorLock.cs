@@ -82,5 +82,8 @@ namespace Trucker.Control.Beacons
             anchorPosProvider.Lock(anchorPos);
             catchee.SetUnavailableState();
         }
+
+        public void InitLock(Vector3 pos) 
+            => Lock(pos);
     }
 }
