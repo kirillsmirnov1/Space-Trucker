@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8461788254075151597}
   - component: {fileID: 2361595620102236165}
+  - component: {fileID: 2876571649984575240}
   m_Layer: 0
   m_Name: Beacons
   m_TagString: Untagged
@@ -55,6 +56,35 @@ MonoBehaviour:
   - {fileID: 6301459344407352123}
   - {fileID: 4742037406234907747}
   - {fileID: 4742037406458730523}
+--- !u!114 &2876571649984575240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461788254075151596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6957297fb206642b2f37e96c30a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c7f0e68d06f69d243b87ec4c524c6093, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2361595620102236165}
+        m_TargetAssemblyTypeName: Trucker.Control.Beacons.BeaconsAnchorLockInit,
+          Assembly-CSharp
+        m_MethodName: ResetBeaconsLocks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4371157382129376733
 PrefabInstance:
   m_ObjectHideFlags: 0
