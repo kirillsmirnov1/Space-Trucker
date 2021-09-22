@@ -21,9 +21,9 @@ namespace Trucker.Model.Beacons
 
         private abstract class AnchorProviderState
         {
-            protected AnchorPosProvider posProvider;
+            protected readonly AnchorPosProvider posProvider;
 
-            public AnchorProviderState(AnchorPosProvider posProvider)
+            protected AnchorProviderState(AnchorPosProvider posProvider)
             {
                 this.posProvider = posProvider;
                 Debug.Log($"{posProvider.transform.parent.name} is {GetType().Name}");
