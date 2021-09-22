@@ -72,10 +72,15 @@ namespace Trucker.Control.Beacons
 
             if (nearestBeaconAnchor.TryLock(currentAnchorPos))
             {
-                Anchored = true;
-                anchorPosProvider.Lock(currentAnchorPos);
-                catchee.SetUnavailableState();
+                Lock(currentAnchorPos);
             }
+        }
+
+        private void Lock(Vector3 anchorPos)
+        {
+            Anchored = true;
+            anchorPosProvider.Lock(anchorPos);
+            catchee.SetUnavailableState();
         }
     }
 }
