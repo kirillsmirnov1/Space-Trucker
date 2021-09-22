@@ -10,7 +10,8 @@ namespace Trucker.View.Beacons
         [SerializeField] private MeshRenderer[] renderers;
         
         private Material _material;
-        
+        private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
         private void OnValidate()
         {
             beaconStatusProvider = GetComponentInParent<BeaconStatusProvider>();
@@ -44,14 +45,19 @@ namespace Trucker.View.Beacons
 
         private void SetRingColor(BeaconStatus beaconStatus)
         {
-            // TODO use emission 
-            _material.color = beaconStatus switch
+            var statusColor = StatusColor(beaconStatus);
+            
+            _material.color = statusColor;
+            _material.SetColor(EmissionColor, statusColor);
+        }
+
+        private static Color StatusColor(BeaconStatus beaconStatus) =>
+            beaconStatus switch
             {
                 BeaconStatus.Far => Color.red,
                 BeaconStatus.Near => Color.yellow,
                 BeaconStatus.InPosition => Color.green,
                 _ => throw new ArgumentOutOfRangeException()
             };
-        }
     }
 }
