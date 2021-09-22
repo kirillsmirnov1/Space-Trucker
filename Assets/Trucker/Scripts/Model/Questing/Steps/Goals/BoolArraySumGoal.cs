@@ -4,6 +4,7 @@ using UnityUtils.Variables;
 
 namespace Trucker.Model.Questing.Steps.Goals
 {
+    [CreateAssetMenu(menuName = "Quests/Goals/BoolArraySumGoal", fileName = "BoolArraySumGoal", order = 0)]
     public class BoolArraySumGoal : Goal
     {
         [SerializeField] private int requiredTrueCount;
