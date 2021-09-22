@@ -9,7 +9,7 @@ namespace Trucker.Model.Beacons
     public class NearestBeaconAnchor : InitiatedScriptableObject // IMPR that's actually beacon's anchors data 
     {
         [SerializeField] private TransformVariable playersTransformVariable;
-        [SerializeField] private Vector3Variable[] anchorPositions;
+        [SerializeField] private Vector3Variable[] anchorPositions; // IMPR into V3ArrayVariable 
 
         private Transform _player;
         private Vector3[] _anchors;
