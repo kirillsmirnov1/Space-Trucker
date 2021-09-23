@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7f95fea2f4eb184586b9a88fb3db86a, type: 2}
   - {fileID: 11400000, guid: 499a14b476428914ba6893fe1317c3b9, type: 2}
   - {fileID: 11400000, guid: a1504ffd9268c0b4295fca0f1f6b9420, type: 2}
+  - {fileID: 11400000, guid: 687dca80e5272df4490f8ed86f969cce, type: 2}
   starterQuest: {fileID: 11400000, guid: e0085730cdeecc54d913c76830007c3b, type: 2}
   setDefaults:
   - {fileID: 11400000, guid: b4bfac469e2925245be636348eb52551, type: 2}
