@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearestAnchor: {fileID: 11400000, guid: d72be573156300441b8c78e2bd3f1577, type: 2}
+  logBeaconLockChange: {fileID: 11400000, guid: ae48105f4ab749a46ad6659461fc9fc8, type: 2}
 --- !u!114 &3098965142084069740
 MonoBehaviour:
   m_ObjectHideFlags: 0

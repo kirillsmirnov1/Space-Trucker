@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
+using UnityUtils.Variables;
 
 namespace Trucker.Model.Beacons
 {
     public class AnchorPosProvider : MonoBehaviour
     {
         [SerializeField] private NearestBeaconAnchor nearestAnchor;
-
+        [SerializeField] private BoolVariable logBeaconLockChange;
+        
         private AnchorProviderState _state;
 
         public Vector3 Pos => _state.Pos;
@@ -26,7 +28,15 @@ namespace Trucker.Model.Beacons
             protected AnchorProviderState(AnchorPosProvider posProvider)
             {
                 this.posProvider = posProvider;
-                Debug.Log($"{posProvider.transform.parent.name} is {GetType().Name}");
+                LogStateChange();
+            }
+
+            private void LogStateChange()
+            {
+                if (posProvider.logBeaconLockChange)
+                {
+                    Debug.Log($"{posProvider.transform.parent.name} is {GetType().Name}");
+                }
             }
 
             public abstract Vector3 Pos { get; }
