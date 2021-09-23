@@ -28,7 +28,7 @@ namespace Trucker.Control.Asteroid
             PushObject();
         }
 
-        private void Init() // TODO call on respawn 
+        private void Init()
         {
             SetPersonalOrbitRadius();
             SetStartSpeed();

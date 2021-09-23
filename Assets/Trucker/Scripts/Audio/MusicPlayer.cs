@@ -20,7 +20,7 @@ namespace Trucker.Audio
         [Header("Data")]
         [SerializeField] private FloatVariable crossFadeDuration;
         [SerializeField] private MusicFiles musicFiles;
-        [SerializeField] private AudioClipVariable currentSong; // TODO save song 
+        [SerializeField] private AudioClipVariable currentSong; 
         
         private Action _onUpdate;
         private AudioSource _from;
