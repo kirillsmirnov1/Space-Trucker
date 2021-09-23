@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Trucker.Model.Beacons
 {
-    [RequireComponent(typeof(AnchorPosProvider))]
+    [RequireComponent(typeof(BeaconAnchorPosProvider))]
     public class BeaconStatusProvider : MonoBehaviour
     {
         public event Action<BeaconStatus> OnBeaconStatusChange;
 
-        [SerializeField] private AnchorPosProvider anchorPosProvider;
+        [SerializeField] private BeaconAnchorPosProvider anchorPosProvider;
         [SerializeField] private float inPosDistance = 500f; // TODO use vars 
         [SerializeField] private float nearDistance = 1500f;
 
@@ -26,7 +26,7 @@ namespace Trucker.Model.Beacons
 
         private void OnValidate()
         {
-            anchorPosProvider = GetComponent<AnchorPosProvider>();
+            anchorPosProvider = GetComponent<BeaconAnchorPosProvider>();
         }
 
         private void Update() 

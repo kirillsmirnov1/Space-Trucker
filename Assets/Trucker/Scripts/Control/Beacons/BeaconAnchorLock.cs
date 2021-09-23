@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Trucker.Control.Beacons
 {
-    [RequireComponent(typeof(AnchorPosProvider))]
+    [RequireComponent(typeof(BeaconAnchorPosProvider))]
     [RequireComponent(typeof(BeaconStatusProvider))]
     public class BeaconAnchorLock : MonoBehaviour
     {
         [SerializeField] private BeaconStatusProvider statusProvider;
-        [SerializeField] private AnchorPosProvider anchorPosProvider;
+        [SerializeField] private BeaconAnchorPosProvider anchorPosProvider;
         [SerializeField] private ZapCatchee catchee;
         [SerializeField] private NearestBeaconAnchor nearestBeaconAnchor;
 
@@ -30,7 +30,7 @@ namespace Trucker.Control.Beacons
         private void OnValidate()
         {
             statusProvider = GetComponent<BeaconStatusProvider>();
-            anchorPosProvider = GetComponent<AnchorPosProvider>();
+            anchorPosProvider = GetComponent<BeaconAnchorPosProvider>();
             catchee = GetComponentInParent<ZapCatchee>();
         }
 

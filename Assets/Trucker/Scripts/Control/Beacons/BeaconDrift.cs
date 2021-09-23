@@ -5,13 +5,13 @@ using UnityUtils.Variables;
 
 namespace Trucker.Control.Beacons
 {
-    [RequireComponent(typeof(AnchorPosProvider))]
+    [RequireComponent(typeof(BeaconAnchorPosProvider))]
     [RequireComponent(typeof(BeaconAnchorLock))]
     public class BeaconDrift : MonoBehaviour
     {
         [Header("Components")] 
         [SerializeField] private BeaconAnchorLock anchorLock;
-        [SerializeField] private AnchorPosProvider posProvider;
+        [SerializeField] private BeaconAnchorPosProvider posProvider;
         [SerializeField] private Rigidbody rb;
 
         [Header("Data")] 
@@ -24,7 +24,7 @@ namespace Trucker.Control.Beacons
         private void OnValidate()
         {
             anchorLock = GetComponent<BeaconAnchorLock>();
-            posProvider = GetComponent<AnchorPosProvider>();
+            posProvider = GetComponent<BeaconAnchorPosProvider>();
             rb = GetComponentInParent<Rigidbody>();
         }
 

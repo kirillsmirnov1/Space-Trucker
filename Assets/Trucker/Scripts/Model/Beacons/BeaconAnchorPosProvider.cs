@@ -3,7 +3,7 @@ using UnityUtils.Variables;
 
 namespace Trucker.Model.Beacons
 {
-    public class AnchorPosProvider : MonoBehaviour
+    public class BeaconAnchorPosProvider : MonoBehaviour
     {
         [SerializeField] private NearestBeaconAnchor nearestAnchor;
         [SerializeField] private BoolVariable logBeaconLockChange;
@@ -23,9 +23,9 @@ namespace Trucker.Model.Beacons
 
         private abstract class AnchorProviderState
         {
-            protected readonly AnchorPosProvider posProvider;
+            protected readonly BeaconAnchorPosProvider posProvider;
 
-            protected AnchorProviderState(AnchorPosProvider posProvider)
+            protected AnchorProviderState(BeaconAnchorPosProvider posProvider)
             {
                 this.posProvider = posProvider;
                 LogStateChange();
@@ -44,7 +44,7 @@ namespace Trucker.Model.Beacons
 
         private class Free : AnchorProviderState
         {
-            public Free(AnchorPosProvider posProvider) : base(posProvider) { }
+            public Free(BeaconAnchorPosProvider posProvider) : base(posProvider) { }
             public override Vector3 Pos 
                 => posProvider.nearestAnchor.NearestAnchorFor(posProvider.transform.position);
         }
@@ -53,7 +53,7 @@ namespace Trucker.Model.Beacons
         {
             private readonly Vector3 _anchorPos;
             
-            public Locked(AnchorPosProvider posProvider, Vector3 anchorPos) : base(posProvider) 
+            public Locked(BeaconAnchorPosProvider posProvider, Vector3 anchorPos) : base(posProvider) 
                 => _anchorPos = anchorPos;
 
             public override Vector3 Pos 
