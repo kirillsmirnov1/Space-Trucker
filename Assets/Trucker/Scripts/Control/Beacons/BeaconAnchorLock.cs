@@ -1,7 +1,7 @@
-﻿using System;
-using Trucker.Control.Zap.Catchee;
+﻿using Trucker.Control.Zap.Catchee;
 using Trucker.Model.Beacons;
 using UnityEngine;
+using UnityUtils;
 
 namespace Trucker.Control.Beacons
 {
@@ -14,18 +14,7 @@ namespace Trucker.Control.Beacons
         [SerializeField] private ZapCatchee catchee;
         [SerializeField] private NearestBeaconAnchor nearestBeaconAnchor;
 
-        public bool Anchored
-        {
-            get => _anchored;
-            private set
-            {
-                if(value == _anchored) return;
-                _anchored = value;
-                OnAnchored?.Invoke(value);
-            }
-        }
-        private bool _anchored;
-        public event Action<bool> OnAnchored;
+        public Observable<bool> anchored;
 
         private void OnValidate()
         {
@@ -63,10 +52,10 @@ namespace Trucker.Control.Beacons
         }
 
         private bool HaveToUnlock 
-            => Anchored && !InPosition;
+            => anchored && !InPosition;
 
         private bool MightLock 
-            => !Anchored && InPosition && !catchee.Catched;
+            => !anchored && InPosition && !catchee.Catched;
 
         private bool InPosition => statusProvider.Status == BeaconStatus.InPosition;
 
@@ -75,7 +64,7 @@ namespace Trucker.Control.Beacons
             nearestBeaconAnchor.Unlock(anchorPosProvider.Pos);
             anchorPosProvider.Unlock();
             catchee.SetFreeState();
-            Anchored = false;
+            anchored.Value = false;
         }
 
         private void TryLock()
@@ -92,7 +81,7 @@ namespace Trucker.Control.Beacons
         {
             anchorPosProvider.Lock(anchorPos);
             catchee.SetUnavailableState();
-            Anchored = true;
+            anchored.Value = true;
         }
 
         public void InitLock(Vector3 pos) 

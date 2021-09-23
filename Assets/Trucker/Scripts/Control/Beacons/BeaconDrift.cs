@@ -29,10 +29,10 @@ namespace Trucker.Control.Beacons
         }
 
         private void Awake()
-            => anchorLock.OnAnchored += SetDrift;
+            => anchorLock.anchored.OnChange += SetDrift;
 
         private void Start()
-            => SetDrift(anchorLock.Anchored);
+            => SetDrift(anchorLock.anchored);
 
         private void FixedUpdate()
             => _onFixedUpdate?.Invoke();
