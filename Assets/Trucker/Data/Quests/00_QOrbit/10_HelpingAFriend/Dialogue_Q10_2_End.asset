@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q10_2_End
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: dfdd2b32825f68f43b2d29aee10ea3b9
+  canBeRepeated: 0
+  initialCharacter: 7
+  lines:
+  - character: 9
+    line: About those beacons.
+  - character: 9
+    line: They are positioned allright.
+  - character: 7
+    line: Oh, that is good.
+  - character: 7
+    line: That is really good.
+  dialogueType: 2
+  quest: {fileID: 11400000, guid: f9d29f777efeb7d429b813f5a15fa0ed, type: 2}
+  unlockCondition: {fileID: 0}

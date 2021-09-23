@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q10_1_Start
+  m_EditorClassIdentifier: 
+  value: 0
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 66bbc1aae96a62448ad785b9f5b6a5b2
+  canBeRepeated: 0
+  initialCharacter: 7
+  lines:
+  - character: 9
+    line: Darny, do you need any help with those beacons of yours?
+  - character: 7
+    line: I think I do.
+  - character: 7
+    line: I had to put them between Institute, Dorm and Dump.
+  - character: 7
+    line: 'But storm got me near Diner and.... '
+  - character: 7
+    line: I hope they are somewhere near.
+  - character: 9
+    line: Yeah, I saw them not so far away
+  - character: 7
+    line: Could you position them for me?
+  - character: 7
+    line: That's pretty easy, just drop them one by one when they rings are glowing
+      green.
+  - character: 7
+    line: Green ring means a beacon is positioned at right place.
+  - character: 9
+    line: Sounds easy. Would you include me in your report once it is done?
+  - character: 7
+    line: Oh yeah, of course.
+  - character: 9
+    line: I'll be going then.
+  dialogueType: 1
+  quest: {fileID: 11400000, guid: f9d29f777efeb7d429b813f5a15fa0ed, type: 2}
+  unlockCondition: {fileID: 0}
