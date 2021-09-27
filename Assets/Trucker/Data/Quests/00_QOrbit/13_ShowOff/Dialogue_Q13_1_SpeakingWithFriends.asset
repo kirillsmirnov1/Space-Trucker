@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
+  m_Name: Dialogue_Q13_1_SpeakingWithFriends
+  m_EditorClassIdentifier: 
+  value: 1
+  save: 1
+  logSave: 0
+  defaultValue: 0
+  guid: 6ab82e97f0c3e314883bf4e9d55dda78
+  canBeRepeated: 0
+  initialCharacter: 0
+  lines:
+  - character: 9
+    line: Look at what I've got.
+  - character: 8
+    line: Fieldy, my boy, you did it!
+  - character: 7
+    line: Congratulations. That ship suits you.
+  - character: 6
+    line: It's so nice and elegant! How do you like it?
+  - character: 9
+    line: A lot. It's brand new. It's fast. It's...
+  - character: 8
+    line: Hey, guys, don't want to be the party pooper, but there's something happening...
+  - character: 8
+    line: Might wanna look at Institute..
+  dialogueType: 3
+  quest: {fileID: 11400000, guid: 687dca80e5272df4490f8ed86f969cce, type: 2}
+  unlockCondition: {fileID: 0}
