@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1626948116}
   - component: {fileID: 1626948118}
   - component: {fileID: 1626948117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PS Electric noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4838,6 +4838,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+--- !u!114 &9159980152066586679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5403006771723776124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29d190c3bf94afea8f1ccec1bfb3469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: {fileID: 11400000, guid: 6c0fcda186302e943ab933d1a75d4d5f, type: 2}
 --- !u!1001 &8124074560845739153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4848,6 +4861,10 @@ PrefabInstance:
     - target: {fileID: 4198996205673333997, guid: 78762076ce523b842b4d0f77977f4107, type: 3}
       propertyPath: m_Name
       value: WarpSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198996205673333997, guid: 78762076ce523b842b4d0f77977f4107, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4683865645465773215, guid: 78762076ce523b842b4d0f77977f4107, type: 3}
       propertyPath: tile
