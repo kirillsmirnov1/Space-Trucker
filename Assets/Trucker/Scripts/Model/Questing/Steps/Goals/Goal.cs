@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Trucker.Model.Questing.Steps.Goals
 {
@@ -8,7 +9,8 @@ namespace Trucker.Model.Questing.Steps.Goals
         public static event Action<string> OnCompletion;
         
         public string description;
-
+        [SerializeField] private bool forceResetAtInit;
+        
         public override StepType Type => StepType.Goal;
 
         public bool Completed
@@ -44,7 +46,10 @@ namespace Trucker.Model.Questing.Steps.Goals
             base.Init();
             _completed = false;
             _started = false;
+            if (forceResetAtInit) Reset();
         }
+
+        public abstract void Reset();
 
         public override void Start()
         {

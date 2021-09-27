@@ -8,6 +8,8 @@ namespace Trucker.Model.Questing.Steps.Goals
     {
         [SerializeField] private GameEvent gameEvent;
 
+        public override void Reset() { /* Can't be reset */ }
+
         public override void Start()
         {
             base.Start();

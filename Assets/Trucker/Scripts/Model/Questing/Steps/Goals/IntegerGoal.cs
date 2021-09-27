@@ -9,6 +9,8 @@ namespace Trucker.Model.Questing.Steps.Goals
         [SerializeField] private int requiredValue;
         [SerializeField] private IntVariable currentValue;
 
+        public override void Reset() => currentValue.SetDefaultValue();
+
         public override void Start()
         {
             base.Start();

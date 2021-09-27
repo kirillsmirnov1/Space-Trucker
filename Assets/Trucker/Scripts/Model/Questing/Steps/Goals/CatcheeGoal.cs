@@ -13,6 +13,8 @@ namespace Trucker.Model.Questing.Steps.Goals
         
         [SerializeField] private TypesOfCatchedObjects catchedByTypes;
 
+        public override void Reset() { /* Can't be reset */ }
+
         public override void Start()
         {
             base.Start();

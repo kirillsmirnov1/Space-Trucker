@@ -9,6 +9,8 @@ namespace Trucker.Model.Questing.Steps.Goals
         [SerializeField] private LandmarkTypeEvent landmarkTypeEvent;
         [SerializeField] private LandmarkType requiredType;
 
+        public override void Reset() { /* Can't be reset */ }
+
         public override void Start()
         {
             base.Start();
