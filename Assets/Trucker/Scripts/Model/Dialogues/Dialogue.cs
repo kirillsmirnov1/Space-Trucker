@@ -19,7 +19,7 @@ namespace Trucker.Model.Dialogues
         [Header("Conditions")]
         [SerializeField] private DialogueType dialogueType;
         [SerializeField] 
-        [ConditionalField("dialogueType", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest})] 
+        [ConditionalField("dialogueType", compareValues: new object[]{DialogueType.TakeQuest, DialogueType.FinishQuest, DialogueType.MidQuest})] 
         private Quest quest;
         [SerializeField]
         [ConditionalField("dialogueType", compareValues: new object[]{DialogueType.Unlockable})] 
@@ -40,7 +40,7 @@ namespace Trucker.Model.Dialogues
         {
             switch (dialogueType)
             {
-                case DialogueType.Mini:
+                case DialogueType.MidQuest:
                 case DialogueType.None:
                 case DialogueType.Unlockable:
                     break;
@@ -65,7 +65,7 @@ namespace Trucker.Model.Dialogues
                 DialogueType.None => DialogueWasNotShown || canBeRepeated,
                 DialogueType.TakeQuest => quest.CanBeTaken && quest.NeverBeenStarted, 
                 DialogueType.FinishQuest => quest.CanBeFinished,
-                DialogueType.Mini => true,
+                DialogueType.MidQuest => quest.InProgress && DialogueWasNotShown,
                 DialogueType.Unlockable => unlockCondition.Value && DialogueWasNotShown,
                 _ => throw new ArgumentOutOfRangeException()
             };
@@ -82,7 +82,7 @@ namespace Trucker.Model.Dialogues
             None,
             TakeQuest,
             FinishQuest,
-            Mini,
+            MidQuest,
             Unlockable,
         }
     }
