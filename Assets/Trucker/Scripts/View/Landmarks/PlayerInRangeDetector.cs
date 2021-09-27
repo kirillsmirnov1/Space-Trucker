@@ -13,8 +13,11 @@ namespace Trucker.View.Landmarks
 
         private void Awake() => playerInRange.Value = false;
 
-        private void OnTriggerEnter(Collider other) 
-            => playerInRange.Value = true;
+        private void OnTriggerEnter(Collider other)
+        {
+            if(other.isTrigger) return;
+            playerInRange.Value = true;
+        }
 
         private void OnTriggerExit(Collider other) 
             => playerInRange.Value = false;
