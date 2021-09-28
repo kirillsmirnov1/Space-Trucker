@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a4225fc22b480394ecf76bce4ba645, type: 3}
+  m_Name: Goal_Delay_Q13_WSOnPlayer
+  m_EditorClassIdentifier: 
+  description: 
+  forceResetAtInit: 0
+  variable: {fileID: 11400000, guid: 6c0fcda186302e943ab933d1a75d4d5f, type: 2}
+  requiredValue: 1
