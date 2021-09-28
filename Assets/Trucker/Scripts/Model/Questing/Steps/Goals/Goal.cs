@@ -7,7 +7,7 @@ namespace Trucker.Model.Questing.Steps.Goals
     {
         public static event Action<string> OnStart;
         public static event Action<string> OnCompletion;
-        
+        [Tooltip("Leave empty to hide from QuestLog view")]        
         public string description;
         [SerializeField] private bool forceResetAtInit;
         

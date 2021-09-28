@@ -37,6 +37,7 @@ namespace Trucker.Model.Questing.Quests
 
         private static void AppendGoalDescription(StringBuilder strToAppendTo, Goal goal)
         {
+            if(string.IsNullOrEmpty(goal.description)) return;
             strToAppendTo.Append(Prefix(goal.Stage));
             strToAppendTo.Append(" ");
             strToAppendTo.Append(goal.description);
