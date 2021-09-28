@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ddf787a86272d404fbc8a2db8c2113a0, type: 2}
   - {fileID: 11400000, guid: 5ea27ada981ca2d4fbc422b833e09a02, type: 2}
   - {fileID: 11400000, guid: a282ecb78920f3a4c83a7b32a46c430e, type: 2}
+  - {fileID: 11400000, guid: 3e2101eb3fcab4c44952305f70aa9694, type: 2}
   consequences: []
   currentStepNumber: -1
   logQuestSteps: {fileID: 11400000, guid: 49da0d8eb05d45f46934e6ee3391fff4, type: 2}
