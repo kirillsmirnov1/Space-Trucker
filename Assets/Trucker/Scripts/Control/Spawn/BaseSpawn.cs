@@ -15,14 +15,16 @@ namespace Trucker.Control.Spawn
         protected static readonly Random Random = new Random();
 
         private void OnValidate() => this.CheckNullFieldsIfNotPrefab();
-
+        protected bool canSpawn;
         private void Start()
         {
+            canSpawn = true;
             Spawn();
         }
 
         public void Spawn()
         {
+            if(!canSpawn) return;
             RemoveOldSpawn();
             for (var i = 0; i < numberOfObjects; i++)
             {
