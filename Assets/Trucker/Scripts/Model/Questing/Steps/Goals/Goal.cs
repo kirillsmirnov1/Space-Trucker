@@ -23,8 +23,8 @@ namespace Trucker.Model.Questing.Steps.Goals
 
                 if (_completed)
                 {
-                    onCompleted?.Invoke();
                     OnCompletion?.Invoke(description);
+                    onCompleted?.Invoke();
                 }
             }
         }
