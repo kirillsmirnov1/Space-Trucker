@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 534992668266704428}
   - component: {fileID: 7015812546672294396}
   - component: {fileID: 2146028666042252520}
+  - component: {fileID: 310970973969310121}
   m_Layer: 0
   m_Name: socials
   m_TagString: Untagged
@@ -702,7 +703,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite index=0 tint=1>  <sprite index=1 tint=1>  <sprite index=2 tint=1>
+  m_text: <link="https://t.me/kiirusha95"><sprite index=2 tint=1></link>  <link="https://kiirusha95.itch.io/"><sprite
+    index=1 tint=1></link>  <link="https://twitter.com/kiirusha95"><sprite index=0
+    tint=1></link>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -785,6 +788,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &310970973969310121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098244825743906291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2916d6d253cc9cd48823bb32ed1101e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7195217696299905827
 MonoBehaviour:
   m_ObjectHideFlags: 0
