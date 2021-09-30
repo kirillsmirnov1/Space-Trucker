@@ -7,12 +7,16 @@ namespace Trucker.Control.Spawn
     {
         [SerializeField] private UnityEvent onRespawnStart;
         [SerializeField] private UnityEvent onRespawnEnd;
+        [SerializeField] private TrailRenderer trailRenderer;
+        
         private BaseSpawn _spawn;
         private bool _respawning;
 
-        public void Init(BaseSpawn spaceJunkOrbitSpawn)
+        public void Init(BaseSpawn spaceJunkOrbitSpawn, float scale)
         {
             _spawn = spaceJunkOrbitSpawn;
+            transform.localScale *= scale;
+            if(trailRenderer != null) trailRenderer.widthMultiplier = scale;
         }
 
         private void OnTriggerExit(Collider other)

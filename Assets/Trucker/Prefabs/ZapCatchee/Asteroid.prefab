@@ -42,6 +42,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  trailRenderer: {fileID: 8403181109405890612}
 --- !u!114 &8078234492105354850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +261,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.7709923
+        value: 0.5143547
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -268,14 +269,14 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.20376326
-        value: 0.85109204
-        inSlope: 0.07319364
-        outSlope: 0.07319364
+        time: 0.41052747
+        value: 0.5590579
+        inSlope: -0.20132194
+        outSlope: -0.20132194
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.19738339
+        outWeight: 0.31122315
       - serializedVersion: 3
         time: 1
         value: 0
@@ -293,7 +294,7 @@ TrailRenderer:
       key0: {r: 1, g: 1, b: 1, a: 0}
       key1: {r: 1, g: 1, b: 1, a: 0.75686276}
       key2: {r: 0, g: 0, b: 0, a: 0.105882354}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0.105882354}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
@@ -306,10 +307,10 @@ TrailRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 4587
-      atime1: 6554
+      atime0: 6168
+      atime1: 10794
       atime2: 65535
-      atime3: 0
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0

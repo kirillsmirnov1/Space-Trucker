@@ -177,6 +177,7 @@ MonoBehaviour:
   onRespawnEnd:
     m_PersistentCalls:
       m_Calls: []
+  trailRenderer: {fileID: 0}
 --- !u!114 &1100252397210021424
 MonoBehaviour:
   m_ObjectHideFlags: 0

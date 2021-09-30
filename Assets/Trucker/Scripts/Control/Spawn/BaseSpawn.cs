@@ -35,9 +35,9 @@ namespace Trucker.Control.Spawn
         private void SpawnObject(int index)
         {
             var obj = Instantiate(prefabToSpawn, NextSpawnPosition(), quaternion.identity, transform);
-            obj.transform.localScale = Random.NextFloat(scale.Value.x, scale.Value.y) * Vector3.one;
+            var objScale = Random.NextFloat(scale.Value.x, scale.Value.y);
             obj.name += index;
-            obj.GetComponent<Spawnee>().Init(this);
+            obj.GetComponent<Spawnee>().Init(this, objScale);
         }
 
         public void RemoveOldSpawn()
