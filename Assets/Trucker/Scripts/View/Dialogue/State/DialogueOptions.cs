@@ -3,6 +3,7 @@ using System.Linq;
 using Trucker.Model.Dialogues;
 using Trucker.Model.NPC;
 using Trucker.Model.Questing.Steps.Goals;
+using UnityUtils.Extensions;
 
 namespace Trucker.View.Dialogue.State
 {
@@ -55,6 +56,9 @@ namespace Trucker.View.Dialogue.State
         private static List<string> GetFirstLines(IDialogue[] dialogues) 
             => dialogues.Select(d => d.FirstLine).ToList();
 
-        private void UpdateOptions(string obj) => DialogueView.SetStateDialogueOptions();
+        private void UpdateOptions(string obj)
+        {
+            DialogueView.DelayAction(0.1f, () => DialogueView.SetStateDialogueOptions());
+        }
     }
 }
