@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1fda16082d460faeb30cab88e85328, type: 3}
   m_Name: DU_Song_Diner
   m_EditorClassIdentifier: 
-  value: 1
+  value: 0
   save: 1
   logSave: 0
   defaultValue: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9dd2e108e6d47908e12b98507b45a37, type: 3}
   m_Name: hasSpaceForNewCatch
   m_EditorClassIdentifier: 
-  value: 1
+  value: 0
   save: 0
   logSave: 0
   defaultValue: 0

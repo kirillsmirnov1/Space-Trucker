@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BeaconsLockedOnAnchors
   m_EditorClassIdentifier: 
   value:
-    data: 
+    data: 000000
   save: 1
   logSave: 0
   defaultValue:

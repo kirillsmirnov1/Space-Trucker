@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ed963796ab46e2ad74c2f139dddf98, type: 3}
   m_Name: ZapLevelVariable
   m_EditorClassIdentifier: 
-  value: 15
+  value: 0
   save: 1
   logSave: 0
   defaultValue: 0
