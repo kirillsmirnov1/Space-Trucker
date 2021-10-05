@@ -29,7 +29,6 @@ namespace Trucker.Model.Questing.Quests
         public override void Init()
         {
             SubscribeOnCallbacks();
-            InitQuests();
         }
 
         private void InitQuests()
@@ -55,5 +54,7 @@ namespace Trucker.Model.Questing.Quests
         {
             questLogEntries.QuestStopped(title, questStatus);
         }
+
+        public void StartTakenQuests() => InitQuests();
     }
 }

@@ -278,6 +278,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8135565870645640399, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
   m_PrefabInstance: {fileID: 8605797741433418352}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548645226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548645228}
+  - component: {fileID: 1548645227}
+  m_Layer: 0
+  m_Name: TakeQuestsOnGameLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1548645227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548645226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a31852526c404b8462ce42063296ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questLog: {fileID: 11400000, guid: a2fa0b3f2c6f42b4799367866fd84538, type: 2}
+--- !u!4 &1548645228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548645226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1593689240 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7464603151959768322, guid: a7e6accf4de36ad4781ac8285aa10c04, type: 3}
@@ -347,7 +391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1798763957 stripped
 MonoBehaviour:
@@ -1283,7 +1327,7 @@ PrefabInstance:
       objectReference: {fileID: 8605797741433418353}
     - target: {fileID: 4092939529503534563, guid: 78cb7f101cd4fc0408fa7e2df6c82396, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4092939529503534563, guid: 78cb7f101cd4fc0408fa7e2df6c82396, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3082,7 +3126,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 06ba0301992966d44b385727543965d9, type: 2}
     - target: {fileID: 8135565870645640399, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8135565870645640399, guid: 65ee547cdf44f484aade855656c631ce, type: 3}
       propertyPath: m_LocalScale.x
