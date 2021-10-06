@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questLog: {fileID: 11400000, guid: a2fa0b3f2c6f42b4799367866fd84538, type: 2}
+  firstQuest: {fileID: 11400000, guid: e0085730cdeecc54d913c76830007c3b, type: 2}
 --- !u!4 &1548645228
 Transform:
   m_ObjectHideFlags: 0
