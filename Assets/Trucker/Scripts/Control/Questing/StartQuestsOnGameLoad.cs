@@ -1,5 +1,6 @@
 ﻿using Trucker.Model.Questing.Quests;
 using UnityEngine;
+using UnityUtils.VisualEffects;
 
 namespace Trucker.Control.Questing
 {
@@ -7,12 +8,13 @@ namespace Trucker.Control.Questing
     {
         [SerializeField] private QuestLog questLog;
         [SerializeField] private Quest firstQuest;
-
+        [SerializeField] private UiFadePanel titleScreen;
+        
         private void Start()
         {
             StartQuests();
             PerformFirstQuestCheck();
-            // TODO hide title screen 
+            titleScreen.Hide();
         }
 
         private void StartQuests()
