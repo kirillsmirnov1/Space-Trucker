@@ -3,10 +3,11 @@ using UnityEngine;
 
 namespace Trucker.View.Util
 {
+    [RequireComponent(typeof(MeshCollider))]
     public class AddInvertedMeshCollider : MonoBehaviour
     {
-        public bool removeExistingColliders = true;
         public bool runOnAwake = false;
+        private Mesh _mesh;
 
         private void Awake()
         {
@@ -15,25 +16,27 @@ namespace Trucker.View.Util
     
         public void CreateInvertedMeshCollider()
         {
-            if (removeExistingColliders)
-                RemoveExistingColliders();
- 
             InvertMesh();
- 
-            gameObject.AddComponent<MeshCollider>();
+            SetCollider();
         }
- 
-        private void RemoveExistingColliders()
-        {
-            Collider[] colliders = GetComponents<Collider>();
-            for (int i = 0; i < colliders.Length; i++)
-                DestroyImmediate(colliders[i]);
-        }
- 
+
         private void InvertMesh()
         {
-            Mesh mesh = GetComponent<MeshFilter>().mesh;
-            mesh.triangles = mesh.triangles.Reverse().ToArray();
+            var meshFilter = GetComponent<MeshFilter>();
+            var defaultMesh = meshFilter.mesh;
+            _mesh = new Mesh
+            {
+                name = "inverted sphere mesh",
+                vertices = defaultMesh.vertices,
+                normals = defaultMesh.normals,
+                triangles = defaultMesh.triangles.Reverse().ToArray()
+            };
+            meshFilter.mesh = _mesh;
+        }
+
+        private void SetCollider()
+        {
+            GetComponent<MeshCollider>().sharedMesh = _mesh;
         }
     }
 }
